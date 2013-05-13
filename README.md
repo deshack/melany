@@ -8,6 +8,11 @@ Based on _s
 
 There's plenty of starter themes on the Internet, but they're mostly parent themes: not very cool to use and distribute the derivative work. Thanks God, I found this toolbox by ThemeShaper, _s, and I must say that's great!
 
+Built with Twitter Bootstrap
+============================
+
+Twitter Bootstrap is a powerful framework that allows a faster and easier web development. That's not only its description, it's reality. Because it's very powerful, I decided to use it for this project.
+
 The content, everywhere
 =======================
 
