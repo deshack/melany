@@ -32,11 +32,11 @@ function melany_content_nav( $nav_id ) {
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'melany' ); ?></h1>
+		<ul class="pager">
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
-
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'melany' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'melany' ) . '</span>' ); ?>
+		<?php previous_post_link( '<li class="previous">%link</li>', _x( '&larr;', 'Previous post link', 'melany' ) . __( ' Older', 'melany' )); ?>
+		<?php next_post_link( '<li class="next">%link</li>', __( 'Newer ', 'melany' ) . _x( '&rarr;', 'Next post link', 'melany' ) ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
@@ -49,7 +49,7 @@ function melany_content_nav( $nav_id ) {
 		<?php endif; ?>
 
 	<?php endif; ?>
-
+		</ul>
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
 }
