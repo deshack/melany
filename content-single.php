@@ -5,13 +5,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+	<header class="page-header">
+		<h1><?php the_title(); ?></h1>
 
-		<div class="entry-meta">
-			<?php melany_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+		<div class="entry-meta muted">
+			<small><?php melany_posted_on(); ?></small>
+		</div>
+	</header><!-- .page-header -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -23,7 +23,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-meta">
+	<footer class="well">
 		<?php
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( __( ', ', 'melany' ) );
