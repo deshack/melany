@@ -48,7 +48,7 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'primary',
 						'container' => false,
 						'menu_class' => 'nav',
-						'items_wrap' => '<ul class="%2$s">%3$s</ul>', ) ); ?>
+						'items_wrap' => '<ul class="%2$s">%3$s</ul>' ) ); ?>
 				</nav>
 
 				<?php get_search_form( true ); ?>

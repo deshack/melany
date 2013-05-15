@@ -94,6 +94,33 @@ body{
 	margin: 0 0 1.5em;
 }
 
+/* =Asides
+----------------------------------------------- */
+
+#footer{
+	padding:1em;
+	color:#999;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #1b1b1b;
+	background-image: -moz-linear-gradient(top, #111111, #222222);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#111111), to(#222222));
+	background-image: -webkit-linear-gradient(top, #111111, #222222);
+	background-image: -o-linear-gradient(top, #111111, #222222);
+	background-image: linear-gradient(to bottom, #111111, #222222);
+	background-repeat: repeat-x;
+	border-color: #252525;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff111111', endColorstr='#ff222222', GradientType=0);
+	border-radius:5px 5px 0 0;
+	-webkit-border-radius:5px 5px 0 0;
+	-moz-border-radius:5px 5px 0 0;
+}
+#footer a{
+	color:#eee;
+}
+#footer a:focus,
+#footer a:hover{
+	color:#999;
+}
 
 /* =Asides
 ----------------------------------------------- */

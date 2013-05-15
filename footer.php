@@ -10,12 +10,14 @@
 
 	</div><!-- #main -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( 'melany_credits' ); ?>
-			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'melany' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'melany' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'melany' ), 'Melany', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+	<footer id="footer" role="contentinfo">
+		<div class="text-center">
+			<small>
+				<?php do_action( 'melany_credits' ); ?>
+				<?php printf( __( 'Powered by ', 'melany' )); ?><a href="http://wordpress.org/" target="_blank" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'melany' ); ?>" rel="generator">WordPress</a><?php printf( __( ' and ', 'melany' )); ?><a href="http://twitter.github.com/bootstrap" target="_blank">Bootstrap</a>
+				<span class="sep"> - </span>
+				<?php printf( __( '%1$s theme by %2$s', 'melany' ), '<a href="https://github.com/deshack/melany" target="_blank">Melany</a>', '<a href="http://www.deshack.net/" target="_blank" rel="designer">deshack</a>' ); ?>
+			</small>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
