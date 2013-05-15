@@ -172,17 +172,17 @@ function melany_comment_form( $args = array(), $post_id = null ) {
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 	$fields =  array(
 		'author' => '<div class="control-group">' . '<label for="author" class="control-label">' . ( $req ? '<span class="badge badge-important">*</span> ' : '' ) . __( 'Name' ) . '</label> ' .
-		            '<div class="controls"><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></div></div>',
+		            '<div class="controls"><div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></div></div></div>',
 		'email'  => '<div class="control-group"><label for="email" class="control-label">' . ( $req ? '<span class="badge badge-important">*</span> ' : '' ) . __( 'Email' ) . '</label> ' .
-		            '<div class="controls"><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></div></div>',
+		            '<div class="controls"><div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></div></div></div>',
 		'url'    => '<div class="control-group"><label for="url" class="control-label">' . __( 'Website' ) . '</label>' .
-		            '<div class="controls"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div></div>',
+		            '<div class="controls"><div class="input-prepend"><span class="add-on"><i class="icon-home"></i></span><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div></div></div>',
 	);
 
 	$required_text = sprintf( ' ' . __('Required fields are marked %s'), '<span class="badge badge-important">*</span>' );
 	$defaults = array(
 		'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
-		'comment_field'        => '<div class="control-group"><label for="comment" class="control-label">' . _x( 'Comment', 'noun' ) . '</label><div class="controls"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div></div>',
+		'comment_field'        => '<div class="control-group"><label for="comment" class="control-label">' . _x( 'Comment', 'noun' ) . '</label><div class="controls"><div class="input-prepend"><span class="add-on"><i class="icon-pencil"></i></span><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div></div></div>',
 		'must_log_in'          => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
 		'logged_in_as'         => '<p class="alert">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
 		'comment_notes_before' => '<div class="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</div>',

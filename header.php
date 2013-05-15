@@ -38,20 +38,18 @@
 				</a>
 
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="brand" rel="home"><?php bloginfo( 'name' ); ?></a>
-				<!-- ## Site description ##
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-				-->
-				<nav id="nav-collapse collapse">
-					<h1 class="menu-toggle"><?php _e( 'Menu', 'melany' ); ?></h1>
-					<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'melany' ); ?>"><?php _e( 'Skip to content', 'melany' ); ?></a></div>
+				<div class="nav-collapse collapse">
+					<nav>
+						<h1 class="menu-toggle"><?php _e( 'Menu', 'melany' ); ?></h1>
+						<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'melany' ); ?>"><?php _e( 'Skip to content', 'melany' ); ?></a></div>
 
-					<?php wp_nav_menu( array( 'theme_location' => 'primary',
-						'container' => false,
-						'menu_class' => 'nav',
-						'items_wrap' => '<ul class="%2$s">%3$s</ul>' ) ); ?>
-				</nav>
-
-				<?php get_search_form( true ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary',
+							'container' => false,
+							'menu_class' => 'nav',
+							'items_wrap' => '<ul class="%2$s">%3$s</ul>' ) ); ?>
+					</nav>
+					<?php get_search_form( true ); ?>
+				</div>
 			</div>
 		</div>
 	</header>

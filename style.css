@@ -79,11 +79,6 @@ a:focus{
 }
 
 @media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-small-navigation ul.nav-menu.toggled-on {
-		display: block;
-	}
-
 	.navigation-main ul {
 		display: none;
 	}
@@ -145,7 +140,7 @@ a:focus{
 	display: none;
 }
 #secondary h1{
-	font-size:24.5px;
+	font-size:22px;
 }
 
 
