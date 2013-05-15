@@ -49,7 +49,7 @@ function melany_content_nav( $nav_id ) {
 			<?php if ( $next ) :
 				next_post_link( '<li class="next">%link</li>', __( 'Newer ', 'melany' ) . _x( '&rarr;', 'Next post link', 'melany' ) );
 			else : ?>
-				<li class="next disabled"><a href="#"><?php printf( __( '&rarr; Newer', 'melany' )); ?></a></li>
+				<li class="next disabled"><a href="#"><?php printf( __( 'Newer &rarr;', 'melany' )); ?></a></li>
 			<?php endif; ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
