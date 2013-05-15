@@ -5,29 +5,29 @@
  * @package Melany
  */
 ?>
-	<aside id="secondary" class="span2" role="complementary">
+	<section id="secondary" class="span2" role="complementary">
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
-			<article id="search" class="widget widget_search">
+			<aside id="search" class="widget widget_search">
 				<?php get_search_form(); ?>
-			</article>
+			</aside>
 
-			<article id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'melany' ); ?></h1>
+			<aside id="archives" class="widget">
+				<h3 class="widget-title"><?php _e( 'Archives', 'melany' ); ?></h3>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>
-			</article>
+			</aside>
 
-			<article id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'melany' ); ?></h1>
+			<aside id="meta" class="widget">
+				<h3 class="widget-title"><?php _e( 'Meta', 'melany' ); ?></h3>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>
 					<?php wp_meta(); ?>
 				</ul>
-			</article>
+			</aside>
 
 		<?php endif; // end sidebar widget area ?>
-	</div><!-- #secondary -->
+	</section><!-- #secondary -->

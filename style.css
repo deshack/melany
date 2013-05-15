@@ -136,6 +136,9 @@ a:focus{
 .archive .format-aside .entry-title {
 	display: none;
 }
+#secondary h1{
+	font-size:24.5px;
+}
 
 
 /* =Media
