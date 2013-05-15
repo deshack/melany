@@ -35,8 +35,22 @@ function melany_content_nav( $nav_id ) {
 		<ul class="pager">
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
-		<?php previous_post_link( '<li class="previous">%link</li>', _x( '&larr;', 'Previous post link', 'melany' ) . __( ' Older', 'melany' )); ?>
-		<?php next_post_link( '<li class="next">%link</li>', __( 'Newer ', 'melany' ) . _x( '&rarr;', 'Next post link', 'melany' ) ); ?>
+
+		<?php
+			$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
+			$next = get_adjacent_post( false, '', false );
+
+			if ( $previous ) :
+				previous_post_link( '<li class="previous">%link</li>', _x( '&larr;', 'Previous post link', 'melany' ) . __( ' Older', 'melany' ));
+			else : ?>
+				<li class="previous disabled"><a href="#"><?php printf( __( '&larr; Older', 'melany' )); ?></a></li>
+			<?php endif; ?>
+
+			<?php if ( $next ) :
+				next_post_link( '<li class="next">%link</li>', __( 'Newer ', 'melany' ) . _x( '&rarr;', 'Next post link', 'melany' ) );
+			else : ?>
+				<li class="next disabled"><a href="#"><?php printf( __( '&rarr; Newer', 'melany' )); ?></a></li>
+			<?php endif; ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
