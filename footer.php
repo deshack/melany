@@ -7,8 +7,8 @@
  * @package Melany
  */
 ?>
-
-	</div><!-- #main -->
+		</div>
+	</section><!-- #main -->
 
 	<footer id="footer" role="contentinfo">
 		<div class="text-center">
