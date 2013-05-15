@@ -19,6 +19,14 @@ body{
 	padding-top:40px;
 }
 
+/* Fix admin toolbar issue */
+body.admin-bar .navbar{
+	top:28px;
+}
+body.admin-bar{
+	padding-top:68px;
+}
+
 a{
 	color: #090;
 	text-decoration: none;
