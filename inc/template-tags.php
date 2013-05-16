@@ -59,10 +59,12 @@ function melany_content_nav( $nav_id ) {
 				$total_pages = $wp_query->max_num_pages;
 				$current_page = max(1, get_query_var( 'paged' ));
 				echo paginate_links( array(
+					'format' => '/page/%#%',
 					'current' => $current_page,
 					'total' => $total_pages,
 					'prev_text' => '&laquo;',
 					'next_text' => '&raquo;',
+					'mid_size' => 1,
 					'type' => 'list',
 				)); ?>
 	<?php endif; ?>
