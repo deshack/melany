@@ -12,11 +12,14 @@ Tags: responsive, simple, content, blog
  _s is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 */
 
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300|Roboto:300,300italic,700,700italic);
+
 /* =Global
 ----------------------------------------------- */
 
 body{
 	padding-top:40px;
+	font-family:'Roboto Condensed', Arial, sans-serif;
 }
 
 /* Fix admin toolbar issue */
@@ -188,6 +191,7 @@ input[type="color"]:focus,
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+	font-family:'Roboto', Arial, sans-serif;
 }
 .page-links {
 	clear: both;
