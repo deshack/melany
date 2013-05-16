@@ -82,41 +82,38 @@ function melany_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'melany' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'melany' ), '<span class="edit-link">', '<span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'melany' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'melany' ), '<div class="btn btn-small pull-right">', '</div>' ); ?></p>
 	<?php
 			break;
 		default :
 	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<footer>
-				<div class="comment-author vcard">
+	<li <?php comment_class( 'clearfix' ); ?> id="li-comment-<?php comment_ID(); ?>">
+		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
+			<header>
+				<div class="lead clearfix">
 					<?php echo get_avatar( $comment, 40 ); ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'melany' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( sprintf( '<cite>%s</cite>', get_comment_author_link() ) ); ?>
+					<span class="muted"> - <time datetime="<?php comment_time( 'c' ); ?>">
+					<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'melany' ), get_comment_date(), get_comment_time() ); ?>
+					</time></span>
+					<?php edit_comment_link( __( 'Edit', 'melany' ), '<div class="btn btn-small pull-right">', '</div>' ); ?>
 				</div><!-- .comment-author .vcard -->
 				<?php if ( $comment->comment_approved == '0' ) : ?>
 					<em><?php _e( 'Your comment is awaiting moderation.', 'melany' ); ?></em>
 					<br />
 				<?php endif; ?>
-
-				<div class="comment-meta commentmetadata">
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_time( 'c' ); ?>">
-					<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'melany' ), get_comment_date(), get_comment_time() ); ?>
-					</time></a>
-					<?php edit_comment_link( __( 'Edit', 'melany' ), '<span class="edit-link">', '<span>' ); ?>
-				</div><!-- .comment-meta .commentmetadata -->
-			</footer>
+			</header>
 
 			<div class="comment-content"><?php comment_text(); ?></div>
 
-			<div class="reply">
+			<div class="btn btn-small pull-right">
 			<?php
-				comment_reply_link( array_merge( $args,array(
+				melany_comment_reply_link( array_merge( $args,array(
 					'depth'     => $depth,
 					'max_depth' => $args['max_depth'],
 				) ) );
 			?>
-			</div><!-- .reply -->
+			</div>
 		</article><!-- #comment-## -->
 
 	<?php
