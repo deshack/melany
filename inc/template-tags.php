@@ -57,12 +57,12 @@ function melany_content_nav( $nav_id ) {
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="pagination pagination-centered <?php echo $nav_class; ?>">
 			<?php
 				$total_pages = $wp_query->max_num_pages;
+				$current_page = max(1, get_query_var( 'paged' ));
 				echo paginate_links( array(
 					'current' => $current_page,
 					'total' => $total_pages,
 					'prev_text' => '&laquo;',
 					'next_text' => '&raquo;',
-					'show_all' => true,
 					'type' => 'list',
 				)); ?>
 	<?php endif; ?>
