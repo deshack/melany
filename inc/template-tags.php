@@ -30,12 +30,11 @@ function melany_content_nav( $nav_id ) {
 	$nav_class = ( is_single() ) ? 'navigation-post' : 'navigation-paging';
 
 	?>
+
+	<?php if ( is_single() ) : // navigation links for single posts ?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'melany' ); ?></h1>
 		<ul class="pager">
-
-	<?php if ( is_single() ) : // navigation links for single posts ?>
-
 		<?php
 			$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
 			$next = get_adjacent_post( false, '', false );
@@ -51,20 +50,22 @@ function melany_content_nav( $nav_id ) {
 			else : ?>
 				<li class="next disabled"><a href="#"><?php printf( __( 'Newer &rarr;', 'melany' )); ?></a></li>
 			<?php endif; ?>
-
-	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
-
-		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'melany' ) ); ?></div>
-		<?php endif; ?>
-
-		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'melany' ) ); ?></div>
-		<?php endif; ?>
-
-	<?php endif; ?>
 		</ul>
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
+
+	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
+	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="pagination pagination-centered <?php echo $nav_class; ?>">
+			<?php
+				$total_pages = $wp_query->max_num_pages;
+				echo paginate_links( array(
+					'current' => $current_page,
+					'total' => $total_pages,
+					'prev_text' => '&laquo;',
+					'next_text' => '&raquo;',
+					'show_all' => true,
+					'type' => 'list',
+				)); ?>
+	<?php endif; ?>
 	<?php
 }
 endif; // melany_content_nav
