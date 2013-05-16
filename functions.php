@@ -84,7 +84,7 @@ add_action( 'after_setup_theme', 'melany_setup' );
  * using feature detection of wp_get_theme() which was introduced
  * in WordPress 3.4.
  *
- * @since 1.0.0
+ * @since 0.1
  * @todo Remove the 3.3 support when WordPress 3.6 is released.
  *
  * Hooks into the after_setup_theme action.
@@ -144,9 +144,83 @@ function melany_scripts() {
 add_action( 'wp_enqueue_scripts', 'melany_scripts' );
 
 /**
+ * Display the post content.
+ *
+ * @since 0.1
+ *
+ * @param string $more_link_text Optional. Content for when there is more text.
+ * @param bool $stripteaser Optional. Strip teaser content before the more text. Default is false.
+ */
+function melany_the_content($more_link_text = null, $stripteaser = false) {
+	$content = melany_get_the_content($more_link_text, $stripteaser);
+	$content = apply_filters('the_content', $content);
+	$content = str_replace(']]>', ']]&gt;', $content);
+	echo $content;
+}
+
+/**
+ * Retrieve the post content.
+ *
+ * @since 0.1
+ *
+ * @param string $more_link_text Optional. Content for when there is more text.
+ * @param bool $stripteaser Optional. Strip teaser content before the more text. Default is false.
+ * @return string
+ */
+function melany_get_the_content( $more_link_text = null, $stripteaser = false ) {
+	global $more, $page, $pages, $multipage, $preview;
+
+	$post = get_post();
+
+	if ( null === $more_link_text )
+		$more_link_text = __( '(more...)' );
+
+	$output = '';
+	$hasTeaser = false;
+
+	// If post password required and it doesn't match the cookie.
+	if ( post_password_required() )
+		return get_the_password_form();
+
+	if ( $page > count($pages) ) // if the requested page doesn't exist
+		$page = count($pages); // give them the highest numbered page that DOES exist
+
+	$content = $pages[$page-1];
+	if ( preg_match('/<!--more(.*?)?-->/', $content, $matches) ) {
+		$content = explode($matches[0], $content, 2);
+		if ( !empty($matches[1]) && !empty($more_link_text) )
+			$more_link_text = strip_tags(wp_kses_no_null(trim($matches[1])));
+
+		$hasTeaser = true;
+	} else {
+		$content = array($content);
+	}
+	if ( (false !== strpos($post->post_content, '<!--noteaser-->') && ((!$multipage) || ($page==1))) )
+		$stripteaser = true;
+	$teaser = $content[0];
+	if ( $more && $stripteaser && $hasTeaser )
+		$teaser = '';
+	$output .= $teaser;
+	if ( count($content) > 1 ) {
+		if ( $more ) {
+			$output .= '<span id="more-' . $post->ID . '"></span>' . $content[1];
+		} else {
+			if ( ! empty($more_link_text) )
+				$output .= apply_filters( 'the_content_more_link', ' <div class="clearfix"></div><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"btn btn-large btn-primary pull-right\">$more_link_text</a>", $more_link_text );
+			$output = force_balance_tags($output);
+		}
+
+	}
+	if ( $preview ) // preview fix for javascript bug with foreign languages
+		$output =	preg_replace_callback('/\%u([0-9A-F]{4})/', '_convert_urlencoded_to_entities', $output);
+
+	return $output;
+}
+
+/**
  * Display or retrieve edit comment link with formatting.
  *
- * @since 1.0.0
+ * @since 0.1
  *
  * @param string $link Optional. Anchor text.
  * @param string $before Optional. Display before edit link.
@@ -175,7 +249,7 @@ function melany_edit_comment_link( $link = null, $before = '', $after = '' ) {
  * a filter of the form comment_form_field_$name where $name is the key used
  * in the array of fields.
  *
- * @since 1.0.0
+ * @since 0.1
  * @param array $args Options for strings, fields etc in the form
  * @param mixed $post_id Post ID to generate the form for, uses the current post if null
  * @return void
@@ -210,7 +284,7 @@ function melany_comment_form( $args = array(), $post_id = null ) {
 		'must_log_in'          => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
 		'logged_in_as'         => '<p class="alert">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
 		'comment_notes_before' => '<div class="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</div>',
-		'comment_notes_after'  => '<p class="alert alert-info">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <pre>' . allowed_tags() . '</pre>' ) . '</p>',
+		'comment_notes_after'  => '<p class="alert alert-info">' . sprintf( __( 'You may use these <abbr class="initialism" title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <pre>' . allowed_tags() . '</pre>' ) . '</p>',
 		'id_form'              => 'commentform',
 		'id_submit'            => 'submit',
 		'title_reply'          => __( 'Leave a Reply' ),
@@ -272,7 +346,7 @@ function melany_comment_form( $args = array(), $post_id = null ) {
  * 'respond_id' arguments are for the JavaScript moveAddCommentForm() function
  * parameters.
  *
- * @since 1.0.0
+ * @since 0.1
  *
  * @param array $args Optional. Override default options.
  * @param int $comment Optional. Comment being replied to.
@@ -312,7 +386,7 @@ function melany_get_comment_reply_link($args = array(), $comment = null, $post =
 /**
  * Displays the HTML content for reply to comment link.
  *
- * @since 1.0.0
+ * @since 0.1
  * @see get_comment_reply_link() Echoes result
  *
  * @param array $args Optional. Override default options.
@@ -327,7 +401,7 @@ function melany_comment_reply_link($args = array(), $comment = null, $post = nul
 /**
  * Retrieve HTML content for cancel comment reply link.
  *
- * @since 1.0.0
+ * @since 0.1
  *
  * @param string $text Optional. Text to display for cancel reply link.
  */
@@ -343,7 +417,7 @@ function melany_get_cancel_comment_reply_link($text = '') {
 /**
  * Display HTML content for cancel comment reply link.
  *
- * @since 1.0.0
+ * @since 0.1
  *
  * @param string $text Optional. Text to display for cancel reply link.
  */
@@ -354,7 +428,7 @@ function melany_cancel_comment_reply_link($text = '') {
 /**
  * Display edit post link for post.
  *
- * @since 1.0.0
+ * @since 0.1
  *
  * @param string $link Optional. Anchor text.
  * @param string $before Optional. Display before edit link.

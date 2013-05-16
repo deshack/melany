@@ -4,13 +4,19 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'hero-unit' ); ?>>
+	<header class="page-header">
+		<h1><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		
 		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php melany_posted_on(); ?>
+		<div class="entry-meta muted">
+			<small><?php melany_posted_on();
+					/* Check categories for this blog */
+					if( melany_categorized_blog() ){
+						$category_list = get_the_category_list( __( ', ', 'melany' ) );
+						printf( __( ' in %1$s', 'melany' ), $category_list );
+					}
+				?></small>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -20,8 +26,8 @@
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
-	<div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'melany' ) ); ?>
+	<div class="entry-content clearfix">
+		<?php melany_the_content( __( 'Continue reading', 'melany' ) ); ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'melany' ),
@@ -31,7 +37,7 @@
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
-	<footer class="entry-meta">
+	<footer class="well well-small">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
