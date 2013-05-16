@@ -30,6 +30,12 @@ body.admin-bar{
 	padding-top:68px;
 }
 
+/* Headings */
+h1, h2, h3, h4, h5, h6{
+	font-weight:300;
+}
+
+/* Links */
 a{
 	color: #090;
 	text-decoration: none;
@@ -69,6 +75,10 @@ a:focus{
 }
 
 /* Input and textarea */
+input, button, select, textarea{
+	font-family:'Roboto Condensed', Arial, sans-serif;
+}
+
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -140,6 +150,7 @@ input[type="color"]:focus,
 /* Search bar */
 .navbar-search .search-query{
 	padding-left:29px!important;
+	font-family:'Roboto Condensed', Arial, sans-serif;
 }
 .navbar-search .icon-search{
 	position:absolute;
