@@ -88,15 +88,14 @@ function melany_comment( $comment, $args, $depth ) {
 		default :
 	?>
 	<li <?php comment_class( 'clearfix' ); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
-			<header>
-				<div class="lead clearfix">
+		<article id="comment-<?php comment_ID(); ?>" class="clearfix comment-inner">
+				<header>					<div class="lead clearfix">
 					<?php echo get_avatar( $comment, 40 ); ?>
 					<?php printf( sprintf( '<cite>%s</cite>', get_comment_author_link() ) ); ?>
 					<span class="muted"> - <time datetime="<?php comment_time( 'c' ); ?>">
 					<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'melany' ), get_comment_date(), get_comment_time() ); ?>
 					</time></span>
-					<?php edit_comment_link( __( 'Edit', 'melany' ), '<div class="btn btn-small pull-right">', '</div>' ); ?>
+					<?php melany_edit_comment_link( __( 'Edit', 'melany' ) ); ?>
 				</div><!-- .comment-author .vcard -->
 				<?php if ( $comment->comment_approved == '0' ) : ?>
 					<em><?php _e( 'Your comment is awaiting moderation.', 'melany' ); ?></em>
@@ -106,14 +105,12 @@ function melany_comment( $comment, $args, $depth ) {
 
 			<div class="comment-content"><?php comment_text(); ?></div>
 
-			<div class="btn btn-small pull-right">
 			<?php
 				melany_comment_reply_link( array_merge( $args,array(
 					'depth'     => $depth,
 					'max_depth' => $args['max_depth'],
 				) ) );
 			?>
-			</div>
 		</article><!-- #comment-## -->
 
 	<?php

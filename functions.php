@@ -84,6 +84,7 @@ add_action( 'after_setup_theme', 'melany_setup' );
  * using feature detection of wp_get_theme() which was introduced
  * in WordPress 3.4.
  *
+ * @since 1.0.0
  * @todo Remove the 3.3 support when WordPress 3.6 is released.
  *
  * Hooks into the after_setup_theme action.
@@ -143,6 +144,29 @@ function melany_scripts() {
 add_action( 'wp_enqueue_scripts', 'melany_scripts' );
 
 /**
+ * Display or retrieve edit comment link with formatting.
+ *
+ * @since 1.0.0
+ *
+ * @param string $link Optional. Anchor text.
+ * @param string $before Optional. Display before edit link.
+ * @param string $after Optional. Display after edit link.
+ * @return string|null HTML content, if $echo is set to false.
+ */
+function melany_edit_comment_link( $link = null, $before = '', $after = '' ) {
+	global $comment;
+
+	if ( !current_user_can( 'edit_comment', $comment->comment_ID ) )
+		return;
+
+	if ( null === $link )
+		$link = __('Edit This');
+
+	$link = '<a class="btn btn-small pull-right" href="' . get_edit_comment_link( $comment->comment_ID ) . '" title="' . esc_attr__( 'Edit comment' ) . '">' . $link . '</a>';
+	echo $before . apply_filters( 'melany_edit_comment_link', $link, $comment->comment_ID ) . $after;
+}
+
+/**
  * Outputs a complete commenting form for use within a template.
  * Most strings and form fields may be controlled through the $args array passed
  * into the function, while you may also choose to use the comment_form_default_fields
@@ -151,7 +175,7 @@ add_action( 'wp_enqueue_scripts', 'melany_scripts' );
  * a filter of the form comment_form_field_$name where $name is the key used
  * in the array of fields.
  *
- * @since 3.0.0
+ * @since 1.0.0
  * @param array $args Options for strings, fields etc in the form
  * @param mixed $post_id Post ID to generate the form for, uses the current post if null
  * @return void
@@ -201,7 +225,7 @@ function melany_comment_form( $args = array(), $post_id = null ) {
 		<?php if ( comments_open( $post_id ) ) : ?>
 			<?php do_action( 'comment_form_before' ); ?>
 			<div id="respond">
-				<h3 id="reply-title"><?php comment_form_title( $args['title_reply'], $args['title_reply_to'] ); ?> <small><?php cancel_comment_reply_link( $args['cancel_reply_link'] ); ?></small></h3>
+				<h3 id="reply-title"><?php comment_form_title( $args['title_reply'], $args['title_reply_to'] ); ?> <?php melany_cancel_comment_reply_link( $args['cancel_reply_link'] ); ?></h3>
 				<?php if ( get_option( 'comment_registration' ) && !is_user_logged_in() ) : ?>
 					<?php echo $args['must_log_in']; ?>
 					<?php do_action( 'comment_form_must_log_in_after' ); ?>
@@ -248,7 +272,7 @@ function melany_comment_form( $args = array(), $post_id = null ) {
  * 'respond_id' arguments are for the JavaScript moveAddCommentForm() function
  * parameters.
  *
- * @since 2.7.0
+ * @since 1.0.0
  *
  * @param array $args Optional. Override default options.
  * @param int $comment Optional. Comment being replied to.
@@ -281,14 +305,14 @@ function melany_get_comment_reply_link($args = array(), $comment = null, $post =
 	if ( get_option('comment_registration') && !$user_ID )
 		$link = '<a rel="nofollow" class="comment-reply-login" href="' . esc_url( wp_login_url( get_permalink() ) ) . '">' . $login_text . '</a>';
 	else
-		$link = "<a class='comment-reply-link' href='" . esc_url( add_query_arg( 'replytocom', $comment->comment_ID ) ) . "#" . $respond_id . "' onclick='return addComment.moveForm(\"$add_below-$comment->comment_ID\", \"$comment->comment_ID\", \"$respond_id\", \"$post->ID\")'>$reply_text</a>";
+		$link = "<a class='btn btn-small pull-right' href='" . esc_url( add_query_arg( 'replytocom', $comment->comment_ID ) ) . "#" . $respond_id . "' onclick='return addComment.moveForm(\"$add_below-$comment->comment_ID\", \"$comment->comment_ID\", \"$respond_id\", \"$post->ID\")'>$reply_text</a>";
 	return apply_filters('comment_reply_link', $before . $link . $after, $args, $comment, $post);
 }
 
 /**
  * Displays the HTML content for reply to comment link.
  *
- * @since 2.7.0
+ * @since 1.0.0
  * @see get_comment_reply_link() Echoes result
  *
  * @param array $args Optional. Override default options.
@@ -298,6 +322,58 @@ function melany_get_comment_reply_link($args = array(), $comment = null, $post =
  */
 function melany_comment_reply_link($args = array(), $comment = null, $post = null) {
 	echo melany_get_comment_reply_link($args, $comment, $post);
+}
+
+/**
+ * Retrieve HTML content for cancel comment reply link.
+ *
+ * @since 1.0.0
+ *
+ * @param string $text Optional. Text to display for cancel reply link.
+ */
+function melany_get_cancel_comment_reply_link($text = '') {
+	if ( empty($text) )
+		$text = __('Click here to cancel reply.');
+
+	$style = isset($_GET['replytocom']) ? '' : ' style="display:none;"';
+	$link = esc_html( remove_query_arg('replytocom') ) . '#respond';
+	return apply_filters('cancel_comment_reply_link', '<a rel="nofollow" id="cancel-comment-reply-link" class="btn btn-small pull-right" href="' . $link . '"' . $style . '>' . $text . '</a>', $link, $text);
+}
+
+/**
+ * Display HTML content for cancel comment reply link.
+ *
+ * @since 1.0.0
+ *
+ * @param string $text Optional. Text to display for cancel reply link.
+ */
+function melany_cancel_comment_reply_link($text = '') {
+	echo melany_get_cancel_comment_reply_link($text);
+}
+
+/**
+ * Display edit post link for post.
+ *
+ * @since 1.0.0
+ *
+ * @param string $link Optional. Anchor text.
+ * @param string $before Optional. Display before edit link.
+ * @param string $after Optional. Display after edit link.
+ * @param int $id Optional. Post ID.
+ */
+function melany_edit_post_link( $link = null, $before = '', $after = '', $id = 0 ) {
+	if ( !$post = get_post( $id ) )
+		return;
+
+	if ( !$url = get_edit_post_link( $post->ID ) )
+		return;
+
+	if ( null === $link )
+		$link = __('Edit This');
+
+	$post_type_obj = get_post_type_object( $post->post_type );
+	$link = '<a class="btn btn-small pull-right" href="' . $url . '" title="' . esc_attr( $post_type_obj->labels->edit_item ) . '">' . $link . '</a>';
+	echo $before . apply_filters( 'melany_edit_post_link', $link, $post->ID ) . $after;
 }
 
 /**
