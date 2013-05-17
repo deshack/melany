@@ -217,12 +217,6 @@ input[type="color"]:focus,
 	margin-bottom: 30px;
 	font-size: 16px;
 	font-weight: 300;
-	line-height: 30px;
-	color: inherit;
-	background-color: #eeeeee;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
 }
 .blog .hero-unit .page-header{
 	border-bottom-color:#fff;
@@ -230,12 +224,6 @@ input[type="color"]:focus,
 .blog .hero-unit h1 {
 	margin-bottom: 0;
 	font-size: 40px;
-	line-height: 1;
-	letter-spacing: -1px;
-	color: inherit;
-}
-.blog .hero-unit li {
-	line-height: 30px;
 }
 
 /* =Footer
