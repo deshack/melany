@@ -24,35 +24,34 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="container-fluid hfeed site">
-	<?php do_action( 'before' ); ?>
-	<header class="navbar navbar-fixed-top navbar-inverse" role="banner">
-		<div class="navbar-inner">
-			<div class="container">
+<?php do_action( 'before' ); ?>
+<header class="navbar navbar-fixed-top navbar-inverse" role="banner">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<!-- toggle collapsed navbar content -->
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
 
-				<!-- toggle collapsed navbar content -->
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="brand" rel="home"><?php bloginfo( 'name' ); ?></a>
+			<div class="nav-collapse collapse">
+				<nav>
+					<h1 class="menu-toggle"><?php _e( 'Menu', 'melany' ); ?></h1>
+					<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'melany' ); ?>"><?php _e( 'Skip to content', 'melany' ); ?></a></div>
 
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="brand" rel="home"><?php bloginfo( 'name' ); ?></a>
-				<div class="nav-collapse collapse">
-					<nav>
-						<h1 class="menu-toggle"><?php _e( 'Menu', 'melany' ); ?></h1>
-						<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'melany' ); ?>"><?php _e( 'Skip to content', 'melany' ); ?></a></div>
-
-						<?php wp_nav_menu( array( 'theme_location' => 'primary',
-							'container' => false,
-							'menu_class' => 'nav',
-							'items_wrap' => '<ul class="%2$s">%3$s</ul>' ) ); ?>
-					</nav>
-					<?php get_search_form( true ); ?>
-				</div>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary',
+						'container' => false,
+						'menu_class' => 'nav',
+						'items_wrap' => '<ul class="%2$s">%3$s</ul>' ) ); ?>
+				</nav>
+				<?php get_search_form( true ); ?>
 			</div>
 		</div>
-	</header>
+	</div>
+</header>
 
+<div id="page" class="container-fluid hfeed site">
 	<section id="main" class="container-fluid">
 		<div class="row-fluid">
