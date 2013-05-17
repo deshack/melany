@@ -12,7 +12,7 @@
 				<li class="span12">
 					<div class="thumbnail">
 						<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
-						<p class="text-right"><?php bloginfo( 'description' ); ?></p>
+						<p class="text-center"><?php bloginfo( 'description' ); ?></p>
 					</div>
 				</li>
 			</ul>
