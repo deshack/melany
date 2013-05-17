@@ -5,7 +5,7 @@
  * @package Melany
  */
 ?>
-	<section id="secondary" class="span2" role="complementary">
+	<section id="secondary" class="span3" role="complementary">
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 

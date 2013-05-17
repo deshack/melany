@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-		<div id="content" class="span10" role="main">
+		<div id="content" class="span9" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
