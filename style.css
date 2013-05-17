@@ -31,6 +31,15 @@ body.admin-bar{
 	padding-top:68px;
 }
 
+@media (max-width: 979px){
+	body, body.admin-bar{
+		padding-top:0;
+	}
+	body.admin-bar .navbar{
+		top:0;
+	}
+}
+
 /* Headings */
 h1, h2, h3, h4, h5, h6{
 	font-weight:300;
@@ -157,6 +166,12 @@ input[type="color"]:focus,
 	position:absolute;
 	top:7px;
 	left:11px;
+}
+@media (max-width: 979px){
+	.navbar-search .icon-search{
+		top:1.16em;
+		left:1.8em;
+	}
 }
 .navbar-search .search-query:focus,
 .navbar-search .search-query.focused{
@@ -425,16 +440,4 @@ object {
 a:hover,
 a:focus{
 	text-decoration:none;
-}
-
-/* =Smaller devices
------------------------------------------------ */
-
-@media (max-width: 979px){
-	body, body.admin-bar{
-		padding-top:0;
-	}
-	body.admin-bar .navbar{
-		top:0;
-	}
 }

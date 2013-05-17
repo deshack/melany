@@ -27,7 +27,7 @@
 <?php do_action( 'before' ); ?>
 <header class="navbar navbar-fixed-top navbar-inverse" role="banner">
 	<div class="navbar-inner">
-		<div class="container-fluid">
+		<div class="container">
 			<!-- toggle collapsed navbar content -->
 			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 				<span class="icon-bar"></span>
