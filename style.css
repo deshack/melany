@@ -254,13 +254,20 @@ input[type="color"]:focus,
 .archive .format-aside .entry-title {
 	display: none;
 }
-#secondary .widget-title{
+.widget-title{
 	font-size:22px;
 	background:#eee;
 	border-radius:6px;
 	-webkit-border-radius:6px;
 	-moz-border-radius:6px;
-	padding:.3em;
+	padding-left:1em;
+}
+.widget ul{
+	list-style-type:square;
+	padding-left:1em;
+}
+.widget div{
+	padding-left:2em;
 }
 
 

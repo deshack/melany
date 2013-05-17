@@ -24,7 +24,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="container hfeed site">
+<div id="page" class="container-fluid hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header class="navbar navbar-fixed-top navbar-inverse" role="banner">
 		<div class="navbar-inner">
