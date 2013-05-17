@@ -205,6 +205,7 @@ input[type="color"]:focus,
 	margin: 1.5em 0;
 	font-family:'Roboto', Arial, sans-serif;
 	font-size:16px;
+	line-height:24px;
 }
 .page-links {
 	clear: both;
@@ -267,7 +268,7 @@ input[type="color"]:focus,
 	padding-left:1em;
 }
 .widget div{
-	padding-left:2em;
+	padding-left:1.8em;
 }
 
 
