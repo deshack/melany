@@ -6,6 +6,18 @@
  */
 ?>
 	<section id="secondary" class="span3" role="complementary">
+		<?php if( get_theme_mod( 'melany_logo' )) : ?>
+		<aside id="logo">
+			<ul class="thumbnails">
+				<li class="span12">
+					<div class="thumbnail">
+						<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
+						<p class="text-right"><?php bloginfo( 'description' ); ?></p>
+					</div>
+				</li>
+			</ul>
+		</aside>
+		<?php endif; ?>
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 

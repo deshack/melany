@@ -271,6 +271,13 @@ input[type="color"]:focus,
 	padding-left:1.8em;
 }
 
+/* Logo and site description */
+#logo img{
+	max-height:150px;
+}
+#logo p{
+	padding-top:1em;
+}
 
 /* =Media
 ----------------------------------------------- */
