@@ -11,7 +11,7 @@
 			<ul class="thumbnails">
 				<li class="span12">
 					<div class="thumbnail text-center">
-						<?php if( get_theme_mod( 'melany_logo' ) : ?>
+						<?php if( get_theme_mod( 'melany_logo' ) ) : ?>
 							<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
 						<?php endif; ?>
 
