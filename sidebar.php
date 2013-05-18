@@ -10,9 +10,13 @@
 		<aside id="logo">
 			<ul class="thumbnails">
 				<li class="span12">
-					<div class="thumbnail">
+					<div class="thumbnail text-center">
 						<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
-						<p class="text-center"><?php bloginfo( 'description' ); ?></p>
+						<p><?php bloginfo( 'description' ); ?></p>
+
+						<a href="//plus.google.com/<?php echo get_theme_mod( 'melany_plus_icon' ); ?>?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
+							<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/>
+						</a>
 					</div>
 				</li>
 			</ul>

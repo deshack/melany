@@ -18,8 +18,7 @@ function melany_customize_register( $wp_customize ) {
 	/**
 	 * Add logo handler
 	 *
-	 * Create a new section for logo upload
-	 * The description will not be displayed when using Theme Customizer
+	 * @since 0.2
 	 */
 	$wp_customize->add_section( 'melany_logo_section', array(
 		'title' => __( 'Logo', 'melany' ),
@@ -27,14 +26,30 @@ function melany_customize_register( $wp_customize ) {
 		'description' => 'Upload a logo to display at the top of the sidebar',
 	));
 	$wp_customize->add_setting( 'melany_logo' );
-	/**
-	 * Tell Theme Customizer to use an image uploader for setting the logo
-	 */
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'melany_logo', array(
 		'label' => __( 'Logo', 'melany' ),
 		'section' => 'melany_logo_section',
 		'settings' => 'melany_logo',
 	)));
+
+	/**
+	 * Add integrated social badges
+	 *
+	 * @since 0.3
+	 */
+	$wp_customize->add_section( 'melany_social_section', array(
+		'title' => __( 'Social Badges', 'melany' ),
+		'priority' => 30,
+		'description' => 'Add Social Icons and display them under site description',
+	));
+	/* Google+ Icon */
+	$wp_customize->add_setting( 'melany_plus_icon' );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'melany_plus_icon', array(
+		'label' => __( 'Google+ ID', 'melany' ),
+		'section' => 'melany_social_section',
+		'settings' => 'melany_plus_icon',
+	)));
+
 }
 add_action( 'customize_register', 'melany_customize_register' );
 
