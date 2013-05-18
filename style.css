@@ -294,6 +294,11 @@ input[type="color"]:focus,
 	padding-top:1em;
 }
 
+/* Social icons */
+.social-badge{
+	margin:0 .5em;
+}
+
 /* =Media
 ----------------------------------------------- */
 

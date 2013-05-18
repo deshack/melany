@@ -13,10 +13,20 @@
 					<div class="thumbnail text-center">
 						<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
 						<p><?php bloginfo( 'description' ); ?></p>
-
-						<a href="//plus.google.com/<?php echo get_theme_mod( 'melany_plus_icon' ); ?>?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
-							<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/>
-						</a>
+						<div id="social-badges">
+							<?php # Google+ Icon ?>
+							<span class="social-badge">
+								<a href="//plus.google.com/<?php echo get_theme_mod( 'melany_plus_icon' ); ?>?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
+									<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/>
+								</a>
+							</span>
+							<?php # Facebook Icon ?>
+							<span class="social-badge">
+								<a href="//www.facebook.com/<?php echo get_theme_mod( 'melany_fb_icon' ); ?>" target="_blank">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/facebook-icon-32.png" alt="Facebook" />
+								</a>
+							</span>
+						</div>
 					</div>
 				</li>
 			</ul>
