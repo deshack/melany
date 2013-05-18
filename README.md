@@ -43,6 +43,7 @@ URL: https://plus.google.com/u/0/111208809586814306110/posts
 
 ID: 111208809586814306110
 
+
 = Facebook ID =
 
 That's in your profile's URL too:
@@ -50,9 +51,11 @@ That's in your profile's URL too:
 URL: https://www.facebook.com/mattia.migliorini
 ID: mattia.migliorini
 
+
 = Twitter Username =
 
 Your Twitter Username (without @).
+
 
 = GitHub Username =
 
