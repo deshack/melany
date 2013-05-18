@@ -63,6 +63,13 @@ function melany_customize_register( $wp_customize ) {
 		'section' => 'melany_social_section',
 		'settings' => 'melany_twitter_icon',
 	)));
+	/* GitHub Icon */
+	$wp_customize->add_setting( 'melany_github_icon' );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'melany_github_icon', array(
+		'label' => __( 'GitHub Username', 'melany' ),
+		'section' => 'melany_social_section',
+		'settings' => 'melany_github_icon',
+	)));
 }
 add_action( 'customize_register', 'melany_customize_register' );
 

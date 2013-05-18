@@ -294,6 +294,7 @@ input[type="color"]:focus,
 /* Social icons */
 .social-badge{
 	margin:0 .5em;
+	line-height:50px;
 }
 
 /* =Media
