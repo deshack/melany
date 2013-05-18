@@ -14,26 +14,35 @@
 						<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
 						<p><?php bloginfo( 'description' ); ?></p>
 
-						<?php # Google+ Icon ?>
+						<?php # Google+ Icon
+							if( get_theme_mod( 'melany_plus_icon' ) != '' ) :
+						?>
 						<span class="social-badge">
 							<a href="//plus.google.com/<?php echo get_theme_mod( 'melany_plus_icon' ); ?>?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
 								<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/>
 							</a>
 						</span>
+						<?php endif; ?>
 
-						<?php # Facebook Icon ?>
+						<?php # Facebook Icon
+							if( get_theme_mod( 'melany_fb_icon' ) != '' ) :
+						?>
 						<span class="social-badge">
 							<a href="//www.facebook.com/<?php echo get_theme_mod( 'melany_fb_icon' ); ?>" target="_blank">
 								<img src="<?php echo get_template_directory_uri(); ?>/img/facebook-icon-32.png" alt="Facebook" />
 							</a>
 						</span>
+						<?php endif; ?>
 
-						<?php # Twitter Icon ?>
+						<?php # Twitter Icon
+							if( get_theme_mod( 'melany_twitter_icon' ) != '' ) :
+						?>
 						<span class="social-badge">
 							<a href="//www.twitter.com/<?php echo get_theme_mod( 'melany_twitter_icon' ); ?>" target="_blank">
 								<img src="<?php echo get_template_directory_uri(); ?>/img/twitter-icon-32.png" alt="Twitter" />
 							</a>
 						</span>
+						<?php endif; ?>
 					</div>
 				</li>
 			</ul>
