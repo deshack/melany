@@ -56,7 +56,7 @@
 						<?php # RSS Icon
 							if( get_theme_mod( 'melany_rss_icon' ) ) : ?>
 						<span class="social-badge">
-							<a href="<?php bloginfo( 'rss2_url' ); ?>" title="<?php echo __( 'Subscribe to Posts', 'melany' ); ?>">
+							<a href="<?php bloginfo( 'rss2_url' ); ?>" title="<?php echo __( 'Subscribe to Posts', 'melany' ); ?>" target="_blank">
 								<img src="<?php echo get_template_directory_uri(); ?>/img/rss-icon.png" alt="RSS Feed" />
 							</a>
 						</span>
