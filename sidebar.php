@@ -52,6 +52,15 @@
 							</a>
 						</span>
 						<?php endif; ?>
+
+						<?php # RSS Icon
+							if( get_theme_mod( 'melany_rss_icon' ) ) : ?>
+						<span class="social-badge">
+							<a href="<?php bloginfo( 'rss2_url' ); ?>" title="<?php echo __( 'Subscribe to Posts', 'melany' ); ?>">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/rss-icon.png" alt="RSS Feed" />
+							</a>
+						</span>
+						<?php endif; ?>
 					</div>
 				</li>
 			</ul>
