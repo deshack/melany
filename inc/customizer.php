@@ -16,12 +16,12 @@ function melany_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	/**
-	 * Add logo handler
+	 * Add logo and favicon handler
 	 *
 	 * @since 0.2
 	 */
 	$wp_customize->add_section( 'melany_logo_section', array(
-		'title' => __( 'Logo', 'melany' ),
+		'title' => __( 'Logo and favicon', 'melany' ),
 		'priority' => 30,
 		'description' => 'Upload a logo to display at the top of the sidebar',
 	));
@@ -31,9 +31,15 @@ function melany_customize_register( $wp_customize ) {
 		'section' => 'melany_logo_section',
 		'settings' => 'melany_logo',
 	)));
+	$wp_customize->add_setting( 'melany_favicon' );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'melany_favicon', array(
+		'label' => __( 'Favicon', 'melany' ),
+		'section' => 'melany_logo_section',
+		'settings' => 'melany_favicon',
+	)));
 
 	/**
-	 * Add integrated social badges
+	 * Add integrated social icons
 	 *
 	 * @since 0.3
 	 */

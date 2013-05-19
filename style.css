@@ -223,6 +223,9 @@ input[type="color"]:focus,
 	clear: both;
 	margin: 0 0 1.5em;
 }
+.cc-block{
+	margin-top:2em!important;
+}
 
 /* Homepage articles loop */
 .blog .hero-unit {
@@ -281,6 +284,9 @@ input[type="color"]:focus,
 }
 .widget div{
 	padding-left:1.8em;
+}
+.widget_text div{
+	padding-left:0;
 }
 
 /* Logo and site description */
