@@ -40,19 +40,21 @@
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
-	<footer class="well well-small">
+	<footer class="well well-small row-fluid">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$tags_list = get_the_tag_list( '', __( ', ', 'melany' ) );
 				if ( $tags_list ) :
 			?>
+		<div class="span9">
 			<span>
 				<?php printf( __( 'Tags: %1$s', 'melany' ), $tags_list ); ?>
 			</span>
+		</div>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
-		<div class="pull-right clearfix">
+		<div class="span3 text-right pull-right">
 			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 			<?php comments_popup_link( __( 'Leave a comment', 'melany' ), __( '1 Comment', 'melany' ), __( '% Comments', 'melany' ) ); ?>
 			<?php endif; ?>
