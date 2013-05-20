@@ -123,7 +123,7 @@ function melany_widgets_init() {
 
 	/* Unregister default Archives Widget */
 	unregister_widget( 'WP_Widget_Archives' );
-
+	/* Register custom Archives Widget */
 	register_widget( 'melany_widget_archives' );
 }
 add_action( 'widgets_init', 'melany_widgets_init' );
