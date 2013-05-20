@@ -270,7 +270,8 @@ input[type="color"]:focus,
 .archive .format-aside .entry-title {
 	display: none;
 }
-.widget-title{
+.widget-title,
+.widgettitle{
 	font-size:22px;
 	background:#eee;
 	border-radius:6px;
@@ -449,4 +450,11 @@ object {
 a:hover,
 a:focus{
 	text-decoration:none;
+}
+
+/* =404
+----------------------------------------------- */
+
+#widgets404{
+	margin-top:5em;
 }

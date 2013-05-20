@@ -7,21 +7,22 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+	<section id="content" class="span12" role="main">
 
-			<article id="post-0" class="post error404 not-found">
-				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'melany' ); ?></h1>
-				</header><!-- .entry-header -->
+		<article id="post-0" class="post error404 not-found">
+			<header class="page-header">
+				<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'melany' ); ?></h1>
+			</header><!-- .entry-header -->
 
-				<div class="entry-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'melany' ); ?></p>
+			<div class="entry-content">
+				<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'melany' ); ?></p>
 
-					<?php get_search_form(); ?>
-
+			<section id="widgets404" class="row-fluid">
+				<article class="span3">
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+				</article>
 
+				<article class="span3">
 					<?php if ( melany_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">
 						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'melany' ); ?></h2>
@@ -38,19 +39,24 @@ get_header(); ?>
 						</ul>
 					</div><!-- .widget -->
 					<?php endif; ?>
+				</article>
 
+				<article class="span3">
 					<?php
 					/* translators: %1$s: smiley */
 					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'melany' ), convert_smilies( ':)' ) ) . '</p>';
 					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>
+				</article>
 
+				<article class="span3">
 					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+				</article>
+			</section>
 
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 .post .error404 .not-found -->
+			</div><!-- .entry-content -->
+		</article><!-- #post-0 .post .error404 .not-found -->
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
+	</section><!-- #content -->
 
 <?php get_footer(); ?>
