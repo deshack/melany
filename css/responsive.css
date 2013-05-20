@@ -10,7 +10,7 @@
 		padding-left:2px;
 		padding-right:2px;
 	}
-	.blog .hero-unit{
+	.hero-unit{
 		padding:10px;
 	}
 	/* Fix header padding */
@@ -23,5 +23,19 @@
 	/* Fix post meta width in homepage */
 	.hero-unit .row-fluid{
 		width:auto;
+	}
+	.hero-unit h1{
+		text-align:center;
+	}
+	.hero-unit .entry-meta{
+		padding-left:0;
+		text-align:center;
+	}
+	/* Center more button */
+	.hero-unit .btn{
+		float:none;
+	}
+	.hero-unit .more-button{
+		text-align:center;
 	}
 }

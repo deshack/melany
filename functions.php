@@ -286,6 +286,17 @@ function melany_get_the_content( $more_link_text = null, $stripteaser = false ) 
 }
 
 /**
+ * Display Read more button below an excerpt
+ *
+ * @since 0.4
+ */
+function excerpt_read_more_link( $output ){
+	global $post;
+	return $output . '<div class="clearfix more-button"><a href="' . get_permalink( $post->ID ) . '" class="btn btn-large btn-primary">' . __( 'Continue reading', 'melany' ) . '</a></div>';
+}
+add_filter( 'the_excerpt', 'excerpt_read_more_link' );
+
+/**
  * Display or retrieve edit comment link with formatting.
  *
  * @since 0.1

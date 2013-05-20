@@ -21,12 +21,9 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() || is_home() ) : // Only display Excerpts for Search and posts page ?>
+	<?php if ( is_search() || is_home() || is_archive() ) : // Display Excerpts for blog homepage, archives and search ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
-		<div class="clearfix">
-			<a href="<?php echo get_permalink(); ?>" class="btn btn-large btn-primary pull-right"><?php echo __( 'Continue reading', 'melany' ); ?></a>
-		</div>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content clearfix">

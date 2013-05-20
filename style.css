@@ -253,18 +253,21 @@ input[type="color"]:focus,
 }
 
 /* Homepage articles loop */
-.blog .hero-unit {
+.hero-unit {
 	padding: 40px;
 	margin-bottom: 30px;
 	font-size: 16px;
 	font-weight: 300;
 }
-.blog .hero-unit .page-header{
+.hero-unit .page-header{
 	border-bottom-color:#fff;
 }
-.blog .hero-unit h1 {
+.hero-unit h1 {
 	margin-bottom: 0;
 	font-size: 40px;
+}
+.hero-unit .btn{
+	float:right;
 }
 
 /* =Footer
