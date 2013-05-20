@@ -64,10 +64,14 @@ Your GitHub Username.
 Changelog
 =========
 
-V 0.3
-* Added Social Icons (see "Features" section)
-* Some optimizations for mobile devices
-* Bug fixes
+v 0.4
+* New favicon setting
+* New search and archive pages' style
+* 404 page restyled
+* Pretty dropdown menus with customized bootstrap-select
+* Mobile optimizations
+* Added screenshot
+* Numerous bug fixes
 
 License
 =======
