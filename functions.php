@@ -42,6 +42,11 @@ function melany_setup() {
 	require( get_template_directory() . '/inc/customizer.php' );
 
 	/**
+	 * Bootstrap Walker
+	 */
+	require( get_template_directory() . '/inc/bootstrap-walker.php' );
+
+	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 * If you're building a theme based on Melany, use a find and replace

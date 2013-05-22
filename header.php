@@ -47,9 +47,10 @@
 					<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'melany' ); ?>"><?php _e( 'Skip to content', 'melany' ); ?></a></div>
 
 					<?php wp_nav_menu( array( 'theme_location' => 'primary',
-						'container' => false,
+						'container' => 'div',
+						'container_class' => 'nav-collapse collapse',
 						'menu_class' => 'nav',
-						'items_wrap' => '<ul class="%2$s">%3$s</ul>' ) ); ?>
+						'walker' => new Bootstrap_Walker(), ) ); ?>
 				</nav>
 				<?php get_search_form( true ); ?>
 			</div>
