@@ -92,6 +92,22 @@ function melany_customize_register( $wp_customize ) {
 		'settings' => 'melany_rss_icon',
 		'type' => 'checkbox',
 	)));
+
+	/**
+	 * Jetpack Infinite Scroll
+	 */
+	$wp_customize->add_section( 'melany_infinite_scroll_section', array(
+		'title' => 'Jetpack Infinite Scroll',
+		'priority' => 30,
+		'description' => 'Enable Jetpack Infinite Scroll function',
+	));
+	$wp_customize->add_setting( 'melany_infinite_scroll' );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'melany_infinite_scroll', array(
+		'label' => __( 'Automatically show new posts when scrolling down the page', 'melany' ),
+		'section' => 'melany_infinite_scroll_section',
+		'settings' => 'melany_infinite_scroll',
+		'type' => 'checkbox',
+	)));
 }
 add_action( 'customize_register', 'melany_customize_register' );
 

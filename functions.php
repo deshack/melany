@@ -14,7 +14,9 @@ if ( ! isset( $content_width ) )
 /*
  * Load Jetpack compatibility file.
  */
-require( get_template_directory() . '/inc/jetpack.php' );
+if( get_theme_mod( 'melany_infinite_scroll' )) :
+	require( get_template_directory() . '/inc/jetpack.php' );
+endif;
 
 if ( ! function_exists( 'melany_setup' ) ) :
 /**

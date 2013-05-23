@@ -89,7 +89,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 
 		/* Output the actual caret for the user to click on to toggle the menu */            
 		if ($item->hasChildren && $depth == 0) {
-			$item_output .= '<b class="caret"></b></a>';
+			$item_output .= ' <b class="caret"></b></a>';
 		} else {
 			$item_output .= '</a>';
 		}
