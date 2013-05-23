@@ -228,7 +228,10 @@ input[type="color"]:focus,
 
 /**
  * Multi-level dropdowns on hover
+ * 
+ * Uncomment to enable
  */
+/**
 ul.nav li.dropdown:hover ul.dropdown-menu{
 	display:block;
 }
@@ -259,7 +262,7 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
 	left:10px;
 	top:11px;
 	left:-6px;
-}
+}*/
 
 /* =Content
 ----------------------------------------------- */
