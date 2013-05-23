@@ -11,7 +11,7 @@
 	</section><!-- #main -->
 
 	<footer id="footer" role="contentinfo">
-		<div class="text-center">
+		<div class="text-center navbar-text">
 			<small>
 				<?php do_action( 'melany_credits' ); ?>
 				<?php printf( __( 'Powered by ', 'melany' )); ?><a href="http://wordpress.org/" target="_blank" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'melany' ); ?>" rel="generator">WordPress</a><?php printf( __( ' and ', 'melany' )); ?><a href="http://twitter.github.com/bootstrap" target="_blank">Bootstrap</a>
