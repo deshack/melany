@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * Bootstrap_Walker for Wordpress
  * Author: George Huger, Illuminati Karate, Inc
