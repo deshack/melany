@@ -154,6 +154,11 @@ input[type="color"]:focus,
 /* =Header
 ----------------------------------------------- */
 
+.navbar .container-fluid{
+	padding-left:40px;
+	padding-right:40px;
+}
+
 /* Search bar */
 .navbar-search .search-query{
 	padding-left:29px!important;
