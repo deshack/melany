@@ -300,7 +300,7 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
 
 /* Jetpack Tiled Gallery */
 .tiled-gallery{
-	margin-bottom:1em;
+	margin-bottom:1em!important;
 }
 
 /* Homepage articles loop */
