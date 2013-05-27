@@ -14,7 +14,7 @@
 		</hgroup>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content clearfix">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

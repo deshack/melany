@@ -22,7 +22,7 @@
 	</header><!-- .entry-header -->
 
 	<?php if ( is_search() || is_home() || is_archive() ) : // Display Excerpts for blog homepage, archives and search ?>
-	<div class="entry-summary">
+	<div class="entry-summary clearfix">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
