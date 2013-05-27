@@ -76,6 +76,13 @@ function melany_customize_register( $wp_customize ) {
 		'section' => 'melany_social_section',
 		'settings' => 'melany_github_icon',
 	)));
+	/* Ubuntu Wiki Icon */
+	$wp_customize->add_setting( 'melany_ubuntu_wiki' );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'melany_ubuntu_wiki', array(
+		'label' => __( 'Ubuntu Wiki Page Name', 'melany' ),
+		'section' => 'melany_social_section',
+		'settings' => 'melany_ubuntu_wiki',
+	)));
 
 	/**
 	 * Add RSS Feed Icon
