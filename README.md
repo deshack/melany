@@ -64,14 +64,12 @@ Your GitHub Username.
 Changelog
 =========
 
-v 0.4
-* New favicon setting
-* New search and archive pages' style
-* 404 page restyled
-* Pretty dropdown menus with customized bootstrap-select
-* Mobile optimizations
-* Added screenshot
-* Numerous bug fixes
+v 0.5
+* Introduce sub-menus support
+* Enable/disable Infinite Scroll via Theme Customizer
+* Responsive navbar
+* Alignment classes CSS
+* Bug fixes (one critical)
 
 License
 =======
