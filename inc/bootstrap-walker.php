@@ -76,7 +76,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
 		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-		$item_output = $args->before;
+		$item_output = isset( $args->before ) ? $args->before : '';
         
 		/* If this item has a dropdown menu, make clicking on this link toggle it */
 		if ($item->hasChildren && $depth == 0) {
@@ -85,7 +85,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 			$item_output .= '<a'. $attributes .'>';
 		}
 
-		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+		$item_output .= ( isset( $args->link_before ) ? $args->link_before : '' ) . apply_filters( 'the_title', $item->title, $item->ID ) . ( isset( $args->link_after ) ? $args->link_after : '' );
 
 		/* Output the actual caret for the user to click on to toggle the menu */            
 		if ($item->hasChildren && $depth == 0) {
@@ -94,7 +94,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 			$item_output .= '</a>';
 		}
 
-		$item_output .= $args->after;
+		$item_output .= isset( $args->after ) ? $args->after : '';
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		return;
 	}
