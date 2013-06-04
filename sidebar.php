@@ -20,7 +20,7 @@
 						<?php # Google+ Icon
 							if( get_theme_mod( 'melany_plus_icon' ) ) : ?>
 						<span class="social-badge">
-							<a href="//plus.google.com/<?php echo get_theme_mod( 'melany_plus_icon' ); ?>?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;" title="Google+">
+							<a href="//plus.google.com/<?php echo get_theme_mod( 'melany_plus_icon' ); ?>?rel=author" rel="publisher" target="_blank" style="text-decoration:none;" title="Google+">
 								<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/>
 							</a>
 						</span>
