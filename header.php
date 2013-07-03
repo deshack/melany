@@ -21,11 +21,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css" />
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-select.min.css" />
 <?php wp_head(); ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-responsive.min.css" />
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/responsive.css" />
 </head>
 
 <body <?php body_class(); ?>>

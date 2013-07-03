@@ -26,9 +26,6 @@
 
 <?php wp_footer(); ?>
 
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap-select.min.js"></script>
 <script type="text/javascript">
 	$('.selectpicker').selectpicker();
 </script>
