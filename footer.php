@@ -13,8 +13,8 @@
 	<footer id="footer" role="contentinfo">
 		<div class="text-center navbar-text">
 			<small>
-				<?php do_action( 'melany_credits' ); ?>
-				<?php printf( '&copy; 2013 Mattia Migliorini' ); ?>
+				<?php printf( '&copy; 2013 ' ); ?>
+				<?php bloginfo( 'name' ); ?>
 				<span class="sep"> - </span>
 				<?php printf( __( 'Powered by ', 'melany' )); ?><a href="http://wordpress.org/" target="_blank" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'melany' ); ?>" rel="generator">WordPress</a><?php printf( __( ' and ', 'melany' )); ?><a href="http://twitter.github.com/bootstrap" target="_blank">Bootstrap</a>
 				<span class="sep"> - </span>
