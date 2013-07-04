@@ -67,6 +67,7 @@ function melany_content_nav( $nav_id ) {
 					'mid_size' => 1,
 					'type' => 'list',
 				)); ?>
+	</nav>
 	<?php endif; ?>
 	<?php
 }

@@ -228,6 +228,15 @@ class melany_widget_archives extends WP_Widget {
 }
 
 /**
+ * Fix "category tag" bad value error
+ */
+function add_nofollow_cat( $text ) {
+	$text = str_replace( 'rel="category tag"', "", $text );
+	return $text;
+}
+add_filter( 'the_category', 'add_nofollow_cat' );
+
+/**
  * Display the post content.
  *
  * @since 0.1
