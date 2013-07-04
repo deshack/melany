@@ -1,7 +1,7 @@
 Melany for Wordpress
 ====================
 
-This is my first WordPress theme named Melany. This name doesn't have any specific meaning, I just like it. Some time ago I opened a blog on http://deshack.altervista.org and I wanted to focus on the content, so I choose the "Custom Community" theme by Themekraft, promising myself I would find the time to develop my own. So here we are: it's free, but I'd like you to report credits when you use it.
+This is my first WordPress theme named Melany. This name doesn't have any specific meaning, I just like it. Some time ago I opened a blog on http://www.deshack.net and I wanted to focus on the content, so I choose the "Custom Community" theme by Themekraft, promising myself I would find the time to develop my own. So here we are: it's free, but I'd like you to report credits when you use it.
 
 Based on _s
 ===========
