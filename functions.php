@@ -130,6 +130,8 @@ function melany_widgets_init() {
 
 	/* Unregister default Archives Widget */
 	unregister_widget( 'WP_Widget_Archives' );
+	/* Unregister default Search Widget */
+	unregister_widget( 'WP_Widget_Search' );
 	/* Register custom Archives Widget */
 	register_widget( 'melany_widget_archives' );
 }
