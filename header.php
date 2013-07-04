@@ -11,7 +11,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0" />
-<title><?php bloginfo( 'name' ); ?></title>
+<title><?php wp_title(); ?></title>
 <?php if( get_theme_mod( 'melany_favicon' )) : ?>
 <link rel="shortcut icon" href="<?php echo get_theme_mod( 'melany_favicon' ); ?>" />
 <?php endif; ?>
