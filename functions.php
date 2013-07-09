@@ -79,9 +79,27 @@ function melany_setup() {
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+
+	/**
+	 * Enable support for Post Thumbnails
+	 */
+	add_theme_support( 'post-thumbnails' );
 }
 endif; // melany_setup
 add_action( 'after_setup_theme', 'melany_setup' );
+
+if ( !function_exists( 'melany_editor_styles' ) ) :
+/**
+ * Add support to custom stylesheet via WordPress Editor Style
+ * built-in function.
+ *
+ * @since 0.5.4
+ */
+function melany_editor_styles() {
+	add_editor_style( 'css/custom-style.css' );
+}
+endif;
+add_action( 'init', 'melany_editor_styles' );
 
 /**
  * Setup the WordPress core custom background feature.
@@ -384,7 +402,7 @@ function melany_comment_form( $args = array(), $post_id = null ) {
 	$required_text = sprintf( ' ' . __( 'Required fields are marked %s', 'melany' ), '<span class="badge badge-important">*</span>' );
 	$defaults = array(
 		'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
-		'comment_field'        => '<div class="control-group"><label for="comment" class="control-label">' . _x( 'Comment', 'noun' ) . '</label><div class="controls"><div class="input-prepend"><span class="add-on"><i class="icon-pencil"></i></span><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div></div></div>',
+		'comment_field'        => '<div class="control-group"><label for="comment" class="control-label">' . _x( 'Comment', 'noun', 'melany' ) . '</label><div class="controls"><div class="input-prepend"><span class="add-on"><i class="icon-pencil"></i></span><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div></div></div>',
 		'must_log_in'          => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
 		'logged_in_as'         => '<p class="alert">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
 		'comment_notes_before' => '<div class="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' . __( 'Your email address will not be published.', 'melany' ) . ( $req ? $required_text : '' ) . '</div>',
