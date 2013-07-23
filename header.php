@@ -42,11 +42,15 @@
 					<h1 class="menu-toggle"><?php _e( 'Menu', 'melany' ); ?></h1>
 					<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'melany' ); ?>"><?php _e( 'Skip to content', 'melany' ); ?></a></div>
 
-					<?php wp_nav_menu( array( 'theme_location' => 'primary',
+					<?php
+						wp_nav_menu( array(
+						'theme_location' => 'primary',
 						'container' => 'div',
 						'container_class' => 'nav-collapse collapse',
 						'menu_class' => 'nav',
-						'walker' => new Bootstrap_Walker(), ) ); ?>
+						'depth' => 3,
+						'walker' => new Bootstrap_Walker(),
+					) ); ?>
 				</nav>
 				<?php get_search_form( true ); ?>
 			</div>
