@@ -45,8 +45,7 @@
 					<?php
 						wp_nav_menu( array(
 						'theme_location' => 'primary',
-						'container' => 'div',
-						'container_class' => 'nav-collapse collapse',
+						'container' => false,
 						'menu_class' => 'nav',
 						'depth' => 3,
 						'walker' => new Bootstrap_Walker(),
