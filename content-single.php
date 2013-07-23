@@ -21,7 +21,8 @@
 	</header><!-- .page-header -->
 
 	<div class="entry-content clearfix">
-		<?php the_post_thumbnail( 'large', array( 'class' => 'aligncenter' ) ); ?>
+		<?php if ( has_post_thumbnail() )
+			the_post_thumbnail( 'large', array( 'class' => 'aligncenter' ) ); ?>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
