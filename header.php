@@ -44,11 +44,12 @@
 
 					<?php
 						wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'container' => false,
-						'menu_class' => 'nav',
-						'depth' => 3,
-						'walker' => new Bootstrap_Walker(),
+						'theme_location'	=> 'primary',
+						'container' 			=> false,
+						'menu_class' 			=> 'nav',
+						'fallback_cb'			=> 'melany_page_menu',
+						'depth'						=> 3,
+					//	'walker'					=> new Bootstrap_Walker(),
 					) ); ?>
 				</nav>
 				<?php get_search_form( true ); ?>

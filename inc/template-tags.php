@@ -7,6 +7,75 @@
  * @package Melany
  */
 
+/**
+ * Display or retrieve list of pages with optional home link.
+ *
+ * The arguments are listed below and part of the arguments are for
+ * wp_list_pages() function. Check that function for more info on those
+ * arguments.
+ *
+ * sort_column - How to sort the list of pages. Defaults
+ * to page title. Use column for posts table.
+ * menu_class - Class to use for the div ID which contains
+ * the page list. Defaults to 'menu'.
+ * echo - Whether to echo list or return it. Defaults to echo.
+ * link_before - Text before show_home argument text.
+ * link_after - Text after show_home argument text.
+ * show_home - If you set this argument, then it will
+ * display the link to the home page. The show_home argument really just needs
+ * to be set to the value of the text of the link.
+ *
+ * @since 0.5.6
+ *
+ * @param array|string $args
+ * @return string html menu
+ */
+if ( ! function_exists( 'melany_page_menu' ) ) :
+function melany_page_menu( $args = array() ) {
+	$defaults = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
+	$args = wp_parse_args( $args, $defaults );
+	$args = apply_filters( 'wp_page_menu_args', $args );
+
+	$menu = '';
+
+	$list_args = $args;
+
+	// Show Home in the menu
+	if ( ! empty($args['show_home']) ) {
+		if ( true === $args['show_home'] || '1' === $args['show_home'] || 1 === $args['show_home'] )
+			$text = __('Home');
+		else
+			$text = $args['show_home'];
+		$class = '';
+		if ( is_front_page() && !is_paged() )
+			$class = 'class="current_page_item"';
+		$menu .= '<li ' . $class . '><a href="' . home_url( '/' ) . '" title="' . esc_attr($text) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
+		// If the front page is a page, add it to the exclude list
+		if (get_option('show_on_front') == 'page') {
+			if ( !empty( $list_args['exclude'] ) ) {
+				$list_args['exclude'] .= ',';
+			} else {
+				$list_args['exclude'] = '';
+			}
+			$list_args['exclude'] .= get_option('page_on_front');
+		}
+	}
+
+	$list_args['echo'] = false;
+	$list_args['title_li'] = '';
+	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_pages($list_args) );
+
+	if ( $menu )
+		$menu = '<ul class="' . esc_attr($args['menu_class']) . '">' . $menu . '</ul>';
+
+	$menu = apply_filters( 'wp_page_menu', $menu, $args );
+	if ( $args['echo'] )
+		echo $menu;
+	else
+		return $menu;
+}
+endif;
+
 if ( ! function_exists( 'melany_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
