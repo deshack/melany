@@ -49,7 +49,7 @@
 						'menu_class' 			=> 'nav',
 						'fallback_cb'			=> 'melany_page_menu',
 						'depth'						=> 3,
-					//	'walker'					=> new Bootstrap_Walker(),
+						'walker'					=> new Bootstrap_Walker(),
 					) ); ?>
 				</nav>
 				<?php get_search_form( true ); ?>
