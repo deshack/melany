@@ -281,3 +281,7 @@ function melany_category_transient_flusher() {
 }
 add_action( 'edit_category', 'melany_category_transient_flusher' );
 add_action( 'save_post', 'melany_category_transient_flusher' );
+
+function melany_site_name($text = '', $numberchar = 20) {
+    echo (strlen($text) > $numberchar) ? substr($text, 0, $numberchar) . '...' : $text;
+}
