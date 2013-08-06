@@ -134,7 +134,7 @@ if ( ! function_exists( 'melany_pagination' ) ) :
  *
  * @since 0.5.8
  */
-function melany_pagination( $pages = '', $range = 2 ){
+function melany_pagination( $pages = '', $range = 1 ){
 	// Calculate the number of items to show
 	$showitems = ( $range * 2 ) + 1;
 
@@ -156,17 +156,25 @@ function melany_pagination( $pages = '', $range = 2 ){
 			echo '<li><a href="' . get_pagenum_link(1) . '">&laquo;</a></li>';
 		if ( $paged > 1 && $showitems < $pages )
 			echo '<li><a href="' . get_pagenum_link( $paged - 1 ) . '">&lsaquo;</a></li>';
+		if ( $paged - $range > 1 && $showitems < $pages )
+			echo '<li><a href="' . get_pagenum_link(1) . '">1</a></li>';
+		if ( $paged - $range > 2 && $showitems < $pages )
+			echo '<li><span class="dots">...</span></li>';
 
 		for ( $i=1; $i <= $pages; $i++ ) {
 			if ( 1 != $pages && ( ! ( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) {
-				echo ( $paged == $i ) ? '<li><span class="active">' . $i . '</span></li>' : '<li><a href="' . get_pagenum_link( $i ) . '">' . $i . '</a>';
+				echo ( $paged == $i ) ? '<li><span class="active">' . $i . '</span></li>' : '<li><a href="' . get_pagenum_link( $i ) . '">' . $i . '</a></li>';
 			}
 		}
 
+		if ( $paged + $range < $pages - 1 && $showitems < $pages )
+			echo '<li><span class="dots">...</span></li>';
+		if ( $paged + $range < $pages && $showitems < $pages )
+			echo '<li><a href="' . get_pagenum_link( $pages ) . '">' . $pages . '</a></li>';
 		if ( $paged < $pages && $showitems < $pages )
-			echo '<a href="' . get_pagenum_link( $paged + 1 ) . '">&rsaquo;</a>';
+			echo '<li><a href="' . get_pagenum_link( $paged + 1 ) . '">&rsaquo;</a></li>';
 		if ( $paged < $pages-1 && $paged + $range - 1 < $pages && $showitems < $pages )
-			echo '<a href="' . get_pagenum_link( $pages ) . '">&raquo;</a>';
+			echo '<li><a href="' . get_pagenum_link( $pages ) . '">&raquo;</a></li>';
 
 		echo "</ul>\n";
 	}
