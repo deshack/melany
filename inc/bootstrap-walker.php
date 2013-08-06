@@ -22,7 +22,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 	 * Note on $depth: Counterintuitively, $depth here means the "depth right before we start this menu". 
 	 * 		So basically add one to what you'd expect it to be
 	 */        
-	function start_lvl(&$output, $depth){
+	function start_lvl( &$output, $depth = 0, $args = array() ){
 		$tabs = str_repeat("\t", $depth);
 		// If we are about to start the first submenu, we need to give it a dropdown-menu class
 		if ($depth == 0 || $depth == 1) { //really, level-1 or level-2, because $depth is misleading here (see note above)
@@ -39,7 +39,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 	 * Note on $depth: Counterintuitively, $depth here means the "depth right before we start this menu". 
 	 * 		So basically add one to what you'd expect it to be
 	 */        
-	function end_lvl(&$output, $depth){
+	function end_lvl( &$output, $depth = 0, $args = array() ){
 		if ($depth == 0) { // This is actually the end of the level-1 submenu ($depth is misleading here too!)
 			// we don't have anything special for Bootstrap, so we'll just leave an HTML comment for now
 			$output .= '<!--.dropdown-->';
@@ -53,7 +53,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 	 * Output the <li> and the containing <a>
 	 * Note: $depth is "correct" at this level
 	 */        
-	function start_el(&$output, $item, $depth, $args){
+	function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ){
 		global $wp_query;
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 		$class_names = $value = '';
@@ -104,7 +104,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 	 * Note: the <a> is already closed
 	 * Note 2: $depth is "correct" at this level
 	 */        
-	function end_el (&$output, $item, $depth, $args){
+	function end_el ( &$output, $object, $depth = 0, $args = array() ){
 		$output .= '</li>';
 		return;
 	}
