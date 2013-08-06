@@ -96,13 +96,11 @@ function melany_content_nav( $nav_id ) {
 	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
 		return;
 
-	$nav_class = ( is_single() ) ? 'navigation-post' : 'navigation-paging';
-
+	$nav_class = ( is_single() ) ? 'post-navigation' : 'paging-navigation';
 	?>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
-	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'melany' ); ?></h1>
+
 		<ul class="pager">
 		<?php
 			$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
@@ -120,27 +118,60 @@ function melany_content_nav( $nav_id ) {
 				<li class="next disabled"><a href="#"><?php printf( __( 'Newer &rarr;', 'melany' )); ?></a></li>
 			<?php endif; ?>
 		</ul>
-	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="pagination pagination-centered <?php echo $nav_class; ?>">
-			<?php
-				$total_pages = $wp_query->max_num_pages;
-				$current_page = max(1, get_query_var( 'paged' ));
-				echo paginate_links( array(
-					'format' => '/page/%#%',
-					'current' => $current_page,
-					'total' => $total_pages,
-					'prev_text' => '&laquo;',
-					'next_text' => '&raquo;',
-					'mid_size' => 1,
-					'type' => 'list',
-				)); ?>
+			<?php melany_pagination(); ?>
 	</nav>
 	<?php endif; ?>
 	<?php
 }
 endif; // melany_content_nav
+
+if ( ! function_exists( 'melany_pagination' ) ) :
+/**
+ * Paginate page navigation
+ *
+ * @since 0.5.8
+ */
+function melany_pagination( $pages = '', $range = 2 ){
+	// Calculate the number of items to show
+	$showitems = ( $range * 2 ) + 1;
+
+	global $paged;
+	if ( empty( $paged) )
+		$paged = 1;
+
+	if ( $pages == '' ) {
+		global $wp_query;
+		$pages = $wp_query->max_num_pages;
+
+		if ( ! $pages )
+			$pages = 1;
+	}
+
+	if ( 1 != $pages ) {
+		echo '<ul class="page-numbers">';
+		if ( $paged > 2 && $paged > $range+1 && $showitems < $pages )
+			echo '<li><a href="' . get_pagenum_link(1) . '">&laquo;</a></li>';
+		if ( $paged > 1 && $showitems < $pages )
+			echo '<li><a href="' . get_pagenum_link( $paged - 1 ) . '">&lsaquo;</a></li>';
+
+		for ( $i=1; $i <= $pages; $i++ ) {
+			if ( 1 != $pages && ( ! ( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) {
+				echo ( $paged == $i ) ? '<li><span class="active">' . $i . '</span></li>' : '<li><a href="' . get_pagenum_link( $i ) . '">' . $i . '</a>';
+			}
+		}
+
+		if ( $paged < $pages && $showitems < $pages )
+			echo '<a href="' . get_pagenum_link( $paged + 1 ) . '">&rsaquo;</a>';
+		if ( $paged < $pages-1 && $paged + $range - 1 < $pages && $showitems < $pages )
+			echo '<a href="' . get_pagenum_link( $pages ) . '">&raquo;</a>';
+
+		echo "</ul>\n";
+	}
+}
+endif;
 
 if ( ! function_exists( 'melany_comment' ) ) :
 /**
