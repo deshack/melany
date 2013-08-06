@@ -22,17 +22,8 @@ Series
 ======
 
 Beta: 0.5.x
-Dev: 0.6.x
-
-Changelog
-=========
-
-v 0.5
-* Introduce sub-menus support
-* Enable/disable Infinite Scroll via Theme Customizer
-* Responsive navbar
-* Alignment classes CSS
-* Bug fixes (one critical)
+Dev: 0.5.x
+Nightly: 0.6.x
 
 License
 =======
