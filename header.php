@@ -36,7 +36,7 @@
 				<span class="icon-bar"></span>
 			</a>
 
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="brand" rel="home"><?php bloginfo( 'name' ); ?></a>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="brand" rel="home"><?php melany_site_name(get_bloginfo('name', 'display')); ?></a>
 			<div class="nav-collapse collapse">
 				<nav>
 					<h1 class="menu-toggle"><?php _e( 'Menu', 'melany' ); ?></h1>
