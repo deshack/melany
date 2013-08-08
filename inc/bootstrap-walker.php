@@ -57,10 +57,10 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 		global $wp_query;
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 		$class_names = $value = '';
-		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+		$classes = empty( $object->classes ) ? array() : (array) $object->classes;
 
 		/* If this item has a dropdown menu, add the 'dropdown' class for Bootstrap */
-		if ($item->hasChildren) {
+		if ($object->hasChildren) {
 			$classes[] = 'dropdown';
 			// level-1 menus also need the 'dropdown-submenu' class
 			if($depth == 1) {
@@ -69,33 +69,33 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 		}
 
 		/* This is the stock Wordpress code that builds the <li> with all of its attributes */
-		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $object ) );
 		$class_names = ' class="' . esc_attr( $class_names ) . '"';
-		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';            
-		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-		$item_output = isset( $args->before ) ? $args->before : '';
+		$output .= $indent . '<li id="menu-item-'. $object->ID . '"' . $value . $class_names .'>';            
+		$attributes  = ! empty( $object->attr_title ) ? ' title="'  . esc_attr( $object->attr_title ) .'"' : '';
+		$attributes .= ! empty( $object->target )     ? ' target="' . esc_attr( $object->target     ) .'"' : '';
+		$attributes .= ! empty( $object->xfn )        ? ' rel="'    . esc_attr( $object->xfn        ) .'"' : '';
+		$attributes .= ! empty( $object->url )        ? ' href="'   . esc_attr( $object->url        ) .'"' : '';
+		$object_output = isset( $args->before ) ? $args->before : '';
         
 		/* If this item has a dropdown menu, make clicking on this link toggle it */
-		if ($item->hasChildren && $depth == 0) {
-			$item_output .= '<a'. $attributes .' class="dropdown-toggle" data-toggle="dropdown">';
+		if ($object->hasChildren && $depth == 0) {
+			$object_output .= '<a'. $attributes .' class="dropdown-toggle" data-toggle="dropdown">';
 		} else {
-			$item_output .= '<a'. $attributes .'>';
+			$object_output .= '<a'. $attributes .'>';
 		}
 
-		$item_output .= ( isset( $args->link_before ) ? $args->link_before : '' ) . apply_filters( 'the_title', $item->title, $item->ID ) . ( isset( $args->link_after ) ? $args->link_after : '' );
+		$object_output .= ( isset( $args->link_before ) ? $args->link_before : '' ) . apply_filters( 'the_title', $object->title, $object->ID ) . ( isset( $args->link_after ) ? $args->link_after : '' );
 
 		/* Output the actual caret for the user to click on to toggle the menu */            
-		if ($item->hasChildren && $depth == 0) {
-			$item_output .= ' <b class="caret"></b></a>';
+		if ($object->hasChildren && $depth == 0) {
+			$object_output .= ' <b class="caret"></b></a>';
 		} else {
-			$item_output .= '</a>';
+			$object_output .= '</a>';
 		}
 
-		$item_output .= isset( $args->after ) ? $args->after : '';
-		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+		$object_output .= isset( $args->after ) ? $args->after : '';
+		$output .= apply_filters( 'walker_nav_menu_start_el', $object_output, $object, $depth, $args );
 		return;
 	}
 
