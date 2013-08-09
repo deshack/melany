@@ -5,9 +5,9 @@
  * @package Melany
  */
 ?>
-	<section id="secondary" class="span3" role="complementary">
+	<section id="secondary" class="span3">
 
-		<section id="logo">
+<!--		<section id="logo">
 			<ul class="thumbnails">
 				<li class="span12">
 					<div class="thumbnail text-center">
@@ -21,7 +21,7 @@
 				</li>
 			</ul>
 		</section>
-
+-->
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
