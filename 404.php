@@ -45,7 +45,7 @@ get_header(); ?>
 					<?php
 					/* translators: %1$s: smiley */
 					$archive_content = '<div><p>' . sprintf( __( 'Try looking in the monthly archives.', 'melany' )) . '</p></div>';
-					the_widget( 'melany_widget_archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>
 				</article>
 

@@ -145,15 +145,8 @@ function melany_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
-
-	/* Unregister default Archives Widget */
-	unregister_widget( 'WP_Widget_Archives' );
-	/* Unregister default Search Widget */
-	unregister_widget( 'WP_Widget_Search' );
-	/* Register custom Archives Widget */
-	register_widget( 'melany_widget_archives' );
 }
-add_action( 'widgets_init', 'melany_widgets_init' );
+add_action( 'widgets_init', 'Melany_widgets_init' );
 
 /**
  * Enqueue scripts and styles
@@ -181,69 +174,6 @@ function melany_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'melany_scripts' );
-
-/**
- * Archives widget class
- *
- * @since 0.4
- */
-class melany_widget_archives extends WP_Widget {
-
-	function __construct() {
-		$widget_ops = array('classname' => 'widget_archive', 'description' => __( 'A monthly archive of your site&#8217;s posts', 'melany' ) );
-		parent::__construct('archives', __( 'Archives', 'melany' ), $widget_ops);
-	}
-
-	function widget( $args, $instance ) {
-		extract($args);
-		$c = ! empty( $instance['count'] ) ? '1' : '0';
-		$d = ! empty( $instance['dropdown'] ) ? '1' : '0';
-		$title = apply_filters('widget_title', empty($instance['title']) ? __( 'Archives', 'melany' ) : $instance['title'], $instance, $this->id_base);
-
-		echo $before_widget;
-		if ( $title )
-			echo $before_title . $title . $after_title;
-
-		if ( $d ) {
-?>
-		<div><select class="selectpicker" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value=""><?php echo esc_attr(__( 'Select Month', 'melany' )); ?></option> <?php wp_get_archives(apply_filters('widget_archives_dropdown_args', array('type' => 'monthly', 'format' => 'option', 'show_post_count' => $c))); ?> </select></div>
-<?php
-		} else {
-?>
-		<ul>
-		<?php wp_get_archives(apply_filters('widget_archives_args', array('type' => 'monthly', 'show_post_count' => $c))); ?>
-		</ul>
-<?php
-		}
-
-		echo $after_widget;
-	}
-
-	function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
-		$new_instance = wp_parse_args( (array) $new_instance, array( 'title' => '', 'count' => 0, 'dropdown' => '') );
-		$instance['title'] = strip_tags($new_instance['title']);
-		$instance['count'] = $new_instance['count'] ? 1 : 0;
-		$instance['dropdown'] = $new_instance['dropdown'] ? 1 : 0;
-
-		return $instance;
-	}
-
-	function form( $instance ) {
-		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'count' => 0, 'dropdown' => '') );
-		$title = strip_tags($instance['title']);
-		$count = $instance['count'] ? 'checked="checked"' : '';
-		$dropdown = $instance['dropdown'] ? 'checked="checked"' : '';
-?>
-		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'melany' ); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
-		<p>
-			<input class="checkbox" type="checkbox" <?php echo $dropdown; ?> id="<?php echo $this->get_field_id('dropdown'); ?>" name="<?php echo $this->get_field_name('dropdown'); ?>" /> <label for="<?php echo $this->get_field_id('dropdown'); ?>"><?php _e( 'Display as dropdown', 'melany' ); ?></label>
-			<br/>
-			<input class="checkbox" type="checkbox" <?php echo $count; ?> id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" /> <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e( 'Show post counts', 'melany' ); ?></label>
-		</p>
-<?php
-	}
-}
 
 /**
  * Fix "category tag" bad value error
