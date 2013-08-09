@@ -170,7 +170,8 @@ function melany_pagination( $pages = '', $range = 1 ){
 		if ( $paged > 2 && $paged > $range+1 && $showitems < $pages )
 			echo '<li><a href="' . get_pagenum_link(1) . '">&laquo;</a></li>';
 		if ( $paged > 1 && $showitems < $pages )
-			echo '<li><a href="' . get_pagenum_link( $paged - 1 ) . '">&lsaquo;</a></li>';
+			previous_posts_link( '&lsaquo;' );
+		//	echo '<li><a href="' . get_pagenum_link( $paged - 1 ) . '">&lsaquo;</a></li>';
 		if ( $paged - $range > 1 && $showitems < $pages )
 			echo '<li><a href="' . get_pagenum_link(1) . '">1</a></li>';
 		if ( $paged - $range > 2 && $showitems < $pages )
@@ -187,7 +188,8 @@ function melany_pagination( $pages = '', $range = 1 ){
 		if ( $paged + $range < $pages && $showitems < $pages )
 			echo '<li><a href="' . get_pagenum_link( $pages ) . '">' . $pages . '</a></li>';
 		if ( $paged < $pages && $showitems < $pages )
-			echo '<li><a href="' . get_pagenum_link( $paged + 1 ) . '">&rsaquo;</a></li>';
+			next_posts_link( '&rsaquo;' );
+		//	echo '<li><a href="' . get_pagenum_link( $paged + 1 ) . '">&rsaquo;</a></li>';
 		if ( $paged < $pages-1 && $paged + $range - 1 < $pages && $showitems < $pages )
 			echo '<li><a href="' . get_pagenum_link( $pages ) . '">&raquo;</a></li>';
 
