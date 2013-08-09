@@ -7,10 +7,11 @@
 ?>
 	<section id="secondary" class="span3" role="complementary">
 
-		<aside id="logo">
+		<section id="logo">
 			<ul class="thumbnails">
 				<li class="span12">
 					<div class="thumbnail text-center">
+						<h2><?php bloginfo( 'name' ); ?></h2>
 						<?php if( get_theme_mod( 'melany_logo' ) ) : ?>
 							<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
 						<?php endif; ?>
@@ -75,7 +76,7 @@
 					</div>
 				</li>
 			</ul>
-		</aside>
+		</section>
 
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
