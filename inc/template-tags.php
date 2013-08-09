@@ -208,8 +208,8 @@ function melany_comment( $comment, $args, $depth ) {
 		case 'pingback' :
 		case 'trackback' :
 	?>
-	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'melany' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'melany' ), '<div class="btn btn-small pull-right">', '</div>' ); ?></p>
+	<li class="post pingback clearfix">
+		<div class="pingback-inner"><span class="lead"><?php _e( 'Pingback:', 'melany' ); ?></span> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'melany' ), '<button class="btn btn-small pull-right">', '</button>' ); ?></div>
 	<?php
 			break;
 		default :
