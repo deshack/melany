@@ -76,6 +76,21 @@ function melany_page_menu( $args = array() ) {
 }
 endif;
 
+if ( ! function_exists( 'melany_active_item_class' ) ) :
+/**
+ * Add Bootstrap support to active menu elements
+ *
+ * @since 0.5.12
+ */
+function melany_active_item_class( $classes = array(), $menu_item = false ) {
+	if ( in_array( 'current-menu-item', $menu_item->classes ) )
+		$classes[] = 'active';
+
+	return $classes;
+}
+add_filter( 'nav_menu_css_class', 'melany_active_item_class', 10, 2 );
+endif;
+
 if ( ! function_exists( 'melany_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
