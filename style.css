@@ -394,9 +394,6 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
 /* =Asides
 ----------------------------------------------- */
 
-#secondary > aside{
-	overflow:hidden;
-}
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;

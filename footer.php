@@ -28,7 +28,7 @@
 <?php wp_footer(); ?>
 
 <script type="text/javascript">
-	jQuery('.selectpicker').selectpicker();
+	jQuery('select').selectpicker();
 </script>
 </body>
 </html>
