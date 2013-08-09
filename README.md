@@ -3,30 +3,36 @@ Melany for Wordpress
 
 This is my first WordPress theme named Melany. This name doesn't have any specific meaning, I just like it. Some time ago I opened a blog on http://www.deshack.net and I wanted to focus on the content, so I choose the "Custom Community" theme by Themekraft, promising myself I would find the time to develop my own. So here we are: it's free, but I'd like you to report credits when you use it.
 
+
 Based on _s
-===========
+-----------
 
 There's plenty of starter themes on the Internet, but they're mostly parent themes: not very cool to use and distribute the derivative work. Thanks God, I found this toolbox by ThemeShaper, _s, and I must say that's great!
 
+
 Designed with Twitter Bootstrap
-============================
+-------------------------------
 
 Twitter Bootstrap is a powerful framework that allows a faster and easier web development. That's not only its description, it's reality. Because it's very powerful, I decided to use it for this project.
 
+
 The content, everywhere
-=======================
+-----------------------
 
 I don't like that kind of layout that highlights the look instead of the content, at least on blogs. Melany is meant to be clear, linear, and make people enjoy the contents, everywhere, from the desktop to the smarphone.
 
+
 Series
-======
+------
 
 Beta: 0.5.x
+
 Dev: 0.5.x
-Nightly: 0.6.x
+
+Nightly: 1.0.x
 
 License
-=======
+-------
 
 	Copyright (C) 2013  Mattia Migliorini
 
