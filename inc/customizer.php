@@ -39,6 +39,7 @@ function melany_customize_register( $wp_customize ) {
 		'section'		=> 'melany_logo_section',
 		'settings'	=> 'melany_favicon',
 	)));
+}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
