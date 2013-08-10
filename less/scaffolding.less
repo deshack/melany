@@ -16,6 +16,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	.word-wrap( break-word );
+	font-weight:300;
 }
 p {
 	.word-wrap( break-word );
@@ -55,14 +56,17 @@ p {
 	}
 
   @media screen and (min-width: @screen-tablet) {
-    padding: 30px 60px;
+    padding: 30px 20px;
 		text-align:left;
+		&.sticky {
+			padding:30px 60px;
+		}
     h1 {
       font-size: (@font-size-base * 3.5);
     }
 		.well {
 			.leave-comment {
-				text-align:center;
+				text-align:right;
 			}
 		}
   }
