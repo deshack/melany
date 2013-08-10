@@ -193,6 +193,9 @@ input[type="color"]:focus,
 }
 
 /* Logo and site description */
+#logo {
+	float:right;
+}
 @media ( min-width:1200px ) {
 	#logo {
 		float:right;
