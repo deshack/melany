@@ -46,7 +46,7 @@ function melany_setup() {
 	/**
 	 * Bootstrap Walker
 	 */
-	require( get_template_directory() . '/inc/bootstrap-walker.php' );
+	require( get_template_directory() . '/lib/bootstrap/bootstrap-walker.php' );
 
 	/**
 	 * Make theme available for translation
