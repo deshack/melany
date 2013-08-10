@@ -1,0 +1,29 @@
+//
+// Screen Reader Text
+// --------------------------------------------------
+
+.screen-reader-text {
+	clip: rect( 1px, 1px, 1px, 1px, );
+	position: absolute !important;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: @gray-lighter;
+		.border-radius( 3px );
+		.box-shadow( 0 0 2px 2px rgba( 0, 0, 0, 0.6 ) );
+		clip: auto !important;
+		color: @link-color;
+		display:block;
+		font-size: @font-size-base;
+		font-weight:bold;
+		height:auto;
+		left:5px;
+		line-height: @line-height-computed;
+		padding: 15px 23px 14px;
+		text-decoration:none;
+		top:5px;
+		width:auto;
+		z-index: (@zindex-adminbar + 1); // Above WP Admin Bar
+	}
+}

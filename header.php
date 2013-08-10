@@ -29,35 +29,36 @@
 <body <?php body_class(); ?>>
 <?php do_action( 'before' ); ?>
 <header class="navbar navbar-fixed-top navbar-inverse" role="banner">
-	<div class="navbar-inner">
-		<div class="container-fluid">
-			<!-- toggle collapsed navbar content -->
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
+	<div class="container">
+		<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
 
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="brand" rel="home"><?php melany_site_name(get_bloginfo('name', 'display')); ?></a>
-			<div class="nav-collapse collapse">
-				<nav>
-					<h1 class="menu-toggle"><?php _e( 'Menu', 'melany' ); ?></h1>
-					<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'melany' ); ?>"><?php _e( 'Skip to content', 'melany' ); ?></a></div>
+		<!-- Be sure to leave the brand out there if you want it shown -->
+		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php melany_site_name( get_bloginfo( 'name', 'display' ) ); ?></a>
 
-					<?php
-						wp_nav_menu( array(
-						'theme_location'	=> 'primary',
-						'container' 			=> false,
-						'menu_class' 			=> 'nav',
-						'fallback_cb'			=> 'melany_page_menu',
-						'depth'						=> 3,
-						'walker'					=> new Bootstrap_Walker(),
-					) ); ?>
-				</nav>
-				<?php get_search_form( true ); ?>
-			</div>
-		</div>
-	</div>
+		<!-- Place everything within .nav-collapse to hide it until above 768px -->
+		<div class="nav-collapse collapse navbar-responsive-collapse">
+			<nav>
+				<h1 class="menu-toggle"><?php _e( 'Menu', 'melany' ); ?></h1>
+				<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'melany' ); ?>"><?php _e( 'Skip to content', 'melany' ); ?></a></div>
+
+				<?php
+					wp_nav_menu( array(
+					'theme_location'	=> 'primary',
+					'container' 			=> false,
+					'menu_class' 			=> 'nav navbar-nav',
+					'fallback_cb'			=> 'melany_page_menu',
+					'depth'						=> 3,
+					'walker'					=> new Bootstrap_Walker(),
+				) ); ?>
+			</nav>
+			<?php get_search_form( true ); ?>
+		</div><!-- .nav-collapse -->
+	</div><!-- .container -->
 </header>
 
 <div id="page" class="container-fluid hfeed site">
