@@ -4,12 +4,12 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'hero-unit' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'jumbotron' ); ?>>
 	<header class="page-header">
 		<h1><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		
 		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta muted">
+		<div class="entry-meta">
 			<small><?php melany_posted_on();
 					/* Check categories for this blog */
 					if( melany_categorized_blog() ){
@@ -38,21 +38,21 @@
 	<?php endif; ?>
 
 	<footer class="well well-small">
-		<div class="row-fluid">
+		<div class="row">
 			<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 				<?php
 					/* translators: used between list items, there is a space after the comma */
 					$tags_list = get_the_tag_list( '', __( ', ', 'melany' ) );
 					if ( $tags_list ) :
 				?>
-			<div class="span9">
+			<div class="col-sm-9 col-lg-9 tag-list">
 				<span>
 					<?php printf( __( 'Tags: %1$s', 'melany' ), $tags_list ); ?>
 				</span>
 			</div>
 				<?php endif; // End if $tags_list ?>
 			<?php endif; // End if 'post' == get_post_type() ?>
-			<div class="span3 text-right pull-right">
+			<div class="col-sm-3 col-lg-3 leave-comment pull-right">
 				<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 				<?php comments_popup_link( __( 'Leave a comment', 'melany' ), __( '1 Comment', 'melany' ), __( '% Comments', 'melany' ) ); ?>
 				<?php endif; ?>

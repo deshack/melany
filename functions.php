@@ -244,7 +244,7 @@ function melany_get_the_content( $more_link_text = null, $stripteaser = false ) 
 			$output .= '<span id="more-' . $post->ID . '"></span>' . $content[1];
 		} else {
 			if ( ! empty($more_link_text) )
-				$output .= apply_filters( 'the_content_more_link', ' <div class="clearfix"></div><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"btn btn-large btn-primary pull-right\">$more_link_text</a>", $more_link_text );
+				$output .= apply_filters( 'the_content_more_link', ' <div class="clearfix"></div><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"btn btn-large btn-success pull-right\">$more_link_text</a>", $more_link_text );
 			$output = force_balance_tags($output);
 		}
 
@@ -262,7 +262,7 @@ function melany_get_the_content( $more_link_text = null, $stripteaser = false ) 
  */
 function excerpt_read_more_link( $output ){
 	global $post;
-	return $output . '<div class="clearfix more-button"><a href="' . get_permalink( $post->ID ) . '" class="btn btn-large btn-primary">' . __( 'Continue reading', 'melany' ) . '</a></div>';
+	return $output . '<div class="clearfix text-center more-button"><a href="' . get_permalink( $post->ID ) . '" class="btn btn-large btn-success">' . __( 'Continue reading', 'melany' ) . '</a></div>';
 }
 add_filter( 'the_excerpt', 'excerpt_read_more_link' );
 
