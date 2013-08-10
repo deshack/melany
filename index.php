@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-	<section id="content" class="span9" role="main">
+	<section id="content" class="col-lg-9" role="main">
 
 	<?php if ( have_posts() ) : ?>
 

@@ -152,13 +152,10 @@ add_action( 'widgets_init', 'Melany_widgets_init' );
  * Enqueue scripts and styles
  */
 function melany_scripts() {
-	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '2.3.1' );
-	wp_enqueue_style( 'boostrap-select-style', get_template_directory_uri() . '/css/bootstrap-select.min.css', array( 'bootstrap-style' ) );
-	wp_enqueue_style( 'melany-style', get_stylesheet_uri(), array( 'bootstrap-style' ) );
-	wp_enqueue_style( 'bootstrap-responsive', get_template_directory_uri() . '/css/bootstrap-responsive.min.css', array( 'melany-style' ), '2.3.1' );
-	wp_enqueue_style( 'melany-responsive', get_template_directory_uri() . '/css/responsive.css', array( 'bootstrap-responsive' ) );
+	wp_enqueue_style( 'melany-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'boostrap-select-style', get_template_directory_uri() . '/css/bootstrap-select.min.css', array( 'melany-style' ) );
 
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '2.3.1', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.0.0-rc1', false );
 	wp_enqueue_script( 'bootstrap-select', get_template_directory_uri() . '/js/bootstrap-select.min.js', array( 'bootstrap' ), '20130510', true );
 
 	wp_enqueue_script( 'Melany-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );

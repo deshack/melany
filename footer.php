@@ -7,7 +7,6 @@
  * @package Melany
  */
 ?>
-		</div>
 	</section><!-- #main -->
 
 	<footer id="footer" role="contentinfo">
