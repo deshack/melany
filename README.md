@@ -22,15 +22,6 @@ The content, everywhere
 I don't like that kind of layout that highlights the look instead of the content, at least on blogs. Melany is meant to be clear, linear, and make people enjoy the contents, everywhere, from the desktop to the smarphone.
 
 
-Series
-------
-
-Beta: 0.5.x
-
-Dev: 0.5.x
-
-Nightly: 1.0.x
-
 License
 -------
 
