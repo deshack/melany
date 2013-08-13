@@ -10,16 +10,13 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function melany_customize_register( $wp_customize ) {
+/*function melany_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	/**
-	 * Add logo and favicon handler
-	 *
-	 * @since 0.2
-	 */
+    // Add logo and favicon handler
+    // @since 0.2
 	$wp_customize->add_section( 'melany_logo_section', array(
 		'title' => __( 'Logo and favicon', 'melany' ),
 		'priority' => 30,
@@ -39,7 +36,7 @@ function melany_customize_register( $wp_customize ) {
 		'section'		=> 'melany_logo_section',
 		'settings'	=> 'melany_favicon',
 	)));
-}
+}*/
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

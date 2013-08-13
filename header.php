@@ -12,11 +12,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-<?php if ( get_theme_mod( 'melany_favicon' ) ) : ?>
-	<link rel="shortcut icon" href="<?php echo get_theme_mod( 'melany_favicon' ); ?>" />
-<?php else : ?>
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri() . '/img/favicon.png'; ?>" />
-<?php endif; ?>
+<link rel="shortcut icon" href="<?php echo get_theme_mod( 'melany_favicon' , get_template_directory_uri() . '/img/favicon.png'); ?>" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
