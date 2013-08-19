@@ -28,7 +28,7 @@
 
 <body <?php body_class(); ?>>
 <?php do_action( 'before' ); ?>
-<header class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+<header id="site-header" class="navbar navbar-fixed-top navbar-inverse" role="navigation">
 
 	<?php // Brand and toggle get grouped for better mobile display ?>
 	<div class="navbar-header">

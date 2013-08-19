@@ -21,7 +21,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
 	.word-wrap( break-word );
 }
-
 img {
 	// Make all images responsive
 	max-width:100%;
@@ -30,6 +29,34 @@ img {
 
 // Header
 // -------------------------
+
+// Search form
+@media ( max-width: @screen-xs-max ) {
+	#site-header {
+		.searchform {
+			max-width:100%;
+			margin-left:0;
+		}
+	}
+}
+@media ( min-width: @screen-sm ) and ( max-width: @screen-md-max ) {
+	#site-header {
+		.searchform {
+			float:right;
+
+			input {
+				width:0;
+			}
+		}
+	}
+}
+@media ( min-width: @screen-lg ) {
+	#site-header {
+		.searchform {
+			float:right;
+		}
+	}
+}
 
 // Name, logo and site description
 #logo {
@@ -90,5 +117,15 @@ img {
 	.border-radius(0);
 	.navbar-text {
 		float:none;
+	}
+}
+
+// Bootstrap Select
+// -------------------------
+
+.bootstrap-select {
+	// Fix width if option has a long text
+	ul {
+		width:100%;
 	}
 }
