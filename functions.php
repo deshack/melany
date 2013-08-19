@@ -54,7 +54,7 @@ function melany_setup() {
 	 * If you're building a theme based on Melany, use a find and replace
 	 * to change 'melany' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'melany', get_template_directory() . '/languages' );
+	// load_theme_textdomain( 'melany', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
