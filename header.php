@@ -28,37 +28,34 @@
 
 <body <?php body_class(); ?>>
 <?php do_action( 'before' ); ?>
-<header class="navbar navbar-fixed-top navbar-inverse" role="banner">
-	<div class="container">
-		<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+<header class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+
+	<?php // Brand and toggle get grouped for better mobile display ?>
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+			<span class="sr-only"><?php echo __( 'Toggle navigation', 'melany' ); ?></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-
-		<!-- Be sure to leave the brand out there if you want it shown -->
 		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php melany_site_name( get_bloginfo( 'name', 'display' ) ); ?></a>
+	</div><!-- .navbar-header -->
 
-		<!-- Place everything within .nav-collapse to hide it until above 768px -->
-		<div class="nav-collapse collapse navbar-responsive-collapse">
-			<nav>
-				<h1 class="menu-toggle"><?php _e( 'Menu', 'melany' ); ?></h1>
-				<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'melany' ); ?>"><?php _e( 'Skip to content', 'melany' ); ?></a></div>
-
-				<?php
-					wp_nav_menu( array(
-					'theme_location'	=> 'primary',
-					'container' 			=> false,
-					'menu_class' 			=> 'nav navbar-nav',
-					'fallback_cb'			=> 'melany_page_menu',
-					'depth'						=> 3,
-					'walker'					=> new Bootstrap_Walker(),
-				) ); ?>
-			</nav>
-			<?php get_search_form( true ); ?>
-		</div><!-- .nav-collapse -->
-	</div><!-- .container -->
+	<?php // Collect the nav links, forms, and other content for toggling ?>
+	<div class="collapse navbar-collapse navbar-ex1-collapse">
+		<nav>
+			<?php
+				wp_nav_menu( array(
+				'theme_location'	=> 'primary',
+				'container' 			=> false,
+				'menu_class' 			=> 'nav navbar-nav',
+				'fallback_cb'			=> 'melany_page_menu',
+				'depth'						=> 3,
+				'walker'					=> new Bootstrap_Walker(),
+			) ); ?>
+		</nav>
+		<?php get_search_form( true ); ?>
+	</div><!-- .navbar-collapse -->
 </header>
 
 <div id="page" class="container hfeed site">
