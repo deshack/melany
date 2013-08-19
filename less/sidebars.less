@@ -12,6 +12,7 @@
 .widget-title,
 .widgettitle {
 	font-size: @font-size-large;
+	line-height: @line-height-widget-heading;
 	background:@jumbotron-bg;
 	.border-radius( 6px );
 	padding-left:1em;
@@ -20,7 +21,22 @@
 .widget {
 	ul {
 		list-style-type:square;
-		padding-left:1em;
+		padding-left:1.5em;
+
+		&.sub-menu {
+			padding-left:1em;
+
+			ul.sub-menu ul.sub-menu {
+				padding-left:0;
+			}
+		}
+		&.children {
+			padding-left:1em;
+
+			ul.children ul.children {
+				padding-left:0;
+			}
+		}
 	}
 	div {
 		padding-left:1.8em;
