@@ -1,0 +1,74 @@
+//
+// Search
+// --------------------------------------------------
+
+// Search toggle
+//
+// Custom button for toggling the `.navbar-collapse`, powered by the collapse
+// JavaScript plugin.
+
+.search-toggle {
+  position: relative;
+  float: right;
+  margin-right: @navbar-padding-horizontal;
+  padding: 5px 10px;
+  .navbar-vertical-align(34px);
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: @border-radius-base;
+
+  // Icon
+  .glyphicon-search {
+    width: 22px;
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    display: none;
+  }
+}
+
+// Search form
+@media ( max-width: @screen-sm-max ) {
+	#site-header {
+		.searchform {
+			max-width:100%;
+			margin-left:0;
+			border:none;
+			box-shadow:none;
+		}
+	}
+}
+@media ( min-width: @screen-lg ) {
+	#site-header {
+		.searchform {
+			float:right;
+		}
+	}
+}
+
+// Alternate navbars
+// --------------------------------------------------
+
+// Default navbar
+.navbar-default {
+	.search-toggle {
+		color:@navbar-default-toggle-icon-bar-bg;
+		border-color: @navbar-default-toggle-border-color;
+		&:hover,
+		&:focus {
+			background-color: @navbar-default-toggle-hover-bg;
+		}
+	}
+}
+
+// Inverse navbar
+.navbar-inverse {
+	.search-toggle {
+		color:@navbar-inverse-toggle-icon-bar-bg;
+		border-color: @navbar-inverse-toggle-border-color;
+		&:hover,
+		&:focus {
+			background-color:@navbar-inverse-toggle-hover-bg;
+		}
+	}
+}

@@ -30,51 +30,11 @@ img {
 // Header
 // -------------------------
 
-// Search form
-
-#site-header {
-	.search-toggle {
-		padding: 5px 10px;
-		color:@navbar-inverse-toggle-icon-bar-bg;
-		.glyphicon-search {
-			width:22px;
-		}
-	}
-}
-@media ( max-width: @screen-xs-max ) {
-	#site-header {
-		.searchform {
-			max-width:100%;
-			margin-left:0;
-			border:none;
-			box-shadow:none;
-		}
-	}
-}
-@media ( min-width: @screen-sm ) and ( max-width: @screen-md-max ) {
-	#site-header {
-		.searchform {
-			float:right;
-
-			input {
-				width:0;
-			}
-		}
-	}
-}
-@media ( min-width: @screen-lg ) {
-	#site-header {
-		.searchform {
-			float:right;
-		}
-	}
-}
-
 // Name, logo and site description
 #logo {
 	margin-bottom:30px;
 }
-@media ( min-width: @screen-desktop ) {
+@media ( min-width: @screen-lg ) {
 	#logo {
 		float:right;
 	}

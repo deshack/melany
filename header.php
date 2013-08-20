@@ -32,13 +32,13 @@
 
 	<?php // Brand and toggle get grouped for better mobile display ?>
 	<div class="navbar-header">
-		<button type="button" class="navbar-toggle menu-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+		<button type="button" class="navbar-toggle menu-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" data-parent="#site-header">
 			<span class="sr-only"><?php echo __( 'Toggle navigation', 'melany' ); ?></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<button type="button" class="navbar-toggle search-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse">
+		<button type="button" class="search-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse" data-parent="#site-header">
 			<span class="sr-only"><?php echo __( 'Toggle search', 'melany' ); ?></span>
 			<span class="glyphicon glyphicon-search"></span>
 		</button>
