@@ -52,7 +52,7 @@
 			</div>
 				<?php endif; // End if $tags_list ?>
 			<?php endif; // End if 'post' == get_post_type() ?>
-			<div class="col-sm-3 col-lg-3 leave-comment pull-right">
+			<div class="col-sm-3 col-lg-3 leave-comment">
 				<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 				<?php comments_popup_link( __( 'Leave a comment', 'melany' ), __( '1 Comment', 'melany' ), __( '% Comments', 'melany' ) ); ?>
 				<?php endif; ?>
