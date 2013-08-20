@@ -5,15 +5,10 @@
 // Body
 // -------------------------
 
-.menu-toggle {
-	display:none;
-	cursor:pointer;
-}
-.main-small-navigation ul {
-	display:none;
-}
-@media screen and (max-width:600px) {
-	.navigation-main ul {
-		display:none;
+@media ( max-width: @screen-xs-max ) {
+	.menu-toggle {
+		float:left;
+		margin-left:15px;
+		margin-right:0;
 	}
 }

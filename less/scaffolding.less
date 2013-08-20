@@ -31,11 +31,23 @@ img {
 // -------------------------
 
 // Search form
+
+#site-header {
+	.search-toggle {
+		padding: 5px 10px;
+		color:@navbar-inverse-toggle-icon-bar-bg;
+		.glyphicon-search {
+			width:22px;
+		}
+	}
+}
 @media ( max-width: @screen-xs-max ) {
 	#site-header {
 		.searchform {
 			max-width:100%;
 			margin-left:0;
+			border:none;
+			box-shadow:none;
 		}
 	}
 }
