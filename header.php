@@ -38,7 +38,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<button type="button" class="search-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse" data-parent="#site-header">
+		<button type="button" class="search-toggle" data-toggle="collapse" data-target=".search-collapse" data-parent="#site-header">
 			<span class="sr-only"><?php echo __( 'Toggle search', 'melany' ); ?></span>
 			<span class="glyphicon glyphicon-search"></span>
 		</button>
@@ -59,7 +59,7 @@
 			) ); ?>
 		</nav>
 	</div><!-- .navbar-collapse -->
-	<div class="collapse navbar-collapse navbar-ex2-collapse navbar-right">
+	<div class="collapse search-collapse">
 		<?php get_search_form( true ); ?>
 	</div>
 </header>

@@ -4,7 +4,7 @@
 
 // Search toggle
 //
-// Custom button for toggling the `.navbar-collapse`, powered by the collapse
+// Custom button for toggling the `.search-collapse`, powered by the collapse
 // JavaScript plugin.
 
 .search-toggle {
@@ -21,30 +21,60 @@
   .glyphicon-search {
     width: 22px;
   }
-
   @media (min-width: @grid-float-breakpoint) {
     display: none;
   }
 }
 
-// Search form
-@media ( max-width: @screen-sm-max ) {
-	#site-header {
-		.searchform {
-			max-width:100%;
+// Fix layout on desktop and large desktop
+@media (min-width:@grid-float-breakpoint) {
+	.navbar-collapse:after {
+		clear:none;
+	}
+}
+
+// Navbar form
+//
+// Extension of the `.form-inline` with some extra flavor for optimum display in
+// our navbars.
+.search-collapse {
+	max-width:100%;
+
+	.search-form {
+		max-width:100%;
+		margin:0;
+		padding: 10px @navbar-padding-horizontal;
+		border-top:1px solid transparent;
+		@shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
+		.box-shadow(@shadow);
+
+		// Mixin behaviour for optimum display
+		.form-inline();
+
+		@media (min-width:@grid-float-breakpoint) {
+			margin-top: ((@navbar-height - @input-height-base) / 2);
+		}
+
+		// Undo 100% width for pull classes
+		@media (min-width:@grid-float-breakpoint) {
+			width:auto;
+			border:0;
 			margin-left:0;
-			border:none;
-			box-shadow:none;
+			margin-right:0;
+			padding-top:0;
+			padding-bottom:0;
+			.box-shadow(none);
+			.navbar-vertical-align(@input-height-base);
 		}
 	}
-}
-@media ( min-width: @screen-lg ) {
-	#site-header {
-		.searchform {
-			float:right;
-		}
+	// Uncollapse the search
+	@media (min-width: @grid-float-breakpoint) {
+		display:block;
+		float:right;
+		margin:0;
 	}
 }
+
 
 // Alternate navbars
 // --------------------------------------------------
@@ -59,6 +89,10 @@
 			background-color: @navbar-default-toggle-hover-bg;
 		}
 	}
+	.search-collapse,
+	.search-form {
+		border-color:darken(@navbar-default-bg, 7%);
+	}
 }
 
 // Inverse navbar
@@ -70,5 +104,9 @@
 		&:focus {
 			background-color:@navbar-inverse-toggle-hover-bg;
 		}
+	}
+	.search-collapse,
+	.search-form {
+		border-color:darken(@navbar-inverse-bg, 7%);
 	}
 }

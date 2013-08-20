@@ -5,6 +5,6 @@
  * @package Melany
  */
 ?>
-	<form method="get" class="navbar-form searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+	<form method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 		<input type="text" class="form-control" name="s" id="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'melany' ); ?>" />
 	</form>
