@@ -259,7 +259,7 @@ function melany_comment( $comment, $args, $depth ) {
 							'max_depth'	=> $args['max_depth'],
 						) ) );
 					?>
-					<?php melany_edit_comment_link( __( 'Edit', 'melany' ) ); ?>
+					<?php edit_comment_link( __( 'Edit', 'melany' ) ); ?>
 				</div>
 			</header>
 			<?php if ( $comment->comment_approved = '0' ) : ?>
@@ -282,36 +282,27 @@ if ( ! function_exists( 'melany_avatar_class' ) ) :
  *
  * @since 1.0.0
  */
-function melany_avatar_class( $class ) {
-	$class = str_replace( "class='avatar", "class='avatar media-object ", $class );
-	return $class;
+function melany_avatar_class( $output ) {
+	$output = str_replace( 'class="avatar', 'class="avatar media-object ', $output );
+	return $output;
 }
 add_filter( 'get_avatar', 'melany_avatar_class' );
 endif;
 
 if ( ! function_exists( 'melany_edit_comment_link' ) ) :
 /**
- * Display or retrieve edit comment link with formatting.
+ * Add CSS classes to edit_comment_link()
  *
- * @since 0.1
+ * @since 1.0.0
  *
- * @param string $link Optional. Anchor text.
- * @param string $before Optional. Display before edit link.
- * @param string $after Optional. Display after edit link.
- * @return string|null HTML content, if $echo is set to false.
+ * @param string $output Required. The output of edit_comment_link() function.
+ * @return string HTML content. The output of edit_comment_link() with custom CSS classes.
  */
-function melany_edit_comment_link( $link = null, $before = '', $after = '' ) {
-	global $comment;
-
-	if ( !current_user_can( 'edit_comment', $comment->comment_ID ) )
-		return;
-
-	if ( null === $link )
-		$link = __( 'Edit This', 'melany' );
-
-	$link = '<a class="btn btn-default edit-link" href="' . get_edit_comment_link( $comment->comment_ID ) . '" title="' . esc_attr__( 'Edit comment' ) . '">' . $link . '</a>';
-	echo $before . apply_filters( 'melany_edit_comment_link', $link, $comment->comment_ID ) . $after;
+function melany_edit_comment_link( $output ) {
+	$output = str_replace( 'class="comment-edit-link"', 'class="comment-edit-link btn btn-default"', $output );
+	return $output;
 }
+add_filter( 'edit_comment_link', 'melany_edit_comment_link' );
 endif;
 
 if ( ! function_exists( 'melany_posted_on' ) ) :
