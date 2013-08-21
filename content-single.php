@@ -11,7 +11,7 @@
 				<h1><?php the_title(); ?></h1>
 			</div>
 			<div class="col-sm-2">
-				<?php melany_edit_post_link( __( 'Edit', 'melany' ) ); ?>
+				<?php edit_post_link( __( 'Edit', 'melany' ) ); ?>
 			</div>
 		</div><!-- .row -->
 		<div class="entry-meta">

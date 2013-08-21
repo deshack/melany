@@ -5,12 +5,27 @@
 // Edit link
 // -------------------------
 
-// Posts and pages
-.page-header .edit-link {
+.post-edit-link {
 	margin-top: ( @line-height-computed / 2 );
 	margin-bottom: ( @line-height-computed / 2 );
-	// Align button with page title
-	@media (min-width: @screen-sm) {
-		margin-top: floor(@line-height-computed * 1.3 );
+
+	@media (min-width:@screen-sm) {
+		margin-top: floor( @line-height-computed * 1.3 );
+		float:right;
+	}
+}
+
+@media (min-width: @screen-sm) {
+	// Remove margins in comments
+	#comments .edit-link {
+		margin-top:0;
+		margin-bottom:0;
+	}
+	// Float
+	.page-header,
+	#comments {
+		.edit-link {
+			float:right;
+		}
 	}
 }

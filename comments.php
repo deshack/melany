@@ -30,7 +30,7 @@ if ( post_password_required() )
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="navigation-comment" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'melany' ); ?></h1>
+			<h1 class="sr-only"><?php _e( 'Comment navigation', 'melany' ); ?></h1>
 			<ul class="pager">
 				<li class="previous"><?php previous_comments_link( __( '&larr; Older Comments', 'melany' ) ); ?></li>
 				<li class="next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'melany' ) ); ?></li>
@@ -38,7 +38,7 @@ if ( post_password_required() )
 		</nav><!-- #comment-nav-before -->
 		<?php endif; // check for comment navigation ?>
 
-		<ol class="unstyled">
+		<ul class="comment-list media-list">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
 				 * to use melany_comment() to format the comments.
@@ -48,7 +48,7 @@ if ( post_password_required() )
 				 */
 				wp_list_comments( array( 'callback' => 'melany_comment' ) );
 			?>
-		</ol><!-- .comment-list -->
+		</ul><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation-comment" role="navigation">

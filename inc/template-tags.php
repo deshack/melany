@@ -9,29 +9,18 @@
 
 if( ! function_exists( 'melany_edit_post_link' ) ) :
 /**
- * Display edit post link for post.
+ * Add CSS classes to edit post link
  *
- * @since 0.1
+ * @since 1.0.0
  *
- * @param string $link Optional. Anchor text.
- * @param string $before Optional. Display before edit link.
- * @param string $after Optional. Display after edit link.
- * @param int $id Optional. Post ID.
+ * @param string $output Required. The output of the edit_post_link() function
+ * @returns $output - edit_post_link() output with additional CSS classes.
  */
-function melany_edit_post_link( $link = null, $before = '', $after = '', $id = 0 ) {
-	if ( !$post = get_post( $id ) )
-		return;
-
-	if ( !$url = get_edit_post_link( $post->ID ) )
-		return;
-
-	if ( null === $link )
-		$link = __( 'Edit This', 'melany' );
-
-	$post_type_obj = get_post_type_object( $post->post_type );
-	$link = '<a class="btn btn-default edit-link" href="' . $url . '" title="' . esc_attr( $post_type_obj->labels->edit_item ) . '">' . $link . '</a>';
-	echo $before . apply_filters( 'melany_edit_post_link', $link, $post->ID ) . $after;
+function melany_edit_post_link( $output ) {
+	$output = str_replace( 'class="post-edit-link"', 'class="post-edit-link btn btn-default"', $output );
+	return $output;
 }
+add_filter( 'edit_post_link', 'melany_edit_post_link' );
 endif;
 
 /**
@@ -116,6 +105,19 @@ function melany_active_item_class( $classes = array(), $menu_item = false ) {
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'melany_active_item_class', 10, 2 );
+endif;
+
+if ( ! function_exists( 'excerpt_read_more_link' ) ) :
+/**
+ * Display Read more button below an excerpt
+ *
+ * @since 0.4
+ */
+function excerpt_read_more_link( $output ){
+	global $post;
+	return $output . '<div class="clearfix text-center more-button"><a href="' . get_permalink( $post->ID ) . '" class="btn btn-success">' . __( 'Continue reading', 'melany' ) . '</a></div>';
+}
+add_filter( 'the_excerpt', 'excerpt_read_more_link' );
 endif;
 
 if ( ! function_exists( 'melany_content_nav' ) ) :
@@ -235,43 +237,82 @@ function melany_comment( $comment, $args, $depth ) {
 		case 'pingback' :
 		case 'trackback' :
 	?>
-	<li class="post pingback clearfix">
-		<div class="pingback-inner"><span class="lead"><?php _e( 'Pingback:', 'melany' ); ?></span> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'melany' ), '<button class="btn btn-small pull-right">', '</button>' ); ?></div>
+	<li class="post pingback media clearfix">
+		<div class="pingback-inner media-body"><h4 class="media-heading"><?php _e( 'Pingback:', 'melany' ); ?></h4> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'melany' ), '<button class="btn btn-default pull-right">', '</button>' ); ?></div>
 	<?php
 			break;
 		default :
 	?>
-	<li <?php comment_class( 'clearfix' ); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="clearfix comment-inner">
-				<header>					<div class="lead clearfix">
-					<?php echo get_avatar( $comment, 40 ); ?>
-					<?php printf( sprintf( '<cite>%s</cite>', get_comment_author_link() ) ); ?>
-					<span class="muted"> - <time datetime="<?php comment_time( 'c' ); ?>">
-					<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'melany' ), get_comment_date(), get_comment_time() ); ?>
-					</time></span>
+	<li <?php comment_class( 'media clearfix' ); ?> id="comment-<?php comment_ID(); ?>">
+		<a class="pull-left" href="<?php echo get_comment_author_link(); ?>">
+			<?php echo get_avatar( $comment, 40 ); ?>
+		</a>
+		<div class="media-body">
+			<header class="row">
+				<hgroup class="col-sm-9">
+					<h4 class="media-heading"><?php printf( sprintf( '<cite>%s</cite>', get_comment_author_link() ) ); ?></h4>
+					<h6><time datetime="<?php comment_time( 'c' ); ?>"><?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'melany' ), get_comment_date(), get_comment_time() ); ?></time></h6>
+				</hgroup>
+				<div class="col-sm-3">
+					<?php melany_comment_reply_link( array_merge( $args, array(
+							'depth'			=> $depth,
+							'max_depth'	=> $args['max_depth'],
+						) ) );
+					?>
 					<?php melany_edit_comment_link( __( 'Edit', 'melany' ) ); ?>
-				</div><!-- .comment-author .vcard -->
-				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', 'melany' ); ?></em>
-					<br />
-				<?php endif; ?>
+				</div>
 			</header>
+			<?php if ( $comment->comment_approved = '0' ) : ?>
+				<em><?php _e( 'Your comment is awaiting moderation.', 'melany' ); ?></em>
+				<br />
+			<?php endif; ?>
 
 			<div class="comment-content"><?php comment_text(); ?></div>
-
-			<?php
-				melany_comment_reply_link( array_merge( $args,array(
-					'depth'     => $depth,
-					'max_depth' => $args['max_depth'],
-				) ) );
-			?>
-		</article><!-- #comment-## -->
+		</div><!-- .media-body -->
 
 	<?php
 			break;
 	endswitch;
 }
 endif; // ends check for melany_comment()
+
+if ( ! function_exists( 'melany_avatar_class' ) ) :
+/**
+ * Add CSS classes to avatars
+ *
+ * @since 1.0.0
+ */
+function melany_avatar_class( $class ) {
+	$class = str_replace( "class='avatar", "class='avatar media-object ", $class );
+	return $class;
+}
+add_filter( 'get_avatar', 'melany_avatar_class' );
+endif;
+
+if ( ! function_exists( 'melany_edit_comment_link' ) ) :
+/**
+ * Display or retrieve edit comment link with formatting.
+ *
+ * @since 0.1
+ *
+ * @param string $link Optional. Anchor text.
+ * @param string $before Optional. Display before edit link.
+ * @param string $after Optional. Display after edit link.
+ * @return string|null HTML content, if $echo is set to false.
+ */
+function melany_edit_comment_link( $link = null, $before = '', $after = '' ) {
+	global $comment;
+
+	if ( !current_user_can( 'edit_comment', $comment->comment_ID ) )
+		return;
+
+	if ( null === $link )
+		$link = __( 'Edit This', 'melany' );
+
+	$link = '<a class="btn btn-default edit-link" href="' . get_edit_comment_link( $comment->comment_ID ) . '" title="' . esc_attr__( 'Edit comment' ) . '">' . $link . '</a>';
+	echo $before . apply_filters( 'melany_edit_comment_link', $link, $comment->comment_ID ) . $after;
+}
+endif;
 
 if ( ! function_exists( 'melany_posted_on' ) ) :
 /**

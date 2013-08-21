@@ -261,40 +261,6 @@ function melany_get_the_content( $more_link_text = null, $stripteaser = false ) 
 }
 
 /**
- * Display Read more button below an excerpt
- *
- * @since 0.4
- */
-function excerpt_read_more_link( $output ){
-	global $post;
-	return $output . '<div class="clearfix text-center more-button"><a href="' . get_permalink( $post->ID ) . '" class="btn btn-large btn-success">' . __( 'Continue reading', 'melany' ) . '</a></div>';
-}
-add_filter( 'the_excerpt', 'excerpt_read_more_link' );
-
-/**
- * Display or retrieve edit comment link with formatting.
- *
- * @since 0.1
- *
- * @param string $link Optional. Anchor text.
- * @param string $before Optional. Display before edit link.
- * @param string $after Optional. Display after edit link.
- * @return string|null HTML content, if $echo is set to false.
- */
-function melany_edit_comment_link( $link = null, $before = '', $after = '' ) {
-	global $comment;
-
-	if ( !current_user_can( 'edit_comment', $comment->comment_ID ) )
-		return;
-
-	if ( null === $link )
-		$link = __( 'Edit This', 'melany' );
-
-	$link = '<a class="btn btn-small pull-right" href="' . get_edit_comment_link( $comment->comment_ID ) . '" title="' . esc_attr__( 'Edit comment' ) . '">' . $link . '</a>';
-	echo $before . apply_filters( 'melany_edit_comment_link', $link, $comment->comment_ID ) . $after;
-}
-
-/**
  * Outputs a complete commenting form for use within a template.
  * Most strings and form fields may be controlled through the $args array passed
  * into the function, while you may also choose to use the comment_form_default_fields
