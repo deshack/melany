@@ -14,7 +14,9 @@
 		float:right;
 	}
 }
-
+.comment-edit-link {
+	margin-left:(@line-height-computed / 2);
+}
 @media (min-width:@screen-sm) {
 	.post-edit-link {
 		margin-top: floor( @line-height-computed * 1.3 );
@@ -22,5 +24,18 @@
 	.comment-edit-link {
 		margin-top:0;
 		margin-bottom:0;
+	}
+}
+
+// Comment reply link
+.comment-reply-link {
+	color:@btn-default-color;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&.active {
+		color: @btn-default-color;
+		text-decoration:none;
 	}
 }

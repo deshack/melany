@@ -37,26 +37,16 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="panel panel-default">
+<?php $tag_list = get_the_tag_list( '', __( ' - ', 'melany' ) );
+	if ( '' != $tag_list ) : ?>
+
+	<footer class="panel panel-success">
+		<div class="panel-heading">
+			<h3 class="panel-title"><?php echo __( 'Tags', 'melany' ); ?></h3>
+		</div>
 		<div class="panel-body">
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$tag_list = get_the_tag_list( '', __( ', ', 'melany' ) );
-
-				// This blog only has 1 category so we just need to worry about tags in the meta text
-				if ( '' != $tag_list ) {
-					$meta_text = __( '<span>Tags: %1$s</span><span class="pull-right">Bookmark the <a href="%2$s" title="Permalink to %3$s" rel="bookmark">permalink</a>.</span>', 'melany' );
-				} else {
-					$meta_text = __( '<span class="pull-right">Bookmark the <a href="%2$s" title="Permalink to %3$s" rel="bookmark">permalink</a>.</span>', 'melany' );
-				}
-
-				printf(
-					$meta_text,
-					$tag_list,
-					get_permalink(),
-					the_title_attribute( 'echo=0' )
-				);
-			?>
+			<?php printf( __( '%1$s', 'melany' ), $tag_list ); ?>
 		</div><!-- .panel-body -->
 	</footer><!-- .entry-meta -->
+<?php endif; ?>
 </article><!-- #post-## -->

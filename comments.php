@@ -46,7 +46,10 @@ if ( post_password_required() )
 				 * define melany_comment() and that will be used instead.
 				 * See melany_comment() in inc/template-tags.php for more.
 				 */
-				wp_list_comments( array( 'callback' => 'melany_comment' ) );
+				wp_list_comments( array(
+					'callback'	=> 'melany_comment',
+					'format'		=> 'html5',
+				) );
 			?>
 		</ul><!-- .comment-list -->
 

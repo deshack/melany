@@ -264,7 +264,7 @@ function melany_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class( 'media clearfix' ); ?> id="comment-<?php comment_ID(); ?>">
 		<a class="pull-left" href="<?php echo get_comment_author_link(); ?>">
-			<?php echo get_avatar( $comment, 40 ); ?>
+			<?php echo get_avatar( $comment, 64 ); ?>
 		</a>
 		<div class="media-body">
 			<header class="row">
@@ -273,11 +273,13 @@ function melany_comment( $comment, $args, $depth ) {
 					<h6><time datetime="<?php comment_time( 'c' ); ?>"><?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'melany' ), get_comment_date(), get_comment_time() ); ?></time></h6>
 				</hgroup>
 				<div class="col-sm-3">
-					<?php comment_reply_link( array_merge( $args, array(
-							'depth'			=> $depth,
-							'max_depth'	=> $args['max_depth'],
-						) ) );
-					?>
+					<div class="comment-edit-link btn btn-default">
+						<?php comment_reply_link( array_merge( $args, array(
+								'depth'			=> $depth,
+								'max_depth'	=> $args['max_depth'],
+							) ) );
+						?>
+					</div>
 					<?php edit_comment_link( __( 'Edit', 'melany' ) ); ?>
 				</div>
 			</header>
