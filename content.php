@@ -27,7 +27,7 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content clearfix">
-		<?php melany_the_content( __( 'Continue reading', 'melany' ) ); ?>
+		<?php the_content( __( 'Continue reading', 'melany' ) ); ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'melany' ),

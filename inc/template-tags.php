@@ -13,14 +13,46 @@ if( ! function_exists( 'melany_edit_post_link' ) ) :
  *
  * @since 1.0.0
  *
- * @param string $output Required. The output of the edit_post_link() function
- * @returns $output - edit_post_link() output with additional CSS classes.
+ * @param string $output Required. edit_post_link() HTML output.
+ * @return string $output - edit_post_link() HTML output with custom CSS classes.
  */
 function melany_edit_post_link( $output ) {
 	$output = str_replace( 'class="post-edit-link"', 'class="post-edit-link btn btn-default"', $output );
 	return $output;
 }
 add_filter( 'edit_post_link', 'melany_edit_post_link' );
+endif;
+
+if ( ! function_exists( 'melany_edit_comment_link' ) ) :
+/**
+ * Add custom CSS classes to edit_comment_link()
+ *
+ * @since 1.0.0
+ *
+ * @param string $output Required. edit_comment_link() HTML output.
+ * @return string $output - edit_comment_link() HTML output with custom CSS classes.
+ */
+function melany_edit_comment_link( $output ) {
+	$output = str_replace( 'class="comment-edit-link"', 'class="comment-edit-link btn btn-default"', $output );
+	return $output;
+}
+add_filter( 'edit_comment_link', 'melany_edit_comment_link' );
+endif;
+
+if ( ! function_exists( 'melany_excerpt_read_more_link' ) ) :
+/**
+ * Display Read more button below an excerpt
+ *
+ * @since 0.4
+ *
+ * @param string $output Required. the_excerpt() HTML output.
+ * @return string $output - the_excerpt() HTML output followed by custom readmore button.
+ */
+function melany_excerpt_read_more_link( $output ){
+	global $post;
+	return $output . '<div class="clearfix text-center more-button"><a href="' . get_permalink( $post->ID ) . '" class="btn btn-success">' . __( 'Continue reading', 'melany' ) . '</a></div>';
+}
+add_filter( 'the_excerpt', 'melany_excerpt_read_more_link' );
 endif;
 
 /**
@@ -105,19 +137,6 @@ function melany_active_item_class( $classes = array(), $menu_item = false ) {
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'melany_active_item_class', 10, 2 );
-endif;
-
-if ( ! function_exists( 'excerpt_read_more_link' ) ) :
-/**
- * Display Read more button below an excerpt
- *
- * @since 0.4
- */
-function excerpt_read_more_link( $output ){
-	global $post;
-	return $output . '<div class="clearfix text-center more-button"><a href="' . get_permalink( $post->ID ) . '" class="btn btn-success">' . __( 'Continue reading', 'melany' ) . '</a></div>';
-}
-add_filter( 'the_excerpt', 'excerpt_read_more_link' );
 endif;
 
 if ( ! function_exists( 'melany_content_nav' ) ) :
@@ -254,7 +273,7 @@ function melany_comment( $comment, $args, $depth ) {
 					<h6><time datetime="<?php comment_time( 'c' ); ?>"><?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'melany' ), get_comment_date(), get_comment_time() ); ?></time></h6>
 				</hgroup>
 				<div class="col-sm-3">
-					<?php melany_comment_reply_link( array_merge( $args, array(
+					<?php comment_reply_link( array_merge( $args, array(
 							'depth'			=> $depth,
 							'max_depth'	=> $args['max_depth'],
 						) ) );
@@ -289,22 +308,6 @@ function melany_avatar_class( $output ) {
 add_filter( 'get_avatar', 'melany_avatar_class' );
 endif;
 
-if ( ! function_exists( 'melany_edit_comment_link' ) ) :
-/**
- * Add CSS classes to edit_comment_link()
- *
- * @since 1.0.0
- *
- * @param string $output Required. The output of edit_comment_link() function.
- * @return string HTML content. The output of edit_comment_link() with custom CSS classes.
- */
-function melany_edit_comment_link( $output ) {
-	$output = str_replace( 'class="comment-edit-link"', 'class="comment-edit-link btn btn-default"', $output );
-	return $output;
-}
-add_filter( 'edit_comment_link', 'melany_edit_comment_link' );
-endif;
-
 if ( ! function_exists( 'melany_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -321,6 +324,8 @@ function melany_posted_on() {
 	);
 }
 endif;
+
+if ( ! function_exists( 'melany_categorized_blog' ) ) :
 /**
  * Returns true if a blog has more than 1 category
  */
@@ -345,7 +350,9 @@ function melany_categorized_blog() {
 		return false;
 	}
 }
+endif;
 
+if ( ! function_exists( 'melany_category_transient_flusher' ) ) :
 /**
  * Flush out the transients used in melany_categorized_blog
  */
@@ -359,3 +366,5 @@ add_action( 'save_post', 'melany_category_transient_flusher' );
 function melany_site_name($text = '', $numberchar = 20) {
     echo (strlen($text) > $numberchar) ? substr($text, 0, $numberchar) . '...' : $text;
 }
+endif;
+
