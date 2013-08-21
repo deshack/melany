@@ -84,6 +84,11 @@ function melany_setup() {
 	 * Enable support for Post Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
+
+	/**
+	 * Add new image sizes
+	 */
+	add_image_size( 'single_post_thumb', 800, 300, true );
 }
 endif; // melany_setup
 add_action( 'after_setup_theme', 'melany_setup' );
@@ -472,31 +477,6 @@ function melany_get_cancel_comment_reply_link($text = '') {
  */
 function melany_cancel_comment_reply_link($text = '') {
 	echo melany_get_cancel_comment_reply_link($text);
-}
-
-/**
- * Display edit post link for post.
- *
- * @since 0.1
- *
- * @param string $link Optional. Anchor text.
- * @param string $before Optional. Display before edit link.
- * @param string $after Optional. Display after edit link.
- * @param int $id Optional. Post ID.
- */
-function melany_edit_post_link( $link = null, $before = '', $after = '', $id = 0 ) {
-	if ( !$post = get_post( $id ) )
-		return;
-
-	if ( !$url = get_edit_post_link( $post->ID ) )
-		return;
-
-	if ( null === $link )
-		$link = __( 'Edit This', 'melany' );
-
-	$post_type_obj = get_post_type_object( $post->post_type );
-	$link = '<a class="btn btn-small pull-right" href="' . $url . '" title="' . esc_attr( $post_type_obj->labels->edit_item ) . '">' . $link . '</a>';
-	echo $before . apply_filters( 'melany_edit_post_link', $link, $post->ID ) . $after;
 }
 
 /**

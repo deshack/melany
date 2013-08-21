@@ -5,7 +5,7 @@
  * @package Melany
  */
 ?>
-	<section id="secondary" class="col-lg-3">
+	<section id="secondary" class="col-md-3">
 
 <!--		<section id="logo">
 			<ul class="thumbnails">

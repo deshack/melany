@@ -25,6 +25,8 @@ img {
 	// Make all images responsive
 	max-width:100%;
 	height:auto;
+	margin-top:@line-height-computed !important;
+	margin-bottom:@line-height-computed !important;
 }
 
 // Header
@@ -33,8 +35,12 @@ img {
 // Name, logo and site description
 #logo {
 	margin-bottom:30px;
+	img {
+		margin-top:0 !important;
+		margin-bottom:0 !important;
+	}
 }
-@media ( min-width: @screen-lg ) {
+@media ( min-width: @screen-md ) {
 	#logo {
 		float:right;
 	}
@@ -81,10 +87,25 @@ img {
 	}
 }
 
+// Single and Pages
+.page-header {
+	text-align:center;
+	@media (min-width:@screen-tablet) {
+		text-align:left;
+	}
+}
+.single {
+	footer.panel {
+		margin-top: @line-height-computed;
+	}
+}
+
 // Footer
 // -------------------------
 
 #footer {
+	margin-top: @line-height-computed;
+	margin-bottom:0;
 	.border-radius(0);
 	.navbar-text {
 		float:none;

@@ -66,7 +66,7 @@
 
 <div id="page" class="container hfeed site">
 	<section id="main" class="row">
-		<section id="logo" class="col-lg-3">
+		<section id="logo" class="col-md-3">
 			<div class="thumbnail text-center">
 				<div class="caption">
 					<h2><?php bloginfo( 'name' ); ?></h2>

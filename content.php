@@ -46,14 +46,14 @@
 						$tags_list = get_the_tag_list( '', __( ', ', 'melany' ) );
 						if ( $tags_list ) :
 					?>
-				<div class="col-sm-9 col-lg-9 tag-list">
+				<div class="col-sm-8 tag-list">
 					<span>
 						<?php printf( __( 'Tags: %1$s', 'melany' ), $tags_list ); ?>
 					</span>
 				</div>
 					<?php endif; // End if $tags_list ?>
 				<?php endif; // End if 'post' == get_post_type() ?>
-				<div class="col-sm-3 col-lg-3 leave-comment">
+				<div class="col-sm-4 leave-comment">
 					<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 					<?php comments_popup_link( __( 'Leave a comment', 'melany' ), __( '1 Comment', 'melany' ), __( '% Comments', 'melany' ) ); ?>
 					<?php endif; ?>
