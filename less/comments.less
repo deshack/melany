@@ -8,10 +8,6 @@
 
 	.children {
 		padding-left:@line-height-computed;
-
-		.comment {
-			
-		}
 	}
 }
 
@@ -19,7 +15,7 @@
 	padding-top:@line-height-computed;
 	padding-bottom:(@line-height-computed / 2);
 	border-top:1px solid @gray-light;
-	border-bottom:1px solid @gray-light;
+	border-left:1px solid @gray-light;
 	.border-radius(@border-radius-base);
 
 	.media-body-inner {
@@ -27,5 +23,8 @@
 	}
 	.comment-content {
 		padding-left:1em;
+	}
+	.bypostauthor {
+		background:@gray-lighter;
 	}
 }

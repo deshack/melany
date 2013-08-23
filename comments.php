@@ -72,6 +72,10 @@ if ( post_password_required() )
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'melany' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php $comment_field = melany_get_comment_field(); ?>
+	<?php comment_form( array(
+			'comment_field'		=> $comment_field,
+		) );
+	?>
 
 </div><!-- #comments -->

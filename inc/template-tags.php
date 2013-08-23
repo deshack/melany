@@ -299,21 +299,37 @@ function melany_comment( $comment, $args, $depth ) {
 }
 endif; // ends check for melany_comment()
 
-if ( ! function_exists( 'melany_get_comment_form_fields' ) ) :
+if ( ! function_exists( 'melany_comment_form_fields' ) ) :
 /**
  * Customized comment form fields
  *
- * Gets comment form fields with customized HTML to use in the 'fields' parameter
- * of comment_form() function (see comments.php)
+ * @since 1.0.0
+ *
+ * @param array $fields Required. Default form fields
+ * @return array $fields - The new fields
+ */
+function melany_comment_form_fields( $fields ) {
+	$commenter	= wp_get_current_commenter();
+	$req				= get_option( 'require_name_email' );
+	$aria_req		= ( $req ? ' aria-required="true"' : '' );
+	$fields['author']		= '<div class="comment-form-author form-group">' . '<label for="author" class="sr-only">' . __( 'Name', 'melany' ) . '</label>' . '<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . __( 'Name', 'melany' ) . ( $req ? '*' : '' ) . '" size="30"' . $aria_req . '/></div>';
+	$fields['email']		= '<div class="comment-form-email form-group">' . '<label for="email" class="sr-only">' . __( 'Email', 'melany' ) . '</label>' . '<input id="email" name="email" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="' . __( 'Email', 'melany' ) . ( $req ? '*' : '' )  . '" size="30"' . $aria_req . '/></div>';
+	$fields['url']			= '<div class="comment-form-url form-group">' . '<label for="url" class="sr-only">' . __( 'Website', 'melany' ) . '</label>' . '<input id="url" name="url" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . __( 'Website', 'melany' ) . '" size="30" /></div>';
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'melany_comment_form_fields' );
+endif; // ends check for melany_comment_form_fields
+
+if ( ! function_exists( 'melany_get_comment_field' ) ) :
+/**
+ * Customize comment textarea
  *
  * @since 1.0.0
  */
-function melany_get_comment_form_fields() {
-	array(
-		'author'	=> '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'melany' ) . '</label>' . ( $req ? '<span class="badge">*</span>' : '' ) . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . '/></p>',
-	);
+function melany_get_comment_field() {
+	return '<div class="comment-form-comment">' . '<label for="comment" class="sr-only">' . _x( 'Comment', 'noun', 'melany' ) . '</label>' . '<textarea id="comment" name="comment" class="form-control" placeholder="' . _x( 'Comment', 'noun', 'melany' ) . '" rows="8"' . $aria_req . '></textarea></div>';
 }
-endif; // ends check for melany_get_comment_form_fields
+endif;
 
 if ( ! function_exists( 'melany_avatar_class' ) ) :
 /**
