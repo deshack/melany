@@ -25,9 +25,7 @@ function melany_customize_register( $wp_customize ) {
 		'priority' => 30,
 		'description' => 'Upload a logo to display at the top of the sidebar',
 	));
-	$wp_customize->add_setting( 'melany_logo', array(
-		'default'		=> get_template_directory_uri() . '/img/logo.png',
-	) );
+	$wp_customize->add_setting( 'melany_logo' );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'melany_logo', array(
 		'label' => __( 'Logo', 'melany' ),
 		'section' => 'melany_logo_section',
@@ -40,6 +38,7 @@ function melany_customize_register( $wp_customize ) {
 		'settings'	=> 'melany_favicon',
 	)));
 }
+add_action( 'customize_register', 'melany_customize_register' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
