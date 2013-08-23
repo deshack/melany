@@ -263,32 +263,34 @@ function melany_comment( $comment, $args, $depth ) {
 		default :
 	?>
 	<li <?php comment_class( 'media clearfix' ); ?> id="comment-<?php comment_ID(); ?>">
-		<a class="pull-left" href="<?php echo get_comment_author_link(); ?>">
+		<a class="pull-left" href="<?php comment_author_url(); ?>">
 			<?php echo get_avatar( $comment, 64 ); ?>
 		</a>
 		<div class="media-body">
-			<header class="row">
-				<hgroup class="col-sm-9">
-					<h4 class="media-heading"><?php printf( sprintf( '<cite>%s</cite>', get_comment_author_link() ) ); ?></h4>
-					<h6><time datetime="<?php comment_time( 'c' ); ?>"><?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'melany' ), get_comment_date(), get_comment_time() ); ?></time></h6>
-				</hgroup>
-				<div class="col-sm-3">
-					<div class="comment-edit-link btn btn-default">
-						<?php comment_reply_link( array_merge( $args, array(
-								'depth'			=> $depth,
-								'max_depth'	=> $args['max_depth'],
-							) ) );
-						?>
+			<div class="media-body-inner">
+				<header class="row">
+					<hgroup class="col-sm-9">
+						<h4 class="media-heading"><?php printf( sprintf( '<cite>%s</cite>', get_comment_author_link() ) ); ?></h4>
+						<h6><time datetime="<?php comment_time( 'c' ); ?>"><?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'melany' ), get_comment_date(), get_comment_time() ); ?></time></h6>
+					</hgroup>
+					<div class="col-sm-3">
+						<div class="comment-edit-link btn btn-default">
+							<?php comment_reply_link( array_merge( $args, array(
+									'depth'			=> $depth,
+									'max_depth'	=> $args['max_depth'],
+								) ) );
+							?>
+						</div>
+						<?php edit_comment_link( __( 'Edit', 'melany' ) ); ?>
 					</div>
-					<?php edit_comment_link( __( 'Edit', 'melany' ) ); ?>
-				</div>
-			</header>
-			<?php if ( $comment->comment_approved = '0' ) : ?>
-				<em><?php _e( 'Your comment is awaiting moderation.', 'melany' ); ?></em>
-				<br />
-			<?php endif; ?>
+				</header>
+				<?php if ( $comment->comment_approved = '0' ) : ?>
+					<em><?php _e( 'Your comment is awaiting moderation.', 'melany' ); ?></em>
+					<br />
+				<?php endif; ?>
 
-			<div class="comment-content"><?php comment_text(); ?></div>
+				<div class="comment-content"><?php comment_text(); ?></div>
+			</div><!-- .media-body-inner -->
 		</div><!-- .media-body -->
 
 	<?php
@@ -296,6 +298,22 @@ function melany_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 endif; // ends check for melany_comment()
+
+if ( ! function_exists( 'melany_get_comment_form_fields' ) ) :
+/**
+ * Customized comment form fields
+ *
+ * Gets comment form fields with customized HTML to use in the 'fields' parameter
+ * of comment_form() function (see comments.php)
+ *
+ * @since 1.0.0
+ */
+function melany_get_comment_form_fields() {
+	array(
+		'author'	=> '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'melany' ) . '</label>' . ( $req ? '<span class="badge">*</span>' : '' ) . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . '/></p>',
+	);
+}
+endif; // ends check for melany_get_comment_form_fields
 
 if ( ! function_exists( 'melany_avatar_class' ) ) :
 /**
