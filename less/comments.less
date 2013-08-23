@@ -2,9 +2,17 @@
 // Comments
 // --------------------------------------------------
 
-.media-list {
+.comment-list {
 	margin-top:@line-height-computed;
 	margin-bottom:(@line-height-computed / 2);
+
+	.children {
+		padding-left:@line-height-computed;
+
+		.comment {
+			
+		}
+	}
 }
 
 .comment {
@@ -13,4 +21,11 @@
 	border-top:1px solid @gray-light;
 	border-bottom:1px solid @gray-light;
 	.border-radius(@border-radius-base);
+
+	.media-body-inner {
+		padding:0 1em;
+	}
+	.comment-content {
+		padding-left:1em;
+	}
 }
