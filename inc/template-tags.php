@@ -39,6 +39,19 @@ function melany_edit_comment_link( $output ) {
 add_filter( 'edit_comment_link', 'melany_edit_comment_link' );
 endif;
 
+if ( ! function_exists( 'melany_cancel_comment_reply_link' ) ) :
+/**
+ * Customize cancel_comment_reply_link
+ *
+ * @since 1.0.0
+ */
+function melany_cancel_comment_reply_link( $text ) {
+	$output = '<a rel="nofollow" id="cancel-comment-reply-link" class="btn btn-default" href="' . $link . '"' . $style . '>' . $text . '</a>';
+	return $output;
+}
+apply_filters( 'cancel_comment_reply_link', 'melany_cancel_comment_reply_link' );
+endif; // ends check for melany_cancel_comment_reply_link
+
 if ( ! function_exists( 'melany_excerpt_read_more_link' ) ) :
 /**
  * Display Read more button below an excerpt
@@ -303,6 +316,8 @@ if ( ! function_exists( 'melany_comment_form_fields' ) ) :
 /**
  * Customized comment form fields
  *
+ * Adds also X-Autocomplete Fields support
+ *
  * @since 1.0.0
  *
  * @param array $fields Required. Default form fields
@@ -312,9 +327,9 @@ function melany_comment_form_fields( $fields ) {
 	$commenter	= wp_get_current_commenter();
 	$req				= get_option( 'require_name_email' );
 	$aria_req		= ( $req ? ' aria-required="true"' : '' );
-	$fields['author']		= '<div class="comment-form-author form-group">' . '<label for="author" class="sr-only">' . __( 'Name', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-user"></span>'  . '<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . __( 'Name', 'melany' ) . ( $req ? '*' : '' ) . '" size="30"' . $aria_req . '/></div></div>';
-	$fields['email']		= '<div class="comment-form-email form-group">' . '<label for="email" class="sr-only">' . __( 'Email', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-envelope"></span>' . '<input id="email" name="email" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="' . __( 'Email', 'melany' ) . ( $req ? '*' : '' )  . '" size="30"' . $aria_req . '/></div></div>';
-	$fields['url']			= '<div class="comment-form-url form-group">' . '<label for="url" class="sr-only">' . __( 'Website', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-home"></span>' . '<input id="url" name="url" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . __( 'Website', 'melany' ) . '" size="30" /></div></div>';
+	$fields['author']		= '<div class="comment-form-author form-group">' . '<label for="author" class="sr-only">' . __( 'Name', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-user"></span>'  . '<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . __( 'Name', 'melany' ) . ( $req ? '*' : '' ) . '" size="30"' . $aria_req . ' x-autocompletetype="name-full" /></div></div>';
+	$fields['email']		= '<div class="comment-form-email form-group">' . '<label for="email" class="sr-only">' . __( 'Email', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-envelope"></span>' . '<input id="email" name="email" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="' . __( 'Email', 'melany' ) . ( $req ? '*' : '' )  . '" size="30"' . $aria_req . ' x-autocompletetype="email" /></div></div>';
+	$fields['url']			= '<div class="comment-form-url form-group">' . '<label for="url" class="sr-only">' . __( 'Website', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-home"></span>' . '<input id="url" name="url" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . __( 'Website', 'melany' ) . '" size="30" x-autocompletetype="url" /></div></div>';
 	return $fields;
 }
 add_filter( 'comment_form_default_fields', 'melany_comment_form_fields' );
@@ -329,7 +344,31 @@ if ( ! function_exists( 'melany_get_comment_field' ) ) :
 function melany_get_comment_field() {
 	return '<div class="comment-form-comment form-group">' . '<label for="comment" class="sr-only">' . _x( 'Comment', 'noun', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-pencil"></span>' . '<textarea id="comment" name="comment" class="form-control" placeholder="' . _x( 'Comment', 'noun', 'melany' ) . '" rows="8"></textarea></div></div>';
 }
-endif;
+endif; // ends check for melany_get_comment_field
+
+if ( ! function_exists( 'melany_get_comment_notes_before' ) ) :
+/**
+ * Customize comment_notes_before comment_form() parameter
+ *
+ * @since 1.0.0
+ */
+function melany_get_comment_notes_before() {
+	$req = get_option( 'require_name_email' );
+	$required_text = sprintf( ' ' . __( 'Required fields are marked %s', 'melany' ), '<span class="required">*</span>' );
+	return '<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><p class="comment-notes">' . __( 'Your email address will not be published.', 'melany' ) . ( $req ? $required_text : '' ) . '</p></div>';
+}
+endif; // ends check for melany_get_comment_notes_before
+
+if ( ! function_exists( 'melany_get_comment_notes_after' ) ) :
+/**
+ * Customize comment_notes_after comment_form() parameter
+ *
+ * @since 1.0.0
+ */
+function melany_get_comment_notes_after() {
+	return '<p class="form-allowed-tags help-block">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'melany' ), ' <pre>' . allowed_tags() . '</pre>' ) . '</p>';
+}
+endif; // ends check for melany_get_comment_notes_after
 
 if ( ! function_exists( 'melany_avatar_class' ) ) :
 /**
