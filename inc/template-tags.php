@@ -39,16 +39,29 @@ function melany_edit_comment_link( $output ) {
 add_filter( 'edit_comment_link', 'melany_edit_comment_link' );
 endif;
 
+if ( ! function_exists( 'melany_cancel_comment_reply_link' ) ) :
+/**
+ * Customize Cancel Comment Reply link
+ *
+ * @since 1.0.0
+ *
+ * @param string $text Required. The output of get_cancel_comment_reply_link().
+ * @return string $output - The customized link
+ */
 function melany_cancel_comment_reply_link( $text ) {
+	// $text is a link, we need to extract only the text and save it in $title
 	preg_match( '/>(.*)</', $text, $matches );
 	$title = $matches[0];
 	$title = str_replace( '>', '', $title );
 	$title = str_replace( '<', '', $title );
+	// Now substitute the text with &times;
 	$output = preg_replace( '#\>[^\]]+\<\/a>#', '>&times;</a>', $text );
+	// Put $title as value of the title property, then add classes and other useful properties
 	$output = str_replace( 'id="cancel-comment-reply-link"', 'id="cancel-comment-reply-link" class="btn btn-danger close tooltip-toggle" data-toggle="tooltip" data-trigger="click hover" title="' . $title . '"', $output );
 	return $output;
 }
 add_filter( 'cancel_comment_reply_link', 'melany_cancel_comment_reply_link' );
+endif; // ends check for melany_cancel_comment_reply_link
 
 if ( ! function_exists( 'melany_excerpt_read_more_link' ) ) :
 /**
@@ -367,6 +380,14 @@ function melany_get_comment_notes_after() {
 	return '<p class="form-allowed-tags help-block">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'melany' ), ' <pre>' . allowed_tags() . '</pre>' ) . '</p>';
 }
 endif; // ends check for melany_get_comment_notes_after
+
+if ( ! function_exists( 'melany_comment_form_logged_in' ) ) :
+function melany_comment_form_logged_in( $input ) {
+	$output = str_replace( 'class="logged-in-as"', 'class="logged-in-as help-block"', $input );
+	return $output;
+}
+add_filter( 'comment_form_logged_in', 'melany_comment_form_logged_in' );
+endif; // ends check for melany_comment_form_logged_in
 
 if ( ! function_exists( 'melany_avatar_class' ) ) :
 /**
