@@ -39,18 +39,16 @@ function melany_edit_comment_link( $output ) {
 add_filter( 'edit_comment_link', 'melany_edit_comment_link' );
 endif;
 
-if ( ! function_exists( 'melany_cancel_comment_reply_link' ) ) :
-/**
- * Customize cancel_comment_reply_link
- *
- * @since 1.0.0
- */
 function melany_cancel_comment_reply_link( $text ) {
-	$output = '<a rel="nofollow" id="cancel-comment-reply-link" class="btn btn-default" href="' . $link . '"' . $style . '>' . $text . '</a>';
+	preg_match( '/>(.*)</', $text, $matches );
+	$title = $matches[0];
+	$title = str_replace( '>', '', $title );
+	$title = str_replace( '<', '', $title );
+	$output = preg_replace( '#\>[^\]]+\<\/a>#', '>&times;</a>', $text );
+	$output = str_replace( 'id="cancel-comment-reply-link"', 'id="cancel-comment-reply-link" class="btn btn-danger close tooltip-toggle" data-toggle="tooltip" data-trigger="hover" title="' . $title . '"', $output );
 	return $output;
 }
-apply_filters( 'cancel_comment_reply_link', 'melany_cancel_comment_reply_link' );
-endif; // ends check for melany_cancel_comment_reply_link
+add_filter( 'cancel_comment_reply_link', 'melany_cancel_comment_reply_link' );
 
 if ( ! function_exists( 'melany_excerpt_read_more_link' ) ) :
 /**

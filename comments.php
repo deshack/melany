@@ -80,6 +80,7 @@ if ( post_password_required() )
 			'comment_field'					=> $comment_field,
 			'comment_notes_before'	=> $comment_notes_before,
 			'comment_notes_after'		=> $comment_notes_after,
+			'cancel_reply_link'			=> "Cancel reply",
 		) );
 	?>
 
