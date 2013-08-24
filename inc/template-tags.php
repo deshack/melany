@@ -312,9 +312,9 @@ function melany_comment_form_fields( $fields ) {
 	$commenter	= wp_get_current_commenter();
 	$req				= get_option( 'require_name_email' );
 	$aria_req		= ( $req ? ' aria-required="true"' : '' );
-	$fields['author']		= '<div class="comment-form-author form-group">' . '<label for="author" class="sr-only">' . __( 'Name', 'melany' ) . '</label>' . '<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . __( 'Name', 'melany' ) . ( $req ? '*' : '' ) . '" size="30"' . $aria_req . '/></div>';
-	$fields['email']		= '<div class="comment-form-email form-group">' . '<label for="email" class="sr-only">' . __( 'Email', 'melany' ) . '</label>' . '<input id="email" name="email" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="' . __( 'Email', 'melany' ) . ( $req ? '*' : '' )  . '" size="30"' . $aria_req . '/></div>';
-	$fields['url']			= '<div class="comment-form-url form-group">' . '<label for="url" class="sr-only">' . __( 'Website', 'melany' ) . '</label>' . '<input id="url" name="url" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . __( 'Website', 'melany' ) . '" size="30" /></div>';
+	$fields['author']		= '<div class="comment-form-author form-group">' . '<label for="author" class="sr-only">' . __( 'Name', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-user"></span>'  . '<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . __( 'Name', 'melany' ) . ( $req ? '*' : '' ) . '" size="30"' . $aria_req . '/></div></div>';
+	$fields['email']		= '<div class="comment-form-email form-group">' . '<label for="email" class="sr-only">' . __( 'Email', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-envelope"></span>' . '<input id="email" name="email" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="' . __( 'Email', 'melany' ) . ( $req ? '*' : '' )  . '" size="30"' . $aria_req . '/></div></div>';
+	$fields['url']			= '<div class="comment-form-url form-group">' . '<label for="url" class="sr-only">' . __( 'Website', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-home"></span>' . '<input id="url" name="url" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . __( 'Website', 'melany' ) . '" size="30" /></div></div>';
 	return $fields;
 }
 add_filter( 'comment_form_default_fields', 'melany_comment_form_fields' );
@@ -327,7 +327,7 @@ if ( ! function_exists( 'melany_get_comment_field' ) ) :
  * @since 1.0.0
  */
 function melany_get_comment_field() {
-	return '<div class="comment-form-comment">' . '<label for="comment" class="sr-only">' . _x( 'Comment', 'noun', 'melany' ) . '</label>' . '<textarea id="comment" name="comment" class="form-control" placeholder="' . _x( 'Comment', 'noun', 'melany' ) . '" rows="8"' . $aria_req . '></textarea></div>';
+	return '<div class="comment-form-comment form-group">' . '<label for="comment" class="sr-only">' . _x( 'Comment', 'noun', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-pencil"></span>' . '<textarea id="comment" name="comment" class="form-control" placeholder="' . _x( 'Comment', 'noun', 'melany' ) . '" rows="8"></textarea></div></div>';
 }
 endif;
 
