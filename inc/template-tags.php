@@ -45,7 +45,7 @@ function melany_cancel_comment_reply_link( $text ) {
 	$title = str_replace( '>', '', $title );
 	$title = str_replace( '<', '', $title );
 	$output = preg_replace( '#\>[^\]]+\<\/a>#', '>&times;</a>', $text );
-	$output = str_replace( 'id="cancel-comment-reply-link"', 'id="cancel-comment-reply-link" class="btn btn-danger close tooltip-toggle" data-toggle="tooltip" data-trigger="hover" title="' . $title . '"', $output );
+	$output = str_replace( 'id="cancel-comment-reply-link"', 'id="cancel-comment-reply-link" class="btn btn-danger close tooltip-toggle" data-toggle="tooltip" data-trigger="click hover" title="' . $title . '"', $output );
 	return $output;
 }
 add_filter( 'cancel_comment_reply_link', 'melany_cancel_comment_reply_link' );
