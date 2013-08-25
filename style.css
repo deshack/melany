@@ -637,3 +637,7 @@ a:focus{
 #widgets404{
 	margin-top:5em;
 }
+
+.bootstrap-select ul {
+    width:100%;
+}
