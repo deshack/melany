@@ -47,11 +47,6 @@
     .dropdown-submenu:hover > a,
     .dropdown-submenu:focus > a {
         background-color: #111;
-        background-image: -moz-linear-gradient(top, #111, #111);
-        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#111), to(#111));
-        background-image: -webkit-linear-gradient(top, #111, #111);
-        background-image: -o-linear-gradient(top, #111, #111);
-        background-image: linear-gradient(to bottom, #111, #111);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#111', endColorstr='#111', GradientType=0);
+        background-image: none;
     }
 }
