@@ -456,9 +456,16 @@ function melany_category_transient_flusher() {
 }
 add_action( 'edit_category', 'melany_category_transient_flusher' );
 add_action( 'save_post', 'melany_category_transient_flusher' );
-
-function melany_site_name($text = '', $numberchar = 20) {
-    echo (strlen($text) > $numberchar) ? substr($text, 0, $numberchar) . '...' : $text;
-}
 endif;
 
+if ( ! function_exists( 'melany_site_name' ) ) :
+/**
+ * @param string $text -> Site title
+ * @param int $numberchars -> How many chars want to display
+ * @return -> Call echo function for printing the result
+ * @author Mirko Pizii
+ */
+function melany_site_name($text = '', $numberchars = 20) {
+    echo (strlen($text) > $numberchars) ? substr($text, 0, $numberchars) . '...' : $text;
+}
+endif;

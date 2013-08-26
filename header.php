@@ -42,7 +42,7 @@
 			<span class="sr-only"><?php echo __( 'Toggle search', 'melany' ); ?></span>
 			<span class="glyphicon glyphicon-search"></span>
 		</button>
-		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php melany_site_name( get_bloginfo( 'name', 'display' ) ); ?></a>
+		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php melany_site_name( get_bloginfo( 'name', 'display' ), get_theme_mod( 'melany_title_length' ) ); ?></a>
 	</div><!-- .navbar-header -->
 
 	<?php // Collect the nav links, forms, and other content for toggling ?>
