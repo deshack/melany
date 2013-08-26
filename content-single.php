@@ -8,7 +8,7 @@
 	<header class="page-header">
 		<div class="row">
 			<div class="col-sm-10">
-				<h1><?php the_title(); ?></h1>
+				<h1 class="entry-title"><?php the_title(); ?></h1>
 			</div>
 			<div class="col-sm-2">
 				<?php edit_post_link( __( 'Edit', 'melany' ) ); ?>
