@@ -473,3 +473,4 @@ function melany_site_name($text = '', $numchars = 20) {
     echo ( strlen($text) > $numchars) ? substr($text, 0, $numchars) . '...' : $text;
 }
 endif;
+
