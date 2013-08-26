@@ -38,20 +38,21 @@ function melany_customize_register( $wp_customize ) {
 		'settings'	=> 'melany_favicon',
 	)));
 
-    /**
-     * @Type: Core hack
-     * @WhatDo: Add title length field within Site Title & Tagline
-     * @Author: Mirko Pizii
-     */
-    $wp_customize->add_setting( 'melany_title_length', array(
-        'default' => 20,
-        'transport' => 'refresh',
-        'type' => 'theme_mod'
-    ));
-    $wp_customize->add_control( 'melany_title_length', array(
-        'label' => __( 'Title Length (number required)' ),
-        'section' => 'title_tagline',
-        ) );
+	/**
+	 * Add title length field within Site Title & Tagline section
+	 *
+	 * @Type: Core hack
+	 * @Author: Mirko Pizii
+	 */
+	$wp_customize->add_setting( 'melany_title_length', array(
+		'default' => 20,
+		'transport' => 'refresh',
+		'type' => 'theme_mod'
+	));
+	$wp_customize->add_control( 'melany_title_length', array(
+		'label' => __( 'Title Length', 'melany' ),
+		'section' => 'title_tagline',
+	));
 
 }
 add_action( 'customize_register', 'melany_customize_register' );

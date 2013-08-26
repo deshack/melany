@@ -460,12 +460,16 @@ endif;
 
 if ( ! function_exists( 'melany_site_name' ) ) :
 /**
- * @param string $text -> Site title
- * @param int $numberchars -> How many chars want to display
- * @return -> Call echo function for printing the result
+ * Break site name if too long
+ *
+ * Applies to the header bar
+ *
  * @author Mirko Pizii
+ * @see header.php
+ * @param string $text Required. Site title
+ * @param int $numchars Optional. Number of characters to display before breaking the name
  */
-function melany_site_name($text = '', $numberchars = 20) {
-    echo (strlen($text) > $numberchars) ? substr($text, 0, $numberchars) . '...' : $text;
+function melany_site_name($text = '', $numchars = 20) {
+    echo ( strlen($text) > $numchars) ? substr($text, 0, $numchars) . '...' : $text;
 }
 endif;
