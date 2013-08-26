@@ -31,6 +31,10 @@ img {
 	cursor:default;
 }
 
+.updated {
+	display:none;
+}
+
 // Content
 // -------------------------
 
@@ -78,6 +82,17 @@ img {
 .single {
 	footer.panel {
 		margin-top: @line-height-computed;
+	}
+}
+
+// Pager
+.pager > li {
+	display:block;
+	&.previous {
+		float:left;
+	}
+	&.next {
+		float:right;
 	}
 }
 
