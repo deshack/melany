@@ -2,14 +2,14 @@
 /**
  * The Header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="main">
+ * Displays all of the <head> section and everything up till <main id="main">
  *
  * @package Melany
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <?php if ( get_theme_mod( 'melany_favicon' ) ) : ?>
@@ -17,8 +17,8 @@
 <?php else : ?>
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri() . '/img/favicon.png'; ?>" />
 <?php endif; ?>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
@@ -28,10 +28,10 @@
 
 <body <?php body_class(); ?>>
 <?php do_action( 'before' ); ?>
-<header id="site-header" class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+<header id="masthead" class="site-header navbar navbar-fixed-top navbar-inverse" role="banner">
 
 	<?php // Brand and toggle get grouped for better mobile display ?>
-	<div class="navbar-header">
+	<div class="navbar-header" role="banner">
 		<button type="button" class="navbar-toggle menu-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" data-parent="#site-header">
 			<span class="sr-only"><?php echo __( 'Toggle navigation', 'melany' ); ?></span>
 			<span class="icon-bar"></span>
@@ -44,12 +44,14 @@
 		</button>
 		<?php $name = get_bloginfo( 'name', 'display' );
 			$length = get_theme_mod( 'melany_title_length' ); ?>
-		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php melany_site_name( $name, $length ); ?></a>
+		<a class="navbar-brand site-branding" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php melany_site_name( $name, $length ); ?></a>
 	</div><!-- .navbar-header -->
 
 	<?php // Collect the nav links, forms, and other content for toggling ?>
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
-		<nav>
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<h1 class="sr-only"><?php _e( 'Menu', 'melany' ); ?></h1>
+			<div class="sr-only skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'melany' ); ?>"><?php _e( 'Skip to content', 'melany' ); ?></a></div>
 			<?php
 				wp_nav_menu( array(
 				'theme_location'	=> 'primary',
@@ -59,25 +61,26 @@
 				'depth'						=> 3,
 				'walker'					=> new Bootstrap_Walker(),
 			) ); ?>
-		</nav>
+		</nav><!-- #site-navigation -->
 	</div><!-- .navbar-collapse -->
 	<div class="collapse search-collapse">
 		<?php get_search_form( true ); ?>
 	</div>
-</header>
+</header><!-- #masthead -->
 
 <div id="page" class="container hfeed site">
-	<section id="main" class="row">
-		<section id="logo" class="col-md-3">
-			<div class="thumbnail text-center">
-				<div class="caption">
-					<h2><?php bloginfo( 'name' ); ?></h2>
+	<div id="content" class="site-content">
+		<section id="main" class="row">
+			<section id="logo" class="col-md-3">
+				<div class="thumbnail text-center">
+					<div class="caption">
+						<h2><?php bloginfo( 'name' ); ?></h2>
+					</div>
+					<?php if ( get_theme_mod( 'melany_logo' ) ) : ?>
+						<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
+					<?php endif; ?>
+					<div class="caption">
+						<p><?php bloginfo( 'description' ); ?></p>
+					</div>
 				</div>
-				<?php if ( get_theme_mod( 'melany_logo' ) ) : ?>
-					<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
-				<?php endif; ?>
-				<div class="caption">
-					<p><?php bloginfo( 'description' ); ?></p>
-				</div>
-			</div>
-		</section>
+			</section>
