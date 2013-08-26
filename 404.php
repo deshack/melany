@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<section id="content" class="col-md-9" role="main">
+	<section id="primary" class="content-area col-md-9" role="main">
 
 		<article id="post-0" class="error404 not-found">
 			<header class="page-header">
@@ -60,6 +60,6 @@ get_header(); ?>
 			</div><!-- .entry-content -->
 		</article><!-- #post-0 .post .error404 .not-found -->
 
-	</section><!-- #content -->
+	</section><!-- #primary -->
 
 <?php get_footer(); ?>

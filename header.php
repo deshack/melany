@@ -69,8 +69,8 @@
 </header><!-- #masthead -->
 
 <div id="page" class="container hfeed site">
-	<div id="content" class="site-content">
-		<section id="main" class="row">
+	<section id="content" class="site-content">
+		<main id="main" class="row" role="main">
 			<section id="logo" class="col-md-3">
 				<div class="thumbnail text-center">
 					<div class="caption">

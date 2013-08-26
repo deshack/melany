@@ -5,23 +5,7 @@
  * @package Melany
  */
 ?>
-	<section id="secondary" class="col-md-3">
-
-<!--		<section id="logo">
-			<ul class="thumbnails">
-				<li class="span12">
-					<div class="thumbnail text-center">
-						<h2><?php bloginfo( 'name' ); ?></h2>
-						<?php if( get_theme_mod( 'melany_logo' ) ) : ?>
-							<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
-						<?php endif; ?>
-
-						<p><?php bloginfo( 'description' ); ?></p>
-					</div>
-				</li>
-			</ul>
-		</section>
--->
+	<section id="secondary" class="widget-area col-md-3" role="complementary">
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
