@@ -194,7 +194,3 @@ add_filter( 'the_category', 'add_nofollow_cat' );
  */
 //require( get_template_directory() . '/inc/custom-header.php' );
 
-/**
- * Implement the Category Dropdown Control
- */
-//require_once( get_template_directory() . '/inc/category-dropdown.php' );
