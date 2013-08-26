@@ -193,14 +193,17 @@ function melany_content_nav( $nav_id ) {
 			$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
 			$next = get_adjacent_post( false, '', false );
 
+			$previous_title = get_the_title($previous->ID);
+			$next_title = get_the_title($next->ID);
+
 			if ( $previous ) :
-				previous_post_link( '<li class="previous">%link</li>', _x( '&larr;', 'Previous post link', 'melany' ) . __( ' Older', 'melany' ));
+				previous_post_link( '<li title="' . $previous_title . '" class="previous">%link</li>', _x( '&larr;', 'Previous post link', 'melany' ) . __( ' Older', 'melany' ));
 			else : ?>
 				<li class="previous disabled"><a href="#"><?php printf( __( '&larr; Older', 'melany' )); ?></a></li>
 			<?php endif; ?>
 
 			<?php if ( $next ) :
-				next_post_link( '<li class="next">%link</li>', __( 'Newer ', 'melany' ) . _x( '&rarr;', 'Next post link', 'melany' ) );
+				next_post_link( '<li title="' . $next_title . '" class="next">%link</li>', __( 'Newer ', 'melany' ) . _x( '&rarr;', 'Next post link', 'melany' ) );
 			else : ?>
 				<li class="next disabled"><a href="#"><?php printf( __( 'Newer &rarr;', 'melany' )); ?></a></li>
 			<?php endif; ?>
