@@ -9,7 +9,7 @@ get_header(); ?>
 
 	<section id="content" class="col-md-9" role="main">
 
-		<article id="post-0" class="post error404 not-found">
+		<article id="post-0" class="error404 not-found">
 			<header class="page-header">
 				<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'melany' ); ?></h1>
 			</header><!-- .entry-header -->
