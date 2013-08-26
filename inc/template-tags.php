@@ -417,7 +417,6 @@ function melany_posted_on() {
 		get_the_author()
 	);
 }
-
 endif;
 
 if ( ! function_exists( 'melany_categorized_blog' ) ) :

@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<section id="content" class="span12" role="main">
+	<section id="content" class="col-md-9" role="main">
 
 		<article id="post-0" class="post error404 not-found">
 			<header class="page-header">
@@ -17,41 +17,44 @@ get_header(); ?>
 			<div class="entry-content">
 				<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'melany' ); ?></p>
 
-			<section id="widgets404" class="row-fluid">
-				<article class="span3">
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-				</article>
+			<section id="widgets404">
+				<div class="row">
+					<article class="col-md-6">
+						<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+					</article>
 
-				<article class="span3">
-					<?php if ( melany_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-					<div class="widget widget_categories">
-						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'melany' ); ?></h2>
-						<ul>
+					<article class="col-md-6">
+						<?php if ( melany_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
+						<div class="widget widget_categories">
+							<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'melany' ); ?></h2>
+							<ul>
+							<?php
+								wp_list_categories( array(
+									'orderby'    => 'count',
+									'order'      => 'DESC',
+									'show_count' => 1,
+									'title_li'   => '',
+									'number'     => 10,
+								) );
+							?>
+							</ul>
+						</div><!-- .widget -->
+						<?php endif; ?>
+					</article>
+				</div>
+				<div class="row">
+					<article class="col-md-6">
 						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
+						/* translators: %1$s: smiley */
+						$archive_content = '<div><p>' . sprintf( __( 'Try looking in the monthly archives.', 'melany' )) . '</p></div>';
+						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 						?>
-						</ul>
-					</div><!-- .widget -->
-					<?php endif; ?>
-				</article>
+					</article>
 
-				<article class="span3">
-					<?php
-					/* translators: %1$s: smiley */
-					$archive_content = '<div><p>' . sprintf( __( 'Try looking in the monthly archives.', 'melany' )) . '</p></div>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
-				</article>
-
-				<article class="span3">
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-				</article>
+					<article class="col-md-6">
+						<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+					</article>
+				</div>
 			</section>
 
 			</div><!-- .entry-content -->
