@@ -9,7 +9,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="page-header">
 		<hgroup class="clearfix">
-			<h1 class="span11"><?php the_title(); ?></h1>
+			<h1 class="entry-title span11"><?php the_title(); ?></h1>
 			<?php melany_edit_post_link( __( 'Edit', 'melany' ), '<div class="span1">', '</div>' ); ?>
 		</hgroup>
 	</header><!-- .entry-header -->

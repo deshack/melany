@@ -54,7 +54,7 @@ function melany_setup() {
 	 * If you're building a theme based on Melany, use a find and replace
 	 * to change 'melany' to the name of your theme in all the template files
 	 */
-	// load_theme_textdomain( 'melany', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'melany', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -66,7 +66,7 @@ function melany_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -79,11 +79,6 @@ function melany_setup() {
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
-
-	/**
-	 * Enable support for Post Thumbnails
-	 */
-	add_theme_support( 'post-thumbnails' );
 }
 endif; // melany_setup
 add_action( 'after_setup_theme', 'melany_setup' );
