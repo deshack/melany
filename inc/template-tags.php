@@ -469,8 +469,11 @@ if ( ! function_exists( 'melany_site_name' ) ) :
  * @param string $text Required. Site title
  * @param int $numchars Optional. Number of characters to display before breaking the name
  */
-function melany_site_name($text = '', $numchars = 20) {
-    echo ( strlen($text) > $numchars) ? substr($text, 0, $numchars) . '...' : $text;
+function melany_site_name( $text, $numchars ) {
+	if ( empty( $numchars ) )
+		$numchars = 20;
+
+	echo ( strlen($text) > $numchars) ? substr($text, 0, $numchars) . '...' : $text;
 }
 endif;
 
