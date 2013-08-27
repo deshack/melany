@@ -4,12 +4,13 @@ Theme URI: https://github.com/deshack/melany
 Author: Mattia Migliorini
 Author URI: http://www.deshack.net/
 Description: Melany is a simple, minimalistic and responsive theme built with Twitter Bootstrap. The aim of this theme is to bring a pure Bootstrap experience in an extremely simple layout, forcing the user to focus on the content. It is thought to be used mainly in blogs, although future releases will bring support for more complex and complete websites. Features include custom logo and favicon (under Appearance > Customize), navigation menu with two-levels deep dropdown, support for some Jetpack's features and the ability to override default styles under Appearance > Editor.
-Version: 0.5.16
-License: AGPL
-License URI: http://www.gnu.org/licenses/agpl.html
+Version: 0.5.17
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl.txt
 Tags: light, green, two-columns, right-sidebar, flexible-width, custom-background, custom-menu, editor-style, featured-images, flexible-header, sticky-post, threaded-comments
 
  _s is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+and distributed under the terms of the GNU General Public License v2 or later.
 */
 
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300|Roboto:300,300italic,700,700italic);
