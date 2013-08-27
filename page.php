@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-	<div id="content" class="col-md-9" role="main">
+	<section id="primary" class="content-area col-md-9">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -26,7 +26,7 @@ get_header(); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
-	</div><!-- #content -->
+	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

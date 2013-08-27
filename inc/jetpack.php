@@ -10,10 +10,10 @@
  * Add theme support for Infinite Scroll.
  * See: http://jetpack.me/support/infinite-scroll/
  */
-function melany_infinite_scroll_setup() {
+function melany_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'content',
+		'container' => 'main',
 		'footer'    => 'page',
 	) );
 }
-add_action( 'after_setup_theme', 'melany_infinite_scroll_setup' );
+add_action( 'after_setup_theme', 'melany_jetpack_setup' );

@@ -103,11 +103,7 @@ function melany_scripts() {
 	// Register has-error script for further conditional use
 	wp_register_script( 'has-error', get_template_directory_uri() . '/js/has-error.js', array( 'jquery' ), '1.0', true );
 
-	/**
-	 * Enqueue styles
-	 *
-	 * ToDo: update Bootstrap Select to BS 3.0
-	 */
+	// Enqueue styles
 	wp_enqueue_style( 'melany-style', get_stylesheet_uri() );
 
 	// Enqueue scripts

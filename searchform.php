@@ -5,6 +5,8 @@
  * @package Melany
  */
 ?>
-	<form method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-		<input type="text" class="form-control" name="s" id="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'melany' ); ?>" />
-	</form>
+<form method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+	<label class="sr-only"><?php _ex( 'Search:', 'label', 'melany' ); ?></label>
+	<input type="text" class="form-control" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'melany' ); ?>" />
+	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'melany' ); ?>">
+</form>
