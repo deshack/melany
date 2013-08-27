@@ -7,7 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="page-header">
+	<header class="page-header entry-header">
 		<hgroup class="row">
 			<div class="col-sm-10">
 				<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -16,7 +16,7 @@
 		</hgroup>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content clearfix">
+	<div class="entry-content">
 		<?php if ( has_post_thumbnail() )
 			the_post_thumbnail( 'single_post_thumb', array( 'class' => 'aligncenter img-rounded' ) ); ?>
 		<?php the_content(); ?>

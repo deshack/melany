@@ -8,7 +8,7 @@
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
-			$( 'a.navbar-brand' ).text( to );
+			$( '.site-title a' ).text( to );
 		} );
 	} );
 	wp.customize( 'blogdescription', function( value ) {

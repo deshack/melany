@@ -11,7 +11,7 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<small><?php melany_posted_on();
-					/* Check categories for this blog */
+					/* translators: used between list items, there is a space after the comma */
 					$categories_list = get_the_category_list( __( ', ', 'melany' ) );
 					if ( $categories_list && melany_categorized_blog() ) : ?>
 						<span class="cat-links">
@@ -23,7 +23,7 @@
 	</header><!-- .entry-header -->
 
 	<?php if ( is_search() || is_home() || is_archive() ) : // Display Excerpts for blog homepage, archives and search ?>
-	<div class="entry-summary clearfix">
+	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
