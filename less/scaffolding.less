@@ -25,6 +25,14 @@ img {
 	margin-top:@line-height-computed;
 	margin-bottom:@line-height-computed;
 }
+select {
+	// Avoid select elements to breaking the layout
+	max-width:100%;
+
+	option {
+		width:__; // This does not work
+	}
+}
 
 // Force default cursor over input addons
 .input-group-addon {
@@ -99,7 +107,7 @@ img {
 // Footer
 // -------------------------
 
-#footer {
+#colophon {
 	margin-top: @line-height-computed;
 	margin-bottom:0;
 	.border-radius(0);
@@ -108,12 +116,3 @@ img {
 	}
 }
 
-// Bootstrap Select
-// -------------------------
-
-.bootstrap-select {
-	// Fix width if option has a long text
-	ul {
-		width:100%;
-	}
-}
