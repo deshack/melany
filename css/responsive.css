@@ -39,3 +39,14 @@
 		text-align:center;
 	}
 }
+
+@media (max-width: 979px) {
+    /* Dropdowns */
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus,
+    .dropdown-submenu:hover > a,
+    .dropdown-submenu:focus > a {
+        background-color: #111;
+        background-image: none;
+    }
+}
