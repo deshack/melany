@@ -4,6 +4,26 @@ Melany for Wordpress
 This is my first WordPress theme named Melany. This name doesn't have any specific meaning, I just like it. Some time ago I opened a blog on http://www.deshack.net and I wanted to focus on the content, so I choose the "Custom Community" theme by Themekraft, promising myself I would find the time to develop my own. So here we are: it's free, but I'd like you to report credits when you use it.
 
 
+Collaborators
+-------------
+
+### Mattia Migliorini (deshack)
+
+- **Project Leader**
+- Contact: deshack@ubuntu.com
+- Location: Italy
+- Website: [deshack@web:~$](http://www.deshack.net)
+- Twitter: [@MattiaMglrn](https://twitter.com/MattiaMglrn)
+ 
+### Mirko Pizii (hallino1)
+
+- **Collaborator**
+- Contact: hallino1@ubuntu.com
+- Location: Italy
+- Twitter: [@MirkoPizii](https://twitter.com/MirkoPizii)
+- LinkedIn: [MirkoPizii](http://www.linkedin.com/in/MirkoPizii)
+
+
 Based on _s
 -----------
 
@@ -25,17 +45,19 @@ I don't like that kind of layout that highlights the look instead of the content
 License
 -------
 
-	Copyright (C) 2013  Mattia Migliorini
+GNU General Public License v3 - See LICENSE.txt
 
-This theme is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as
-published by the Free Software Foundation, either version 3 of the
-License, or (at your option) any later version.
+    Copyright (C) 2013  Mattia Migliorini
 
-This theme is distributed in the hope that it will be useful,
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-For more informations about this license, see LICENSE.txt or
-<http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
