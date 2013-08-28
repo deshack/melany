@@ -4,6 +4,25 @@ Melany for Wordpress
 This is my first WordPress theme named Melany. This name doesn't have any specific meaning, I just like it. Some time ago I opened a blog on http://www.deshack.net and I wanted to focus on the content, so I choose the "Custom Community" theme by Themekraft, promising myself I would find the time to develop my own. So here we are: it's free, but I'd like you to report credits when you use it.
 
 
+Collaborators
+-------------
+
+### Mattia Migliorini (deshack)
+
+- **Project Leader**
+- Contact: deshack@ubuntu.com
+- Location: Italy
+- Website: [deshack@web:~$](http://www.deshack.net)
+- Twitter: [@MattiaMglrn](https://twitter.com/MattiaMglrn)
+ 
+### Mirko Pizii (hallino1)
+
+- **Collaborator**
+- Contact: 
+- Location: Italy
+- Twitter: 
+
+
 Based on _s
 -----------
 
@@ -21,15 +40,6 @@ The content, everywhere
 
 I don't like that kind of layout that highlights the look instead of the content, at least on blogs. Melany is meant to be clear, linear, and make people enjoy the contents, everywhere, from the desktop to the smarphone.
 
-
-Series
-------
-
-Beta: 0.5.x
-
-Dev: 0.5.x
-
-Nightly: 1.0.x
 
 License
 -------
