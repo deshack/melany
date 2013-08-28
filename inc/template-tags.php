@@ -380,7 +380,7 @@ if ( ! function_exists( 'melany_get_comment_notes_after' ) ) :
  * @since 1.0.0
  */
 function melany_get_comment_notes_after() {
-	return '<p class="form-allowed-tags help-block">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'melany' ), ' <pre>' . allowed_tags() . '</pre>' ) . '</p>';
+	return '<p class="form-allowed-tags help-block">' . sprintf( __( 'You may use these', 'melany' ) . ' <abbr title="' . __( 'HyperText Markup Language', 'melany' ) . '">' . __( 'HTML', 'melany' ) . '</abbr> ' . __( 'tags and attributes: %s', 'melany' ), ' <pre>' . allowed_tags() . '</pre>' ) . '</p>';
 }
 endif; // ends check for melany_get_comment_notes_after
 
@@ -473,7 +473,7 @@ function melany_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'melany' ),
+	printf( '<span class="posted-on">' . __( 'Posted on %1$s', 'melany' ) . '</span> <span class="byline">' . _x( 'by %2$s', 'Posted by', 'melany' ) . '</span>',
 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
