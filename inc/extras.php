@@ -69,22 +69,3 @@ function melany_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'melany_wp_title', 10, 2 );
 
-if ( ! function_exists( 'melany_site_name' ) ) :
-/**
- * Break site name if too long
- *
- * Applies to the header bar
- *
- * @author Mirko Pizii
- * @see header.php
- * @param string $text Required. Site title
- * @param int $numchars Optional. Number of characters to display before breaking the name
- */
-function melany_site_name( $text, $numchars ) {
-	if ( empty( $numchars ) )
-		$numchars = 20;
-
-	echo ( strlen($text) > $numchars) ? substr($text, 0, $numchars) . '...' : $text;
-}
-endif;
-

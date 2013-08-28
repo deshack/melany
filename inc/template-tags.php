@@ -527,3 +527,21 @@ add_action( 'edit_category', 'melany_category_transient_flusher' );
 add_action( 'save_post', 'melany_category_transient_flusher' );
 endif;
 
+if ( ! function_exists( 'melany_site_name' ) ) :
+/**
+ * Break site name if too long
+ *
+ * Applies to the header bar
+ *
+ * @author Mirko Pizii
+ * @see header.php
+ * @param string $text Required. Site title
+ * @param int $numchars Optional. Number of characters to display before breaking the name
+ */
+function melany_site_name( $text, $numchars ) {
+	if ( empty( $numchars ) )
+		$numchars = 20;
+
+	echo ( strlen($text) > $numchars) ? substr($text, 0, $numchars) . '...' : $text;
+}
+endif;
