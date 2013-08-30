@@ -210,7 +210,7 @@ function melany_content_nav( $nav_id ) {
 		</ul>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
-	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="pagination pagination-centered <?php echo $nav_class; ?>">
+	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
 			<?php melany_pagination(); ?>
 	</nav>
 	<?php endif; ?>
@@ -241,7 +241,7 @@ function melany_pagination( $pages = '', $range = 1 ){
 	}
 
 	if ( 1 != $pages ) {
-		echo '<ul class="page-numbers">';
+		echo '<ul class="pagination">';
 		if ( $paged > 2 && $paged > $range+1 && $showitems < $pages )
 			echo '<li><a href="' . get_pagenum_link(1) . '">&laquo;</a></li>';
 		if ( $paged > 1 && $showitems < $pages )

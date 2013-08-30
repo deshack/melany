@@ -15,12 +15,17 @@
 	line-height: @line-height-widget-heading;
 	background:@jumbotron-bg;
 	.border-radius( 6px );
-	padding-left:1em;
+	text-align:center;
+	@media (min-width:@screen-md) {
+		padding-left:1em;
+		text-align:left;
+	}
 }
 
 .widget {
 	ul {
 		list-style-type:square;
+
 		padding-left:1.5em;
 
 		&.sub-menu {
@@ -38,9 +43,6 @@
 			}
 		}
 	}
-	div {
-		padding-left:1.8em;
-	}
 	.unstyled {
 		list-style:none;
 		padding-left:0;
@@ -50,10 +52,10 @@
 	// Widget Text
 .widget_text {
 	div {
-		padding-left:0;
+		text-align:justify;
 
-		p {
-			padding-left:1.8em;
+		@media (min-width: @screen-md){
+			text-align:left;
 		}
 	}
 }
@@ -70,13 +72,5 @@
 .widget_categories {
 	select {
 		width:100%;
-	}
-}
-
-	// Widget Calendar
-.widget_calendar {
-	// Remove left padding from div
-	div {
-		padding-left:0;
 	}
 }
