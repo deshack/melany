@@ -9,6 +9,19 @@ img {
 	}
 }
 
-.wp-caption {
-	max-width:100%;
+// Captions
+.wp-caption,
+.gallery-caption {
+	.img-thumbnail();
+	display:block;
+
+	> img {
+		.img-responsive();
+	}
+
+	.wp-caption-text {
+		text-align:center;
+		padding:@thumbnail-caption-padding;
+		color:@thumbnail-caption-color;
+	}
 }

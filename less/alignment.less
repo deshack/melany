@@ -1,17 +1,27 @@
 /* =Alignment
 ----------------------------------------------- */
 
-.alignleft {
+.alignnone {
+	margin:@line-height-computed 0;
+}
+.alignleft,
+a img.alignleft,
+.wp-caption.alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin:@line-height-computed 1.5em @line-height-computed 0;
 }
-.alignright {
+.alignright,
+a img.alignright,
+.wp-caption.alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin:@line-height-computed 0 @line-height-computed 1.5em;
 }
-.aligncenter {
+.aligncenter,
+div.aligncenter,
+a img.aligncenter,
+.wp-caption.aligncenter {
 	clear: both;
 	display: block;
 	margin: @line-height-computed auto;
