@@ -12,7 +12,7 @@
 		<div class="entry-meta">
 			<small><?php melany_posted_on();
 					/* translators: used between list items, there is a space after the comma */
-					$categories_list = get_the_category_list( __( ', ', 'melany' ) );
+					$categories_list = get_the_category_list( ', ' );
 					if ( $categories_list && melany_categorized_blog() ) : ?>
 						<span class="cat-links">
 							<?php printf( __(' in %1$s', 'melany' ), $categories_list ); ?>
@@ -39,7 +39,7 @@
 	<?php endif; ?>
 
 <?php if ( 'post' == get_post_type() ) : // Hide tag text for pages on Search ?>
-	<?php $tags_list = get_the_tag_list( '', __( ' - ', 'melany' ) );
+	<?php $tags_list = get_the_tag_list( '', ' - ' );
 		if ( $tags_list ) : ?>
 
 	<footer class="entry-meta panel panel-success">
@@ -47,7 +47,7 @@
 			<h3 class="panel-title"><?php echo __( 'Tags', 'melany' ); ?></h3>
 		</div><!-- .panel-heading -->
 		<div class="panel-body">
-			<?php printf( __( '%1$s', 'melany' ), $tags_list ); ?>
+			<?php printf( $tags_list ); ?>
 		</div><!-- .panel-body -->
 	</footer><!-- .entry-meta -->
 

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Melany 1.0.0\n"
-"POT-Creation-Date: 2013-08-28 18:32+0100\n"
-"PO-Revision-Date: 2013-08-30 14:26+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2013-08-30 18:26+0100\n"
+"PO-Revision-Date: 2013-08-30 18:27+0100\n"
+"Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,25 +16,29 @@ msgstr ""
 
 #: ../footer.php:21
 msgid "Powered by "
-msgstr ""
+msgstr "Realizzato con "
 
+# 1: theme name
+# 2: theme author
 #: ../footer.php:23
 #, php-format
 msgid "%1$s theme by %2$s"
-msgstr "tema %1$s di %2$s"
+msgstr "Tema %1$s di %2$s"
 
 #: ../image.php:22
 msgid "Published on"
 msgstr "Pubblicato il"
 
+# Full-size image
 #: ../image.php:22
 msgid "at"
-msgstr "alle"
+msgstr "come"
 
 #: ../image.php:22
 msgid "Link to full-size image"
-msgstr "Link all'immagine con dimensioni originali"
+msgstr "Link all'immagine intera"
 
+# [published] in [gallery name]
 #: ../image.php:22
 msgid "in"
 msgstr "in"
@@ -56,12 +60,12 @@ msgstr "Precedente"
 
 #: ../image.php:37
 msgid "Next"
-msgstr "Successivo"
+msgstr "Successiva"
 
 #: ../image.php:58 ../content-page.php:25 ../content-single.php:35
 #: ../content.php:34
 msgid "Pages:"
-msgstr "Pagine:"
+msgstr "Pagine: "
 
 #: ../image.php:67 ../image.php:71
 msgid "Post a comment"
@@ -83,17 +87,19 @@ msgstr "Trackback URL"
 msgid "Comments are closed, but you can leave a trackback:"
 msgstr "I commenti sono chiusi, ma puoi lasciare un trackback:"
 
+# ...post a comment
 #: ../image.php:71
 msgid "Trackbacks are closed, but you can"
 msgstr "I trackback sono chiusi, ma puoi"
 
+# [Trackbacks are closed, but you can...]
 #: ../image.php:71
 msgid "post a comment"
 msgstr "inserire un commento"
 
 #: ../image.php:73
 msgid "Both comments and trackbacks are currently closed."
-msgstr "Commenti e trackback sono attualmente chiusi."
+msgstr "Commenti e trackback sono chiusi."
 
 #: ../comments.php:28
 msgid "Comments"
@@ -105,11 +111,11 @@ msgstr "Navigazione commenti"
 
 #: ../comments.php:35 ../comments.php:60
 msgid "&larr; Older Comments"
-msgstr "&larr; Commenti più vecchi"
+msgstr "&larr; Vecchi commenti"
 
 #: ../comments.php:36 ../comments.php:61
 msgid "Newer Comments &rarr;"
-msgstr "Commenti più recenti &rarr;"
+msgstr "Nuovi commenti &rarr;"
 
 #: ../comments.php:72
 msgid "Comments are closed."
@@ -117,7 +123,7 @@ msgstr "I commenti sono chiusi."
 
 #: ../no-results.php:13
 msgid "Nothing Found"
-msgstr "Non è stato trovato nulla"
+msgstr "Non è stato trovato niente"
 
 #: ../no-results.php:19
 msgid "Ready to publish your first post?"
@@ -125,22 +131,22 @@ msgstr "Sei pronto a pubblicare il tuo primo post?"
 
 #: ../no-results.php:19
 msgid "Get started here"
-msgstr "Inizia da qui"
+msgstr "Comincia da qui"
 
 #: ../no-results.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Non sono stati trovati contenuti corrispondenti ai termini di ricerca. Si "
-"prega di riprovare con diverse parole chiave."
+"Non sono state trovate corrispondenze con i termini di ricerca inseriti. Si "
+"prega di riprovare con parole chiave diverse."
 
 #: ../no-results.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Non è stato trovato ciò che cercavi. Probabilmente una ricerca può aiutare."
+"Impossibile trovare quanto richiesto. Probabilmente una ricerca può aiutare."
 
 #: ../functions.php:47
 msgid "Primary Menu"
@@ -158,27 +164,16 @@ msgstr "Archivi"
 msgid "Meta"
 msgstr "Meta"
 
-#: ../content-single.php:20 ../content.php:15
-msgid ", "
-msgstr ", "
-
+# [published] in
+# 1: category name
 #: ../content-single.php:23 ../content.php:18
 #, php-format
 msgid " in %1$s"
 msgstr "in %1$s"
 
-#: ../content-single.php:41 ../content.php:42
-msgid " - "
-msgstr " - "
-
 #: ../content-single.php:46 ../content.php:47
 msgid "Tags"
 msgstr "Etichette"
-
-#: ../content-single.php:49 ../content.php:50
-#, php-format
-msgid "%1$s"
-msgstr "%1$s"
 
 #: ../archive.php:30
 #, php-format
@@ -222,15 +217,15 @@ msgstr "Link"
 
 #: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oops! Pagina non trovata."
+msgstr "Pagina non trovata."
 
 #: ../404.php:18
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Sembra che non ci sia niente qui. Probabilmente uno dei seguenti link o una "
-"ricerca possono aiutare."
+"Sembra che non ci sia niente qui. Uno dei link sottostanti o una ricerca "
+"potrebbero aiutare."
 
 #: ../404.php:29
 msgid "Most Used Categories"
@@ -238,7 +233,7 @@ msgstr "Categorie più usate"
 
 #: ../404.php:49
 msgid "Try looking in the monthly archives."
-msgstr "Prova a vedere gli archivi mensili."
+msgstr "Prova a cercare negli archivi mensili."
 
 #: ../search.php:15
 #, php-format
@@ -247,11 +242,11 @@ msgstr "Risultati della ricerca per: %s"
 
 #: ../header.php:36
 msgid "Toggle navigation"
-msgstr "Attiva/disattiva navigazione"
+msgstr "Mostra o nascondi la navigazione"
 
 #: ../header.php:42
 msgid "Toggle search"
-msgstr "Attiva/disattiva ricerca"
+msgstr "Mostra o nascondi la ricerca"
 
 #: ../header.php:53
 msgid "Menu"
@@ -279,7 +274,7 @@ msgstr "Favicon"
 
 #: ../inc/customizer.php:53
 msgid "Title Length"
-msgstr "Lunghezza del titolo"
+msgstr "Lunghezza titolo"
 
 #: ../inc/template-tags.php:118
 msgid "Home"
@@ -287,36 +282,22 @@ msgstr "Home"
 
 #: ../inc/template-tags.php:191
 msgid "Post navigation"
-msgstr "Navigazione nei post"
+msgstr "Navigazione articoli"
 
-#: ../inc/template-tags.php:199
-msgid "&larr;"
-msgstr "&larr;"
-
-#: ../inc/template-tags.php:199
-msgid " Older"
-msgstr "Precedente"
-
-#: ../inc/template-tags.php:201
+#: ../inc/template-tags.php:199 ../inc/template-tags.php:201
 msgid "&larr; Older"
-msgstr "&larr; Precedente"
+msgstr "&larr; Vecchi"
 
-#: ../inc/template-tags.php:206
-msgid "Newer "
-msgstr "Successivo"
-
-#: ../inc/template-tags.php:206
-msgid "&rarr;"
-msgstr "&rarr;"
-
-#: ../inc/template-tags.php:208
+#: ../inc/template-tags.php:206 ../inc/template-tags.php:208
 msgid "Newer &rarr;"
-msgstr "Successivo &rarr;"
+msgstr "Nuovi &rarr;"
 
 #: ../inc/template-tags.php:287
 msgid "Pingback:"
 msgstr "Pingback:"
 
+# 1: date
+# 2: time
 #: ../inc/template-tags.php:301
 #, php-format
 msgid "%1$s at %2$s"
@@ -349,30 +330,21 @@ msgstr "I campi richiesti sono contrassegnati con %s"
 
 #: ../inc/template-tags.php:372
 msgid "Your email address will not be published."
-msgstr "La tua email non sarà pubblicata"
-
-#: ../inc/template-tags.php:383
-msgid "You may use these"
-msgstr "Puoi usare questi"
-
-#: ../inc/template-tags.php:383
-msgid "HyperText Markup Language"
-msgstr "HyperText Markup Language"
-
-#: ../inc/template-tags.php:383
-msgid "HTML"
-msgstr "HTML"
+msgstr "Il tuo indirizzo email non sarà pubblicato."
 
 #: ../inc/template-tags.php:383
 #, php-format
-msgid "tags and attributes: %s"
-msgstr "tag e attributi: %s"
+msgid "You may use these HTML tags and attributes: %s"
+msgstr "Puoi usare questi tag e attributi HTML: %s"
 
+# 1: date
 #: ../inc/template-tags.php:476
 #, php-format
 msgid "Posted on %1$s"
 msgstr "Pubblicato il %1$s"
 
+# [published] by
+# 2: author
 #: ../inc/template-tags.php:476
 #, php-format
 msgid "by %2$s"
@@ -381,9 +353,18 @@ msgstr "da %2$s"
 #: ../inc/template-tags.php:484
 #, php-format
 msgid "View all posts by %s"
-msgstr "Vedi tutti i post di %s"
+msgstr "Visualizza tutti i post di %s"
 
 #: ../inc/extras.php:66
 #, php-format
 msgid "Page %s"
 msgstr "Pagina %s"
+
+#~ msgid "You may use these"
+#~ msgstr "Puoi usare questi"
+
+#~ msgid "HyperText Markup Language"
+#~ msgstr "HyperText Markup Language"
+
+#~ msgid "HTML"
+#~ msgstr "HTML"

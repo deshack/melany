@@ -196,14 +196,14 @@ function melany_content_nav( $nav_id ) {
 
 			if ( $previous ) :
 				$previous_title = get_the_title( $previous->ID );
-				previous_post_link( '<li title="' . $previous_title . '" class="previous tooltip-toggle" data-toggle="tooltip" data-placement="right">%link</li>', _x( '&larr;', 'Previous post link', 'melany' ) . __( ' Older', 'melany' ));
+				previous_post_link( '<li title="' . $previous_title . '" class="previous tooltip-toggle" data-toggle="tooltip" data-placement="right">%link</li>', __( '&larr; Older', 'melany' ));
 			else : ?>
 				<li class="previous disabled"><a href="#"><?php printf( __( '&larr; Older', 'melany' )); ?></a></li>
 			<?php endif; ?>
 
 			<?php if ( $next ) :
 				$next_title = get_the_title( $next->ID );
-				next_post_link( '<li title="' . $next_title . '" class="next tooltip-toggle" data-toggle="tooltip" data-placement="left">%link</li>', __( 'Newer ', 'melany' ) . _x( '&rarr;', 'Next post link', 'melany' ) );
+				next_post_link( '<li title="' . $next_title . '" class="next tooltip-toggle" data-toggle="tooltip" data-placement="left">%link</li>', __( 'Newer &rarr;', 'melany' ) );
 			else : ?>
 				<li class="next disabled"><a href="#"><?php printf( __( 'Newer &rarr;', 'melany' )); ?></a></li>
 			<?php endif; ?>
@@ -380,7 +380,7 @@ if ( ! function_exists( 'melany_get_comment_notes_after' ) ) :
  * @since 1.0.0
  */
 function melany_get_comment_notes_after() {
-	return '<p class="form-allowed-tags help-block">' . sprintf( __( 'You may use these', 'melany' ) . ' <abbr title="' . __( 'HyperText Markup Language', 'melany' ) . '">' . __( 'HTML', 'melany' ) . '</abbr> ' . __( 'tags and attributes: %s', 'melany' ), ' <pre>' . allowed_tags() . '</pre>' ) . '</p>';
+	return '<p class="form-allowed-tags help-block">' . sprintf( __( 'You may use these HTML tags and attributes: %s', 'melany' ), ' <pre>' . allowed_tags() . '</pre>' ) . '</p>';
 }
 endif; // ends check for melany_get_comment_notes_after
 
