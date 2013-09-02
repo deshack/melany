@@ -28,7 +28,7 @@
 
 <body <?php body_class(); ?>>
 <?php do_action( 'before' ); ?>
-<header id="masthead" class="site-header navbar navbar-fixed-top navbar-inverse" role="banner">
+<header id="masthead" <?php melany_header_class(); ?> role="banner">
 
 	<?php // Brand and toggle get grouped for better mobile display ?>
 	<div class="navbar-header" role="banner">

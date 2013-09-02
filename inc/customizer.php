@@ -39,10 +39,34 @@ function melany_customize_register( $wp_customize ) {
 	)));
 
 	/**
+	 * Choose header color
+	 *
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_section( 'melany_navbar_section', array(
+		'title'				=> __( 'Navbar color', 'melany' ),
+		'priority'		=> 30,
+		'description'	=> 'Choose navbar color',
+	));
+	$wp_customize->add_setting( 'melany_navbar_color' );
+	$wp_customize->add_control( 'melany_navbar_color', array(
+		'label'				=> __( 'Choose navbar color', 'melany' ),
+		'type'				=> 'select',
+		'section'			=> 'melany_navbar_section',
+		'choices'			=> array(
+			'default'		=> 'Light',
+			'inverse'		=> 'Dark',
+			'green'			=> 'Green'
+		),
+	));
+
+	/**
 	 * Add title length field within Site Title & Tagline section
 	 *
 	 * @Type: Core hack
 	 * @Author: Mirko Pizii
+	 *
+	 * @since 1.0.0
 	 */
 	$wp_customize->add_setting( 'melany_title_length', array(
 		'default' => 20,
