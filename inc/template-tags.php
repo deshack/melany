@@ -583,10 +583,10 @@ function melany_footer_class( $custom = '' ) {
 	if ( $color == '' || empty( $color ) )
 		$color = 'inverse';
 
+	$class .= ' navbar-' . $color;
+
 	if ( 'page' == get_option( 'show_on_front' ) && is_front_page() )
-		$class .= ' navbar-green navbar-fixed-bottom';
-	else
-		$class .= ' navbar-' . $color;
+		$class .= ' navbar-fixed-bottom';
 
 	if ( ! empty( $custom ) )
 		$class .= ' ' . $custom;
