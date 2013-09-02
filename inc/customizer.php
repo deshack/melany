@@ -78,6 +78,33 @@ function melany_customize_register( $wp_customize ) {
 		'section' => 'title_tagline',
 	));
 
+	/**
+	 * Static homepage custom background and text color
+	 *
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_setting( 'melany_home_background', array(
+		'default'		=> '#3d8b3d',
+		'transport'	=> 'refresh',
+		'type'			=> 'theme_mod'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'melany_home_background', array(
+		'label'			=> __( 'Homepage Background Color', 'melany' ),
+		'section'		=> 'colors',
+		'settings'	=> 'melany_home_background',
+	)));
+
+	$wp_customize->add_setting( 'melany_home_color', array(
+		'default'		=> '#ffffff',
+		'transport'	=> 'refresh',
+		'type'			=> 'theme_mod'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'melany_home_color', array(
+		'label'			=> __( 'Homepage Text Color', 'melany' ),
+		'section'		=> 'colors',
+		'settings'	=> 'melany_home_color'
+	)));
+
 }
 add_action( 'customize_register', 'melany_customize_register' );
 

@@ -595,3 +595,30 @@ function melany_footer_class( $custom = '' ) {
 }
 endif;
 
+if ( ! function_exists( 'melany_custom_home_background' ) ) :
+/**
+ * Custom static homepage background color
+ *
+ * @since 1.0.0
+ */
+function melany_custom_home_background() {
+	if ( 'page' != get_option( 'show_on_front' ) || ! is_front_page() )
+		return;
+
+	$bg			= get_theme_mod( 'melany_home_background' );
+	$color	= get_theme_mod( 'melany_home_color' );
+	
+	if ( $bg )
+		$bg_style = 'body.home.page { background-color:' . $bg . '; }';
+	else
+		$bg_style = '';
+	if ( $color )
+		$color_style = 'body.home.page .jumbotron { color:' . $color . '; }';
+	else
+		$color_style = '';
+
+	echo '<style type="text/css" id="custom-home-background">' . "\n\t" . $bg_style . "\n\t" . $color_style . "\n</style>\n";
+}
+add_action( 'wp_head', 'melany_custom_home_background' );
+endif;
+
