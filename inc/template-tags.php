@@ -556,8 +556,10 @@ if ( ! function_exists( 'melany_header_class' ) ) :
  */
 function melany_header_class( $custom = '' ) {
 	$class = 'site-header navbar navbar-fixed-top';
-
 	$color = get_theme_mod( 'melany_navbar_color' );
+	if ( $color == '' || empty( $color ) )
+		$color = 'inverse';
+
 	$class .= ' navbar-' . $color;
 
 	if ( ! empty( $custom ) )
@@ -578,6 +580,8 @@ if ( ! function_exists( 'melany_footer_class' ) ) :
 function melany_footer_class( $custom = '' ) {
 	$class = 'site-footer navbar';
 	$color = get_theme_mod( 'melany_navbar_color' );
+	if ( $color == '' || empty( $color ) )
+		$color = 'inverse';
 
 	if ( 'page' == get_option( 'show_on_front' ) && is_front_page() )
 		$class .= ' navbar-green navbar-fixed-bottom';
