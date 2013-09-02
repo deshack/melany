@@ -6,7 +6,7 @@ body {
 	padding-top: 70px;
 
 	// Fix admin toolbar issue
-	&.admin-bar .navbar {
+	&.admin-bar .navbar-fixed-top {
 		top:28px;
 	}
 }
@@ -43,6 +43,10 @@ select {
 
 // Content
 // -------------------------
+
+.entry-content {
+    .clearfix();
+}
 
 // Jumbotron
 .jumbotron {
@@ -114,11 +118,8 @@ select {
 	margin-top: @line-height-computed;
 	margin-bottom:0;
 	.border-radius(0);
+	border:none;
 	.navbar-text {
 		float:none;
 	}
-}
-
-.entry-content {
-    .clearfix();
 }

@@ -11,7 +11,7 @@
 	</section><!-- #content -->
 </div><!-- #page -->
 
-<footer id="colophon" class="site-footer navbar navbar-inverse" role="contentinfo">
+<footer id="colophon" <?php melany_footer_class(); ?> role="contentinfo">
 	<div class="site-info navbar-text text-center">
 		<small>
 			<?php printf( '&copy; ' ); ?>
