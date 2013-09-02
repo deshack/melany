@@ -555,10 +555,12 @@ if ( ! function_exists( 'melany_footer_class' ) ) :
  * @param string $class Optional. CSS classes passed to the function
  */
 function melany_footer_class( $class = '' ) {
-	$class .= 'site-footer navbar navbar-inverse';
+	$class .= 'site-footer navbar';
 
-	if ( is_front_page() )
-		$class .= ' navbar-fixed-bottom';
+	if ( 'page' == get_option( 'show_on_front' ) && is_front_page() )
+		$class .= ' navbar-green navbar-fixed-bottom';
+	else
+		$class .= ' navbar-inverse';
 
 	echo 'class="' . $class . '"';
 }

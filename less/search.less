@@ -107,6 +107,36 @@
 	}
 	.search-collapse,
 	.search-form {
-		border-color:darken(@navbar-inverse-bg, 7%);
+		border-color:@navbar-inverse-search-border;
+	}
+	.search-form .form-control {
+		background-color:@navbar-inverse-search-bg;
+		.placeholder(@navbar-inverse-search-placeholder-color);
+		&:focus {
+			background-color:@navbar-inverse-search-bg-focus;
+		}
+	}
+}
+
+// Green navbar
+.navbar-green {
+	.search-toggle {
+		color:@navbar-green-toggle-icon-bar-bg;
+		border-color: @navbar-green-toggle-border-color;
+		&:hover,
+		&:focus {
+			background-color:@navbar-green-toggle-hover-bg;
+		}
+	}
+	.search-collapse,
+	.search-form {
+		border-color:@navbar-green-search-border;
+	}
+	.search-form .form-control {
+		background-color:@navbar-green-search-bg;
+		.placeholder(@navbar-green-search-placeholder-color);
+		&:focus {
+			background-color:@navbar-inverse-search-bg-focus;
+		}
 	}
 }

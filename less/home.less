@@ -5,168 +5,14 @@
 // Home Page hook
 //
 // This class is added to the body by WordPress
-.home {
-	background:@home-bg-color!important; // !important is necessary to override custom background defined via Theme Customizer
+.home.page {
+	background:@home-body-bg!important; // !important is necessary to override custom background defined via Theme Customizer
 	padding-bottom:50px;
 
 	// Hide logo section
 	#logo {
 		display:none;
 	}
-
-	.navbar-default,
-	.navbar-inverse {
-	  background-color: @home-bg-color;
-	  border-color: @home-border-color;
-
-	  .navbar-brand {
-	    color: @home-text-color;
-	    &:hover,
-	    &:focus {
-	      color: @home-text-color;
-	    }
-	  }
-
-	  .navbar-text {
-	    color: @home-nav-color;
-	  }
-
-	  .navbar-nav {
-	    > li > a {
-	      color: @home-nav-color;
-
-	      &:hover,
-	      &:focus {
-	        color: @home-text-color;
-	        background-color: @home-nav-hover;
-	      }
-	    }
-	    > .active > a {
-	      &,
-	      &:hover,
-	      &:focus {
-	        color: @home-text-color;
-	        background-color: @home-nav-hover;
-	      }
-	    }
-	    > .disabled > a {
-	      &,
-	      &:hover,
-	      &:focus {
-	        color: @home-text-color;
-	        background-color: transparent;
-	      }
-	    }
-	  }
-
-	  // Darken the responsive nav toggle
-	  .navbar-toggle {
-	    border-color: @home-border-color;
-	    &:hover,
-	    &:focus {
-	      background-color: @home-nav-hover;
-	    }
-	    .icon-bar {
-	      background-color: @home-nav-color;
-	    }
-	  }
-
-	  .navbar-collapse,
-	  .navbar-form {
-	    border-color: @home-border-color;
-	  }
-
-	  // Dropdowns
-	  .navbar-nav {
-	    > .open > a {
-	      &,
-	      &:hover,
-	      &:focus {
-	        background-color: @home-nav-hover;
-	        color: @home-text-color;
-	      }
-	    }
-	    > .dropdown > a:hover .caret {
-	      border-top-color: @home-text-color;
-	      border-bottom-color: @home-text-color;
-	    }
-	    > .dropdown > a .caret {
-	      border-top-color: @home-nav-color;
-	      border-bottom-color: @home-nav-color;
-	    }
-	    > .open > a {
-	      &,
-	      &:hover,
-	      &:focus {
-	        .caret {
-	          border-top-color: @home-text-color;
-	          border-bottom-color: @home-text-color;
-	        }
-	      }
-	    }
-
-	    @media (max-width: @screen-xs-max) {
-	      // Dropdowns get custom display
-	      .open .dropdown-menu {
-	        > .dropdown-header {
-	          border-color: @home-border-color;
-	        }
-	        > li > a {
-	          color: @home-nav-color;
-	          &:hover,
-	          &:focus {
-	            color: @home-text-color;
-	            background-color: @home-nav-hover;
-	          }
-	        }
-	        > .active > a {
-	          &,
-	          &:hover,
-	          &:focus {
-	            color: @home-text-color;
-	            background-color: @home-nav-hover;
-	          }
-	        }
-	        > .disabled > a {
-	          &,
-	          &:hover,
-	          &:focus {
-	            color: @home-nav-hover;
-	            background-color: transparent;
-	          }
-	        }
-	      }
-	    }
-	  }
-
-	  .navbar-link {
-	    color: @home-nav-color;
-	    &:hover {
-	      color: @home-text-color;
-	    }
-	  }
-
-		.search-toggle {
-			color:@home-nav-color;
-			border-color: @home-border-color;
-			&:hover,
-			&:focus {
-				background-color:@home-nav-hover;
-			}
-		}
-		.search-collapse,
-		.search-form {
-			border-color:@home-border-color;
-		}
-
-		.navbar-text a {
-			color:@home-text-color;
-			&:hover,
-			&:focus {
-				color:@home-nav-color;
-			}
-		}
-	} // .navbar-default, .navbar-inverse
 
 	.jumbotron {
 		background:transparent;
@@ -175,7 +21,7 @@
 		font-size: @home-font-size-base;
 
 		h1 {
-			font-size:@home-h1-size;
+			font-size:@home-font-size-h1;
 			margin-bottom:@line-height-computed;
 		}
 	}

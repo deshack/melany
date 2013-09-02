@@ -32,23 +32,19 @@
 
 @icon-font-path:						"lib/bootstrap/fonts/";
 
-// Home
-// -------------------------
-
-@home-text-color:						#fff;
-@home-bg-color:							@green-dark;
-@home-border-color:					darken(@home-bg-color, 15%);
-
-@home-font-size-base:				30px;
-@home-h1-size:							(@home-font-size-base * 3);
-
-@home-nav-color:						#cdbfe3;
-@home-nav-hover:						@home-border-color;
-
 // Components
 // -------------------------
 
 @component-active-bg:				@green;
+
+// Static home page
+// -------------------------
+
+@home-body-bg:							@green-dark;
+@home-text-color:						#fff;
+
+@home-font-size-base:				30px;
+@home-font-size-h1:					(@home-font-size-base * 3);
 
 // Forms
 // -------------------------
@@ -69,3 +65,44 @@
 
 // Point at which the navbar stops collapsing
 @grid-float-breakpoint:     @screen-desktop;
+
+// Navbar
+// -------------------------
+
+// Inverse navbar
+//
+// Inverse navbar search
+@navbar-inverse-search-border:					darken(@navbar-inverse-bg, 7%);
+
+// Green navbar
+//
+// Reset Green navbar basics
+@navbar-green-color:                      #cdbfe3;
+@navbar-green-bg:                         @green-dark;
+@navbar-green-border:                     darken(@navbar-green-bg, 10%);
+
+// Green navbar links
+@navbar-green-link-color:                 @green-light;
+@navbar-green-link-hover-color:           #fff;
+@navbar-green-link-hover-bg:              darken(@navbar-green-bg, 10%);
+@navbar-green-link-active-color:          @navbar-green-link-hover-color;
+@navbar-green-link-active-bg:             @navbar-green-link-hover-bg;
+@navbar-green-link-disabled-color:        #444;
+@navbar-green-link-disabled-bg:           transparent;
+
+// Green navbar brand label
+@navbar-green-brand-color:                @navbar-green-link-color;
+@navbar-green-brand-hover-color:          @navbar-green-link-hover-color;
+@navbar-green-brand-hover-bg:             transparent;
+
+// Green navbar search
+// Normal navbar needs no special styles or vars
+@navbar-green-search-bg:                  lighten(@navbar-green-bg, 25%);
+@navbar-green-search-bg-focus:            #fff;
+@navbar-green-search-border:              darken(@navbar-green-bg, 7%);
+@navbar-green-search-placeholder-color:   @navbar-green-color;
+
+// Green navbar toggle
+@navbar-green-toggle-hover-bg:            @navbar-green-link-hover-bg;
+@navbar-green-toggle-icon-bar-bg:         @navbar-green-link-color;
+@navbar-green-toggle-border-color:        @navbar-green-border;
