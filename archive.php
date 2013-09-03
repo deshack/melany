@@ -76,21 +76,21 @@ get_header(); ?>
 			<?php the_post(); ?>
 
 			<section id="archive-author" class="media">
+				<div class="media-body">
+					<h2 class="media-heading vcard"><?php the_author_meta( 'first_name' ); ?> <?php the_author_meta( 'last_name' ); ?></h2>
+				</div>
 				<a class="pull-left" href="<?php the_author_url(); ?>">
 					<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
 				</a>
 				<div class="media-body">
-					<div class="media-body-inner">
-						<h2 class="media-heading vcard"><?php the_author_meta( 'first_name' ); ?> <?php the_author_meta( 'last_name' ); ?></h2>
-						<p><?php the_author_meta( 'description' ); ?></p>
-						<p><small>
-							<?php $post_count = get_the_author_posts(); ?>
-							<?php if ( $post_count == 1 )
-								printf( __( '%1$s wrote 1 post', 'melany' ), get_the_author() );
-							else
-								printf( __( '%1$s wrote %2$s posts', 'melany' ), get_the_author(), $post_count ); ?>
-						</small></p>
-					</div><!-- .media-body-inner -->
+					<p><?php the_author_meta( 'description' ); ?></p>
+					<p><small>
+						<?php $post_count = get_the_author_posts(); ?>
+						<?php if ( $post_count == 1 )
+							printf( __( '%1$s wrote 1 post', 'melany' ), get_the_author() );
+						else
+							printf( __( '%1$s wrote %2$s posts', 'melany' ), get_the_author(), $post_count ); ?>
+					</small></p>
 				</div><!-- .media-body -->
 			</section><!-- #archive-author -->
 

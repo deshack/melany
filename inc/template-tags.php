@@ -475,7 +475,7 @@ function melany_posted_on() {
 	);
 
 	printf( '<span class="posted-on">' . __( 'Posted on %1$s', 'melany' ) . '</span> <span class="byline">' . _x( 'by %2$s', 'Posted by', 'melany' ) . '</span>',
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
+		sprintf( '<a href="%1$s" title="%2$s" class="tooltip-toggle" data-toggle="tooltip" data-trigger="click hover" data-placement="bottom" rel="bookmark">%3$s</a>',
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
 			$time_string
