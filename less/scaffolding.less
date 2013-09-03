@@ -119,6 +119,10 @@ select {
 
 	.media-body-inner {
 		padding: 0 (@line-height-computed / 2);
+		text-align:center;
+		@media (min-width:@screen-md) {
+			text-align:left;
+		}
 	}
 	.media-heading {
 		padding-bottom:(@line-height-computed / 2);
