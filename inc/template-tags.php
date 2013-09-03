@@ -623,3 +623,41 @@ function melany_custom_home_background() {
 add_action( 'wp_head', 'melany_custom_home_background' );
 endif;
 
+if ( ! function_exists( 'melany_author_box' ) ) :
+/**
+ * Display a box with author infos
+ *
+ * @since 1.0.0
+ *
+ * @param integer $id Required. The author ID
+ */
+function melany_author_box( $id ) {
+	$first_name	= get_the_author_meta( 'first_name', $id );
+	$last_name	= get_the_author_meta( 'last_name', $id );
+	if ( $first_name && $last_name )
+		$author_name = $first_name . ' ' . $last_name;
+	else
+		$author_name = get_the_author( $id );
+	?>
+
+	<section id="author-box" class="media">
+		<h2 class="media-heading vcard"><?php echo $author_name; ?></h2>
+		<a class="pull-left" href="<?php the_author_meta( 'user_url', $id ); ?>">
+			<?php echo get_avatar( $id, 100 ); ?>
+		</a>
+		<div class="media-body">
+			<p><?php the_author_meta( 'description', $id ); ?></p>
+			<p><small>
+				<?php $post_count = get_the_author_posts( $id ); ?>
+				<?php if ( $post_count == 1 )
+					printf( __( '%1$s wrote 1 post', 'melany' ), get_the_author( $id ) );
+				else
+					printf( __( '%1$s wrote %2$s posts', 'melany' ), get_the_author( $id ), $post_count ); ?>
+			</small></p>
+		</div><!-- .media-body -->
+	</section><!-- #author-box -->
+
+	<?php
+}
+endif;
+

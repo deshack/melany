@@ -38,16 +38,20 @@
 		?>
 	</div><!-- .entry-content -->
 
-<?php $tag_list = get_the_tag_list( '', ' - ' );
-	if ( '' != $tag_list ) : ?>
+	<footer class="entry-meta">
+		<?php $tag_list = get_the_tag_list( '', ' - ' );
+			if( '' != $tag_list ) : ?>
 
-	<footer class="entry-meta panel panel-success">
-		<div class="panel-heading">
-			<h3 class="panel-title"><?php echo __( 'Tags', 'melany' ); ?></h3>
-		</div>
-		<div class="panel-body">
-			<?php printf( $tag_list ); ?>
-		</div><!-- .panel-body -->
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title"><?php echo __( 'Tags', 'melany' ); ?></h3>
+				</div>
+				<div class="panel-body">
+					<?php printf( $tag_list ); ?>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<?php melany_author_box( get_the_author_meta( 'ID' ) ); ?>
 	</footer><!-- .entry-meta -->
-<?php endif; ?>
 </article><!-- #post-## -->
