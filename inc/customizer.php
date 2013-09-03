@@ -54,9 +54,9 @@ function melany_customize_register( $wp_customize ) {
 		'type'				=> 'select',
 		'section'			=> 'melany_navbar_section',
 		'choices'			=> array(
-			'default'		=> 'Light',
-			'inverse'		=> 'Dark',
-			'green'			=> 'Green'
+			'default'		=> __( 'Light', 'melany' ),
+			'inverse'		=> __( 'Dark', 'melany' ),
+			'green'			=> __( 'Green', 'melany' )
 		),
 	));
 

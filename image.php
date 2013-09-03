@@ -5,8 +5,7 @@
  * @package Melany
  */
 
-get_header();
-?>
+get_header(); ?>
 
 	<section id="primary" class="content-area image-attachment">
 

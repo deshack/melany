@@ -79,6 +79,7 @@ function melany_excerpt_read_more_link( $output ){
 add_filter( 'the_excerpt', 'melany_excerpt_read_more_link' );
 endif;
 
+if ( ! function_exists( 'melany_page_menu' ) ) :
 /**
  * Display or retrieve list of pages with optional home link.
  *
@@ -102,7 +103,6 @@ endif;
  * @param array|string $args
  * @return string html menu
  */
-if ( ! function_exists( 'melany_page_menu' ) ) :
 function melany_page_menu( $args = array() ) {
 	$defaults = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
 	$args = wp_parse_args( $args, $defaults );
@@ -132,11 +132,12 @@ function melany_page_menu( $args = array() ) {
 			$list_args['exclude'] .= get_option('page_on_front');
 		}
 	}
-/*
+
 	$list_args['echo'] = false;
 	$list_args['title_li'] = '';
+	$list_args['walker'] = new Bootstrap_Walker;
 	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_pages($list_args) );
-*/
+
 	if ( $menu )
 		$menu = '<ul class="' . esc_attr($args['menu_class']) . '">' . $menu . '</ul>';
 
