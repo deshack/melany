@@ -1,0 +1,50 @@
+//
+// Post Formats
+// --------------------------------------------------
+
+// Image
+// -------------------------
+
+// Single
+body.single-format-image {
+	background-color:@gray-dark!important;
+	color:@gray-light;
+
+	.entry-content {
+		p {
+			text-align:center;
+		}
+	}
+
+	.page-header {
+		border-bottom-color:@gray;
+	}
+	.panel-success {
+		background-color:@gray-dark;
+  	.panel-variant(@gray; @gray-lighter; @gray; @gray);
+	}
+	#author-box.media {
+		background-color:@gray;
+
+		.media-heading {
+			border-bottom-color:@gray-light;
+		}
+	}
+	.btn-default {
+		.button-variant(@gray-light; @gray-dark; @gray);
+	}
+	.pager {
+		li {
+			> a,
+			> span {
+				background-color:@gray-dark;
+				border-color:@gray;
+			}
+			> a:hover,
+			> a:focus {
+				background-color:darken(@gray-dark, 8%);
+				border-color:darken(@gray, 12%);
+			}
+		}
+	}
+}
