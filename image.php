@@ -65,7 +65,7 @@ get_header(); ?>
 					<?php if ( comments_open() && pings_open() ) : // Comments and trackbacks open
 						printf( '<a class="comment-link" href="#respond" title="' . __( 'Post a comment', 'melany' ) . '">' . __( 'Post a comment', 'melany' ) . '</a> ' . __( 'or leave a trackback:', 'melany' ) . ' <a class="trackback-link" href="%s" title="' . __( 'Trackback URL for your post', 'melany' ) . '" rel="trackback">' . __( 'Trackback URL', 'melany' ) . '</a>.', esc_url( get_trackback_url() ) );
 					elseif ( ! comments_open() && pings_open() ) : // Only trackbacks open
-						printf( __( 'Comments are closed, but you can leave a trackback:', 'melany' ) . ' <a class="trackback-link" href="%s" title="' . __( 'Trackback URL for your post', 'melany' ) . '" rel="trackback">' . __( 'Trackback URL', 'melany' ) . '</a>.', 'melany' ), esc_url( get_trackback_url() ) );
+						printf( __( 'Comments are closed, but you can leave a trackback:', 'melany' ) . ' <a class="trackback-link" href="%s" title="' . __( 'Trackback URL for your post', 'melany' ) . '" rel="trackback">' . __( 'Trackback URL', 'melany' ) . '</a>.', esc_url( get_trackback_url() ) );
 					elseif ( comments_open() && ! pings_open() ) : // Only comments open
 						printf( __( 'Trackbacks are closed, but you can', 'melany' ) . ' <a class="comment-link" href="#respond" title="' . __( 'Post a comment', 'melany' ) . '">' . __( 'post a comment', 'melany' ) . '</a>.' );
 					elseif ( ! comments_open() && ! pings_open() ) : // Comments and trackbacks closed

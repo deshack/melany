@@ -49,8 +49,13 @@ function melany_setup() {
 
 	/**
 	 * Enable support for Post Formats
+	 *
+	 * WordPress Post Formats list
+	 * aside, gallery, link, image, quote, status, video, audio, chat
+	 *
+	 * @since 1.0.0
 	 */
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	add_theme_support( 'post-formats', array( 'image' ) );
 
 	/**
 	 * Add new image sizes

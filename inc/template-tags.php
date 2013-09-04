@@ -7,7 +7,27 @@
  * @package Melany
  */
 
-if( ! function_exists( 'melany_edit_post_link' ) ) :
+if ( ! function_exists( 'melany_grid_class' ) ) :
+/**
+ * Set the correct Bootstrap grid class
+ *
+ * Currently supports only the #primary element.
+ *
+ * @since 1.0.0
+ */
+function melany_grid_class() {
+	$base = 'col-md-';
+
+	if ( has_post_format( 'image' ) )
+		$class = $base . '12';
+	else
+		$class = $base . '9';
+
+	echo $class;
+}
+endif; // Ends check for melany_grid_class()
+
+if ( ! function_exists( 'melany_edit_post_link' ) ) :
 /**
  * Add CSS classes to edit post link
  *

@@ -71,6 +71,8 @@
 <div id="page" class="container hfeed site">
 	<section id="content" class="site-content">
 		<main id="main" class="row" role="main">
+
+			<?php if ( ! has_post_format( 'image' ) ) : ?>
 			<section id="logo" class="col-md-3">
 				<div class="thumbnail text-center">
 					<div class="caption">
@@ -84,3 +86,4 @@
 					</div>
 				</div>
 			</section>
+			<?php endif; ?>
