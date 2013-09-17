@@ -144,11 +144,6 @@ function add_nofollow_cat( $text ) {
 add_filter( 'the_category', 'add_nofollow_cat' );
 
 /**
- * Load the LESS Compiler
- */
-require get_template_directory() . '/inc/lessc.inc.php';
-
-/**
  * Load the Bootstrap Walker.
  */
 require get_template_directory() . '/lib/bootstrap/bootstrap-walker.php';
