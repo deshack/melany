@@ -22,6 +22,33 @@
 		h1 {
 			font-size:@home-font-size-h1;
 			margin-bottom:@line-height-computed;
+			text-align: left;
+		}
+
+		@media (min-width:@screen-md) {
+			font-size:(@home-font-size-base + 10);
+			h1 {
+				font-size:(@home-font-size-h1 + 30);
+			}
+		}
+
+		@media (max-width:@screen-sm-max) {
+			.alignnone,
+			.alignleft,
+			.alignright,
+			.aligncenter {
+				margin:@line-height-computed auto;
+				display:block;
+				float:none;
+				clear:both;
+				a img&,
+				.wp-caption& {
+					margin:@line-height-computed auto;
+					display:block;
+					float:none;
+					clear:both;
+				}
+			}
 		}
 	}
 }
