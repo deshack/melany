@@ -112,7 +112,7 @@ function melany_scripts() {
 	wp_enqueue_style( 'melany-style', get_stylesheet_uri() );
 
 	// Enqueue scripts
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.0.0-rc1', false );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.0.0', false );
 
 	wp_enqueue_script( 'melany-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -133,15 +133,6 @@ function melany_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'melany_scripts' );
-
-/**
- * Fix "category tag" bad value error
- */
-function add_nofollow_cat( $text ) {
-	$text = str_replace( 'rel="category tag"', "", $text );
-	return $text;
-}
-add_filter( 'the_category', 'add_nofollow_cat' );
 
 /**
  * Load the Bootstrap Walker.

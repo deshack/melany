@@ -69,3 +69,11 @@ function melany_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'melany_wp_title', 10, 2 );
 
+/**
+ * Fix "category tag" bad value error
+ */
+function add_nofollow_cat( $text ) {
+	$text = str_replace( 'rel="category tag"', "", $text );
+	return $text;
+}
+add_filter( 'the_category', 'add_nofollow_cat' );
