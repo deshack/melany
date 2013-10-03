@@ -29,8 +29,8 @@ function melany_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'melany_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'width'                  => 900,
+		'height'                 => 200,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'melany_header_style',
 		'admin-head-callback'    => 'melany_admin_header_style',
@@ -65,6 +65,9 @@ function melany_header_style() {
 			position: absolute;
 			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
+		}
+		#header .aligncenter {
+			margin:0 auto;
 		}
 	<?php
 		// If the user has set a custom color for the text use that

@@ -71,19 +71,31 @@
 <div id="page" class="container hfeed site">
 	<section id="content" class="site-content">
 		<main id="main" class="row" role="main">
+			<?php if ( ! is_front_page() ) : ?>
+				<?php $header_image = get_header_image();
+				if ( ! empty( $header_image ) ) : ?>
+					<div id="header" class="col-xm-12">
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+						<div class="site-description"><?php bloginfo( 'description' ); ?></div>
+						<img src="<?php header_image(); ?>" class="aligncenter" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+					</div>
+				<?php else : ?>
 
-			<?php if ( ! has_post_format( 'image' ) ) : ?>
-			<section id="logo" class="col-md-3">
-				<div class="thumbnail text-center">
-					<div class="caption">
-						<h2><?php bloginfo( 'name' ); ?></h2>
-					</div>
-					<?php if ( get_theme_mod( 'melany_logo' ) ) : ?>
-						<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
-					<?php endif; ?>
-					<div class="caption">
-						<p><?php bloginfo( 'description' ); ?></p>
-					</div>
-				</div>
-			</section>
-			<?php endif; ?>
+					<?php if ( ! has_post_format( 'image' ) ) : ?>
+						<section id="logo" class="col-md-3">
+							<div class="thumbnail text-center">
+								<div class="caption">
+									<h2><?php bloginfo( 'name' ); ?></h2>
+								</div>
+								<?php if ( get_theme_mod( 'melany_logo' ) ) : ?>
+									<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
+								<?php endif; ?>
+								<div class="caption">
+									<p><?php bloginfo( 'description' ); ?></p>
+								</div>
+							</div>
+						</section>
+					<?php endif; // has_post_format( 'image' ) ?>
+				<?php endif; // $header_image ?>
+
+			<?php endif; // is_front_page() ?>
