@@ -38,6 +38,8 @@
 		?>
 	</div><!-- .entry-content -->
 
+	<?php melany_author_box( get_the_author_meta( 'ID' ) ); ?>
+
 	<footer class="entry-meta">
 		<?php $tag_list = get_the_tag_list( '', ' - ' );
 			if( '' != $tag_list ) : ?>
@@ -51,7 +53,5 @@
 				</div>
 			</div>
 		<?php endif; ?>
-
-		<?php melany_author_box( get_the_author_meta( 'ID' ) ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

@@ -71,7 +71,7 @@
 <div id="page" class="container hfeed site">
 	<section id="content" class="site-content">
 		<main id="main" class="row" role="main">
-			<?php if ( ! is_front_page() ) : ?>
+			<?php if ( ! is_front_page() || is_home() ) : ?>
 				<?php $header_image = get_header_image();
 				if ( ! empty( $header_image ) ) : ?>
 					<div id="header" class="col-xm-12">
