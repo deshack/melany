@@ -79,6 +79,19 @@ function melany_customize_register( $wp_customize ) {
 	));
 
 	/**
+	 * Add footer credits text field within Site Title & Tagline section
+	 *
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_setting( 'melany_footer_credits', array(
+		'type' => 'theme_mod'
+	));
+	$wp_customize->add_control( 'melany_footer_credits', array(
+		'label' => __( 'Credits', 'melany' ),
+		'section' => 'title_tagline'
+	));
+
+	/**
 	 * Static homepage custom background and text color
 	 *
 	 * @since 1.0.0

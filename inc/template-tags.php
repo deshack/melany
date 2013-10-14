@@ -686,3 +686,18 @@ function melany_author_box( $id ) {
 }
 endif;
 
+if ( ! function_exists('melany_credits') ) :
+/**
+ * Display credits in the footer
+ *
+ * @since 1.0.0
+ */
+function melany_credits() {
+	$copy = '&copy; ' . date( 'Y' ) . bloginfo( 'name' );
+	$credits = get_theme_mod('melany_footer_credits');
+	$output = $copy . ' ' . $credits;
+	$sep = '<span class="sep"> - </span>';
+
+
+}
+endif;
