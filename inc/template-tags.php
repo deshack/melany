@@ -583,6 +583,11 @@ function melany_header_class( $custom = '' ) {
 
 	$class .= ' navbar-' . $color;
 
+	$header_image = get_header_image();
+
+	if ( ! empty( $header_image ) )
+		$class .= ' header-image';
+
 	if ( ! empty( $custom ) )
 		$class .= ' ' . $custom;
 

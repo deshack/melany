@@ -75,9 +75,7 @@
 				<?php $header_image = get_header_image();
 				if ( ! empty( $header_image ) ) : ?>
 					<div id="header" class="col-xm-12">
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-						<div class="site-description"><?php bloginfo( 'description' ); ?></div>
-						<img src="<?php header_image(); ?>" class="aligncenter" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+						<img id="header-image" src="<?php header_image(); ?>" class="aligncenter" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 					</div>
 				<?php else : ?>
 
