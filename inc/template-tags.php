@@ -583,11 +583,6 @@ function melany_header_class( $custom = '' ) {
 
 	$class .= ' navbar-' . $color;
 
-	$header_image = get_header_image();
-
-	if ( ! empty( $header_image ) )
-		$class .= ' header-image';
-
 	if ( ! empty( $custom ) )
 		$class .= ' ' . $custom;
 
@@ -611,7 +606,7 @@ function melany_footer_class( $custom = '' ) {
 
 	$class .= ' navbar-' . $color;
 
-	if ( 'page' == get_option( 'show_on_front' ) && is_front_page() )
+	if ( 'page' == get_option( 'show_on_front' ) && is_front_page() && ! wp_is_mobile() )
 		$class .= ' navbar-fixed-bottom';
 
 	if ( ! empty( $custom ) )
@@ -619,6 +614,26 @@ function melany_footer_class( $custom = '' ) {
 
 	echo 'class="' . $class . '"';
 }
+endif;
+
+if ( ! function_exists( 'melany_body_class' ) ) :
+/**
+ * Custom header image class
+ *
+ * Filters body_class() function and adds a new class if custom header image is defined.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes. The body_class() output.
+ * @return array $classes. The new classes: body_class() output + 'header-image' (if present)
+ */
+function melany_body_class($classes) {
+	$header_image = get_header_image();
+	if ( ! empty($header_image) )
+		$classes .= ' header-image';
+	return $classes;
+}
+add_filter( 'body_class', 'melany_body_class' );
 endif;
 
 if ( ! function_exists( 'melany_custom_home_background' ) ) :
