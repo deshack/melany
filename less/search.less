@@ -21,13 +21,18 @@
   .glyphicon-search {
     width: 22px;
   }
-  @media (min-width: @grid-float-breakpoint) {
+  @media (min-width:@grid-float-breakpoint) and (max-width:@screen-md-max) {
+  	position:absolute;
+  	right:0;
+  	top:0;
+  }
+  @media (min-width: @screen-lg) {
     display: none;
   }
 }
 
 // Fix layout on desktop and large desktop
-@media (min-width:@grid-float-breakpoint) {
+@media (min-width:@screen-lg) {
 	.navbar-collapse:after {
 		clear:none;
 	}
@@ -51,12 +56,12 @@
 		// Mixin behaviour for optimum display
 		.form-inline();
 
-		@media (min-width:@grid-float-breakpoint) {
+		@media (min-width:@screen-lg) {
 			margin-top: ((@navbar-height - @input-height-base) / 2);
 		}
 
 		// Undo 100% width for pull classes
-		@media (min-width:@grid-float-breakpoint) {
+		@media (min-width:@screen-lg) {
 			width:auto;
 			border:0;
 			margin-left:0;
@@ -68,7 +73,7 @@
 		}
 	}
 	// Uncollapse the search
-	@media (min-width: @grid-float-breakpoint) {
+	@media (min-width: @screen-lg) {
 		display:block;
 		float:right;
 		margin:0;
