@@ -606,8 +606,8 @@ function melany_footer_class( $custom = '' ) {
 
 	$class .= ' navbar-' . $color;
 
-	if ( 'page' == get_option( 'show_on_front' ) && is_front_page() && ! wp_is_mobile() )
-		$class .= ' navbar-fixed-bottom';
+	//if ( 'page' == get_option( 'show_on_front' ) && is_front_page() && ! wp_is_mobile() )
+		//$class .= ' navbar-fixed-bottom';
 
 	if ( ! empty( $custom ) )
 		$class .= ' ' . $custom;
@@ -630,7 +630,7 @@ if ( ! function_exists( 'melany_body_class' ) ) :
 function melany_body_class($classes) {
 	$header_image = get_header_image();
 	if ( ! empty($header_image) )
-		$classes .= ' header-image';
+		$classes[] = 'header-image';
 	return $classes;
 }
 add_filter( 'body_class', 'melany_body_class' );
