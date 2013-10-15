@@ -15,6 +15,25 @@
 			color: @navbar-default-link-color;
 		}
 	}
+	.search-form {
+		@shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
+		.box-shadow(@shadow);
+	}
+	.search-toggle {
+		color:@navbar-default-toggle-icon-bar-bg;
+		border-color: @navbar-default-toggle-border-color;
+		&:hover,
+		&:focus {
+			background-color: @navbar-default-toggle-hover-bg;
+		}
+	}
+	.search-collapse,
+	.search-form {
+		border-color:darken(@navbar-default-bg, 7%);
+	}
+	.form-control:focus {
+		border-color:@navbar-default-link-color;
+	}
 }
 
 // Inverse navbar
@@ -24,6 +43,18 @@
 		&:hover {
 			color: @navbar-inverse-link-color;
 		}
+	}
+	.search-toggle {
+		color:@navbar-inverse-toggle-icon-bar-bg;
+		border-color: @navbar-inverse-toggle-border-color;
+		&:hover,
+		&:focus {
+			background-color:@navbar-inverse-toggle-hover-bg;
+		}
+	}
+	.search-collapse,
+	.search-form {
+		border-color:@navbar-inverse-search-border;
 	}
 }
 
@@ -148,6 +179,21 @@
     }
   }
 
+  .search-toggle {
+		color:@navbar-green-toggle-icon-bar-bg;
+		border-color: @navbar-green-toggle-border-color;
+		&:hover,
+		&:focus {
+			background-color:@navbar-green-toggle-hover-bg;
+		}
+	}
+	.search-collapse,
+	.search-form {
+		border-color:@navbar-green-search-border;
+	}
+	.form-control:focus {
+		border-color:@navbar-green-link-color;
+	}
 
   // Links in navbars
   //
