@@ -606,8 +606,8 @@ function melany_footer_class( $custom = '' ) {
 
 	$class .= ' navbar-' . $color;
 
-	//if ( 'page' == get_option( 'show_on_front' ) && is_front_page() && ! wp_is_mobile() )
-		//$class .= ' navbar-fixed-bottom';
+	if ( 'page' == get_option( 'show_on_front' ) && is_front_page() )
+		$class .= ' navbar-fixed-bottom';
 
 	if ( ! empty( $custom ) )
 		$class .= ' ' . $custom;
@@ -618,14 +618,14 @@ endif;
 
 if ( ! function_exists( 'melany_body_class' ) ) :
 /**
- * Custom header image class
+ * Custom body classes
  *
- * Filters body_class() function and adds a new class if custom header image is defined.
+ * Filters body_class() function and adds custom classes
  *
  * @since 1.0.0
  *
  * @param array $classes. The body_class() output.
- * @return array $classes. The new classes: body_class() output + 'header-image' (if present)
+ * @return array $classes. The new classes: body_class() output + custom classes
  */
 function melany_body_class($classes) {
 	$header_image = get_header_image();

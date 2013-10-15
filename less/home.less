@@ -6,7 +6,14 @@
 //
 // This class is added to the body by WordPress
 .home.page {
-	padding-bottom:50px;
+	@media (max-width:@screen-xs-max) {
+		#colophon.navbar-fixed-bottom {
+			position:static;
+		}
+	}
+	@media (min-width: @screen-sm) {
+		padding-bottom:50px;
+	}
 
 	.jumbotron {
 		background:transparent;
