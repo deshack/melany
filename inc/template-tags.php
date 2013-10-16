@@ -687,14 +687,15 @@ function melany_author_box( $id ) {
 		</a>
 		<div class="media-body">
 			<p><?php the_author_meta( 'description', $id ); ?></p>
-			<p><small>
-				<?php $post_count = get_the_author_posts( $id ); ?>
-				<?php if ( $post_count == 1 )
-					printf( __( '%1$s wrote 1 post', 'melany' ), get_the_author( $id ) );
-				else
-					printf( __( '%1$s wrote %2$s posts', 'melany' ), get_the_author( $id ), $post_count ); ?>
-			</small></p>
 		</div><!-- .media-body -->
+		<div class="clearfix"></div>
+		<p class="posts-num"><small>
+			<?php $post_count = get_the_author_posts( $id ); ?>
+			<?php if ( $post_count == 1 )
+				printf( __( '%1$s wrote 1 post', 'melany' ), get_the_author( $id ) );
+			else
+				printf( __( '%1$s wrote %2$s posts', 'melany' ), get_the_author( $id ), $post_count ); ?>
+		</small></p>
 	</section><!-- #author-box -->
 
 	<?php
