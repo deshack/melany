@@ -32,7 +32,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'melany' ),
+				'before' => '<div class="page-links well"><b>' . __( 'Pages:', 'melany' ) . '</b>',
 				'after'  => '</div>',
 			) );
 		?>
