@@ -2,17 +2,42 @@
 // Variables
 // --------------------------------------------------
 
-// Global values
-// --------------------------------------------------
+// Colors
+// -------------------------
 
-@green:						#5cb85c;
+@green:					#5cb85c;
 @green-light:			lighten( @green, 30% );
 @green-dark:			darken( @green, 15% );
+
+@blue:					#33b5e5;
+@blue-light:			lighten( @blue, 30% );
+@blue-dark:				darken( @blue, 15% );
 
 // Links
 // -------------------------
 
+// Green
 @link-color:			@green;
+
+// Blue
+@link-blue-color:		@blue;
+@link-blue-hover-color:	darken( @blue, 15% );
+
+// Buttons
+// -------------------------
+
+// Blue
+@btn-blue-color:		#fff;
+@btn-blue-bg:			lighten(@blue, 7%);
+@btn-blue-border:		darken(@btn-blue-bg, 5%);
+
+// Panels
+// -------------------------
+
+// Blue
+@panel-blue-text:			@blue-dark;
+@panel-blue-border:			darken(spin(@panel-blue-heading-bg, -10), 5%);
+@panel-blue-heading-bg:		@blue-light;
 
 // Typography
 // -------------------------
@@ -37,6 +62,8 @@
 
 @component-active-bg:				@green;
 
+@component-blue-active-bg:			@blue;
+
 // Static home page
 // -------------------------
 
@@ -50,6 +77,8 @@
 // -------------------------
 
 @input-border-focus:				@green;
+
+@input-blue-border-focus:			@blue;
 
 
 // COMPONENT VARIABLES

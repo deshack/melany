@@ -39,28 +39,6 @@ function melany_customize_register( $wp_customize ) {
 	)));
 
 	/**
-	 * Choose header color
-	 *
-	 * @since 1.0.0
-	 */
-	$wp_customize->add_section( 'melany_navbar_section', array(
-		'title'				=> __( 'Navbar color', 'melany' ),
-		'priority'		=> 30,
-		'description'	=> 'Choose navbar color',
-	));
-	$wp_customize->add_setting( 'melany_navbar_color' );
-	$wp_customize->add_control( 'melany_navbar_color', array(
-		'label'				=> __( 'Choose navbar color', 'melany' ),
-		'type'				=> 'select',
-		'section'			=> 'melany_navbar_section',
-		'choices'			=> array(
-			'default'		=> __( 'Light', 'melany' ),
-			'inverse'		=> __( 'Dark', 'melany' ),
-			'green'			=> __( 'Green', 'melany' )
-		),
-	));
-
-	/**
 	 * Add title length field within Site Title & Tagline section
 	 *
 	 * @Type: Core hack
@@ -117,6 +95,21 @@ function melany_customize_register( $wp_customize ) {
 		'section'		=> 'colors',
 		'settings'	=> 'melany_home_color'
 	)));
+	$wp_customize->add_setting( 'melany_navbar_color', array(
+		'default'			=> 'inverse',
+		'transport'			=> 'refresh',
+		'type'				=> 'theme_mod'
+	));
+	$wp_customize->add_control( 'melany_navbar_color', array(
+		'label'				=> __( 'Navbar color scheme', 'melany' ),
+		'type'				=> 'select',
+		'section'			=> 'colors',
+		'choices'			=> array(
+			'default'		=> __( 'Light', 'melany' ),
+			'inverse'		=> __( 'Dark', 'melany' ),
+			'green'			=> __( 'Green', 'melany' )
+		),
+	));
 
 }
 add_action( 'customize_register', 'melany_customize_register' );
