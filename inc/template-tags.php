@@ -18,7 +18,7 @@ if ( ! function_exists( 'melany_grid_class' ) ) :
 function melany_grid_class() {
 	$base = 'col-md-';
 
-	if ( has_post_format( 'image' ) )
+	if ( has_post_format( 'image' ) || is_attachment() )
 		$class = $base . '12';
 	else
 		$class = $base . '9';
@@ -431,8 +431,8 @@ if ( ! function_exists( 'melany_the_attached_image' ) ) :
  * Prints the attached image with a link to the next attached image
  */
 function melany_the_attached_image() {
-	$post									= get_post();
-	$attachment_size			= apply_filters( 'melany_attachment_size', array( 1200, 1200 ) );
+	$post					= get_post();
+	$attachment_size		= apply_filters( 'melany_attachment_size', array( 1200, 1200 ) );
 	$next_attachment_url	= wp_get_attachment_url();
 
 	/**
@@ -443,13 +443,13 @@ function melany_the_attached_image() {
 	 */
 	$attachment_ids = get_post( array(
 		'post_parent'			=> $post->post_parent,
-		'fields'					=> 'ids',
+		'fields'				=> 'ids',
 		'numberposts'			=> -1,
 		'post_status'			=> 'inherit',
 		'post_type'				=> 'attachment',
-		'post_mime_type'	=> 'image',
-		'order'						=> 'ASC',
-		'orderby'					=> 'menu_order ID'
+		'post_mime_type'		=> 'image',
+		'order'					=> 'ASC',
+		'orderby'				=> 'menu_order ID'
 	) );
 
 	// If there is more than 1 attachment in a gallery
@@ -473,7 +473,7 @@ function melany_the_attached_image() {
 	printf( '<a href="%1$s" title="%2$s" rel="attachment">%3$s</a>',
 		esc_url( $next_attachment_url ),
 		the_title_attribute( array( 'echo' => false ) ),
-		wp_get_attachment_image( $post->ID, $attachment_size )
+		wp_get_attachment_image( $post->ID, $attachment_size, false, array( 'class' => 'aligncenter' ) )
 	);
 }
 endif; // Ends check for melany_the_attached_image
@@ -483,6 +483,9 @@ if ( ! function_exists( 'melany_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function melany_posted_on() {
+	if ( is_attachment() )
+		$metadata = wp_get_attachment_metadata();
+
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
