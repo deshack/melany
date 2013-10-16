@@ -38,7 +38,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php melany_author_box( get_the_author_meta( 'ID' ) ); ?>
+	<?php melany_author_box(); ?>
 
 	<footer class="entry-meta">
 		<?php $tag_list = get_the_tag_list( '', ' - ' );

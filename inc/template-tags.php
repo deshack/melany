@@ -494,7 +494,7 @@ function melany_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( '<span class="posted-on">' . __( 'Posted on %1$s', 'melany' ) . '</span> <span class="byline">' . _x( 'by %2$s', 'Posted by', 'melany' ) . '</span>',
+	printf( '<span class="posted-on">' . __( 'Posted on %1$s', 'melany' ) . '</span> <span class="byline">' . __( 'by %2$s', 'melany' ) . '</span>',
 		sprintf( '<a href="%1$s" title="%2$s" class="tooltip-toggle" data-toggle="tooltip" data-trigger="click hover" data-placement="bottom" rel="bookmark">%3$s</a>',
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
@@ -671,30 +671,30 @@ if ( ! function_exists( 'melany_author_box' ) ) :
  *
  * @param integer $id Required. The author ID
  */
-function melany_author_box( $id ) {
-	$first_name	= get_the_author_meta( 'first_name', $id );
-	$last_name	= get_the_author_meta( 'last_name', $id );
+function melany_author_box() {
+	$first_name	= get_the_author_meta( 'first_name' );
+	$last_name	= get_the_author_meta( 'last_name' );
 	if ( $first_name && $last_name )
 		$author_name = $first_name . ' ' . $last_name;
 	else
-		$author_name = get_the_author( $id );
+		$author_name = get_the_author();
 	?>
 
 	<section id="author-box" class="media">
 		<h2 class="media-heading vcard"><?php echo $author_name; ?></h2>
-		<a class="pull-left" href="<?php the_author_meta( 'user_url', $id ); ?>">
-			<?php echo get_avatar( $id, 100 ); ?>
+		<a class="pull-left" href="<?php the_author_meta( 'user_url' ); ?>">
+			<?php echo get_avatar( 100 ); ?>
 		</a>
 		<div class="media-body">
-			<p><?php the_author_meta( 'description', $id ); ?></p>
+			<p><?php the_author_meta( 'description' ); ?></p>
 		</div><!-- .media-body -->
 		<div class="clearfix"></div>
 		<p class="posts-num"><small>
-			<?php $post_count = get_the_author_posts( $id ); ?>
+			<?php $post_count = get_the_author_posts(); ?>
 			<?php if ( $post_count == 1 )
-				printf( __( '%1$s wrote 1 post', 'melany' ), get_the_author( $id ) );
+				printf( __( '%1$s wrote 1 post', 'melany' ), get_the_author() );
 			else
-				printf( __( '%1$s wrote %2$s posts', 'melany' ), get_the_author( $id ), $post_count ); ?>
+				printf( __( '%1$s wrote %2$s posts', 'melany' ), get_the_author(), $post_count ); ?>
 		</small></p>
 	</section><!-- #author-box -->
 

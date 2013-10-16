@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Melany 1.0.0\n"
-"POT-Creation-Date: 2013-08-30 18:26+0100\n"
-"PO-Revision-Date: 2013-08-30 18:27+0100\n"
+"POT-Creation-Date: 2013-10-16 14:45+0100\n"
+"PO-Revision-Date: 2013-10-16 14:46+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -13,91 +13,92 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-1: ../inc\n"
 
-#: ../footer.php:21
+#: ../footer.php:24
 msgid "Powered by "
 msgstr "Realizzato con "
 
 # 1: theme name
 # 2: theme author
-#: ../footer.php:23
+#: ../footer.php:26
 #, php-format
 msgid "%1$s theme by %2$s"
 msgstr "Tema %1$s di %2$s"
 
-#: ../image.php:22
+#: ../image.php:21
 msgid "Published on"
 msgstr "Pubblicato il"
 
 # Full-size image
-#: ../image.php:22
+#: ../image.php:21
 msgid "at"
 msgstr "come"
 
-#: ../image.php:22
+#: ../image.php:21
 msgid "Link to full-size image"
 msgstr "Link all'immagine intera"
 
 # [published] in [gallery name]
-#: ../image.php:22
+#: ../image.php:21
 msgid "in"
 msgstr "in"
 
-#: ../image.php:22
+#: ../image.php:21
 #, php-format
 msgid "Return to %7$s"
 msgstr "Torna a %7$s"
 
-#: ../image.php:32 ../image.php:75 ../content-page.php:15
-#: ../content-single.php:14 ../inc/template-tags.php:287
-#: ../inc/template-tags.php:311
+#: ../image.php:31 ../image.php:74 ../content-page.php:15
+#: ../content-single.php:14 ../inc/template-tags.php:308
+#: ../inc/template-tags.php:332
 msgid "Edit"
 msgstr "Modifica"
 
-#: ../image.php:36
+#: ../image.php:35
 msgid "Previous"
 msgstr "Precedente"
 
-#: ../image.php:37
+#: ../image.php:36
 msgid "Next"
 msgstr "Successiva"
 
-#: ../image.php:58 ../content-page.php:25 ../content-single.php:35
+#: ../image.php:57 ../content-page.php:25 ../content-single.php:35
 #: ../content.php:34
 msgid "Pages:"
 msgstr "Pagine: "
 
-#: ../image.php:67 ../image.php:71
+#: ../image.php:66 ../image.php:70
 msgid "Post a comment"
 msgstr "Inserisci un commento"
 
-#: ../image.php:67
+#: ../image.php:66
 msgid "or leave a trackback:"
 msgstr "o lascia un trackback:"
 
-#: ../image.php:67 ../image.php:69
+#: ../image.php:66 ../image.php:68
 msgid "Trackback URL for your post"
 msgstr "Trackback URL per il tuo post"
 
-#: ../image.php:67 ../image.php:69
+#: ../image.php:66 ../image.php:68
 msgid "Trackback URL"
 msgstr "Trackback URL"
 
-#: ../image.php:69
+#: ../image.php:68
 msgid "Comments are closed, but you can leave a trackback:"
 msgstr "I commenti sono chiusi, ma puoi lasciare un trackback:"
 
 # ...post a comment
-#: ../image.php:71
+#: ../image.php:70
 msgid "Trackbacks are closed, but you can"
 msgstr "I trackback sono chiusi, ma puoi"
 
 # [Trackbacks are closed, but you can...]
-#: ../image.php:71
+#: ../image.php:70
 msgid "post a comment"
 msgstr "inserire un commento"
 
-#: ../image.php:73
+#: ../image.php:72
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Commenti e trackback sono chiusi."
 
@@ -152,7 +153,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr "Menù principale"
 
-#: ../functions.php:89
+#: ../functions.php:94
 msgid "Sidebar"
 msgstr "Sidebar"
 
@@ -171,7 +172,7 @@ msgstr "Meta"
 msgid " in %1$s"
 msgstr "in %1$s"
 
-#: ../content-single.php:46 ../content.php:47
+#: ../content-single.php:49 ../content.php:47
 msgid "Tags"
 msgstr "Etichette"
 
@@ -256,7 +257,7 @@ msgstr "Menù"
 msgid "Skip to content"
 msgstr "Vai ai contenuti"
 
-#: ../content.php:31 ../inc/template-tags.php:77
+#: ../content.php:31 ../inc/template-tags.php:97
 msgid "Continue reading"
 msgstr "Continua a leggere"
 
@@ -272,88 +273,128 @@ msgstr "Logo"
 msgid "Favicon"
 msgstr "Favicon"
 
-#: ../inc/customizer.php:53
+#: ../inc/customizer.php:55
 msgid "Title Length"
 msgstr "Lunghezza titolo"
 
-#: ../inc/template-tags.php:118
+#: ../inc/customizer.php:68
+msgid "Credits"
+msgstr "Crediti"
+
+#: ../inc/customizer.php:83
+msgid "Homepage Background Color"
+msgstr "Colore background homepage"
+
+#: ../inc/customizer.php:94
+msgid "Homepage Text Color"
+msgstr "Colore testo homepage"
+
+#: ../inc/customizer.php:104
+msgid "Navbar color scheme"
+msgstr "Schema di colori navbar"
+
+#: ../inc/customizer.php:108
+msgid "Light"
+msgstr "Chiaro"
+
+#: ../inc/customizer.php:109
+msgid "Dark"
+msgstr "Scuro"
+
+#: ../inc/customizer.php:110
+msgid "Green"
+msgstr "Verde"
+
+#: ../inc/template-tags.php:138
 msgid "Home"
 msgstr "Home"
 
-#: ../inc/template-tags.php:191
+#: ../inc/template-tags.php:212
 msgid "Post navigation"
 msgstr "Navigazione articoli"
 
-#: ../inc/template-tags.php:199 ../inc/template-tags.php:201
+#: ../inc/template-tags.php:220 ../inc/template-tags.php:222
 msgid "&larr; Older"
 msgstr "&larr; Vecchi"
 
-#: ../inc/template-tags.php:206 ../inc/template-tags.php:208
+#: ../inc/template-tags.php:227 ../inc/template-tags.php:229
 msgid "Newer &rarr;"
 msgstr "Nuovi &rarr;"
 
-#: ../inc/template-tags.php:287
+#: ../inc/template-tags.php:308
 msgid "Pingback:"
 msgstr "Pingback:"
 
 # 1: date
 # 2: time
-#: ../inc/template-tags.php:301
+#: ../inc/template-tags.php:322
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s alle %2$s"
 
-#: ../inc/template-tags.php:315
+#: ../inc/template-tags.php:336
 msgid "Your comment is awaiting moderation."
 msgstr "Il tuo commento è in attesa di moderazione."
 
-#: ../inc/template-tags.php:344
+#: ../inc/template-tags.php:365
 msgid "Name"
 msgstr "Nome"
 
-#: ../inc/template-tags.php:345
+#: ../inc/template-tags.php:366
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/template-tags.php:346
+#: ../inc/template-tags.php:367
 msgid "Website"
 msgstr "Sito web"
 
-#: ../inc/template-tags.php:359
+#: ../inc/template-tags.php:380
 msgid "Comment"
 msgstr "Commento"
 
-#: ../inc/template-tags.php:371
+#: ../inc/template-tags.php:392
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "I campi richiesti sono contrassegnati con %s"
 
-#: ../inc/template-tags.php:372
+#: ../inc/template-tags.php:393
 msgid "Your email address will not be published."
 msgstr "Il tuo indirizzo email non sarà pubblicato."
 
-#: ../inc/template-tags.php:383
+#: ../inc/template-tags.php:404
 #, php-format
 msgid "You may use these HTML tags and attributes: %s"
 msgstr "Puoi usare questi tag e attributi HTML: %s"
 
 # 1: date
-#: ../inc/template-tags.php:476
+#: ../inc/template-tags.php:497
 #, php-format
 msgid "Posted on %1$s"
 msgstr "Pubblicato il %1$s"
 
 # [published] by
 # 2: author
-#: ../inc/template-tags.php:476
+#: ../inc/template-tags.php:497
 #, php-format
 msgid "by %2$s"
 msgstr "da %2$s"
 
-#: ../inc/template-tags.php:484
+#: ../inc/template-tags.php:505
 #, php-format
 msgid "View all posts by %s"
 msgstr "Visualizza tutti i post di %s"
+
+#: ../inc/template-tags.php:695
+#, php-format
+msgid "%1$s wrote 1 post"
+msgstr "%1$s ha scritto 1 articolo"
+
+# 1: date
+# 2: time
+#: ../inc/template-tags.php:697
+#, php-format
+msgid "%1$s wrote %2$s posts"
+msgstr "%1$s ha scritto %2$s articoli"
 
 #: ../inc/extras.php:66
 #, php-format
