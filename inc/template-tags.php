@@ -176,8 +176,10 @@ if ( ! function_exists( 'melany_active_item_class' ) ) :
  * @since 0.5.12
  */
 function melany_active_item_class( $classes = array(), $menu_item = false ) {
-	if ( in_array( 'current-menu-item', $menu_item->classes ) )
-		$classes[] = 'active';
+	if ( is_array( $menu_item->classes ) ) {
+		if ( in_array( 'current-menu-item', $menu_item->classes ) )
+			$classes[] = 'active';
+	}
 
 	return $classes;
 }
