@@ -688,7 +688,7 @@ function melany_author_box() {
 	<section id="author-box" class="media">
 		<h2 class="media-heading vcard"><?php echo $author_name; ?></h2>
 		<a class="pull-left" href="<?php the_author_meta( 'user_url' ); ?>">
-			<?php echo get_avatar( 100 ); ?>
+			<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
 		</a>
 		<div class="media-body">
 			<p><?php the_author_meta( 'description' ); ?></p>
