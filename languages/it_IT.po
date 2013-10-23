@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Melany 1.0.0\n"
-"POT-Creation-Date: 2013-10-16 14:45+0100\n"
-"PO-Revision-Date: 2013-10-16 15:31+0100\n"
+"POT-Creation-Date: 2013-10-23 14:53+0100\n"
+"PO-Revision-Date: 2013-10-23 14:53+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -15,6 +15,18 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPath-1: ../inc\n"
 
+#: ../searchform.php:9
+msgid "Search:"
+msgstr "Cerca:"
+
+#: ../searchform.php:10
+msgid "Search&hellip;"
+msgstr "Cerca&hellip;"
+
+#: ../searchform.php:11
+msgid "Search"
+msgstr "Cerca"
+
 #: ../footer.php:24
 msgid "Powered by "
 msgstr "Realizzato con "
@@ -26,81 +38,20 @@ msgstr "Realizzato con "
 msgid "%1$s theme by %2$s"
 msgstr "Tema %1$s di %2$s"
 
-#: ../image.php:21
-msgid "Published on"
-msgstr "Pubblicato il"
-
-# Full-size image
-#: ../image.php:21
-msgid "at"
-msgstr "come"
-
-#: ../image.php:21
-msgid "Link to full-size image"
-msgstr "Link all'immagine intera"
-
-# [published] in [gallery name]
-#: ../image.php:21
-msgid "in"
-msgstr "in"
-
-#: ../image.php:21
-#, php-format
-msgid "Return to %7$s"
-msgstr "Torna a %7$s"
-
-#: ../image.php:31 ../image.php:74 ../content-page.php:15
-#: ../content-single.php:14 ../inc/template-tags.php:308
-#: ../inc/template-tags.php:332
+#: ../image.php:21 ../content-page.php:15 ../content-single.php:14
+#: ../inc/template-tags.php:308 ../inc/template-tags.php:332
 msgid "Edit"
 msgstr "Modifica"
 
-#: ../image.php:35
-msgid "Previous"
-msgstr "Precedente"
+# [published] in [gallery name]
+#: ../image.php:26
+msgid " in"
+msgstr " in"
 
-#: ../image.php:36
-msgid "Next"
-msgstr "Successiva"
-
-#: ../image.php:57 ../content-page.php:25 ../content-single.php:35
+#: ../image.php:49 ../content-page.php:25 ../content-single.php:35
 #: ../content.php:34
 msgid "Pages:"
 msgstr "Pagine: "
-
-#: ../image.php:66 ../image.php:70
-msgid "Post a comment"
-msgstr "Inserisci un commento"
-
-#: ../image.php:66
-msgid "or leave a trackback:"
-msgstr "o lascia un trackback:"
-
-#: ../image.php:66 ../image.php:68
-msgid "Trackback URL for your post"
-msgstr "Trackback URL per il tuo post"
-
-#: ../image.php:66 ../image.php:68
-msgid "Trackback URL"
-msgstr "Trackback URL"
-
-#: ../image.php:68
-msgid "Comments are closed, but you can leave a trackback:"
-msgstr "I commenti sono chiusi, ma puoi lasciare un trackback:"
-
-# ...post a comment
-#: ../image.php:70
-msgid "Trackbacks are closed, but you can"
-msgstr "I trackback sono chiusi, ma puoi"
-
-# [Trackbacks are closed, but you can...]
-#: ../image.php:70
-msgid "post a comment"
-msgstr "inserire un commento"
-
-#: ../image.php:72
-msgid "Both comments and trackbacks are currently closed."
-msgstr "Commenti e trackback sono chiusi."
 
 #: ../comments.php:28
 msgid "Comments"
@@ -367,31 +318,31 @@ msgid "You may use these HTML tags and attributes: %s"
 msgstr "Puoi usare questi tag e attributi HTML: %s"
 
 # 1: date
-#: ../inc/template-tags.php:497
+#: ../inc/template-tags.php:500
 #, php-format
 msgid "Posted on %1$s"
 msgstr "Pubblicato il %1$s"
 
 # [published] by
 # 2: author
-#: ../inc/template-tags.php:497
+#: ../inc/template-tags.php:500
 #, php-format
 msgid "by %2$s"
 msgstr "da %2$s"
 
-#: ../inc/template-tags.php:505
+#: ../inc/template-tags.php:508
 #, php-format
 msgid "View all posts by %s"
 msgstr "Visualizza tutti i post di %s"
 
-#: ../inc/template-tags.php:695
+#: ../inc/template-tags.php:698
 #, php-format
 msgid "%1$s wrote 1 post"
 msgstr "%1$s ha scritto 1 articolo"
 
 # 1: date
 # 2: time
-#: ../inc/template-tags.php:697
+#: ../inc/template-tags.php:700
 #, php-format
 msgid "%1$s wrote %2$s posts"
 msgstr "%1$s ha scritto %2$s articoli"
@@ -401,11 +352,5 @@ msgstr "%1$s ha scritto %2$s articoli"
 msgid "Page %s"
 msgstr "Pagina %s"
 
-#~ msgid "You may use these"
-#~ msgstr "Puoi usare questi"
-
-#~ msgid "HyperText Markup Language"
-#~ msgstr "HyperText Markup Language"
-
-#~ msgid "HTML"
-#~ msgstr "HTML"
+#~ msgid "Published on"
+#~ msgstr "Pubblicato il"

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Melany 1.0.0\n"
-"POT-Creation-Date: 2013-08-28 18:32+0100\n"
-"PO-Revision-Date: 2013-08-28 18:37+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2013-10-23 14:49+0100\n"
+"PO-Revision-Date: 2013-10-23 14:49+0100\n"
+"Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,85 +14,35 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../footer.php:21
+#: ../searchform.php:9
+msgid "Search:"
+msgstr ""
+
+#: ../searchform.php:11
+msgid "Search"
+msgstr ""
+
+#: ../footer.php:24
 msgid "Powered by "
 msgstr ""
 
-#: ../footer.php:23
+#: ../footer.php:26
 #, php-format
 msgid "%1$s theme by %2$s"
 msgstr ""
 
-#: ../image.php:22
-msgid "Published on"
-msgstr ""
-
-#: ../image.php:22
-msgid "at"
-msgstr ""
-
-#: ../image.php:22
-msgid "Link to full-size image"
-msgstr ""
-
-#: ../image.php:22
-msgid "in"
-msgstr ""
-
-#: ../image.php:22
-#, php-format
-msgid "Return to %7$s"
-msgstr ""
-
-#: ../image.php:32 ../image.php:75 ../content-page.php:15
-#: ../content-single.php:14 ../inc/template-tags.php:287
-#: ../inc/template-tags.php:311
+#: ../image.php:21 ../content-page.php:15 ../content-single.php:14
+#: ../inc/template-tags.php:308 ../inc/template-tags.php:332
 msgid "Edit"
 msgstr ""
 
-#: ../image.php:36
-msgid "Previous"
+#: ../image.php:26
+msgid " in"
 msgstr ""
 
-#: ../image.php:37
-msgid "Next"
-msgstr ""
-
-#: ../image.php:58 ../content-page.php:25 ../content-single.php:35
+#: ../image.php:49 ../content-page.php:25 ../content-single.php:35
 #: ../content.php:34
 msgid "Pages:"
-msgstr ""
-
-#: ../image.php:67 ../image.php:71
-msgid "Post a comment"
-msgstr ""
-
-#: ../image.php:67
-msgid "or leave a trackback:"
-msgstr ""
-
-#: ../image.php:67 ../image.php:69
-msgid "Trackback URL for your post"
-msgstr ""
-
-#: ../image.php:67 ../image.php:69
-msgid "Trackback URL"
-msgstr ""
-
-#: ../image.php:69
-msgid "Comments are closed, but you can leave a trackback:"
-msgstr ""
-
-#: ../image.php:71
-msgid "Trackbacks are closed, but you can"
-msgstr ""
-
-#: ../image.php:71
-msgid "post a comment"
-msgstr ""
-
-#: ../image.php:73
-msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 
 #: ../comments.php:28
@@ -143,7 +93,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:89
+#: ../functions.php:94
 msgid "Sidebar"
 msgstr ""
 
@@ -155,26 +105,13 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: ../content-single.php:20 ../content.php:15
-msgid ", "
-msgstr ""
-
 #: ../content-single.php:23 ../content.php:18
 #, php-format
 msgid " in %1$s"
 msgstr ""
 
-#: ../content-single.php:41 ../content.php:42
-msgid " - "
-msgstr ""
-
-#: ../content-single.php:46 ../content.php:47
+#: ../content-single.php:49 ../content.php:47
 msgid "Tags"
-msgstr ""
-
-#: ../content-single.php:49 ../content.php:50
-#, php-format
-msgid "%1$s"
 msgstr ""
 
 #: ../archive.php:30
@@ -256,7 +193,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: ../content.php:31 ../inc/template-tags.php:77
+#: ../content.php:31 ../inc/template-tags.php:97
 msgid "Continue reading"
 msgstr ""
 
@@ -272,110 +209,120 @@ msgstr ""
 msgid "Favicon"
 msgstr ""
 
-#: ../inc/customizer.php:53
+#: ../inc/customizer.php:55
 msgid "Title Length"
 msgstr ""
 
-#: ../inc/template-tags.php:118
+#: ../inc/customizer.php:68
+msgid "Credits"
+msgstr ""
+
+#: ../inc/customizer.php:83
+msgid "Homepage Background Color"
+msgstr ""
+
+#: ../inc/customizer.php:94
+msgid "Homepage Text Color"
+msgstr ""
+
+#: ../inc/customizer.php:104
+msgid "Navbar color scheme"
+msgstr ""
+
+#: ../inc/customizer.php:108
+msgid "Light"
+msgstr ""
+
+#: ../inc/customizer.php:109
+msgid "Dark"
+msgstr ""
+
+#: ../inc/customizer.php:110
+msgid "Green"
+msgstr ""
+
+#: ../inc/template-tags.php:138
 msgid "Home"
 msgstr ""
 
-#: ../inc/template-tags.php:191
+#: ../inc/template-tags.php:212
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/template-tags.php:199
-msgid "&larr;"
-msgstr ""
-
-#: ../inc/template-tags.php:199
-msgid " Older"
-msgstr ""
-
-#: ../inc/template-tags.php:201
+#: ../inc/template-tags.php:220 ../inc/template-tags.php:222
 msgid "&larr; Older"
 msgstr ""
 
-#: ../inc/template-tags.php:206
-msgid "Newer "
-msgstr ""
-
-#: ../inc/template-tags.php:206
-msgid "&rarr;"
-msgstr ""
-
-#: ../inc/template-tags.php:208
+#: ../inc/template-tags.php:227 ../inc/template-tags.php:229
 msgid "Newer &rarr;"
 msgstr ""
 
-#: ../inc/template-tags.php:287
+#: ../inc/template-tags.php:308
 msgid "Pingback:"
 msgstr ""
 
-#: ../inc/template-tags.php:301
+#: ../inc/template-tags.php:322
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../inc/template-tags.php:315
+#: ../inc/template-tags.php:336
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../inc/template-tags.php:344
+#: ../inc/template-tags.php:365
 msgid "Name"
 msgstr ""
 
-#: ../inc/template-tags.php:345
+#: ../inc/template-tags.php:366
 msgid "Email"
 msgstr ""
 
-#: ../inc/template-tags.php:346
+#: ../inc/template-tags.php:367
 msgid "Website"
 msgstr ""
 
-#: ../inc/template-tags.php:359
+#: ../inc/template-tags.php:380
 msgid "Comment"
 msgstr ""
 
-#: ../inc/template-tags.php:371
+#: ../inc/template-tags.php:392
 #, php-format
 msgid "Required fields are marked %s"
 msgstr ""
 
-#: ../inc/template-tags.php:372
+#: ../inc/template-tags.php:393
 msgid "Your email address will not be published."
 msgstr ""
 
-#: ../inc/template-tags.php:383
-msgid "You may use these"
-msgstr ""
-
-#: ../inc/template-tags.php:383
-msgid "HyperText Markup Language"
-msgstr ""
-
-#: ../inc/template-tags.php:383
-msgid "HTML"
-msgstr ""
-
-#: ../inc/template-tags.php:383
+#: ../inc/template-tags.php:404
 #, php-format
-msgid "tags and attributes: %s"
+msgid "You may use these HTML tags and attributes: %s"
 msgstr ""
 
-#: ../inc/template-tags.php:476
+#: ../inc/template-tags.php:500
 #, php-format
 msgid "Posted on %1$s"
 msgstr ""
 
-#: ../inc/template-tags.php:476
+#: ../inc/template-tags.php:500
 #, php-format
 msgid "by %2$s"
 msgstr ""
 
-#: ../inc/template-tags.php:484
+#: ../inc/template-tags.php:508
 #, php-format
 msgid "View all posts by %s"
+msgstr ""
+
+#: ../inc/template-tags.php:698
+#, php-format
+msgid "%1$s wrote 1 post"
+msgstr ""
+
+#: ../inc/template-tags.php:700
+#, php-format
+msgid "%1$s wrote %2$s posts"
 msgstr ""
 
 #: ../inc/extras.php:66
