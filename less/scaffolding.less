@@ -14,8 +14,19 @@ body {
 		.navbar-fixed-top {
 			top:28px;
 		}
-		&.header-image {
-			padding-top:47px;
+	}
+
+	// MP6 plugin
+	&.mp6 {
+		@media (max-width:@screen-sm-max) {
+			.navbar-fixed-top {
+				top:46px;
+			}
+		}
+		@media (min-width:@screen-md) {
+			&.header-image {
+				padding-top:47px;
+			}
 		}
 	}
 }
