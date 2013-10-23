@@ -66,9 +66,6 @@ function melany_header_style() {
 			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-		#header .aligncenter {
-			margin:0 auto;
-		}
 	<?php
 		// If the user has set a custom color for the text use that
 		else :
