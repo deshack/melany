@@ -28,6 +28,8 @@
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 
+</div><!-- #scroll -->
+
 <?php wp_footer(); ?>
 
 </body>

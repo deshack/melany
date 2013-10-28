@@ -70,8 +70,8 @@ function melany_setup() {
 		'default-image'	=> '',
 	) ) );
 }
-endif; // melany_setup
 add_action( 'after_setup_theme', 'melany_setup' );
+endif; // melany_setup
 
 if ( !function_exists( 'melany_editor_styles' ) ) :
 /**
@@ -83,8 +83,8 @@ if ( !function_exists( 'melany_editor_styles' ) ) :
 function melany_editor_styles() {
 	add_editor_style( 'css/custom-style.css' );
 }
-endif;
 add_action( 'init', 'melany_editor_styles' );
+endif;
 
 /**
  * Register widgetized area and update sidebar with default widgets
@@ -110,6 +110,7 @@ function melany_scripts() {
 
 	// Enqueue styles
 	wp_enqueue_style( 'melany-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/css/custom-style.css', array('melany-style') );
 
 	// Enqueue scripts
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.0.0', false );
