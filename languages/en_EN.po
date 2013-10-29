@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Melany 1.0.0\n"
-"POT-Creation-Date: 2013-10-23 14:49+0100\n"
-"PO-Revision-Date: 2013-10-23 14:49+0100\n"
+"POT-Creation-Date: 2013-10-29 12:33+0100\n"
+"PO-Revision-Date: 2013-10-29 12:34+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,10 @@ msgstr ""
 
 #: ../searchform.php:9
 msgid "Search:"
+msgstr ""
+
+#: ../searchform.php:10
+msgid "Search&hellip;"
 msgstr ""
 
 #: ../searchform.php:11
@@ -177,19 +181,19 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: ../header.php:36
+#: ../header.php:37
 msgid "Toggle navigation"
 msgstr ""
 
-#: ../header.php:42
+#: ../header.php:43
 msgid "Toggle search"
 msgstr ""
 
-#: ../header.php:53
+#: ../header.php:54
 msgid "Menu"
 msgstr ""
 
-#: ../header.php:54
+#: ../header.php:55
 msgid "Skip to content"
 msgstr ""
 

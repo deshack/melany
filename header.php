@@ -28,6 +28,7 @@
 
 <body <?php body_class(); ?>>
 <?php do_action( 'before' ); ?>
+<div id="scroll">
 <header id="masthead" <?php melany_header_class(); ?> role="banner">
 
 	<?php // Brand and toggle get grouped for better mobile display ?>
