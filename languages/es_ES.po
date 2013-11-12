@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Melany 1.0.0\n"
 "POT-Creation-Date: 2013-10-29 12:33+0100\n"
-"PO-Revision-Date: 2013-11-12 14:20+0100\n"
+"PO-Revision-Date: 2013-11-12 14:29+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,97 +16,98 @@ msgstr ""
 
 #: ../searchform.php:9
 msgid "Search:"
-msgstr "Cerca:"
+msgstr "Búsqueda:"
 
 #: ../searchform.php:10
 msgid "Search&hellip;"
-msgstr "Cerca&hellip;"
+msgstr "Buscar&hellip;"
 
 #: ../searchform.php:11
 msgid "Search"
-msgstr "Cerca"
+msgstr "Buscar"
 
 #: ../footer.php:24
 msgid "Powered by "
-msgstr "Realizzato con "
+msgstr "Impulsado por "
 
 #: ../footer.php:26
 #, php-format
 msgid "%1$s theme by %2$s"
-msgstr "Tema %1$s di %2$s"
+msgstr "%1$s tema por %2$s"
 
 #: ../image.php:21 ../content-page.php:15 ../content-single.php:14
 #: ../inc/template-tags.php:308 ../inc/template-tags.php:332
 msgid "Edit"
-msgstr "Modifica"
+msgstr "Editar"
 
 #: ../image.php:26
 msgid " in"
-msgstr " in"
+msgstr "en"
 
 #: ../image.php:49 ../content-page.php:25 ../content-single.php:35
 #: ../content.php:34
 msgid "Pages:"
-msgstr "Pagine: "
+msgstr "Páginas:"
 
 #: ../comments.php:28
 msgid "Comments"
-msgstr "Commenti"
+msgstr "Comentarios"
 
 #: ../comments.php:33 ../comments.php:58
 msgid "Comment navigation"
-msgstr "Navigazione commenti"
+msgstr "Navegación por comentarios"
 
 #: ../comments.php:35 ../comments.php:60
 msgid "&larr; Older Comments"
-msgstr "&larr; Vecchi commenti"
+msgstr "&larr; Comentarios antiguos"
 
 #: ../comments.php:36 ../comments.php:61
 msgid "Newer Comments &rarr;"
-msgstr "Nuovi commenti &rarr;"
+msgstr "Nuevos Comentarios &rarr;"
 
 #: ../comments.php:72
 msgid "Comments are closed."
-msgstr "I commenti sono chiusi."
+msgstr "Los comentarios estan cerrados."
 
 #: ../no-results.php:13
 msgid "Nothing Found"
-msgstr "Non è stato trovato niente"
+msgstr "No encontramos nada"
 
 #: ../no-results.php:19
 msgid "Ready to publish your first post?"
-msgstr "Sei pronto a pubblicare il tuo primo post?"
+msgstr "¿Listo para publicar su primer post?"
 
 #: ../no-results.php:19
 msgid "Get started here"
-msgstr "Comincia da qui"
+msgstr "Puede empezar aquí"
 
 #: ../no-results.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Non sono state trovate corrispondenze con i termini di ricerca inseriti. Si "
-"prega di riprovare con parole chiave diverse."
+"Lo sentimos, pero no encuentro los términos de búsqueda. Por favor, "
+"inténtelo de nuevo con algunas palabras clave diferentes."
 
 #: ../no-results.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Impossibile trovare quanto richiesto. Probabilmente una ricerca può aiutare."
+"Parece que no podemos encontrar lo que estás buscando. Tal vez la búsqueda "
+"le puede ayudar."
 
 #: ../functions.php:47
 msgid "Primary Menu"
-msgstr "Menù principale"
+msgstr "Menú Primario"
 
 #: ../functions.php:94
 msgid "Sidebar"
-msgstr "Sidebar"
+msgstr "Barra lateral"
 
 #: ../sidebar.php:17 ../archive.php:62
 msgid "Archives"
-msgstr "Archivi"
+msgstr "Archivos"
 
 #: ../sidebar.php:24
 msgid "Meta"
@@ -115,104 +116,104 @@ msgstr "Meta"
 #: ../content-single.php:23 ../content.php:18
 #, php-format
 msgid " in %1$s"
-msgstr "in %1$s"
+msgstr "en %1$s"
 
 #: ../content-single.php:49 ../content.php:47
 msgid "Tags"
-msgstr "Etichette"
+msgstr "Etiquetas"
 
 #: ../archive.php:30
 #, php-format
 msgid "Author: %s"
-msgstr "Autore: %s"
+msgstr "Autor: %s"
 
 #: ../archive.php:38
 #, php-format
 msgid "Day: %s"
-msgstr "Giorno: %s"
+msgstr "Día: %s"
 
 #: ../archive.php:41
 #, php-format
 msgid "Month: %s"
-msgstr "Mese: %s"
+msgstr "Mes: %s"
 
 #: ../archive.php:44
 #, php-format
 msgid "Year: %s"
-msgstr "Anno: %s"
+msgstr "Año: %s"
 
 #: ../archive.php:47
 msgid "Asides"
-msgstr "Digressioni"
+msgstr "Aparte"
 
 #: ../archive.php:50
 msgid "Images"
-msgstr "Immagini"
+msgstr "Imagenes"
 
 #: ../archive.php:53
 msgid "Videos"
-msgstr "Video"
+msgstr "Videos"
 
 #: ../archive.php:56
 msgid "Quotes"
-msgstr "Citazioni"
+msgstr "Comillas"
 
 #: ../archive.php:59
 msgid "Links"
-msgstr "Link"
+msgstr "Enlaces"
 
 #: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Pagina non trovata."
+msgstr "Oops! Esa página no se puede encontrar."
 
 #: ../404.php:18
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Sembra che non ci sia niente qui. Uno dei link sottostanti o una ricerca "
-"potrebbero aiutare."
+"Parece que no se encontró nada en este lugar. Puede probar uno de los "
+"enlaces de abajo o una búsqueda?"
 
 #: ../404.php:29
 msgid "Most Used Categories"
-msgstr "Categorie più usate"
+msgstr "Categorias mas usadas"
 
 #: ../404.php:49
 msgid "Try looking in the monthly archives."
-msgstr "Prova a cercare negli archivi mensili."
+msgstr "Trate de buscar en los archivos mensuales."
 
 #: ../search.php:15
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Risultati della ricerca per: %s"
+msgstr "Busqueda de resultados para: %s"
 
 #: ../header.php:37
 msgid "Toggle navigation"
-msgstr "Mostra o nascondi la navigazione"
+msgstr "Cambia navegación"
 
 #: ../header.php:43
 msgid "Toggle search"
-msgstr "Mostra o nascondi la ricerca"
+msgstr "Cambie búsqueda"
 
 #: ../header.php:54
 msgid "Menu"
-msgstr "Menù"
+msgstr "Menú"
 
 #: ../header.php:55
 msgid "Skip to content"
-msgstr "Vai ai contenuti"
+msgstr "Salte al contenido"
 
 #: ../content.php:31 ../inc/template-tags.php:97
 msgid "Continue reading"
-msgstr "Continua a leggere"
+msgstr "Continue leyendo"
 
 #: ../inc/customizer.php:24
 msgid "Logo and favicon"
-msgstr "Logo e favicon"
+msgstr "Logotipo y favicon"
 
 #: ../inc/customizer.php:30
 msgid "Logo"
-msgstr "Logo"
+msgstr "Logotipo"
 
 #: ../inc/customizer.php:36
 msgid "Favicon"
@@ -220,31 +221,31 @@ msgstr "Favicon"
 
 #: ../inc/customizer.php:55
 msgid "Title Length"
-msgstr "Lunghezza titolo"
+msgstr "Longitud del Titulo"
 
 #: ../inc/customizer.php:68
 msgid "Credits"
-msgstr "Crediti"
+msgstr "Créditos"
 
 #: ../inc/customizer.php:83
 msgid "Homepage Background Color"
-msgstr "Colore background homepage"
+msgstr "Color de fondo Página de Inicio"
 
 #: ../inc/customizer.php:94
 msgid "Homepage Text Color"
-msgstr "Colore testo homepage"
+msgstr "Color del Texto de la página de Inicio"
 
 #: ../inc/customizer.php:104
 msgid "Navbar color scheme"
-msgstr "Schema di colori navbar"
+msgstr "Esquema de color de la barra de navegación"
 
 #: ../inc/customizer.php:108
 msgid "Light"
-msgstr "Chiaro"
+msgstr "Ligero"
 
 #: ../inc/customizer.php:109
 msgid "Dark"
-msgstr "Scuro"
+msgstr "Oscuro"
 
 #: ../inc/customizer.php:110
 msgid "Green"
@@ -252,19 +253,19 @@ msgstr "Verde"
 
 #: ../inc/template-tags.php:138
 msgid "Home"
-msgstr "Home"
+msgstr "Portada"
 
 #: ../inc/template-tags.php:212
 msgid "Post navigation"
-msgstr "Navigazione articoli"
+msgstr "Navegación por publicaciones"
 
 #: ../inc/template-tags.php:220 ../inc/template-tags.php:222
 msgid "&larr; Older"
-msgstr "&larr; Vecchi"
+msgstr "&larr; Antigüo"
 
 #: ../inc/template-tags.php:227 ../inc/template-tags.php:229
 msgid "Newer &rarr;"
-msgstr "Nuovi &rarr;"
+msgstr "Mas nuevo &rarr;"
 
 #: ../inc/template-tags.php:308
 msgid "Pingback:"
@@ -273,68 +274,68 @@ msgstr "Pingback:"
 #: ../inc/template-tags.php:322
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s alle %2$s"
+msgstr "%1$s en %2$s"
 
 #: ../inc/template-tags.php:336
 msgid "Your comment is awaiting moderation."
-msgstr "Il tuo commento è in attesa di moderazione."
+msgstr "Tu comentario está pendiente de moderación."
 
 #: ../inc/template-tags.php:365
 msgid "Name"
-msgstr "Nome"
+msgstr "Nombre"
 
 #: ../inc/template-tags.php:366
 msgid "Email"
-msgstr "Email"
+msgstr "Correo Electrónico"
 
 #: ../inc/template-tags.php:367
 msgid "Website"
-msgstr "Sito web"
+msgstr "Sitio Web"
 
 #: ../inc/template-tags.php:380
 msgid "Comment"
-msgstr "Commento"
+msgstr "Comentario"
 
 #: ../inc/template-tags.php:392
 #, php-format
 msgid "Required fields are marked %s"
-msgstr "I campi richiesti sono contrassegnati con %s"
+msgstr "Los campos necesarios están marcados %s"
 
 #: ../inc/template-tags.php:393
 msgid "Your email address will not be published."
-msgstr "Il tuo indirizzo email non sarà pubblicato."
+msgstr "Su dirección de correo electrónico no será publicada."
 
 #: ../inc/template-tags.php:404
 #, php-format
 msgid "You may use these HTML tags and attributes: %s"
-msgstr "Puoi usare questi tag e attributi HTML: %s"
+msgstr "Puedes usar las siguientes etiquetas y atributos HTML: %s"
 
 #: ../inc/template-tags.php:500
 #, php-format
 msgid "Posted on %1$s"
-msgstr "Pubblicato il %1$s"
+msgstr "Publicado en %1$s"
 
 #: ../inc/template-tags.php:500
 #, php-format
 msgid "by %2$s"
-msgstr "da %2$s"
+msgstr "por %2$s"
 
 #: ../inc/template-tags.php:508
 #, php-format
 msgid "View all posts by %s"
-msgstr "Visualizza tutti i post di %s"
+msgstr "Ver todos los post de %s"
 
 #: ../inc/template-tags.php:698
 #, php-format
 msgid "%1$s wrote 1 post"
-msgstr "%1$s ha scritto 1 articolo"
+msgstr "%1$s escribió 1 publicación"
 
 #: ../inc/template-tags.php:700
 #, php-format
 msgid "%1$s wrote %2$s posts"
-msgstr "%1$s ha scritto %2$s articoli"
+msgstr "%1$s escribió %2$s publicaciones"
 
 #: ../inc/extras.php:66
 #, php-format
 msgid "Page %s"
-msgstr "Pagina %s"
+msgstr "Página(s) %s"

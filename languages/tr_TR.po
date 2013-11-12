@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Melany 1.0.0\n"
 "POT-Creation-Date: 2013-10-29 12:33+0100\n"
-"PO-Revision-Date: 2013-11-12 14:20+0100\n"
+"PO-Revision-Date: 2013-11-12 14:29+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,97 +16,97 @@ msgstr ""
 
 #: ../searchform.php:9
 msgid "Search:"
-msgstr "Cerca:"
+msgstr "Ara:"
 
 #: ../searchform.php:10
 msgid "Search&hellip;"
-msgstr "Cerca&hellip;"
+msgstr "Ara&hellip;"
 
 #: ../searchform.php:11
 msgid "Search"
-msgstr "Cerca"
+msgstr "Ara"
 
 #: ../footer.php:24
 msgid "Powered by "
-msgstr "Realizzato con "
+msgstr "Altyapı: "
 
 #: ../footer.php:26
 #, php-format
 msgid "%1$s theme by %2$s"
-msgstr "Tema %1$s di %2$s"
+msgstr "%2$s tarafından hazırlanan %1$s teması"
 
 #: ../image.php:21 ../content-page.php:15 ../content-single.php:14
 #: ../inc/template-tags.php:308 ../inc/template-tags.php:332
 msgid "Edit"
-msgstr "Modifica"
+msgstr "Düzenle"
 
 #: ../image.php:26
 msgid " in"
-msgstr " in"
+msgstr "yazı:"
 
 #: ../image.php:49 ../content-page.php:25 ../content-single.php:35
 #: ../content.php:34
 msgid "Pages:"
-msgstr "Pagine: "
+msgstr "Sayfalar:"
 
 #: ../comments.php:28
 msgid "Comments"
-msgstr "Commenti"
+msgstr "Yorumlar"
 
 #: ../comments.php:33 ../comments.php:58
 msgid "Comment navigation"
-msgstr "Navigazione commenti"
+msgstr "Yorum navigasyonu"
 
 #: ../comments.php:35 ../comments.php:60
 msgid "&larr; Older Comments"
-msgstr "&larr; Vecchi commenti"
+msgstr "&larr; Eski Yorumlar"
 
 #: ../comments.php:36 ../comments.php:61
 msgid "Newer Comments &rarr;"
-msgstr "Nuovi commenti &rarr;"
+msgstr "Yeni Yorumlar &rarr;"
 
 #: ../comments.php:72
 msgid "Comments are closed."
-msgstr "I commenti sono chiusi."
+msgstr "Yorumlar kapalı."
 
 #: ../no-results.php:13
 msgid "Nothing Found"
-msgstr "Non è stato trovato niente"
+msgstr "Bir Şey Bulunamadı"
 
 #: ../no-results.php:19
 msgid "Ready to publish your first post?"
-msgstr "Sei pronto a pubblicare il tuo primo post?"
+msgstr "İlk yazınızı yayınlamaya hazır mısınız?"
 
 #: ../no-results.php:19
 msgid "Get started here"
-msgstr "Comincia da qui"
+msgstr "Buradan başlayın"
 
 #: ../no-results.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Non sono state trovate corrispondenze con i termini di ricerca inseriti. Si "
-"prega di riprovare con parole chiave diverse."
+"Üzgünüz ancak arama terimlerinize uygun sonuç bulunamadı. Lütfen farklı "
+"kelimelerle tekrar deneyin."
 
 #: ../no-results.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Impossibile trovare quanto richiesto. Probabilmente una ricerca può aiutare."
+"Görünüşe göre aradığınız şeyi bulamıyoruz. Belki arama yapmanız faydalı olur."
 
 #: ../functions.php:47
 msgid "Primary Menu"
-msgstr "Menù principale"
+msgstr "Ana Menü"
 
 #: ../functions.php:94
 msgid "Sidebar"
-msgstr "Sidebar"
+msgstr "Yan Çubuk"
 
 #: ../sidebar.php:17 ../archive.php:62
 msgid "Archives"
-msgstr "Archivi"
+msgstr "Arşivler"
 
 #: ../sidebar.php:24
 msgid "Meta"
@@ -115,100 +115,100 @@ msgstr "Meta"
 #: ../content-single.php:23 ../content.php:18
 #, php-format
 msgid " in %1$s"
-msgstr "in %1$s"
+msgstr "%1$s kategorisinde"
 
 #: ../content-single.php:49 ../content.php:47
 msgid "Tags"
-msgstr "Etichette"
+msgstr "Etiketler"
 
 #: ../archive.php:30
 #, php-format
 msgid "Author: %s"
-msgstr "Autore: %s"
+msgstr "Yazar: %s"
 
 #: ../archive.php:38
 #, php-format
 msgid "Day: %s"
-msgstr "Giorno: %s"
+msgstr "Gün: %s"
 
 #: ../archive.php:41
 #, php-format
 msgid "Month: %s"
-msgstr "Mese: %s"
+msgstr "Ay: %s"
 
 #: ../archive.php:44
 #, php-format
 msgid "Year: %s"
-msgstr "Anno: %s"
+msgstr "Yıl: %s"
 
 #: ../archive.php:47
 msgid "Asides"
-msgstr "Digressioni"
+msgstr "Başlıksız Yazılar"
 
 #: ../archive.php:50
 msgid "Images"
-msgstr "Immagini"
+msgstr "Resimler"
 
 #: ../archive.php:53
 msgid "Videos"
-msgstr "Video"
+msgstr "Videolar"
 
 #: ../archive.php:56
 msgid "Quotes"
-msgstr "Citazioni"
+msgstr "Alıntılar"
 
 #: ../archive.php:59
 msgid "Links"
-msgstr "Link"
+msgstr "Bağlantılar"
 
 #: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Pagina non trovata."
+msgstr "Amanın! Sayfa bulunamadı."
 
 #: ../404.php:18
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Sembra che non ci sia niente qui. Uno dei link sottostanti o una ricerca "
-"potrebbero aiutare."
+"Görünüşe göre bu adreste bir şey bulunamadı. Aşağıdaki bağlantıları denemek "
+"veya arama yapmak ister misiniz?"
 
 #: ../404.php:29
 msgid "Most Used Categories"
-msgstr "Categorie più usate"
+msgstr "En Sık Kullanılan Kategoriler"
 
 #: ../404.php:49
 msgid "Try looking in the monthly archives."
-msgstr "Prova a cercare negli archivi mensili."
+msgstr "Aylık arşivlere bakmayı deneyin."
 
 #: ../search.php:15
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Risultati della ricerca per: %s"
+msgstr "%s arama sonuçları"
 
 #: ../header.php:37
 msgid "Toggle navigation"
-msgstr "Mostra o nascondi la navigazione"
+msgstr "Navigasyonu aç"
 
 #: ../header.php:43
 msgid "Toggle search"
-msgstr "Mostra o nascondi la ricerca"
+msgstr "Aramayı aç"
 
 #: ../header.php:54
 msgid "Menu"
-msgstr "Menù"
+msgstr "Menü"
 
 #: ../header.php:55
 msgid "Skip to content"
-msgstr "Vai ai contenuti"
+msgstr "İçeriğe geç"
 
 #: ../content.php:31 ../inc/template-tags.php:97
 msgid "Continue reading"
-msgstr "Continua a leggere"
+msgstr "Okumaya devam et"
 
 #: ../inc/customizer.php:24
 msgid "Logo and favicon"
-msgstr "Logo e favicon"
+msgstr "Logo ve favicon"
 
 #: ../inc/customizer.php:30
 msgid "Logo"
@@ -220,121 +220,121 @@ msgstr "Favicon"
 
 #: ../inc/customizer.php:55
 msgid "Title Length"
-msgstr "Lunghezza titolo"
+msgstr "Başlık Uzunluğu"
 
 #: ../inc/customizer.php:68
 msgid "Credits"
-msgstr "Crediti"
+msgstr "Emeği Geçenler"
 
 #: ../inc/customizer.php:83
 msgid "Homepage Background Color"
-msgstr "Colore background homepage"
+msgstr "Anasayfa Arkaplan Rengi"
 
 #: ../inc/customizer.php:94
 msgid "Homepage Text Color"
-msgstr "Colore testo homepage"
+msgstr "Anasayfa Yazı Rengi"
 
 #: ../inc/customizer.php:104
 msgid "Navbar color scheme"
-msgstr "Schema di colori navbar"
+msgstr "Navigasyon çubuğu rengi"
 
 #: ../inc/customizer.php:108
 msgid "Light"
-msgstr "Chiaro"
+msgstr "Açık"
 
 #: ../inc/customizer.php:109
 msgid "Dark"
-msgstr "Scuro"
+msgstr "Koyu"
 
 #: ../inc/customizer.php:110
 msgid "Green"
-msgstr "Verde"
+msgstr "Yeşil"
 
 #: ../inc/template-tags.php:138
 msgid "Home"
-msgstr "Home"
+msgstr "Ana sayfa"
 
 #: ../inc/template-tags.php:212
 msgid "Post navigation"
-msgstr "Navigazione articoli"
+msgstr "Yazı navigasyonu"
 
 #: ../inc/template-tags.php:220 ../inc/template-tags.php:222
 msgid "&larr; Older"
-msgstr "&larr; Vecchi"
+msgstr "&larr; Eski"
 
 #: ../inc/template-tags.php:227 ../inc/template-tags.php:229
 msgid "Newer &rarr;"
-msgstr "Nuovi &rarr;"
+msgstr "Yeni &rarr;"
 
 #: ../inc/template-tags.php:308
 msgid "Pingback:"
-msgstr "Pingback:"
+msgstr "Geri bildirim:"
 
 #: ../inc/template-tags.php:322
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s alle %2$s"
+msgstr "%1$s %2$s"
 
 #: ../inc/template-tags.php:336
 msgid "Your comment is awaiting moderation."
-msgstr "Il tuo commento è in attesa di moderazione."
+msgstr "Yorumunuz denetlenmeyi bekliyor."
 
 #: ../inc/template-tags.php:365
 msgid "Name"
-msgstr "Nome"
+msgstr "İsim"
 
 #: ../inc/template-tags.php:366
 msgid "Email"
-msgstr "Email"
+msgstr "E-posta"
 
 #: ../inc/template-tags.php:367
 msgid "Website"
-msgstr "Sito web"
+msgstr "Web Sitesi"
 
 #: ../inc/template-tags.php:380
 msgid "Comment"
-msgstr "Commento"
+msgstr "Yorum"
 
 #: ../inc/template-tags.php:392
 #, php-format
 msgid "Required fields are marked %s"
-msgstr "I campi richiesti sono contrassegnati con %s"
+msgstr "Gerekli alanlar %s ile işaretli"
 
 #: ../inc/template-tags.php:393
 msgid "Your email address will not be published."
-msgstr "Il tuo indirizzo email non sarà pubblicato."
+msgstr "E-posta adresiniz yayınlanmayacak."
 
 #: ../inc/template-tags.php:404
 #, php-format
 msgid "You may use these HTML tags and attributes: %s"
-msgstr "Puoi usare questi tag e attributi HTML: %s"
+msgstr "Şu HTML etiketlerini ve özelliklerini kullanabilirsiniz: %s"
 
 #: ../inc/template-tags.php:500
 #, php-format
 msgid "Posted on %1$s"
-msgstr "Pubblicato il %1$s"
+msgstr "%1$s tarihinde yazılmış"
 
 #: ../inc/template-tags.php:500
 #, php-format
 msgid "by %2$s"
-msgstr "da %2$s"
+msgstr "%2$s tarafından"
 
 #: ../inc/template-tags.php:508
 #, php-format
 msgid "View all posts by %s"
-msgstr "Visualizza tutti i post di %s"
+msgstr "%s tarafından yazılan tüm yazıları görüntüle"
 
 #: ../inc/template-tags.php:698
 #, php-format
 msgid "%1$s wrote 1 post"
-msgstr "%1$s ha scritto 1 articolo"
+msgstr "%1$s 1 yazı yazmış"
 
 #: ../inc/template-tags.php:700
 #, php-format
 msgid "%1$s wrote %2$s posts"
-msgstr "%1$s ha scritto %2$s articoli"
+msgstr "%1$s %2$s yazı yazmış"
 
 #: ../inc/extras.php:66
 #, php-format
 msgid "Page %s"
-msgstr "Pagina %s"
+msgstr "Sayfa %s"
