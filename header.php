@@ -82,7 +82,7 @@
 				<?php endif; // !empty() ?>
 				<?php // Prevent logo section to be shown on image post format
 					if ( ! has_post_format( 'image' ) ) : ?>
-					<section id="logo" class="col-md-3">
+					<section id="logo" class="col-xs-12">
 						<div class="thumbnail text-center">
 							<div class="caption">
 								<h2><?php bloginfo( 'name' ); ?></h2>

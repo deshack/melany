@@ -3,7 +3,8 @@
 // --------------------------------------------------
 
 // Name, logo and site description
-#logo {
+#logo,
+#logo-sidebar {
 	margin-bottom:30px;
 	img {
 		margin-top:0;
@@ -11,9 +12,15 @@
 		max-height: 200px;
 	}
 }
+#logo-sidebar {
+	display:none;
+}
 @media ( min-width: @screen-md ) {
+	#logo-sidebar {
+		display:block;
+	}
 	#logo {
-		float:right;
+		display:none;
 	}
 }
 
