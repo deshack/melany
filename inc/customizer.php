@@ -23,7 +23,7 @@ function melany_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'melany_logo_section', array(
 		'title' => __( 'Logo and favicon', 'melany' ),
 		'priority' => 30,
-		'description' => 'Upload a logo to display at the top of the sidebar',
+		'description' => __( 'Upload a logo to be displayed at the top of the sidebar', 'melany' ),
 	));
 	$wp_customize->add_setting( 'melany_logo' );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'melany_logo', array(
