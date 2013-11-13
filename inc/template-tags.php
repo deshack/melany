@@ -638,7 +638,7 @@ function melany_custom_home_background() {
 	$color	= get_theme_mod( 'melany_home_color' );
 	
 	if ( $bg )
-		$bg_style = 'body.home.page { background-color:' . $bg . '; }';
+		$bg_style = 'body.home.page.page-template-templateshome-php { background-color:' . $bg . '; }';
 	else
 		$bg_style = '';
 	if ( $color )
@@ -656,20 +656,17 @@ if ( ! function_exists( 'melany_author_box' ) ) :
  * Display a box with author infos
  *
  * @since 1.0.0
- *
- * @param integer $id Required. The author ID
  */
 function melany_author_box() {
-	$first_name	= get_the_author_meta( 'first_name' );
-	$last_name	= get_the_author_meta( 'last_name' );
-	if ( $first_name && $last_name )
-		$author_name = $first_name . ' ' . $last_name;
-	else
-		$author_name = get_the_author();
+	if ( ! get_theme_mod( 'melany_author_display', true ) )
+		return;
+
+	// Retrieve author info
+	$author_name = get_the_author();
 	?>
 
 	<section id="author-box" class="media">
-		<h2 class="media-heading vcard"><?php echo $author_name; ?></h2>
+		<h2 class="media-heading vcard"><span class="glyphicon glyphicon-user"></span> <?php echo $author_name; ?></h2>
 		<a class="pull-left" href="<?php the_author_meta( 'user_url' ); ?>">
 			<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
 		</a>
@@ -677,13 +674,16 @@ function melany_author_box() {
 			<p><?php the_author_meta( 'description' ); ?></p>
 		</div><!-- .media-body -->
 		<div class="clearfix"></div>
-		<p class="posts-num"><small>
-			<?php $post_count = get_the_author_posts(); ?>
-			<?php if ( $post_count == 1 )
-				printf( __( '%1$s wrote 1 post', 'melany' ), get_the_author() );
-			else
-				printf( __( '%1$s wrote %2$s posts', 'melany' ), get_the_author(), $post_count ); ?>
-		</small></p>
+		<?php if ( get_theme_mod( 'melany_author_count', true ) ) : ?>
+			<p class="posts-num"><small>
+				<span class="glyphicon glyphicon-pencil"> </span>	
+				<?php $post_count = get_the_author_posts(); ?>
+				<?php if ( $post_count == 1 )
+					printf( __( '%1$s wrote 1 post', 'melany' ), get_the_author() );
+				else
+					printf( __( '%1$s wrote %2$s posts', 'melany' ), get_the_author(), $post_count ); ?>
+			</small></p>
+		<?php endif; ?>
 	</section><!-- #author-box -->
 
 	<?php

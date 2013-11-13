@@ -111,6 +111,30 @@ function melany_customize_register( $wp_customize ) {
 		),
 	));
 
+	$wp_customize->add_section( 'melany_author_section', array(
+		'title'			=> __( 'Author Box', 'melany' ),
+		'priority'		=> 31,
+		'description'	=> __( 'Customize Author Box display', 'melany' )
+	));
+	$wp_customize->add_setting( 'melany_author_display', array(
+		'default'		=> true
+	));
+	$wp_customize->add_control( 'melany_author_display', array(
+		'label'			=> __( 'Display Author Box?', 'melany' ),
+		'type'			=> 'checkbox',
+		'section'		=> 'melany_author_section',
+		'settings'		=> 'melany_author_display'
+	));
+	$wp_customize->add_setting( 'melany_author_count', array(
+		'default'		=> true,
+	));
+	$wp_customize->add_control( 'melany_author_count', array(
+		'label'			=> __( 'Show Posts Number?', 'melany' ),
+		'type'			=> 'checkbox',
+		'section'		=> 'melany_author_section',
+		'settings'		=> 'melany_author_count'
+	));
+
 }
 add_action( 'customize_register', 'melany_customize_register' );
 

@@ -6,7 +6,7 @@
  */
 ?>
 	<section id="secondary" class="widget-area col-md-3" role="complementary">
-		<?php if ( ! is_front_page() || is_home() ) : ?>
+		<?php if ( ! is_page_template('home.php') || is_home() ) : ?>
 			<?php // Prevent logo section to be shown on image post format
 				if ( ! has_post_format( 'image' ) ) : ?>
 				<section id="logo-sidebar">
