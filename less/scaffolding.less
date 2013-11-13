@@ -149,10 +149,7 @@ footer.entry-meta {
 
 	.media-body {
 		padding: 0 @line-height-computed;
-		text-align:center;
-		@media (min-width:@screen-md) {
-			text-align:left;
-		}
+		text-align:left;
 	}
 	.media-heading {
 		padding-bottom:(@line-height-computed / 2);
@@ -160,7 +157,14 @@ footer.entry-meta {
 		border-bottom:1px solid #fff;
 	}
 	.posts-num {
-		margin:1em 1.5em 0;
+		margin:1em 0 0;
+		text-align:center;
+	}
+
+	@media (min-width:@screen-md) {
+		.posts-num {
+			text-align:left;
+		}
 	}
 }
 
