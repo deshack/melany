@@ -73,7 +73,7 @@
 	<section id="content" class="site-content">
 		<main id="main" class="row" role="main">
 			<?php // Prevent custom header image or logo section to be shown on static home pages ?>
-			<?php if ( ! is_page_template( 'home.php' ) || is_home() ) : ?>
+			<?php if ( ! is_page_template('templates/home.php') || is_home() ) : ?>
 				<?php $header_image = get_header_image();
 					if ( ! empty( $header_image ) ) : ?>
 					<div id="header" class="col-xm-12">
