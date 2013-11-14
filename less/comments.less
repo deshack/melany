@@ -18,10 +18,12 @@
 .comment {
 	padding-top:@line-height-computed;
 	padding-bottom:(@line-height-computed / 2);
-	border-top:1px solid @gray-light;
-	border-left:1px solid @gray-light;
+	border:1px solid @gray-light;
 	.border-radius(@border-radius-base);
 
+	.children .comment {
+		border-right:none;
+	}
 	.media-body-inner {
 		padding:0 1em;
 	}

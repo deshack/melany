@@ -1,341 +1,437 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Melany 1.0.0\n"
+"Project-Id-Version: Melany v1.0.3\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-29 12:33+0100\n"
-"PO-Revision-Date: 2013-11-12 14:29+0100\n"
+"PO-Revision-Date: 2013-11-13 19:30:35+0000\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: __;_e;_x\n"
-"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Bookmarks: \n"
 "X-Poedit-SearchPath-0: ..\n"
+"X-Textdomain-Support: yes"
 
-#: ../searchform.php:9
-msgid "Search:"
-msgstr "Búsqueda:"
-
-#: ../searchform.php:10
-msgid "Search&hellip;"
-msgstr "Buscar&hellip;"
-
-#: ../searchform.php:11
-msgid "Search"
-msgstr "Buscar"
-
-#: ../footer.php:24
-msgid "Powered by "
-msgstr "Impulsado por "
-
-#: ../footer.php:26
-#, php-format
-msgid "%1$s theme by %2$s"
-msgstr "%1$s tema por %2$s"
-
-#: ../image.php:21 ../content-page.php:15 ../content-single.php:14
-#: ../inc/template-tags.php:308 ../inc/template-tags.php:332
-msgid "Edit"
-msgstr "Editar"
-
-#: ../image.php:26
+#: image.php:26
+#@ melany
 msgid " in"
 msgstr "en"
 
-#: ../image.php:49 ../content-page.php:25 ../content-single.php:35
-#: ../content.php:34
-msgid "Pages:"
-msgstr "Páginas:"
-
-#: ../comments.php:28
-msgid "Comments"
-msgstr "Comentarios"
-
-#: ../comments.php:33 ../comments.php:58
-msgid "Comment navigation"
-msgstr "Navegación por comentarios"
-
-#: ../comments.php:35 ../comments.php:60
-msgid "&larr; Older Comments"
-msgstr "&larr; Comentarios antiguos"
-
-#: ../comments.php:36 ../comments.php:61
-msgid "Newer Comments &rarr;"
-msgstr "Nuevos Comentarios &rarr;"
-
-#: ../comments.php:72
-msgid "Comments are closed."
-msgstr "Los comentarios estan cerrados."
-
-#: ../no-results.php:13
-msgid "Nothing Found"
-msgstr "No encontramos nada"
-
-#: ../no-results.php:19
-msgid "Ready to publish your first post?"
-msgstr "¿Listo para publicar su primer post?"
-
-#: ../no-results.php:19
-msgid "Get started here"
-msgstr "Puede empezar aquí"
-
-#: ../no-results.php:23
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"Lo sentimos, pero no encuentro los términos de búsqueda. Por favor, "
-"inténtelo de nuevo con algunas palabras clave diferentes."
-
-#: ../no-results.php:28
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-"Parece que no podemos encontrar lo que estás buscando. Tal vez la búsqueda "
-"le puede ayudar."
-
-#: ../functions.php:47
-msgid "Primary Menu"
-msgstr "Menú Primario"
-
-#: ../functions.php:94
-msgid "Sidebar"
-msgstr "Barra lateral"
-
-#: ../sidebar.php:17 ../archive.php:62
-msgid "Archives"
-msgstr "Archivos"
-
-#: ../sidebar.php:24
-msgid "Meta"
-msgstr "Meta"
-
-#: ../content-single.php:23 ../content.php:18
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:23
+#: content.php:18
 #, php-format
+#@ melany
 msgid " in %1$s"
 msgstr "en %1$s"
 
-#: ../content-single.php:49 ../content.php:47
-msgid "Tags"
-msgstr "Etiquetas"
-
-#: ../archive.php:30
+#: footer.php:26
 #, php-format
+#@ melany
+msgid "%1$s theme by %2$s"
+msgstr "Tema %1$s hecho por %2$s"
+
+#: inc/template-tags.php:702
+#, php-format
+#@ melany
+msgid "%1$s wrote %2$s posts"
+msgstr "%1$s escribió %2$s entradas"
+
+#: inc/template-tags.php:700
+#, php-format
+#@ melany
+msgid "%1$s wrote 1 post"
+msgstr "%1$s escribió 1 entrada"
+
+#: inc/template-tags.php:222
+#: inc/template-tags.php:224
+#@ melany
+msgid "&larr; Older"
+msgstr "&larr; Antiguo"
+
+#: comments.php:35
+#: comments.php:60
+#@ melany
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentarios antiguos"
+
+#: archive.php:62
+#: sidebar.php:17
+#@ melany
+msgid "Archives"
+msgstr "Archivos"
+
+#: archive.php:47
+#@ melany
+msgid "Asides"
+msgstr "Relacionados"
+
+#: archive.php:30
+#, php-format
+#@ melany
 msgid "Author: %s"
 msgstr "Autor: %s"
 
-#: ../archive.php:38
-#, php-format
-msgid "Day: %s"
-msgstr "Día: %s"
+#: comments.php:33
+#: comments.php:58
+#@ melany
+msgid "Comment navigation"
+msgstr "Navegación por los comentarios"
 
-#: ../archive.php:41
-#, php-format
-msgid "Month: %s"
-msgstr "Mes: %s"
+#: comments.php:28
+#@ melany
+msgid "Comments"
+msgstr "Comentarios"
 
-#: ../archive.php:44
-#, php-format
-msgid "Year: %s"
-msgstr "Año: %s"
+#: comments.php:72
+#@ melany
+msgid "Comments are closed."
+msgstr "Los comentarios están desactivados."
 
-#: ../archive.php:47
-msgid "Asides"
-msgstr "Aparte"
-
-#: ../archive.php:50
-msgid "Images"
-msgstr "Imagenes"
-
-#: ../archive.php:53
-msgid "Videos"
-msgstr "Videos"
-
-#: ../archive.php:56
-msgid "Quotes"
-msgstr "Comillas"
-
-#: ../archive.php:59
-msgid "Links"
-msgstr "Enlaces"
-
-#: ../404.php:14
-msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oops! Esa página no se puede encontrar."
-
-#: ../404.php:18
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
-msgstr ""
-"Parece que no se encontró nada en este lugar. Puede probar uno de los "
-"enlaces de abajo o una búsqueda?"
-
-#: ../404.php:29
-msgid "Most Used Categories"
-msgstr "Categorias mas usadas"
-
-#: ../404.php:49
-msgid "Try looking in the monthly archives."
-msgstr "Trate de buscar en los archivos mensuales."
-
-#: ../search.php:15
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Busqueda de resultados para: %s"
-
-#: ../header.php:37
-msgid "Toggle navigation"
-msgstr "Cambia navegación"
-
-#: ../header.php:43
-msgid "Toggle search"
-msgstr "Cambie búsqueda"
-
-#: ../header.php:54
-msgid "Menu"
-msgstr "Menú"
-
-#: ../header.php:55
-msgid "Skip to content"
-msgstr "Salte al contenido"
-
-#: ../content.php:31 ../inc/template-tags.php:97
+#: content.php:31
+#: inc/template-tags.php:97
+#@ melany
 msgid "Continue reading"
-msgstr "Continue leyendo"
+msgstr "Siga leyendo"
 
-#: ../inc/customizer.php:24
-msgid "Logo and favicon"
-msgstr "Logotipo y favicon"
-
-#: ../inc/customizer.php:30
-msgid "Logo"
-msgstr "Logotipo"
-
-#: ../inc/customizer.php:36
-msgid "Favicon"
-msgstr "Favicon"
-
-#: ../inc/customizer.php:55
-msgid "Title Length"
-msgstr "Longitud del Titulo"
-
-#: ../inc/customizer.php:68
+#: inc/customizer.php:68
+#@ melany
 msgid "Credits"
 msgstr "Créditos"
 
-#: ../inc/customizer.php:83
-msgid "Homepage Background Color"
-msgstr "Color de fondo Página de Inicio"
-
-#: ../inc/customizer.php:94
-msgid "Homepage Text Color"
-msgstr "Color del Texto de la página de Inicio"
-
-#: ../inc/customizer.php:104
-msgid "Navbar color scheme"
-msgstr "Esquema de color de la barra de navegación"
-
-#: ../inc/customizer.php:108
-msgid "Light"
-msgstr "Ligero"
-
-#: ../inc/customizer.php:109
+#: inc/customizer.php:109
+#@ melany
 msgid "Dark"
 msgstr "Oscuro"
 
-#: ../inc/customizer.php:110
-msgid "Green"
-msgstr "Verde"
-
-#: ../inc/template-tags.php:138
-msgid "Home"
-msgstr "Portada"
-
-#: ../inc/template-tags.php:212
-msgid "Post navigation"
-msgstr "Navegación por publicaciones"
-
-#: ../inc/template-tags.php:220 ../inc/template-tags.php:222
-msgid "&larr; Older"
-msgstr "&larr; Antigüo"
-
-#: ../inc/template-tags.php:227 ../inc/template-tags.php:229
-msgid "Newer &rarr;"
-msgstr "Mas nuevo &rarr;"
-
-#: ../inc/template-tags.php:308
-msgid "Pingback:"
-msgstr "Pingback:"
-
-#: ../inc/template-tags.php:322
+#: archive.php:38
 #, php-format
-msgid "%1$s at %2$s"
-msgstr "%1$s en %2$s"
+#@ melany
+msgid "Day: %s"
+msgstr "Día: %s"
 
-#: ../inc/template-tags.php:336
-msgid "Your comment is awaiting moderation."
-msgstr "Tu comentario está pendiente de moderación."
+#: content-page.php:15
+#: content-single.php:14
+#: image.php:21
+#: inc/template-tags.php:310
+#: inc/template-tags.php:334
+#@ melany
+msgid "Edit"
+msgstr "Editar"
 
-#: ../inc/template-tags.php:365
-msgid "Name"
-msgstr "Nombre"
-
-#: ../inc/template-tags.php:366
+#: inc/template-tags.php:368
+#@ melany
 msgid "Email"
 msgstr "Correo Electrónico"
 
-#: ../inc/template-tags.php:367
+#: inc/customizer.php:36
+#@ melany
+msgid "Favicon"
+msgstr "Favicon"
+
+#: no-results.php:19
+#@ melany
+msgid "Get started here"
+msgstr "Puede empezar aquí"
+
+#: inc/customizer.php:110
+#@ melany
+msgid "Green"
+msgstr "Verde"
+
+#: inc/template-tags.php:138
+#@ melany
+msgid "Home"
+msgstr "Portada"
+
+#: inc/customizer.php:83
+#@ melany
+msgid "Homepage Background Color"
+msgstr "Color de fondo de la Portada"
+
+#: inc/customizer.php:94
+#@ melany
+msgid "Homepage Text Color"
+msgstr "Color del Texto de la Portada"
+
+#: archive.php:50
+#@ melany
+msgid "Images"
+msgstr "Imágenes"
+
+#: 404.php:18
+#@ melany
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Parece que no se encontró nada en este lugar. Puede probar uno de los enlaces de abajo o una búsqueda"
+
+#: no-results.php:28
+#@ melany
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Parece que no podemos encontrar lo que está buscando. Tal vez una búsqueda le ayude."
+
+#: inc/customizer.php:108
+#@ melany
+msgid "Light"
+msgstr "Claro"
+
+#: archive.php:59
+#@ melany
+msgid "Links"
+msgstr "Enlaces"
+
+#: inc/customizer.php:30
+#@ melany
+msgid "Logo"
+msgstr "Logotipo"
+
+#: inc/customizer.php:24
+#@ melany
+msgid "Logo and favicon"
+msgstr "Logotipo y favicon"
+
+#: header.php:53
+#@ melany
+msgid "Menu"
+msgstr "Menú"
+
+#: sidebar.php:24
+#@ melany
+msgid "Meta"
+msgstr "Meta"
+
+#: archive.php:41
+#, php-format
+#@ melany
+msgid "Month: %s"
+msgstr "Mes: %s"
+
+#: 404.php:29
+#@ melany
+msgid "Most Used Categories"
+msgstr "Categorias más usadas"
+
+#: inc/template-tags.php:367
+#@ melany
+msgid "Name"
+msgstr "Nombre"
+
+#: inc/customizer.php:104
+#@ melany
+msgid "Navbar color scheme"
+msgstr "Esquema de color de la barra de navegación"
+
+#: inc/template-tags.php:229
+#: inc/template-tags.php:231
+#@ melany
+msgid "Newer &rarr;"
+msgstr "Más nuevo &rarr;"
+
+#: comments.php:36
+#: comments.php:61
+#@ melany
+msgid "Newer Comments &rarr;"
+msgstr "Nuevos Comentarios &rarr;"
+
+#: no-results.php:13
+#@ melany
+msgid "Nothing Found"
+msgstr "No se encontró nada"
+
+#: 404.php:14
+#@ melany
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Vaya, esa página no se encuentra."
+
+#: inc/extras.php:66
+#, php-format
+#@ melany
+msgid "Page %s"
+msgstr "Página %s"
+
+#: content-page.php:25
+#: content-single.php:35
+#: content.php:34
+#: image.php:49
+#@ melany
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: inc/template-tags.php:310
+#@ melany
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/template-tags.php:214
+#@ melany
+msgid "Post navigation"
+msgstr "Navegación por entradas"
+
+#: inc/template-tags.php:502
+#, php-format
+#@ melany
+msgid "Posted on %1$s"
+msgstr "Publicado el %1$s"
+
+#: footer.php:24
+#@ melany
+msgid "Powered by "
+msgstr "Impulsado por "
+
+#: functions.php:47
+#@ melany
+msgid "Primary Menu"
+msgstr "Menú Principal"
+
+#: archive.php:56
+#@ melany
+msgid "Quotes"
+msgstr "Comillas"
+
+#: no-results.php:19
+#@ melany
+msgid "Ready to publish your first post?"
+msgstr "¿Listo para publicar su primer post?"
+
+#: inc/template-tags.php:394
+#, php-format
+#@ melany
+msgid "Required fields are marked %s"
+msgstr "Los campos con %s son obligatorios"
+
+#: search.php:15
+#, php-format
+#@ melany
+msgid "Search Results for: %s"
+msgstr "Resultados de Búsqueda para: %s"
+
+#: functions.php:94
+#@ melany
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: header.php:54
+#@ melany
+msgid "Skip to content"
+msgstr "Saltar al contenido"
+
+#: no-results.php:23
+#@ melany
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Lo sentimos, pero no se encuentra nada para los términos de búsqueda. Por favor, inténtelo de nuevo con palabras clave diferentes."
+
+#: content-single.php:49
+#: content.php:47
+#@ melany
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: inc/customizer.php:55
+#@ melany
+msgid "Title Length"
+msgstr "Longitud del Titulo"
+
+#: header.php:36
+#@ melany
+msgid "Toggle navigation"
+msgstr "Cambiar navegación"
+
+#: header.php:42
+#@ melany
+msgid "Toggle search"
+msgstr "Cambiar búsqueda"
+
+#. translators: %1$s: smiley
+#: 404.php:49
+#@ melany
+msgid "Try looking in the monthly archives."
+msgstr "Trate de buscar en los archivos mensuales."
+
+#: archive.php:53
+#@ melany
+msgid "Videos"
+msgstr "Vídeos"
+
+#: inc/template-tags.php:510
+#, php-format
+#@ melany
+msgid "View all posts by %s"
+msgstr "Ver todas las entradas de %s"
+
+#: inc/template-tags.php:369
+#@ melany
 msgid "Website"
 msgstr "Sitio Web"
 
-#: ../inc/template-tags.php:380
-msgid "Comment"
-msgstr "Comentario"
-
-#: ../inc/template-tags.php:392
+#: archive.php:44
 #, php-format
-msgid "Required fields are marked %s"
-msgstr "Los campos necesarios están marcados %s"
+#@ melany
+msgid "Year: %s"
+msgstr "Año: %s"
 
-#: ../inc/template-tags.php:393
+#: inc/template-tags.php:406
+#, php-format
+#@ melany
+msgid "You may use these HTML tags and attributes: %s"
+msgstr "Puede usar las siguientes etiquetas y atributos HTML: %s"
+
+#: inc/template-tags.php:338
+#@ melany
+msgid "Your comment is awaiting moderation."
+msgstr "Su comentario está pendiente de moderación."
+
+#: inc/template-tags.php:395
+#@ melany
 msgid "Your email address will not be published."
 msgstr "Su dirección de correo electrónico no será publicada."
 
-#: ../inc/template-tags.php:404
+#: inc/template-tags.php:502
 #, php-format
-msgid "You may use these HTML tags and attributes: %s"
-msgstr "Puedes usar las siguientes etiquetas y atributos HTML: %s"
-
-#: ../inc/template-tags.php:500
-#, php-format
-msgid "Posted on %1$s"
-msgstr "Publicado en %1$s"
-
-#: ../inc/template-tags.php:500
-#, php-format
+#@ melany
 msgid "by %2$s"
 msgstr "por %2$s"
 
-#: ../inc/template-tags.php:508
-#, php-format
-msgid "View all posts by %s"
-msgstr "Ver todos los post de %s"
+#: footer.php:24
+#@ melany
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Plataforma Personal de Publicación Semántica"
 
-#: ../inc/template-tags.php:698
+#: inc/template-tags.php:324
 #, php-format
-msgid "%1$s wrote 1 post"
-msgstr "%1$s escribió 1 publicación"
+#@ melany
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s a las %2$s"
 
-#: ../inc/template-tags.php:700
-#, php-format
-msgid "%1$s wrote %2$s posts"
-msgstr "%1$s escribió %2$s publicaciones"
+#: inc/template-tags.php:382
+#@ melany
+msgctxt "noun"
+msgid "Comment"
+msgstr "Comentario"
 
-#: ../inc/extras.php:66
-#, php-format
-msgid "Page %s"
-msgstr "Página(s) %s"
+#: searchform.php:9
+#@ melany
+msgctxt "label"
+msgid "Search:"
+msgstr "Búsqueda:"
+
+#: searchform.php:10
+#@ melany
+msgctxt "placeholder"
+msgid "Search&hellip;"
+msgstr ""
+
+#: searchform.php:11
+#@ melany
+msgctxt "submit button"
+msgid "Search"
+msgstr "Buscar"
+
+

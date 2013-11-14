@@ -140,8 +140,8 @@ function melany_page_menu( $args = array() ) {
 			$text = $args['show_home'];
 		$class = '';
 		if ( is_front_page() && !is_paged() )
-			$class = 'class="current_page_item"';
-		$menu .= '<li ' . $class . '><a href="' . home_url( '/' ) . '" title="' . esc_attr($text) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
+			$class = 'class="current_page_item active"';
+		$menu .= '<li ' . $class . '><a href="' . home_url( '/' ) . '">' . $args['link_before'] . '<span class="glyphicon glyphicon-home"></span> ' . $text . $args['link_after'] . '</a></li>';
 		// If the front page is a page, add it to the exclude list
 		if (get_option('show_on_front') == 'page') {
 			if ( !empty( $list_args['exclude'] ) ) {
