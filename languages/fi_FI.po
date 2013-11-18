@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Melany 1.0.0\n"
-"POT-Creation-Date: 2013-10-29 12:33+0100\n"
-"PO-Revision-Date: 2013-11-12 14:29+0100\n"
+"POT-Creation-Date: 2013-11-13 16:37+0100\n"
+"PO-Revision-Date: 2013-11-18 12:33+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgid "%1$s theme by %2$s"
 msgstr "%1$s teeman luonut %2$s"
 
 #: ../image.php:21 ../content-page.php:15 ../content-single.php:14
-#: ../inc/template-tags.php:308 ../inc/template-tags.php:332
+#: ../inc/template-tags.php:293 ../inc/template-tags.php:317
 msgid "Edit"
 msgstr "Muokkaa"
 
@@ -103,14 +103,6 @@ msgstr "Päävalikko"
 msgid "Sidebar"
 msgstr "Sivupalkki"
 
-#: ../sidebar.php:17 ../archive.php:62
-msgid "Archives"
-msgstr "Arkistot"
-
-#: ../sidebar.php:24
-msgid "Meta"
-msgstr "Meta"
-
 #: ../content-single.php:23 ../content.php:18
 #, php-format
 msgid " in %1$s"
@@ -160,6 +152,10 @@ msgstr "Sitaatit"
 msgid "Links"
 msgstr "Linkit"
 
+#: ../archive.php:62
+msgid "Archives"
+msgstr "Arkistot"
+
 #: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Hups! Sivua ei löytynyt."
@@ -208,6 +204,10 @@ msgstr "Jatka lukemista"
 msgid "Logo and favicon"
 msgstr "Logo ja favicon"
 
+#: ../inc/customizer.php:26
+msgid "Upload a logo to be displayed at the top of the sidebar"
+msgstr "Lataa logo näytettäväksi sivupalkin ylälaitaan"
+
 #: ../inc/customizer.php:30
 msgid "Logo"
 msgstr "Logo"
@@ -248,86 +248,102 @@ msgstr "Tumma"
 msgid "Green"
 msgstr "Vihreä"
 
+#: ../inc/customizer.php:115
+msgid "Author Box"
+msgstr "Kirjoittajaruutu"
+
+#: ../inc/customizer.php:117
+msgid "Customize Author Box display"
+msgstr "Kustomoi kirjoittajaruudun näkyvyyttä"
+
+#: ../inc/customizer.php:123
+msgid "Display Author Box?"
+msgstr "Näytä kirjoittajaruutu?"
+
+#: ../inc/customizer.php:132
+msgid "Show Posts Number?"
+msgstr "Näytä viestien määrä?"
+
 #: ../inc/template-tags.php:138
 msgid "Home"
 msgstr "Etusivu"
 
-#: ../inc/template-tags.php:212
+#: ../inc/template-tags.php:197
 msgid "Post navigation"
 msgstr "Viestinavigointi"
 
-#: ../inc/template-tags.php:220 ../inc/template-tags.php:222
+#: ../inc/template-tags.php:205 ../inc/template-tags.php:207
 msgid "&larr; Older"
 msgstr "&larr; Vanhempi"
 
-#: ../inc/template-tags.php:227 ../inc/template-tags.php:229
+#: ../inc/template-tags.php:212 ../inc/template-tags.php:214
 msgid "Newer &rarr;"
 msgstr "Uudempi &rarr;"
 
-#: ../inc/template-tags.php:308
+#: ../inc/template-tags.php:293
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/template-tags.php:322
+#: ../inc/template-tags.php:307
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s kohteessa %2$s"
 
-#: ../inc/template-tags.php:336
+#: ../inc/template-tags.php:321
 msgid "Your comment is awaiting moderation."
 msgstr "Kommenttisi odottaa hyväksyntää."
 
-#: ../inc/template-tags.php:365
+#: ../inc/template-tags.php:350
 msgid "Name"
 msgstr "Nimi"
 
-#: ../inc/template-tags.php:366
+#: ../inc/template-tags.php:351
 msgid "Email"
 msgstr "Sähköposti"
 
-#: ../inc/template-tags.php:367
+#: ../inc/template-tags.php:352
 msgid "Website"
 msgstr "Web-sivusto"
 
-#: ../inc/template-tags.php:380
+#: ../inc/template-tags.php:365
 msgid "Comment"
 msgstr "Kommentoi"
 
-#: ../inc/template-tags.php:392
+#: ../inc/template-tags.php:377
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "Vaaditut kentät on merkitty %s"
 
-#: ../inc/template-tags.php:393
+#: ../inc/template-tags.php:378
 msgid "Your email address will not be published."
 msgstr "Sähköpostiosoitettasi ei julkaistu."
 
-#: ../inc/template-tags.php:404
+#: ../inc/template-tags.php:389
 #, php-format
 msgid "You may use these HTML tags and attributes: %s"
 msgstr "Voit käyttää näitä HTML-tageja ja attribuutteja: %s"
 
-#: ../inc/template-tags.php:500
+#: ../inc/template-tags.php:485
 #, php-format
 msgid "Posted on %1$s"
 msgstr "Julkaistu %1$s"
 
-#: ../inc/template-tags.php:500
+#: ../inc/template-tags.php:485
 #, php-format
 msgid "by %2$s"
 msgstr "kirjoittajalta%2$s"
 
-#: ../inc/template-tags.php:508
+#: ../inc/template-tags.php:493
 #, php-format
 msgid "View all posts by %s"
 msgstr "Näytä kaikki viestit kirjoittajalta %s"
 
-#: ../inc/template-tags.php:698
+#: ../inc/template-tags.php:682
 #, php-format
 msgid "%1$s wrote 1 post"
 msgstr "%1$s kirjoittu 1 viestin"
 
-#: ../inc/template-tags.php:700
+#: ../inc/template-tags.php:684
 #, php-format
 msgid "%1$s wrote %2$s posts"
 msgstr "%1$s kirjoitti %2$s viestiä"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Melany 1.0.0\n"
-"POT-Creation-Date: 2013-10-29 12:33+0100\n"
-"PO-Revision-Date: 2013-11-12 14:20+0100\n"
+"POT-Creation-Date: 2013-11-13 16:37+0100\n"
+"PO-Revision-Date: 2013-11-18 12:33+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgid "%1$s theme by %2$s"
 msgstr "Tema %1$s di %2$s"
 
 #: ../image.php:21 ../content-page.php:15 ../content-single.php:14
-#: ../inc/template-tags.php:308 ../inc/template-tags.php:332
+#: ../inc/template-tags.php:293 ../inc/template-tags.php:317
 msgid "Edit"
 msgstr "Modifica"
 
@@ -104,14 +104,6 @@ msgstr "Menù principale"
 msgid "Sidebar"
 msgstr "Sidebar"
 
-#: ../sidebar.php:17 ../archive.php:62
-msgid "Archives"
-msgstr "Archivi"
-
-#: ../sidebar.php:24
-msgid "Meta"
-msgstr "Meta"
-
 #: ../content-single.php:23 ../content.php:18
 #, php-format
 msgid " in %1$s"
@@ -160,6 +152,10 @@ msgstr "Citazioni"
 #: ../archive.php:59
 msgid "Links"
 msgstr "Link"
+
+#: ../archive.php:62
+msgid "Archives"
+msgstr "Archivi"
 
 #: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
@@ -210,6 +206,10 @@ msgstr "Continua a leggere"
 msgid "Logo and favicon"
 msgstr "Logo e favicon"
 
+#: ../inc/customizer.php:26
+msgid "Upload a logo to be displayed at the top of the sidebar"
+msgstr "Carica un logo che sarà visualizzato in cima alla sidebar"
+
 #: ../inc/customizer.php:30
 msgid "Logo"
 msgstr "Logo"
@@ -250,86 +250,102 @@ msgstr "Scuro"
 msgid "Green"
 msgstr "Verde"
 
+#: ../inc/customizer.php:115
+msgid "Author Box"
+msgstr "Riquadro Autore"
+
+#: ../inc/customizer.php:117
+msgid "Customize Author Box display"
+msgstr "Personalizza la visualizzazione del Riquadro Autore"
+
+#: ../inc/customizer.php:123
+msgid "Display Author Box?"
+msgstr "Mostra Riquadro Autore?"
+
+#: ../inc/customizer.php:132
+msgid "Show Posts Number?"
+msgstr "Mostra numero articoli?"
+
 #: ../inc/template-tags.php:138
 msgid "Home"
 msgstr "Home"
 
-#: ../inc/template-tags.php:212
+#: ../inc/template-tags.php:197
 msgid "Post navigation"
 msgstr "Navigazione articoli"
 
-#: ../inc/template-tags.php:220 ../inc/template-tags.php:222
+#: ../inc/template-tags.php:205 ../inc/template-tags.php:207
 msgid "&larr; Older"
 msgstr "&larr; Vecchi"
 
-#: ../inc/template-tags.php:227 ../inc/template-tags.php:229
+#: ../inc/template-tags.php:212 ../inc/template-tags.php:214
 msgid "Newer &rarr;"
 msgstr "Nuovi &rarr;"
 
-#: ../inc/template-tags.php:308
+#: ../inc/template-tags.php:293
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/template-tags.php:322
+#: ../inc/template-tags.php:307
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s alle %2$s"
 
-#: ../inc/template-tags.php:336
+#: ../inc/template-tags.php:321
 msgid "Your comment is awaiting moderation."
 msgstr "Il tuo commento è in attesa di moderazione."
 
-#: ../inc/template-tags.php:365
+#: ../inc/template-tags.php:350
 msgid "Name"
 msgstr "Nome"
 
-#: ../inc/template-tags.php:366
+#: ../inc/template-tags.php:351
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/template-tags.php:367
+#: ../inc/template-tags.php:352
 msgid "Website"
 msgstr "Sito web"
 
-#: ../inc/template-tags.php:380
+#: ../inc/template-tags.php:365
 msgid "Comment"
 msgstr "Commento"
 
-#: ../inc/template-tags.php:392
+#: ../inc/template-tags.php:377
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "I campi richiesti sono contrassegnati con %s"
 
-#: ../inc/template-tags.php:393
+#: ../inc/template-tags.php:378
 msgid "Your email address will not be published."
 msgstr "Il tuo indirizzo email non sarà pubblicato."
 
-#: ../inc/template-tags.php:404
+#: ../inc/template-tags.php:389
 #, php-format
 msgid "You may use these HTML tags and attributes: %s"
 msgstr "Puoi usare questi tag e attributi HTML: %s"
 
-#: ../inc/template-tags.php:500
+#: ../inc/template-tags.php:485
 #, php-format
 msgid "Posted on %1$s"
 msgstr "Pubblicato il %1$s"
 
-#: ../inc/template-tags.php:500
+#: ../inc/template-tags.php:485
 #, php-format
 msgid "by %2$s"
 msgstr "da %2$s"
 
-#: ../inc/template-tags.php:508
+#: ../inc/template-tags.php:493
 #, php-format
 msgid "View all posts by %s"
 msgstr "Visualizza tutti i post di %s"
 
-#: ../inc/template-tags.php:698
+#: ../inc/template-tags.php:682
 #, php-format
 msgid "%1$s wrote 1 post"
 msgstr "%1$s ha scritto 1 articolo"
 
-#: ../inc/template-tags.php:700
+#: ../inc/template-tags.php:684
 #, php-format
 msgid "%1$s wrote %2$s posts"
 msgstr "%1$s ha scritto %2$s articoli"
