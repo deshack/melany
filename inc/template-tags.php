@@ -631,7 +631,7 @@ if ( ! function_exists( 'melany_custom_home_background' ) ) :
  * @since 1.0.0
  */
 function melany_custom_home_background() {
-	if ( 'page' != get_option( 'show_on_front' ) || ! is_front_page() )
+	if ( !is_page_template('templates/home.php') )
 		return;
 
 	$bg			= get_theme_mod( 'melany_home_background' );
@@ -642,7 +642,7 @@ function melany_custom_home_background() {
 	else
 		$bg_style = '';
 	if ( $color )
-		$color_style = 'body.home.page .jumbotron { color:' . $color . '; }';
+		$color_style = 'body.home.page.page-template-templateshome-php .jumbotron { color:' . $color . '; }';
 	else
 		$color_style = '';
 
