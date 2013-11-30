@@ -1,11 +1,14 @@
 Melany for Wordpress
 ====================
 
-This is my first WordPress theme named Melany. This name doesn't have any specific meaning, I just like it. Some time ago I opened a blog on http://www.deshack.net and I wanted to focus on the content, so I choose the "Custom Community" theme by Themekraft, promising myself I would find the time to develop my own. So here we are: it's free, but I'd like you to report credits when you use it.
+Melany is a simple, minimal and responsive WordPress Theme aimed at bringing a pure Twitter Bootstrap experience in WordPress blogs.
+It is addressed to privates and small businesses that need to focus users attention in the content, but allows deep customizations.
+
+[Visit the website](http://melany.deshack.net)
 
 
-Collaborators
--------------
+Team
+----
 
 ### Mattia Migliorini (deshack)
 
