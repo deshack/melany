@@ -1,0 +1,17 @@
+/**
+ * Fix Internet Explorer 10 in Windows 8 and Windows Phone 8
+ *
+ * Internet Explorer 10 doesn't differentiate device width from viewport width,
+ * and thus doesn't properly apply the media queries in Bootstrap's CSS.
+ * There are issues with IE10 in Windows Phone 8, as it will likely show the
+ * desktop version instead of the mobile one.
+ *
+ * This snippet of CSS code fixes these issues.
+ *
+ * @require /js/ie10fix.js
+ */
+ @-webkit-viewport { width: device-width; }
+ @-moz-viewport { width: device-width; }
+ @-ms-viewport { width: device-width; }
+ @-o-viewport { width: device-width; }
+ @viewport { width: device-width; }
