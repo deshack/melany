@@ -61,14 +61,6 @@ function melany_setup() {
 	 * Add new image sizes
 	 */
 	add_image_size( 'single_post_thumb', 800, 300, true );
-
-	/**
-	 * Setup the WordPress core custom background feature.
-	 */
-	add_theme_support( 'custom-background', apply_filters( 'melany_custom_background_args', array(
-		'default-color'	=> 'ffffff',
-		'default-image'	=> '',
-	) ) );
 }
 add_action( 'after_setup_theme', 'melany_setup' );
 endif; // melany_setup
