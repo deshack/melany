@@ -6018,6 +6018,9 @@ footer.entry-meta {
 .jumbotron.sticky .page-header {
   border-color: #c7e6c7;
 }
+.jumbotron .entry-content {
+  font-size: 16px;
+}
 @media (min-width: 992px) {
   .jumbotron {
     padding: 30px 20px;

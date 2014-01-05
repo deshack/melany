@@ -89,20 +89,25 @@ footer.entry-meta {
 		}
 	}
 
-  @media (min-width: @screen-md) {
-    padding: 30px 20px;
+	// When the Homepage displays full text articles
+	.entry-content {
+		font-size: @font-size-base;
+	}
+
+	@media (min-width: @screen-md) {
+		padding: 30px 20px;
 		text-align:left;
 		&.sticky {
 			padding:30px 60px;
 		}
-    h1 {
-      font-size: (@font-size-base * 3.5);
-    }
+		h1 {
+			font-size: (@font-size-base * 3.5);
+		}
 		.leave-comment {
 			float:right;
 			text-align:right;
 		}
-  }
+	}
 }
 
 // Single and Pages
