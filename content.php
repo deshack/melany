@@ -22,7 +22,11 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() || is_home() || is_archive() ) : // Display Excerpts for blog homepage, archives and search ?>
+	<?php
+	/**
+	 * Display Excerpts for blog homepage, archives and search when the "Full text" customizer option is off
+	 */
+	if ( ! get_theme_mod('melany_content_excerpt') && ( is_search() || is_home() || is_archive() ) ) : // Display Excerpts for blog homepage, archives and search ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->

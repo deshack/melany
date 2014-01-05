@@ -76,57 +76,82 @@ function melany_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_setting( 'melany_home_background', array(
 		'default'		=> '#3d8b3d',
-		'transport'	=> 'refresh',
+		'transport'		=> 'refresh',
 		'type'			=> 'theme_mod'
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'melany_home_background', array(
 		'label'			=> __( 'Homepage Background Color', 'melany' ),
 		'section'		=> 'colors',
-		'settings'	=> 'melany_home_background',
+		'settings'		=> 'melany_home_background',
 	)));
 
 	$wp_customize->add_setting( 'melany_home_color', array(
 		'default'		=> '#ffffff',
-		'transport'	=> 'refresh',
+		'transport'		=> 'refresh',
 		'type'			=> 'theme_mod'
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'melany_home_color', array(
 		'label'			=> __( 'Homepage Text Color', 'melany' ),
 		'section'		=> 'colors',
-		'settings'	=> 'melany_home_color'
+		'settings'		=> 'melany_home_color'
 	)));
 	$wp_customize->add_setting( 'melany_navbar_color', array(
-		'default'			=> 'inverse',
-		'transport'			=> 'refresh',
-		'type'				=> 'theme_mod'
+		'default'		=> 'inverse',
+		'transport'		=> 'refresh',
+		'type'			=> 'theme_mod'
 	));
 	$wp_customize->add_control( 'melany_navbar_color', array(
-		'label'				=> __( 'Navbar color scheme', 'melany' ),
-		'type'				=> 'select',
-		'section'			=> 'colors',
-		'choices'			=> array(
+		'label'			=> __( 'Navbar color scheme', 'melany' ),
+		'type'			=> 'select',
+		'section'		=> 'colors',
+		'choices'		=> array(
 			'default'		=> __( 'Light', 'melany' ),
 			'inverse'		=> __( 'Dark', 'melany' ),
 			'green'			=> __( 'Green', 'melany' )
 		),
 	));
 
+	/**
+	 * Content options section
+	 *
+	 * @since 1.1.0
+	 */
+	$wp_customize->add_section( 'melany_content_section', array(
+		'title'			=> __( 'Content', 'melany' ),
+		'priority'		=> 31,
+		'description'	=> __( 'Customize how the content is displayed', 'melany' )
+	));
+	$wp_customize->add_setting( 'melany_content_excerpt', array(
+		'default'		=> false,
+	));
+	$wp_customize->add_control( 'melany_content_excerpt', array(
+		'label'			=> __( 'Full text posts in Home Page', 'melany' ),
+		'type'			=> 'checkbox',
+		'section'		=> 'melany_content_section',
+		'settings'		=> 'melany_content_excerpt',
+	));
+
+	/**
+	 * Author Box section
+	 *
+	 * @since 1.0.0
+	 */
 	$wp_customize->add_section( 'melany_author_section', array(
 		'title'			=> __( 'Author Box', 'melany' ),
-		'priority'		=> 31,
+		'priority'		=> 32,
 		'description'	=> __( 'Customize Author Box display', 'melany' )
 	));
 	$wp_customize->add_setting( 'melany_author_display', array(
 		'default'		=> true
+	));
+	$wp_customize->add_setting( 'melany_author_count', array(
+		'default'		=> true,
 	));
 	$wp_customize->add_control( 'melany_author_display', array(
 		'label'			=> __( 'Display Author Box?', 'melany' ),
 		'type'			=> 'checkbox',
 		'section'		=> 'melany_author_section',
 		'settings'		=> 'melany_author_display'
-	));
-	$wp_customize->add_setting( 'melany_author_count', array(
-		'default'		=> true,
 	));
 	$wp_customize->add_control( 'melany_author_count', array(
 		'label'			=> __( 'Show Posts Number?', 'melany' ),
