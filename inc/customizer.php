@@ -31,6 +31,19 @@ function melany_customize_register( $wp_customize ) {
 		'section' => 'melany_logo_section',
 		'settings' => 'melany_logo',
 	)));
+	$wp_customize->add_setting( 'melany_logo_shape', array(
+		'default'		=> 'default',
+	));
+	$wp_customize->add_control( 'melany_logo_shape', array(
+		'label'			=> __( 'Logo Shape', 'melany' ),
+		'type'			=> 'radio',
+		'section'		=> 'melany_logo_section',
+		'choices'		=> array(
+			'default'		=> __( 'Default', 'melany' ),
+			'rounded'		=> __( 'Rounded', 'melany' ),
+			'circle'		=> __( 'Circle', 'melany' ),
+		),
+	));
 	$wp_customize->add_setting( 'melany_favicon' );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'melany_favicon', array(
 		'label'			=> __( 'Favicon', 'melany' ),

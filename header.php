@@ -56,11 +56,11 @@
 			<?php
 				wp_nav_menu( array(
 				'theme_location'	=> 'primary',
-				'container' 			=> false,
-				'menu_class' 			=> 'nav navbar-nav',
-				'fallback_cb'			=> 'melany_page_menu',
-				'depth'						=> 3,
-				'walker'					=> new Bootstrap_Walker,
+				'container' 		=> false,
+				'menu_class' 		=> 'nav navbar-nav',
+				'fallback_cb'		=> 'melany_page_menu',
+				'depth'				=> 3,
+				'walker'			=> new Bootstrap_Walker,
 			) ); ?>
 		</nav><!-- #site-navigation -->
 	</div><!-- .navbar-collapse -->
@@ -68,6 +68,15 @@
 		<?php get_search_form( true ); ?>
 	</div>
 </header><!-- #masthead -->
+
+<?php // Prevent custom header image to be shown on static front page ?>
+<?php if ( ! is_page_template('templates/home.php') || is_home() ) : ?>
+	<?php $header_image = get_header_image();
+		if ( ! empty( $header_image ) ) : ?>
+		<div id="header" class="col-xm-12">
+		</div>
+	<?php endif; // !empty() ?>
+<?php endif; // !is_page_template() || is_home() ?>
 
 <div id="page" class="container hfeed site">
 	<section id="content" class="site-content">

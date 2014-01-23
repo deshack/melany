@@ -26,7 +26,7 @@
 	/**
 	 * Display Excerpts for blog homepage, archives and search when the "Full text" customizer option is off
 	 */
-	if ( ! get_theme_mod('melany_content_excerpt') && ( is_search() || is_home() || is_archive() ) ) : // Display Excerpts for blog homepage, archives and search ?>
+	if ( ( ! get_theme_mod('melany_content_excerpt') && is_home() ) || is_search() || is_archive() ) : ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
