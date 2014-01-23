@@ -74,6 +74,11 @@
 	<?php $header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>
 		<div id="header" class="col-xm-12">
+			<?php
+			/**
+			 * Uncomplete code
+			 */
+			?>
 		</div>
 	<?php endif; // !empty() ?>
 <?php endif; // !is_page_template() || is_home() ?>
@@ -90,19 +95,6 @@
 					</div>
 				<?php endif; // !empty() ?>
 				<?php // Prevent logo section to be shown on image post format
-					if ( ! has_post_format( 'image' ) ) : ?>
-					<section id="logo" class="col-xs-12">
-						<div class="thumbnail text-center">
-							<div class="caption">
-								<h2><?php bloginfo( 'name' ); ?></h2>
-							</div>
-							<?php if ( get_theme_mod( 'melany_logo' ) ) : ?>
-								<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
-							<?php endif; ?>
-							<div class="caption">
-								<p><?php bloginfo( 'description' ); ?></p>
-							</div>
-						</div>
-					</section>
-				<?php endif; // has_post_format( 'image' ) ?>
+					if ( ! has_post_format( 'image' ) )
+						melany_logo( 'logo' ); ?>
 			<?php endif; // !is_front_page() || is_home() ?>

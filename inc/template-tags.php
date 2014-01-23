@@ -689,3 +689,52 @@ function melany_author_box() {
 	<?php
 }
 endif;
+
+if ( ! function_exists( 'melany_logo' ) ) :
+/**
+ * Output code to display the logo section.
+ *
+ * @since 1.1
+ * @uses get_melany_logo()
+ */
+function melany_logo( $id ) {
+	$class = $id == 'logo' ? 'class="col-xs-12' : '';
+	$html = '
+	<section id="' . $id . '" ' . $class . '">
+		<div class="thumbnail text-center">
+			<div class="caption">
+				<h2>' . get_bloginfo( 'name' ) . '</h2>
+			</div>
+			' . get_melany_logo() . '
+			<div class="caption">
+				<p>' . get_bloginfo( 'description' ) . '</p>
+			</div>
+		</div>
+	</section>';
+
+	echo $html;
+}
+endif;
+
+if ( ! function_exists( 'get_melany_logo' ) ) :
+/**
+ * Get the logo from theme options
+ *
+ * @since 1.1
+ */
+function get_melany_logo() {
+	$src = get_theme_mod( 'melany_logo' );
+	$shape = get_theme_mod( 'melany_logo_shape' );
+	if ( isset($shape) && !empty($shape) && $shape !== 'default' )
+		$shape = 'class="img-' . $shape . '"';
+	else
+		$shape = '';
+	$title = get_bloginfo( 'name' );
+	$output = '';
+
+	if ( $src )
+		$output = '<img src="' . $src . '" alt="' . $title . '" ' . $shape . '>';
+
+	return $output;
+}
+endif;
