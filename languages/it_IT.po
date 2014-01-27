@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Melany 1.0.0\n"
-"POT-Creation-Date: 2013-11-13 16:37+0100\n"
-"PO-Revision-Date: 2013-11-18 12:33+0100\n"
+"POT-Creation-Date: 2013-10-23 14:49+0100\n"
+"PO-Revision-Date: 2013-10-23 14:49+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -13,344 +13,387 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
+""
 
 #: ../searchform.php:9
 msgid "Search:"
 msgstr "Cerca:"
 
-#: ../searchform.php:10
-msgid "Search&hellip;"
-msgstr "Cerca&hellip;"
 
 #: ../searchform.php:11
 msgid "Search"
 msgstr "Cerca"
 
+
 #: ../footer.php:24
 msgid "Powered by "
 msgstr "Realizzato con "
+
 
 #: ../footer.php:26
 #, php-format
 msgid "%1$s theme by %2$s"
 msgstr "Tema %1$s di %2$s"
 
+
 #: ../image.php:21 ../content-page.php:15 ../content-single.php:14
-#: ../inc/template-tags.php:293 ../inc/template-tags.php:317
+#: ../inc/template-tags.php:308 ../inc/template-tags.php:332
 msgid "Edit"
 msgstr "Modifica"
+
 
 #: ../image.php:26
 msgid " in"
 msgstr " in"
+
 
 #: ../image.php:49 ../content-page.php:25 ../content-single.php:35
 #: ../content.php:34
 msgid "Pages:"
 msgstr "Pagine: "
 
+
 #: ../comments.php:28
 msgid "Comments"
 msgstr "Commenti"
+
 
 #: ../comments.php:33 ../comments.php:58
 msgid "Comment navigation"
 msgstr "Navigazione commenti"
 
+
 #: ../comments.php:35 ../comments.php:60
 msgid "&larr; Older Comments"
 msgstr "&larr; Vecchi commenti"
+
 
 #: ../comments.php:36 ../comments.php:61
 msgid "Newer Comments &rarr;"
 msgstr "Nuovi commenti &rarr;"
 
+
 #: ../comments.php:72
 msgid "Comments are closed."
 msgstr "I commenti sono chiusi."
+
 
 #: ../no-results.php:13
 msgid "Nothing Found"
 msgstr "Non è stato trovato niente"
 
+
 #: ../no-results.php:19
 msgid "Ready to publish your first post?"
 msgstr "Sei pronto a pubblicare il tuo primo post?"
+
 
 #: ../no-results.php:19
 msgid "Get started here"
 msgstr "Comincia da qui"
 
+
 #: ../no-results.php:23
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"Non sono state trovate corrispondenze con i termini di ricerca inseriti. Si "
-"prega di riprovare con parole chiave diverse."
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Non sono state trovate corrispondenze con i termini di ricerca inseriti. Si prega di riprovare con parole chiave diverse."
+
 
 #: ../no-results.php:28
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-"Impossibile trovare quanto richiesto. Probabilmente una ricerca può aiutare."
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Impossibile trovare quanto richiesto. Probabilmente una ricerca può aiutare."
+
 
 #: ../functions.php:47
 msgid "Primary Menu"
 msgstr "Menù principale"
 
+
 #: ../functions.php:94
 msgid "Sidebar"
 msgstr "Sidebar"
+
+
+#: ../sidebar.php:17 ../archive.php:62
+msgid "Archives"
+msgstr "Archivi"
+
+
+#: ../sidebar.php:24
+msgid "Meta"
+msgstr "Meta"
+
 
 #: ../content-single.php:23 ../content.php:18
 #, php-format
 msgid " in %1$s"
 msgstr "in %1$s"
 
+
 #: ../content-single.php:49 ../content.php:47
 msgid "Tags"
 msgstr "Etichette"
+
 
 #: ../archive.php:30
 #, php-format
 msgid "Author: %s"
 msgstr "Autore: %s"
 
+
 #: ../archive.php:38
 #, php-format
 msgid "Day: %s"
 msgstr "Giorno: %s"
+
 
 #: ../archive.php:41
 #, php-format
 msgid "Month: %s"
 msgstr "Mese: %s"
 
+
 #: ../archive.php:44
 #, php-format
 msgid "Year: %s"
 msgstr "Anno: %s"
 
+
 #: ../archive.php:47
 msgid "Asides"
 msgstr "Digressioni"
+
 
 #: ../archive.php:50
 msgid "Images"
 msgstr "Immagini"
 
+
 #: ../archive.php:53
 msgid "Videos"
 msgstr "Video"
+
 
 #: ../archive.php:56
 msgid "Quotes"
 msgstr "Citazioni"
 
+
 #: ../archive.php:59
 msgid "Links"
 msgstr "Link"
 
-#: ../archive.php:62
-msgid "Archives"
-msgstr "Archivi"
 
 #: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Pagina non trovata."
 
+
 #: ../404.php:18
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
-msgstr ""
-"Sembra che non ci sia niente qui. Uno dei link sottostanti o una ricerca "
-"potrebbero aiutare."
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Sembra che non ci sia niente qui. Uno dei link sottostanti o una ricerca potrebbero aiutare."
+
 
 #: ../404.php:29
 msgid "Most Used Categories"
 msgstr "Categorie più usate"
 
+
 #: ../404.php:49
 msgid "Try looking in the monthly archives."
 msgstr "Prova a cercare negli archivi mensili."
+
 
 #: ../search.php:15
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Risultati della ricerca per: %s"
 
-#: ../header.php:37
+
+#: ../header.php:36
 msgid "Toggle navigation"
 msgstr "Mostra o nascondi la navigazione"
 
-#: ../header.php:43
+
+#: ../header.php:42
 msgid "Toggle search"
 msgstr "Mostra o nascondi la ricerca"
 
-#: ../header.php:54
+
+#: ../header.php:53
 msgid "Menu"
 msgstr "Menù"
 
-#: ../header.php:55
+
+#: ../header.php:54
 msgid "Skip to content"
 msgstr "Vai ai contenuti"
+
 
 #: ../content.php:31 ../inc/template-tags.php:97
 msgid "Continue reading"
 msgstr "Continua a leggere"
 
+
 #: ../inc/customizer.php:24
 msgid "Logo and favicon"
 msgstr "Logo e favicon"
 
-#: ../inc/customizer.php:26
-msgid "Upload a logo to be displayed at the top of the sidebar"
-msgstr "Carica un logo che sarà visualizzato in cima alla sidebar"
 
 #: ../inc/customizer.php:30
 msgid "Logo"
 msgstr "Logo"
 
+
 #: ../inc/customizer.php:36
 msgid "Favicon"
 msgstr "Favicon"
+
 
 #: ../inc/customizer.php:55
 msgid "Title Length"
 msgstr "Lunghezza titolo"
 
+
 #: ../inc/customizer.php:68
 msgid "Credits"
 msgstr "Crediti"
+
 
 #: ../inc/customizer.php:83
 msgid "Homepage Background Color"
 msgstr "Colore background homepage"
 
+
 #: ../inc/customizer.php:94
 msgid "Homepage Text Color"
 msgstr "Colore testo homepage"
+
 
 #: ../inc/customizer.php:104
 msgid "Navbar color scheme"
 msgstr "Schema di colori navbar"
 
+
 #: ../inc/customizer.php:108
 msgid "Light"
 msgstr "Chiaro"
+
 
 #: ../inc/customizer.php:109
 msgid "Dark"
 msgstr "Scuro"
 
+
 #: ../inc/customizer.php:110
 msgid "Green"
 msgstr "Verde"
 
-#: ../inc/customizer.php:115
-msgid "Author Box"
-msgstr "Riquadro Autore"
-
-#: ../inc/customizer.php:117
-msgid "Customize Author Box display"
-msgstr "Personalizza la visualizzazione del Riquadro Autore"
-
-#: ../inc/customizer.php:123
-msgid "Display Author Box?"
-msgstr "Mostra Riquadro Autore?"
-
-#: ../inc/customizer.php:132
-msgid "Show Posts Number?"
-msgstr "Mostra numero articoli?"
 
 #: ../inc/template-tags.php:138
 msgid "Home"
 msgstr "Home"
 
-#: ../inc/template-tags.php:197
+
+#: ../inc/template-tags.php:212
 msgid "Post navigation"
 msgstr "Navigazione articoli"
 
-#: ../inc/template-tags.php:205 ../inc/template-tags.php:207
+
+#: ../inc/template-tags.php:220 ../inc/template-tags.php:222
 msgid "&larr; Older"
 msgstr "&larr; Vecchi"
 
-#: ../inc/template-tags.php:212 ../inc/template-tags.php:214
+
+#: ../inc/template-tags.php:227 ../inc/template-tags.php:229
 msgid "Newer &rarr;"
 msgstr "Nuovi &rarr;"
 
-#: ../inc/template-tags.php:293
+
+#: ../inc/template-tags.php:308
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/template-tags.php:307
+
+#: ../inc/template-tags.php:322
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s alle %2$s"
 
-#: ../inc/template-tags.php:321
+
+#: ../inc/template-tags.php:336
 msgid "Your comment is awaiting moderation."
 msgstr "Il tuo commento è in attesa di moderazione."
 
-#: ../inc/template-tags.php:350
+
+#: ../inc/template-tags.php:365
 msgid "Name"
 msgstr "Nome"
 
-#: ../inc/template-tags.php:351
+
+#: ../inc/template-tags.php:366
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/template-tags.php:352
+
+#: ../inc/template-tags.php:367
 msgid "Website"
 msgstr "Sito web"
 
-#: ../inc/template-tags.php:365
+
+#: ../inc/template-tags.php:380
 msgid "Comment"
 msgstr "Commento"
 
-#: ../inc/template-tags.php:377
+
+#: ../inc/template-tags.php:392
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "I campi richiesti sono contrassegnati con %s"
 
-#: ../inc/template-tags.php:378
+
+#: ../inc/template-tags.php:393
 msgid "Your email address will not be published."
 msgstr "Il tuo indirizzo email non sarà pubblicato."
 
-#: ../inc/template-tags.php:389
+
+#: ../inc/template-tags.php:404
 #, php-format
 msgid "You may use these HTML tags and attributes: %s"
 msgstr "Puoi usare questi tag e attributi HTML: %s"
 
-#: ../inc/template-tags.php:485
+
+#: ../inc/template-tags.php:500
 #, php-format
 msgid "Posted on %1$s"
 msgstr "Pubblicato il %1$s"
 
-#: ../inc/template-tags.php:485
+
+#: ../inc/template-tags.php:500
 #, php-format
 msgid "by %2$s"
 msgstr "da %2$s"
 
-#: ../inc/template-tags.php:493
+
+#: ../inc/template-tags.php:508
 #, php-format
 msgid "View all posts by %s"
 msgstr "Visualizza tutti i post di %s"
 
-#: ../inc/template-tags.php:682
+
+#: ../inc/template-tags.php:698
 #, php-format
 msgid "%1$s wrote 1 post"
 msgstr "%1$s ha scritto 1 articolo"
 
-#: ../inc/template-tags.php:684
+
+#: ../inc/template-tags.php:700
 #, php-format
 msgid "%1$s wrote %2$s posts"
 msgstr "%1$s ha scritto %2$s articoli"
+
 
 #: ../inc/extras.php:66
 #, php-format
 msgid "Page %s"
 msgstr "Pagina %s"
+
