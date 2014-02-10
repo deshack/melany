@@ -14,17 +14,14 @@ body {
 		.navbar-fixed-top {
 			top:28px;
 		}
-		// MP6 plugin
-		&.mp6 {
-			@media (max-width:@screen-sm-max) {
-				.navbar-fixed-top {
-					top:46px;
-				}
+		@media (max-width:@screen-sm-max) {
+			.navbar-fixed-top {
+				top:46px;
 			}
-			@media (min-width:@screen-md) {
-				&.header-image {
-					padding-top:47px;
-				}
+		}
+		@media (min-width:@screen-md) {
+			&.header-image {
+				padding-top:47px;
 			}
 		}
 	}
@@ -45,10 +42,6 @@ img {
 select {
 	// Avoid select elements to breaking the layout
 	max-width:100%;
-
-	option {
-		width:__; // This does not work
-	}
 }
 
 // Force default cursor over input addons

@@ -738,3 +738,49 @@ function get_melany_logo() {
 	return $output;
 }
 endif;
+
+if ( ! function_exists( 'melany_custom_header' ) ) :
+/**
+ * Display the custom header image
+ *
+ * @since 1.1.0
+ * @uses melany_get_custom_header()
+ */
+
+function melany_custom_header() {
+	// Prevent custom header image to be shown on static front page
+	if ( ! melany_get_custom_header() && is_page_template('templates/home.php') )
+		return;
+
+	echo '<div id="header" class="col-xm-12">';
+	echo melany_get_custom_header();
+	echo '</div>';
+}
+endif;
+
+if ( ! function_exists( 'melany_get_custom_header' ) ) :
+/**
+ * Get the custom header image
+ *
+ * @since 1.1.0
+ */
+function melany_get_custom_header() {
+	$header_image = get_header_image();
+	$has_url = get_theme_mod( 'melany_header' );
+
+	if ( empty( $header_image ) )
+		return;
+
+	$html = '';
+
+	if ( $has_url ) {
+		$html = "<a href=\"" . esc_url( home_url( '/' ) ) . "\" rel=\"home\">\n";
+		$html .= "\t<img id=\"header-image\" src=\"" . get_header_image() . "\" class=\"aligncenter\" alt=\"" . esc_attr( get_bloginfo( 'name', 'display' ) ) . "\">\n";
+		$html .= "</a>";
+	} else {
+		$html = '<img id="header-image" src="' . get_header_image() . '" class="aligncenter" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
+	}
+
+	return $html;
+}
+endif;

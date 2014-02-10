@@ -13,7 +13,38 @@
 function melany_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'refresh';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'refresh';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'refresh';
+	//$wp_customize->get_setting( 'header_textcolor' )->transport = 'refresh';
+
+	/**
+	 * Add title length field within Site Title & Tagline section
+	 *
+	 * @Type: Core hack
+	 * @Author: Mirko Pizii
+	 *
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_setting( 'melany_title_length', array(
+		'default' => 20,
+		'transport' => 'refresh',
+		'type' => 'theme_mod'
+	));
+	$wp_customize->add_control( 'melany_title_length', array(
+		'label' => __( 'Title Length', 'melany' ),
+		'section' => 'title_tagline',
+	));
+
+	/**
+	 * Add footer credits text field within Site Title & Tagline section
+	 *
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_setting( 'melany_footer_credits', array(
+		'type' => 'theme_mod'
+	));
+	$wp_customize->add_control( 'melany_footer_credits', array(
+		'label' => __( 'Credits', 'melany' ),
+		'section' => 'title_tagline'
+	));
 
 	/**
 	 * Add logo and favicon handler
@@ -52,34 +83,23 @@ function melany_customize_register( $wp_customize ) {
 	)));
 
 	/**
-	 * Add title length field within Site Title & Tagline section
+	 * Add a link to the home in the header image (opt-in)
 	 *
-	 * @Type: Core hack
-	 * @Author: Mirko Pizii
-	 *
-	 * @since 1.0.0
+	 * @since 1.1.0
 	 */
-	$wp_customize->add_setting( 'melany_title_length', array(
-		'default' => 20,
-		'transport' => 'refresh',
-		'type' => 'theme_mod'
+	$wp_customize->add_section( 'melany_header_section', array(
+		'title'			=> __( 'Header', 'melany' ),
+		'priority'		=> 31,
+		'description'	=> __( 'Settings affecting the header.', 'melany' )
 	));
-	$wp_customize->add_control( 'melany_title_length', array(
-		'label' => __( 'Title Length', 'melany' ),
-		'section' => 'title_tagline',
+	$wp_customize->add_setting( 'melany_header', array(
+		'default'		=> false
 	));
-
-	/**
-	 * Add footer credits text field within Site Title & Tagline section
-	 *
-	 * @since 1.0.0
-	 */
-	$wp_customize->add_setting( 'melany_footer_credits', array(
-		'type' => 'theme_mod'
-	));
-	$wp_customize->add_control( 'melany_footer_credits', array(
-		'label' => __( 'Credits', 'melany' ),
-		'section' => 'title_tagline'
+	$wp_customize->add_control( 'melany_header', array(
+		'label'			=> __( 'Add a link to the home page in the header image', 'melany' ),
+		'type'			=> 'checkbox',
+		'section'		=> 'melany_header_section',
+		'settings'		=> 'melany_header'
 	));
 
 	/**
@@ -131,7 +151,7 @@ function melany_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_section( 'melany_content_section', array(
 		'title'			=> __( 'Content', 'melany' ),
-		'priority'		=> 31,
+		'priority'		=> 32,
 		'description'	=> __( 'Customize how the content is displayed', 'melany' )
 	));
 	$wp_customize->add_setting( 'melany_content_excerpt', array(
@@ -151,7 +171,7 @@ function melany_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_section( 'melany_author_section', array(
 		'title'			=> __( 'Author Box', 'melany' ),
-		'priority'		=> 32,
+		'priority'		=> 33,
 		'description'	=> __( 'Customize Author Box display', 'melany' )
 	));
 	$wp_customize->add_setting( 'melany_author_display', array(

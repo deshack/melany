@@ -10,7 +10,7 @@ It is addressed to privates and small businesses that need to focus users attent
 Team
 ----
 
-### Mattia Migliorini (deshack)
+#### Mattia Migliorini (deshack)
 
 - **Project Leader**
 - Contact: deshack@ubuntu.com
@@ -18,7 +18,7 @@ Team
 - Website: [deshack@web:~$](http://www.deshack.net)
 - Twitter: [@MattiaMglrn](https://twitter.com/MattiaMglrn)
  
-### Mirko Pizii (hallino1)
+#### Mirko Pizii (hallino1)
 
 - **Contributor**
 - Contact: hallino1@ubuntu.com

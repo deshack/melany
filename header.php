@@ -69,31 +69,13 @@
 	</div>
 </header><!-- #masthead -->
 
-<?php // Prevent custom header image to be shown on static front page ?>
-<?php if ( ! is_page_template('templates/home.php') || is_home() ) : ?>
-	<?php $header_image = get_header_image();
-		if ( ! empty( $header_image ) ) : ?>
-		<div id="header" class="col-xm-12">
-			<?php
-			/**
-			 * Uncomplete code
-			 */
-			?>
-		</div>
-	<?php endif; // !empty() ?>
-<?php endif; // !is_page_template() || is_home() ?>
+<?php melany_custom_header(); ?>
 
 <div id="page" class="container hfeed site">
 	<section id="content" class="site-content">
 		<main id="main" class="row" role="main">
 			<?php // Prevent custom header image or logo section to be shown on static home pages ?>
 			<?php if ( ! is_page_template('templates/home.php') || is_home() ) : ?>
-				<?php $header_image = get_header_image();
-					if ( ! empty( $header_image ) ) : ?>
-					<div id="header" class="col-xm-12">
-						<img id="header-image" src="<?php header_image(); ?>" class="aligncenter" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-					</div>
-				<?php endif; // !empty() ?>
 				<?php // Prevent logo section to be shown on image post format
 					if ( ! has_post_format( 'image' ) )
 						melany_logo( 'logo' ); ?>
