@@ -20,29 +20,11 @@ Team
  
 ### Mirko Pizii (hallino1)
 
-- **Collaborator**
+- **Contributor**
 - Contact: hallino1@ubuntu.com
 - Location: Italy
 - Twitter: [@MirkoPizii](https://twitter.com/MirkoPizii)
 - LinkedIn: [MirkoPizii](http://www.linkedin.com/in/MirkoPizii)
-
-
-Based on _s
------------
-
-There's plenty of starter themes on the Internet, but they're mostly parent themes: not very cool to use and distribute the derivative work. Thanks God, I found this toolbox by ThemeShaper, _s, and I must say that's great!
-
-
-Designed with Twitter Bootstrap
--------------------------------
-
-Twitter Bootstrap is a powerful framework that allows a faster and easier web development. That's not only its description, it's reality. Because it's very powerful, I decided to use it for this project.
-
-
-The content, everywhere
------------------------
-
-I don't like that kind of layout that highlights the look instead of the content, at least on blogs. Melany is meant to be clear, linear, and make people enjoy the contents, everywhere, from the desktop to the smarphone.
 
 
 License
@@ -64,3 +46,30 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+=== License for included software
+
+==== Twitter Bootstrap
+
+The MIT License (MIT)
+
+Copyright (c) 2011-2014 Twitter, Inc
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
