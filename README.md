@@ -48,7 +48,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-### License for included software
+### License of included software
 
 #### Twitter Bootstrap
 
