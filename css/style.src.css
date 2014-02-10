@@ -5851,22 +5851,19 @@ a img.aligncenter,
   display: block;
   margin: 20px auto;
 }
-body {
-  padding-top: 70px;
-}
-body.header-image {
-  padding-top: 51px;
+@media (min-width: 992px) {
+  body {
+    padding-top: 70px;
+  }
+  body.header-image {
+    padding-top: 51px;
+  }
 }
 body.admin-bar .navbar-fixed-top {
   top: 28px;
 }
-@media (max-width: 991px) {
-  body.admin-bar.mp6 .navbar-fixed-top {
-    top: 46px;
-  }
-}
 @media (min-width: 992px) {
-  body.admin-bar.mp6.header-image {
+  body.admin-bar.header-image {
     padding-top: 47px;
   }
 }
@@ -5891,14 +5888,16 @@ img {
 select {
   max-width: 100%;
 }
-select option {
-  width: __;
-}
 .input-group-addon {
   cursor: default;
 }
 .updated {
   display: none;
+}
+@media (max-width: 991px) {
+  #masthead.navbar-fixed-top {
+    position: static;
+  }
 }
 .entry-content {
   font-family: 'Roboto', 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -6029,6 +6028,9 @@ footer.entry-meta {
   margin-top: 0;
   margin-bottom: 0;
   max-height: 200px;
+}
+#logo {
+  float: none;
 }
 #logo-sidebar {
   display: none;

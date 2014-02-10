@@ -749,7 +749,7 @@ if ( ! function_exists( 'melany_custom_header' ) ) :
 
 function melany_custom_header() {
 	// Prevent custom header image to be shown on static front page
-	if ( ! melany_get_custom_header() && is_page_template('templates/home.php') )
+	if ( ! melany_get_custom_header() || is_page_template('templates/home.php') )
 		return;
 
 	echo '<div id="header" class="col-xm-12">';

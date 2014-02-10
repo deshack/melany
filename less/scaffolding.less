@@ -3,21 +3,18 @@
 // --------------------------------------------------
 
 body {
-	padding-top:70px;
 
-	&.header-image {
-		padding-top: 51px;
+	@media (min-width:@screen-md) {
+		padding-top:70px;
+		&.header-image {
+			padding-top: 51px;
+		}
 	}
 
 	// Fix admin toolbar issues
 	&.admin-bar {
 		.navbar-fixed-top {
 			top:28px;
-		}
-		@media (max-width:@screen-sm-max) {
-			.navbar-fixed-top {
-				top:46px;
-			}
 		}
 		@media (min-width:@screen-md) {
 			&.header-image {
@@ -51,6 +48,15 @@ select {
 
 .updated {
 	display:none;
+}
+
+// Header
+// -------------------------
+
+@media ( max-width: @screen-sm-max ) {
+	#masthead.navbar-fixed-top {
+		position:static;
+	}
 }
 
 // Content
