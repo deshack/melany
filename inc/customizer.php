@@ -154,14 +154,23 @@ function melany_customize_register( $wp_customize ) {
 		'priority'		=> 32,
 		'description'	=> __( 'Customize how the content is displayed', 'melany' )
 	));
-	$wp_customize->add_setting( 'melany_content_excerpt', array(
+	$wp_customize->add_setting( 'melany_home_excerpt', array(
 		'default'		=> false,
 	));
-	$wp_customize->add_control( 'melany_content_excerpt', array(
+	$wp_customize->add_control( 'melany_home_excerpt', array(
 		'label'			=> __( 'Full text posts in Home Page', 'melany' ),
 		'type'			=> 'checkbox',
 		'section'		=> 'melany_content_section',
-		'settings'		=> 'melany_content_excerpt',
+		'settings'		=> 'melany_home_excerpt',
+	));
+	$wp_customize->add_setting( 'melany_home_tags', array(
+		'default'		=> true
+	));
+	$wp_customize->add_control( 'melany_home_tags', array(
+		'label'			=> __( 'Display tags in Home Page', 'melany' ),
+		'type'			=> 'checkbox',
+		'section'		=> 'melany_content_section',
+		'settings'		=> 'melany_home_tags'
 	));
 
 	/**
