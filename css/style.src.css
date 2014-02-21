@@ -5888,6 +5888,12 @@ img {
 select {
   max-width: 100%;
 }
+::selection {
+  background: #5cb85c;
+}
+a::selection {
+  background: #555555;
+}
 .input-group-addon {
   cursor: default;
 }

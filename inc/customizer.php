@@ -143,6 +143,12 @@ function melany_customize_register( $wp_customize ) {
 			'green'			=> __( 'Green', 'melany' )
 		),
 	));
+	$wp_customize->add_setting( 'melany_selection_color' );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'melany_selection_color', array(
+		'label'			=> __( 'Text selection color', 'melany' ),
+		'section'		=> 'colors',
+		'settings'		=> 'melany_selection_color'
+	)));
 
 	/**
 	 * Content options section

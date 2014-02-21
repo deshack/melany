@@ -41,6 +41,14 @@ select {
 	max-width:100%;
 }
 
+// Override the default text selection color
+::selection {
+	background:@text-selection-color;
+}
+a::selection {
+	background:@link-selection-color;
+}
+
 // Force default cursor over input addons
 .input-group-addon {
 	cursor:default;

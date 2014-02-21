@@ -784,3 +784,18 @@ function melany_get_custom_header() {
 	return $html;
 }
 endif;
+
+if ( ! function_exists( 'melany_custom_selection_color' ) ) :
+/**
+ * Customize text selection color via the Theme Customizer.
+ */
+function melany_custom_selection_color() {
+	$color = get_theme_mod('melany_selection_color');
+
+	if ( empty($color) )
+		return;
+
+	echo '<style type="text/css" id="custom-selection-color">::selection{background:' . $color . ';}</style>';
+}
+add_action( 'wp_head', 'melany_custom_selection_color' );
+endif;
