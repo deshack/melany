@@ -5936,8 +5936,10 @@ footer.entry-meta {
 .jumbotron.sticky .page-header {
   border-color: #c7e6c7;
 }
-.jumbotron .entry-content {
-  font-size: 16px;
+.jumbotron p,
+.jumbotron .entry-content,
+.jumbotron .entry-summary {
+  font-size: 19.2px;
 }
 @media (min-width: 992px) {
   .jumbotron {

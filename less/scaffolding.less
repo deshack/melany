@@ -84,13 +84,14 @@ footer.entry-meta {
 		background-color: @jumbotron-bg;
 
 		.page-header {
-			border-color:@green-light;
+			border-color:@green-light; // TODO: use a global variable that can be easily overridden
 		}
 	}
 
-	// When the Homepage displays full text articles
-	.entry-content {
-		font-size: @font-size-base;
+	p,
+	.entry-content,
+	.entry-summary {
+		font-size:(@font-size-base * 1.2);
 	}
 
 	@media (min-width: @screen-md) {
