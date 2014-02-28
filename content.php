@@ -22,6 +22,9 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
+	<?php if ( has_post_thumbnail() )
+		the_post_thumbnail( 'post_thumb', array( 'class' => 'aligncenter img-rounded' ) ); ?>
+
 	<?php
 	/**
 	 * Display Excerpts for blog homepage, archives and search when the "Full text" customizer option is off
