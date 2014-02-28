@@ -22,7 +22,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( has_post_thumbnail() )
+	<?php if ( get_theme_mod( 'melany_home_thumb' ) && has_post_thumbnail() )
 		the_post_thumbnail( 'post_thumb', array( 'class' => 'aligncenter img-rounded' ) ); ?>
 
 	<?php

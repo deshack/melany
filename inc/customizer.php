@@ -178,6 +178,15 @@ function melany_customize_register( $wp_customize ) {
 		'section'		=> 'melany_content_section',
 		'settings'		=> 'melany_home_tags'
 	));
+	$wp_customize->add_setting( 'melany_home_thumb', array(
+		'default'		=> false
+	));
+	$wp_customize->add_control( 'melany_home_thumb', array(
+		'label'			=> __( 'Display Featured Images in Home Page', 'melany' ),
+		'type'			=> 'checkbox',
+		'section'		=> 'melany_content_section',
+		'settings'		=> 'melany_home_thumb'
+	));
 
 	/**
 	 * Author Box section
