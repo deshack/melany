@@ -132,7 +132,7 @@ add_action( 'wp_enqueue_scripts', 'melany_scripts' );
 /**
  * Load the Bootstrap Walker.
  */
-require get_template_directory() . '/lib/bootstrap/bootstrap-walker.php';
+require get_template_directory() . '/inc/bootstrap-walker.php';
 
 /**
  * Implement the Custom Header feature

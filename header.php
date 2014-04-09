@@ -59,7 +59,7 @@
 				'container' 		=> false,
 				'menu_class' 		=> 'nav navbar-nav',
 				'fallback_cb'		=> 'melany_page_menu',
-				'depth'				=> 3,
+				'depth'				=> 5,
 				'walker'			=> new Bootstrap_Walker,
 			) ); ?>
 		</nav><!-- #site-navigation -->

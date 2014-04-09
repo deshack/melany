@@ -1,6 +1,6 @@
 <?php
 /**
- * Class Name: wp_bootstrap_navwalker
+ * Class Name: Bootstrap_Walker
  * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
  * Description: A custom WordPress nav walker class to implement the Bootstrap 3 navigation style in a custom theme using the WordPress built in menu manager.
  * Version: 2.0.4
@@ -62,7 +62,11 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 			$class_names = join( ' ', (array) apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
 			if ( ! empty( $args->has_children ) && $args->has_children )
-				$class_names .= ' dropdown';
+				if ( $depth > 0 )
+					$class_names .= ' dropdown-submenu';
+				else
+					$class_names .= ' dropdown' . $depth;
+
 
 			if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' active';
@@ -116,7 +120,15 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 				$item_output .= '<a'. $attributes .'>';
 
 			$item_output .= (!empty($args->link_before) ? $args->link_before : '') . apply_filters( 'the_title', $item->title, $item->ID ) . (!empty($args->link_after) ? $args->link_after : '');
-			$item_output .= ( !empty($args->has_children) && $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
+
+			if ( !empty($args->has_children) && $args->has_children )
+				if ( $depth === 0 )
+					$item_output .= ' <span class="caret"></span></a>';
+				else
+					$item_output .= ' <span class="glyphicon glyphicon-chevron-right arrow"></span></a>';
+			else
+				$item_output .= '</a>';
+
 			$item_output .= (!empty($args->after) ? $args->after : '');
 
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );

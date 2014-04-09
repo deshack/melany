@@ -698,9 +698,9 @@ if ( ! function_exists( 'melany_logo' ) ) :
  * @uses get_melany_logo()
  */
 function melany_logo( $id ) {
-	$class = $id == 'logo' ? 'class="col-xs-12' : '';
+	$class = $id == 'logo' ? ' col-xs-12' : '';
 	$html = '
-	<section id="' . $id . '" ' . $class . '">
+	<section id="' . $id . '" class="site-logo' . $class . '"">
 		<div class="thumbnail text-center">
 			<div class="caption">
 				<h2>' . get_bloginfo( 'name' ) . '</h2>
