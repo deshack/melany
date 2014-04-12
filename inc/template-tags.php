@@ -7,6 +7,23 @@
  * @package Melany
  */
 
+if ( ! function_exists( 'melany_post_thumbnail' ) ) :
+/**
+ * Display the post thumbnail
+ *
+ * @since 1.1.0
+ *
+ * @see the_post_thumbnail() 
+ */
+function melany_post_thumbnail() {
+	if ( is_home() && ! get_theme_mod( 'melany_home_thumb' ) )
+		return;
+	
+	if ( has_post_thumbnail() )
+		the_post_thumbnail( 'post_thumb', array( 'class' => 'aligncenter img-rounded' ) );
+}
+endif; // melany_post_thumbnail()
+
 if ( ! function_exists( 'melany_grid_class' ) ) :
 /**
  * Set the correct Bootstrap grid class

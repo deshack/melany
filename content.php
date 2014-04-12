@@ -21,20 +21,19 @@
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
-	<?php if ( get_theme_mod( 'melany_home_thumb' ) && has_post_thumbnail() )
-		the_post_thumbnail( 'post_thumb', array( 'class' => 'aligncenter img-rounded' ) ); ?>
-
+	
 	<?php
 	/**
 	 * Display Excerpts for blog homepage, archives and search when the "Full text" customizer option is off
 	 */
 	if ( ( ! get_theme_mod('melany_home_excerpt') && is_home() ) || is_search() || is_archive() ) : ?>
 	<div class="entry-summary">
+	<?php melany_post_thumbnail(); ?>
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
+	<?php melany_post_thumbnail(); ?>
 		<?php the_content( __( 'Continue reading', 'melany' ) ); ?>
 		<?php
 			wp_link_pages( array(

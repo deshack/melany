@@ -60,7 +60,7 @@ function melany_setup() {
 	/**
 	 * Add new image sizes
 	 */
-	add_image_size( 'post_thumb', 800, 300, true );
+	add_image_size( 'post_thumb', 800, 300, false );
 }
 add_action( 'after_setup_theme', 'melany_setup' );
 endif; // melany_setup
