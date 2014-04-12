@@ -6407,6 +6407,7 @@ footer.entry-meta {
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
+  background: #fff;
 }
 .comment .children .comment {
   border-right: none;
@@ -6417,7 +6418,7 @@ footer.entry-meta {
 .comment .comment-content {
   padding-left: 1em;
 }
-.comment .bypostauthor {
+.comment.bypostauthor {
   background: #eeeeee;
 }
 /* =Asides
