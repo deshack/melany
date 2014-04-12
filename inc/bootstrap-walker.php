@@ -1,14 +1,30 @@
 <?php
 /**
- * Class Name: Bootstrap_Walker
- * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
+ * Class Name: Bootstrap_Walker 
  * Description: A custom WordPress nav walker class to implement the Bootstrap 3 navigation style in a custom theme using the WordPress built in menu manager.
- * Version: 2.0.4
- * Author: Edward McIntyre - @twittem
- * License: GPL-2.0+
+ * Version: 4.0.0
+ * Author: Mattia Migliorini
+ * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ * Based on the wp_bootstrap_navwalker by Edward McIntyre (@twittem).
+ *
+ * @link https://github.com/twittem/wp-bootstrap-navwalker
+ * @since 1.0.0
+ *
+ * @package Melany
+ * @subpackage Bootstrap_Walker
  */
 
+/**
+ * Custom Twitter Bootstrap Walker Class
+ *
+ * Custom WordPress Nav Walker class to implement the Twitter Bootstrap 3
+ * navigation style using the WordPress built-in menu manager.
+ *
+ * @since 1.0.0
+ * @see Walker_Nav_Menu
+ */
 class Bootstrap_Walker extends Walker_Nav_Menu{
 	
 	/**
@@ -172,47 +188,38 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 	 * =============
 	 * If this function is assigned to the wp_nav_menu's fallback_cb variable
 	 * and a menu has not been assigned to the theme location in the WordPress
-	 * menu manager the function with display nothing to a non-logged in user,
-	 * and will add a link to the WordPress menu manager if logged in as an admin.
+	 * menu manager the function with display a link to the home page and
+	 * will add a link to the WordPress menu manager if logged in as an admin.
+	 *
+	 * @since 4.0.0
+	 * @see wp_nav_menu()
 	 *
 	 * @param array $args passed from the wp_nav_menu function.
-	 *
+	 * @return void|string. Void if $args['echo'] is true, HTML string otherwise.
 	 */
 	public static function fallback( $args ) {
-		if ( current_user_can( 'manage_options' ) ) {
+		$fb_output = null;
 
-			extract( $args );
+		extract( $args );
 
-			$fb_output = null;
+		// Assume we have a list
 
-			if ( $container ) {
-				$fb_output = '<' . $container;
+		// Show Home in the menu
+		$home_class = '';
+		if ( is_front_page() && !is_paged() )
+			$home_class = ' class="current_page_item active"';
+		$fb_output .= '<li' . $home_class . '>' . $link_before . '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . $before . '<span class="glyphicon glyphicon-home"></span> ' . __( 'Home', 'melany' ) . $after . '</a>' . $link_after . '</li>';
 
-				if ( $container_id )
-					$fb_output .= ' id="' . $container_id . '"';
+		if ( current_user_can( 'manage_options' ) )
+			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">' . __( 'Add a menu', 'melany' ) . '</a></li>';
 
-				if ( $container_class )
-					$fb_output .= ' class="' . $container_class . '"';
+		$fb_output = sprintf( $items_wrap, $menu_id, $menu_class, $fb_output );
 
-				$fb_output .= '>';
-			}
-
-			$fb_output .= '<ul';
-
-			if ( $menu_id )
-				$fb_output .= ' id="' . $menu_id . '"';
-
-			if ( $menu_class )
-				$fb_output .= ' class="' . $menu_class . '"';
-
-			$fb_output .= '>';
-			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>';
-			$fb_output .= '</ul>';
-
-			if ( $container )
-				$fb_output .= '</' . $container . '>';
-
+		if ( ! empty( $container ) )
+			$fb_output = '<' . $container . ' class="' . $container_class . '" id="' . $container_id . '">' . $fb_output . '</' . $container . '>';
+		if ( $echo )
 			echo $fb_output;
-		}
+		else
+			return $fb_output;
 	}
 }

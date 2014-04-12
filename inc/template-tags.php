@@ -4,7 +4,10 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
+ * @since 0.5.0
+ *
  * @package Melany
+ * @subpackage Template Tags
  */
 
 if ( ! function_exists( 'melany_post_thumbnail' ) ) :
@@ -136,6 +139,8 @@ if ( ! function_exists( 'melany_page_menu' ) ) :
  * to be set to the value of the text of the link.
  *
  * @since 0.5.6
+ * @deprecated 1.1.0 Use Bootstrap_Walker::fallback
+ * @see Bootstrap_Walker::fallback
  *
  * @param array|string $args
  * @return string html menu

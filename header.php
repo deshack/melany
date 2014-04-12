@@ -58,8 +58,7 @@
 				'theme_location'	=> 'primary',
 				'container' 		=> false,
 				'menu_class' 		=> 'nav navbar-nav',
-				'fallback_cb'		=> 'melany_page_menu',
-				'depth'				=> 5,
+				'fallback_cb'		=> 'Bootstrap_Walker::fallback',
 				'walker'			=> new Bootstrap_Walker,
 			) ); ?>
 		</nav><!-- #site-navigation -->
