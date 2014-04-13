@@ -23,7 +23,7 @@ function melany_post_thumbnail() {
 		return;
 
 	if ( has_post_thumbnail() )
-		the_post_thumbnail( 'post_thumb', array( 'class' => 'aligncenter img-rounded' ) );
+		the_post_thumbnail( 'post_thumbnail', array( 'class' => 'aligncenter img-rounded' ) );
 }
 endif; // melany_post_thumbnail()
 

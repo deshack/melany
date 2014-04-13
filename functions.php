@@ -39,12 +39,17 @@ function melany_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
+	// Set post thumbnail size
+	set_post_thumbnail_size( 800, 300, false );
+	// Add image size for Featured Posts
+	add_image_size( 'featured-thumb', 800, 300, true );
 
 	/**
-	 * This theme uses wp_nav_menu() in one location.
+	 * Switch default core markup for search form, and comments
+	 * to output valid HTML5.
 	 */
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'melany' ),
+	add_theme_support( 'html5', array(
+		'search-form', 'comment-form', 'comment-list'
 	) );
 
 	/**
@@ -58,9 +63,20 @@ function melany_setup() {
 	add_theme_support( 'post-formats', array( 'image' ) );
 
 	/**
-	 * Add new image sizes
+	 * Add support for featured content.
+	 *
+	 * @see Featured_Content
 	 */
-	add_image_size( 'post_thumb', 800, 300, false );
+	add_theme_support( 'featured-content', array(
+		'featured_content_filter' => 'melany_get_featured_posts'
+	) );
+
+	/**
+	 * This theme uses wp_nav_menu() in one location.
+	 */
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', 'melany' ),
+	) );
 }
 add_action( 'after_setup_theme', 'melany_setup' );
 endif; // melany_setup
@@ -153,6 +169,15 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Add Featured Content functionality.
+ *
+ * To override in a plugin, define your own Featured_Content class on or
+ * before the 'setup_theme' hook.
+ */
+if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] )
+	require get_template_directory() . '/inc/featured-content.php';
 
 /**
  * Load Jetpack compatibility file.

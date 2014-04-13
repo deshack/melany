@@ -9,11 +9,12 @@
  *
  * Based on the wp_bootstrap_navwalker by Edward McIntyre (@twittem).
  *
- * @link https://github.com/twittem/wp-bootstrap-navwalker
- * @since 1.0.0
- *
  * @package Melany
  * @subpackage Bootstrap_Walker
+ *
+ * @link https://github.com/twittem/wp-bootstrap-navwalker
+ * @since Melany 1.0.0
+ * @version 4.0.0
  */
 
 /**
