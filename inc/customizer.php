@@ -34,19 +34,6 @@ function melany_customize_register( $wp_customize ) {
 	));
 
 	/**
-	 * Add footer credits text field within Site Title & Tagline section
-	 *
-	 * @since 1.0.0
-	 */
-	$wp_customize->add_setting( 'melany_footer_credits', array(
-		'type' => 'theme_mod'
-	));
-	$wp_customize->add_control( 'melany_footer_credits', array(
-		'label' => __( 'Credits', 'melany' ),
-		'section' => 'title_tagline'
-	));
-
-	/**
 	 * Add logo and favicon handler
 	 *
 	 * @since 0.2
@@ -189,13 +176,52 @@ function melany_customize_register( $wp_customize ) {
 	));
 
 	/**
+	 * Footer section
+	 *
+	 * @since 1.1.0
+	 */
+	$wp_customize->add_section( 'melany_footer_section', array(
+		'title'			=> __( 'Footer', 'melany' ),
+		'priority'		=> 33,
+		'description'	=> __( 'Customize the site footer. If "Copyright text" is empty, the site name will be used. Credits appear after the copyright text.', 'melany' )
+	));
+	/**
+	 * Copyright text
+	 *
+	 * If empty, the site name will be used instead.
+	 *
+	 * @since 1.1.0
+	 */
+	$wp_customize->add_setting( 'melany_copyright' );
+	$wp_customize->add_control( 'melany_copyright', array(
+		'label'			=> __( 'Copyright text', 'melany' ),
+		'type'			=> 'text',
+		'section'		=> 'melany_footer_section',
+		'settings'		=> 'melany_copyright'
+	));
+	/**
+	 * Credits
+	 *
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_setting( 'melany_footer_credits', array(
+		'type' 			=> 'theme_mod'
+	));
+	$wp_customize->add_control( 'melany_footer_credits', array(
+		'label' 		=> __( 'Credits', 'melany' ),
+		'type'			=> 'text',
+		'section' 		=> 'melany_footer_section',
+		'settings'		=> 'melany_footer_credits'
+	));
+
+	/**
 	 * Author Box section
 	 *
 	 * @since 1.0.0
 	 */
 	$wp_customize->add_section( 'melany_author_section', array(
 		'title'			=> __( 'Author Box', 'melany' ),
-		'priority'		=> 33,
+		'priority'		=> 34,
 		'description'	=> __( 'Customize Author Box display', 'melany' )
 	));
 	$wp_customize->add_setting( 'melany_author_display', array(

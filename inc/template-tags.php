@@ -814,6 +814,8 @@ endif;
 if ( ! function_exists( 'melany_custom_selection_color' ) ) :
 /**
  * Customize text selection color via the Theme Customizer.
+ *
+ * @since 1.1.0
  */
 function melany_custom_selection_color() {
 	$color = get_theme_mod('melany_selection_color');
@@ -824,4 +826,26 @@ function melany_custom_selection_color() {
 	echo '<style type="text/css" id="custom-selection-color">::selection{background:' . $color . ';}</style>';
 }
 add_action( 'wp_head', 'melany_custom_selection_color' );
+endif;
+
+/**
+ * Output copyright text
+ *
+ * @since 1.1.0
+ */
+function melany_copy() {
+	echo melany_get_copyright_text();
+}
+
+if ( ! function_exists( 'melany_get_copyright_text' ) ) :
+function melany_get_copyright_text() {
+	$output = '&copy; ' . date( 'Y' ) . ' ';
+	$copy = get_theme_mod( 'melany_copyright' );
+	if ( ! empty( $copy ) )
+		$output .= $copy;
+	else
+		$output .= get_bloginfo( 'name' );
+
+	return $output;
+}
 endif;
