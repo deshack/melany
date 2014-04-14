@@ -493,6 +493,10 @@ function melany_posted_on() {
 	if ( is_attachment() )
 		$metadata = wp_get_attachment_metadata();
 
+	$sticky = '';
+	if ( is_sticky() )
+		$sticky = '<span class="glyphicon glyphicon-pushpin"></span> ';
+
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
@@ -504,7 +508,7 @@ function melany_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( '<span class="posted-on">' . __( 'Posted on %1$s', 'melany' ) . '</span> <span class="byline">' . __( 'by %2$s', 'melany' ) . '</span>',
+	printf( $sticky . '<span class="posted-on">' . __( 'Posted on %1$s', 'melany' ) . '</span> <span class="byline">' . __( 'by %2$s', 'melany' ) . '</span>',
 		sprintf( '<a href="%1$s" title="%2$s" class="tooltip-toggle" data-toggle="tooltip" data-trigger="click hover" data-placement="bottom" rel="bookmark">%3$s</a>',
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
