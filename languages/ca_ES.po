@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Melany 1.0.0\n"
+"Project-Id-Version: Melany 1.1.0\n"
 "POT-Creation-Date: 2013-10-23 14:49+0100\n"
-"PO-Revision-Date: 2013-10-23 14:49+0100\n"
+"PO-Revision-Date: 2014-04-15 12:24+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -12,388 +12,327 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Language: ca_ES\n"
 "X-Poedit-SearchPath-0: ..\n"
-""
 
 #: ../searchform.php:9
 msgid "Search:"
 msgstr "Cerca:"
 
-
 #: ../searchform.php:11
 msgid "Search"
 msgstr "Cerca"
 
-
 #: ../footer.php:24
 msgid "Powered by "
 msgstr "Gràcies al "
-
 
 #: ../footer.php:26
 #, php-format
 msgid "%1$s theme by %2$s"
 msgstr "%1$s tema de %2$s"
 
-
 #: ../image.php:21 ../content-page.php:15 ../content-single.php:14
 #: ../inc/template-tags.php:308 ../inc/template-tags.php:332
 msgid "Edit"
 msgstr "Edita"
 
-
 #: ../image.php:26
 msgid " in"
 msgstr " en "
-
 
 #: ../image.php:49 ../content-page.php:25 ../content-single.php:35
 #: ../content.php:34
 msgid "Pages:"
 msgstr "Pàgines:"
 
-
 #: ../comments.php:28
 msgid "Comments"
 msgstr "Comentaris"
-
 
 #: ../comments.php:33 ../comments.php:58
 msgid "Comment navigation"
 msgstr "Navegació pels comentaris"
 
-
 #: ../comments.php:35 ../comments.php:60
 msgid "&larr; Older Comments"
 msgstr "&larr; Comentaris més antics"
-
 
 #: ../comments.php:36 ../comments.php:61
 msgid "Newer Comments &rarr;"
 msgstr "Comentaris més recents &rarr;"
 
-
 #: ../comments.php:72
 msgid "Comments are closed."
 msgstr "Els comentaris estan tancats."
-
 
 #: ../no-results.php:13
 msgid "Nothing Found"
 msgstr "No s'ha trobat res"
 
-
 #: ../no-results.php:19
 msgid "Ready to publish your first post?"
 msgstr "Esteu preparat per publicar la primera entrada?"
-
 
 #: ../no-results.php:19
 msgid "Get started here"
 msgstr "Comenceu aquí"
 
-
 #: ../no-results.php:23
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "No hi ha res que coincideixi amb el que esteu cercant. Torneu-ho a provar amb algunes paraules clau diferents."
-
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"No hi ha res que coincideixi amb el que esteu cercant. Torneu-ho a provar "
+"amb algunes paraules clau diferents."
 
 #: ../no-results.php:28
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "Sembla que no podem trobar el que esteu cercant. Tal vegada una cerca pot ajudar."
-
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Sembla que no podem trobar el que esteu cercant. Tal vegada una cerca pot "
+"ajudar."
 
 #: ../functions.php:47
 msgid "Primary Menu"
 msgstr "Menú principal"
 
-
 #: ../functions.php:94
 msgid "Sidebar"
 msgstr "Barra lateral"
-
 
 #: ../sidebar.php:17 ../archive.php:62
 msgid "Archives"
 msgstr "Arxius"
 
-
 #: ../sidebar.php:24
 msgid "Meta"
 msgstr ""
-
 
 #: ../content-single.php:23 ../content.php:18
 #, php-format
 msgid " in %1$s"
 msgstr "en %1$s"
 
-
 #: ../content-single.php:49 ../content.php:47
 msgid "Tags"
 msgstr "Etiquetes"
-
 
 #: ../archive.php:30
 #, php-format
 msgid "Author: %s"
 msgstr "Autor: %s"
 
-
 #: ../archive.php:38
 #, php-format
 msgid "Day: %s"
 msgstr "Dia: %s"
-
 
 #: ../archive.php:41
 #, php-format
 msgid "Month: %s"
 msgstr "Mes: %s"
 
-
 #: ../archive.php:44
 #, php-format
 msgid "Year: %s"
 msgstr "Any: %s"
 
-
 #: ../archive.php:47
 msgid "Asides"
 msgstr "Anotacions"
-
 
 #: ../archive.php:50
 msgid "Images"
 msgstr "Imatges"
 
-
 #: ../archive.php:53
 msgid "Videos"
 msgstr "Vídeos"
-
 
 #: ../archive.php:56
 msgid "Quotes"
 msgstr "Destacats"
 
-
 #: ../archive.php:59
 msgid "Links"
 msgstr "Enllaços"
-
 
 #: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "No es pot trobar la pàgina."
 
-
 #: ../404.php:18
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
-msgstr "Sembla que no s'ha trobat res en aquest lloc. Potser podríeu intentar amb un dels enllaços que hi ha a continuació o amb una cerca? "
-
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Sembla que no s'ha trobat res en aquest lloc. Potser podríeu intentar amb un "
+"dels enllaços que hi ha a continuació o amb una cerca? "
 
 #: ../404.php:29
 msgid "Most Used Categories"
 msgstr "Les categories més usades"
 
-
 #: ../404.php:49
 msgid "Try looking in the monthly archives."
 msgstr "Proveu a cercar a l'arxiu mensual."
-
 
 #: ../search.php:15
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Resultats de la cerca per a: %s"
 
-
 #: ../header.php:36
 msgid "Toggle navigation"
 msgstr "Commuta la navegació"
-
 
 #: ../header.php:42
 msgid "Toggle search"
 msgstr "Commuta la cerca"
 
-
 #: ../header.php:53
 msgid "Menu"
 msgstr "Menú"
-
 
 #: ../header.php:54
 msgid "Skip to content"
 msgstr "Vés al contingut"
 
-
 #: ../content.php:31 ../inc/template-tags.php:97
 msgid "Continue reading"
 msgstr "Continua llegint"
-
 
 #: ../inc/customizer.php:24
 msgid "Logo and favicon"
 msgstr "Logotip i favicon"
 
-
 #: ../inc/customizer.php:30
 msgid "Logo"
 msgstr "Logotip"
-
 
 #: ../inc/customizer.php:36
 msgid "Favicon"
 msgstr "Favicon"
 
-
 #: ../inc/customizer.php:55
 msgid "Title Length"
 msgstr "Longitud del títol"
-
 
 #: ../inc/customizer.php:68
 msgid "Credits"
 msgstr "Crèdits"
 
-
 #: ../inc/customizer.php:83
 msgid "Homepage Background Color"
 msgstr "Color del fons de la pàgina d'inici"
-
 
 #: ../inc/customizer.php:94
 msgid "Homepage Text Color"
 msgstr "Color del text de la pàgina d'inici"
 
-
 #: ../inc/customizer.php:104
 msgid "Navbar color scheme"
 msgstr "Combinació de colors de la barra de navegació"
-
 
 #: ../inc/customizer.php:108
 msgid "Light"
 msgstr "Clar"
 
-
 #: ../inc/customizer.php:109
 msgid "Dark"
 msgstr "Obscur"
-
 
 #: ../inc/customizer.php:110
 msgid "Green"
 msgstr "Verd"
 
-
 #: ../inc/template-tags.php:138
 msgid "Home"
 msgstr "Pàgina d'inici"
-
 
 #: ../inc/template-tags.php:212
 msgid "Post navigation"
 msgstr "Navegació per les entrades"
 
-
 #: ../inc/template-tags.php:220 ../inc/template-tags.php:222
 msgid "&larr; Older"
 msgstr "&larr; Més antigues"
-
 
 #: ../inc/template-tags.php:227 ../inc/template-tags.php:229
 msgid "Newer &rarr;"
 msgstr "Més noves &rarr;"
 
-
 #: ../inc/template-tags.php:308
 msgid "Pingback:"
 msgstr "Retroenllaç:"
-
 
 #: ../inc/template-tags.php:322
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s a les %2$s"
 
-
 #: ../inc/template-tags.php:336
 msgid "Your comment is awaiting moderation."
 msgstr "El comentari està sent moderat."
-
 
 #: ../inc/template-tags.php:365
 msgid "Name"
 msgstr "Nom"
 
-
 #: ../inc/template-tags.php:366
 msgid "Email"
 msgstr "Correu electrònic"
-
 
 #: ../inc/template-tags.php:367
 msgid "Website"
 msgstr "Pàgina web"
 
-
 #: ../inc/template-tags.php:380
 msgid "Comment"
 msgstr "Comentari"
-
 
 #: ../inc/template-tags.php:392
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "Els camps necessaris estan marcats %s"
 
-
 #: ../inc/template-tags.php:393
 msgid "Your email address will not be published."
 msgstr "El correu electrònic no es publicarà."
-
 
 #: ../inc/template-tags.php:404
 #, php-format
 msgid "You may use these HTML tags and attributes: %s"
 msgstr "Podeu utilitzar aquestes etiquetes HTML i atributs: %s"
 
-
 #: ../inc/template-tags.php:500
 #, php-format
 msgid "Posted on %1$s"
 msgstr "Publicat el %1$s"
-
 
 #: ../inc/template-tags.php:500
 #, php-format
 msgid "by %2$s"
 msgstr "per %2$s"
 
-
 #: ../inc/template-tags.php:508
 #, php-format
 msgid "View all posts by %s"
 msgstr "Mostra totes les entrades de %s"
-
 
 #: ../inc/template-tags.php:698
 #, php-format
 msgid "%1$s wrote 1 post"
 msgstr "%1$s ha escrit 1 entrada"
 
-
 #: ../inc/template-tags.php:700
 #, php-format
 msgid "%1$s wrote %2$s posts"
 msgstr "%1$s ha escrit %2$s entrades"
 
-
 #: ../inc/extras.php:66
 #, php-format
 msgid "Page %s"
 msgstr "Pàgina %s"
-

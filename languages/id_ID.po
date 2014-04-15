@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Melany 1.0.0\n"
+"Project-Id-Version: Melany 1.1.0\n"
 "POT-Creation-Date: 2013-10-23 14:49+0100\n"
-"PO-Revision-Date: 2013-10-23 14:49+0100\n"
+"PO-Revision-Date: 2014-04-15 12:25+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -12,388 +12,327 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Language: id_ID\n"
 "X-Poedit-SearchPath-0: ..\n"
-""
 
 #: ../searchform.php:9
 msgid "Search:"
 msgstr "Cari:"
 
-
 #: ../searchform.php:11
 msgid "Search"
 msgstr "Pencarian"
 
-
 #: ../footer.php:24
 msgid "Powered by "
 msgstr "Didukung oleh "
-
 
 #: ../footer.php:26
 #, php-format
 msgid "%1$s theme by %2$s"
 msgstr "Tema %1$s oleh %2$s"
 
-
 #: ../image.php:21 ../content-page.php:15 ../content-single.php:14
 #: ../inc/template-tags.php:308 ../inc/template-tags.php:332
 msgid "Edit"
 msgstr "Edit"
 
-
 #: ../image.php:26
 msgid " in"
 msgstr "dalam"
-
 
 #: ../image.php:49 ../content-page.php:25 ../content-single.php:35
 #: ../content.php:34
 msgid "Pages:"
 msgstr "Halaman:"
 
-
 #: ../comments.php:28
 msgid "Comments"
 msgstr "Komentar"
-
 
 #: ../comments.php:33 ../comments.php:58
 msgid "Comment navigation"
 msgstr "Navigasi Komentar"
 
-
 #: ../comments.php:35 ../comments.php:60
 msgid "&larr; Older Comments"
 msgstr "&larr; Komentar Sebelumnya"
-
 
 #: ../comments.php:36 ../comments.php:61
 msgid "Newer Comments &rarr;"
 msgstr "Komentar Berikutnya &rarr;"
 
-
 #: ../comments.php:72
 msgid "Comments are closed."
 msgstr "Komentar ditutup."
-
 
 #: ../no-results.php:13
 msgid "Nothing Found"
 msgstr "Tidak Diketemukan"
 
-
 #: ../no-results.php:19
 msgid "Ready to publish your first post?"
 msgstr "Siap mempublikasikan pos pertama anda?"
-
 
 #: ../no-results.php:19
 msgid "Get started here"
 msgstr "Mulai dari sini"
 
-
 #: ../no-results.php:23
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Maaf, namun tidak ada yang menyamai kata pencarian anda. Coba lagi dengan kata yang berbeda."
-
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Maaf, namun tidak ada yang menyamai kata pencarian anda. Coba lagi dengan "
+"kata yang berbeda."
 
 #: ../no-results.php:28
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "Tampaknya kami tidak dapat menemukan yang anda cari. Mungkin kotak pencarian bisa membantu."
-
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Tampaknya kami tidak dapat menemukan yang anda cari. Mungkin kotak pencarian "
+"bisa membantu."
 
 #: ../functions.php:47
 msgid "Primary Menu"
 msgstr "Menu Utama"
 
-
 #: ../functions.php:94
 msgid "Sidebar"
 msgstr "Sidebar"
-
 
 #: ../sidebar.php:17 ../archive.php:62
 msgid "Archives"
 msgstr "Arsip"
 
-
 #: ../sidebar.php:24
 msgid "Meta"
 msgstr ""
-
 
 #: ../content-single.php:23 ../content.php:18
 #, php-format
 msgid " in %1$s"
 msgstr "dalam %1$s"
 
-
 #: ../content-single.php:49 ../content.php:47
 msgid "Tags"
 msgstr "Label"
-
 
 #: ../archive.php:30
 #, php-format
 msgid "Author: %s"
 msgstr "Penulis: %s"
 
-
 #: ../archive.php:38
 #, php-format
 msgid "Day: %s"
 msgstr "Hari: %s"
-
 
 #: ../archive.php:41
 #, php-format
 msgid "Month: %s"
 msgstr "Bulan: %s"
 
-
 #: ../archive.php:44
 #, php-format
 msgid "Year: %s"
 msgstr "Tahun: %s"
 
-
 #: ../archive.php:47
 msgid "Asides"
 msgstr "Aside"
-
 
 #: ../archive.php:50
 msgid "Images"
 msgstr "Gambar"
 
-
 #: ../archive.php:53
 msgid "Videos"
 msgstr "Video"
-
 
 #: ../archive.php:56
 msgid "Quotes"
 msgstr "Kutipan"
 
-
 #: ../archive.php:59
 msgid "Links"
 msgstr "Tautan"
-
 
 #: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Uups! Halaman tersebut tidak dapat ditemukan."
 
-
 #: ../404.php:18
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
-msgstr "Tampaknya tidak satupun ditemukan di lokasi ini. Mungkin anda bisa mencoba tautan di bawah ini."
-
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Tampaknya tidak satupun ditemukan di lokasi ini. Mungkin anda bisa mencoba "
+"tautan di bawah ini."
 
 #: ../404.php:29
 msgid "Most Used Categories"
 msgstr "Kategori Terbanyak"
 
-
 #: ../404.php:49
 msgid "Try looking in the monthly archives."
 msgstr "Coba cari di arsip bulanan."
-
 
 #: ../search.php:15
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Hasil pencarian untuk: %s"
 
-
 #: ../header.php:36
 msgid "Toggle navigation"
 msgstr "Alihan Navigasi"
-
 
 #: ../header.php:42
 msgid "Toggle search"
 msgstr "Alihan Pencarian"
 
-
 #: ../header.php:53
 msgid "Menu"
 msgstr "Menu"
-
 
 #: ../header.php:54
 msgid "Skip to content"
 msgstr "Lalui"
 
-
 #: ../content.php:31 ../inc/template-tags.php:97
 msgid "Continue reading"
 msgstr "Lanjutkan membaca"
-
 
 #: ../inc/customizer.php:24
 msgid "Logo and favicon"
 msgstr "Logo dan favicon"
 
-
 #: ../inc/customizer.php:30
 msgid "Logo"
 msgstr "Logo"
-
 
 #: ../inc/customizer.php:36
 msgid "Favicon"
 msgstr "Favicon"
 
-
 #: ../inc/customizer.php:55
 msgid "Title Length"
 msgstr "Panjang Judul"
-
 
 #: ../inc/customizer.php:68
 msgid "Credits"
 msgstr "Kredit"
 
-
 #: ../inc/customizer.php:83
 msgid "Homepage Background Color"
 msgstr "Warna Latar Beranda"
-
 
 #: ../inc/customizer.php:94
 msgid "Homepage Text Color"
 msgstr "Warna Huruf Beranda"
 
-
 #: ../inc/customizer.php:104
 msgid "Navbar color scheme"
 msgstr "Set Warna Navbar"
-
 
 #: ../inc/customizer.php:108
 msgid "Light"
 msgstr "Gelap"
 
-
 #: ../inc/customizer.php:109
 msgid "Dark"
 msgstr "Gelap"
-
 
 #: ../inc/customizer.php:110
 msgid "Green"
 msgstr "Hijau"
 
-
 #: ../inc/template-tags.php:138
 msgid "Home"
 msgstr "Beranda"
-
 
 #: ../inc/template-tags.php:212
 msgid "Post navigation"
 msgstr "Navigasi artikel"
 
-
 #: ../inc/template-tags.php:220 ../inc/template-tags.php:222
 msgid "&larr; Older"
 msgstr "&larr; Sebelumnya"
-
 
 #: ../inc/template-tags.php:227 ../inc/template-tags.php:229
 msgid "Newer &rarr;"
 msgstr "Berikutnya &rarr;"
 
-
 #: ../inc/template-tags.php:308
 msgid "Pingback:"
 msgstr "Pingback:"
-
 
 #: ../inc/template-tags.php:322
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s pada %2$s"
 
-
 #: ../inc/template-tags.php:336
 msgid "Your comment is awaiting moderation."
 msgstr "Komentar anda sedang menunggu moderasi."
-
 
 #: ../inc/template-tags.php:365
 msgid "Name"
 msgstr "Name"
 
-
 #: ../inc/template-tags.php:366
 msgid "Email"
 msgstr "Email"
-
 
 #: ../inc/template-tags.php:367
 msgid "Website"
 msgstr "Website"
 
-
 #: ../inc/template-tags.php:380
 msgid "Comment"
 msgstr "Komentar"
-
 
 #: ../inc/template-tags.php:392
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "Kotak yang harus diisi diberi tanda %s"
 
-
 #: ../inc/template-tags.php:393
 msgid "Your email address will not be published."
 msgstr "Alamat email anda tidak akan dipublikasikan. "
-
 
 #: ../inc/template-tags.php:404
 #, php-format
 msgid "You may use these HTML tags and attributes: %s"
 msgstr "Anda dapat menggunakan tag dan atribut HTML ini: %s"
 
-
 #: ../inc/template-tags.php:500
 #, php-format
 msgid "Posted on %1$s"
 msgstr "Ditulis pada %1$s"
-
 
 #: ../inc/template-tags.php:500
 #, php-format
 msgid "by %2$s"
 msgstr "oleh %2$s"
 
-
 #: ../inc/template-tags.php:508
 #, php-format
 msgid "View all posts by %s"
 msgstr "Lihat semua artikel oleh %s"
-
 
 #: ../inc/template-tags.php:698
 #, php-format
 msgid "%1$s wrote 1 post"
 msgstr "%1$s menulis 1 artikel."
 
-
 #: ../inc/template-tags.php:700
 #, php-format
 msgid "%1$s wrote %2$s posts"
 msgstr "%1$s menulis %2$s artikel."
 
-
 #: ../inc/extras.php:66
 #, php-format
 msgid "Page %s"
 msgstr "Halaman %s"
-

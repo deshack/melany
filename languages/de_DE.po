@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Melany 1.0.0\n"
+"Project-Id-Version: Melany 1.1.0\n"
 "POT-Creation-Date: 2013-10-23 14:49+0100\n"
-"PO-Revision-Date: 2013-10-23 14:49+0100\n"
+"PO-Revision-Date: 2014-04-15 12:24+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -12,388 +12,327 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Language: de_DE\n"
 "X-Poedit-SearchPath-0: ..\n"
-""
 
 #: ../searchform.php:9
 msgid "Search:"
 msgstr "Suchen:"
 
-
 #: ../searchform.php:11
 msgid "Search"
 msgstr "Suchen"
 
-
 #: ../footer.php:24
 msgid "Powered by "
 msgstr "Unterstützt durch"
-
 
 #: ../footer.php:26
 #, php-format
 msgid "%1$s theme by %2$s"
 msgstr "%1$s Theme von %2$s"
 
-
 #: ../image.php:21 ../content-page.php:15 ../content-single.php:14
 #: ../inc/template-tags.php:308 ../inc/template-tags.php:332
 msgid "Edit"
 msgstr "Bearbeiten"
 
-
 #: ../image.php:26
 msgid " in"
 msgstr "in"
-
 
 #: ../image.php:49 ../content-page.php:25 ../content-single.php:35
 #: ../content.php:34
 msgid "Pages:"
 msgstr "Seiten:"
 
-
 #: ../comments.php:28
 msgid "Comments"
 msgstr "Kommentare"
-
 
 #: ../comments.php:33 ../comments.php:58
 msgid "Comment navigation"
 msgstr "Kommentarnavigation"
 
-
 #: ../comments.php:35 ../comments.php:60
 msgid "&larr; Older Comments"
 msgstr "Ältere Kommentare"
-
 
 #: ../comments.php:36 ../comments.php:61
 msgid "Newer Comments &rarr;"
 msgstr "Neuere Kommentare"
 
-
 #: ../comments.php:72
 msgid "Comments are closed."
 msgstr "Kommentare sind geschlossen."
-
 
 #: ../no-results.php:13
 msgid "Nothing Found"
 msgstr "Nichts gefunden"
 
-
 #: ../no-results.php:19
 msgid "Ready to publish your first post?"
 msgstr "Bereit, Deinen ersten Post zu veröffentlichen?"
-
 
 #: ../no-results.php:19
 msgid "Get started here"
 msgstr "Beginne hier!"
 
-
 #: ../no-results.php:23
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Entschuldigen Sie, aber es konnte nichts gefunden werden. Versuchen Sie es mit anderen Schlüsselwörtern erneut."
-
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Entschuldigen Sie, aber es konnte nichts gefunden werden. Versuchen Sie es "
+"mit anderen Schlüsselwörtern erneut."
 
 #: ../no-results.php:28
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "Es scheint so, als würden wir die Seite, die Du gesucht hast, nicht finden können. Vielleicht kann dir die Suche weiterhelfen."
-
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Es scheint so, als würden wir die Seite, die Du gesucht hast, nicht finden "
+"können. Vielleicht kann dir die Suche weiterhelfen."
 
 #: ../functions.php:47
 msgid "Primary Menu"
 msgstr "Primäres Menü"
 
-
 #: ../functions.php:94
 msgid "Sidebar"
 msgstr "Seitenleiste"
-
 
 #: ../sidebar.php:17 ../archive.php:62
 msgid "Archives"
 msgstr "Archive"
 
-
 #: ../sidebar.php:24
 msgid "Meta"
 msgstr "Meta"
-
 
 #: ../content-single.php:23 ../content.php:18
 #, php-format
 msgid " in %1$s"
 msgstr "in %1$s"
 
-
 #: ../content-single.php:49 ../content.php:47
 msgid "Tags"
 msgstr "Markierungen (Tags)"
-
 
 #: ../archive.php:30
 #, php-format
 msgid "Author: %s"
 msgstr "Autor: %s"
 
-
 #: ../archive.php:38
 #, php-format
 msgid "Day: %s"
 msgstr "Tag: %s"
-
 
 #: ../archive.php:41
 #, php-format
 msgid "Month: %s"
 msgstr "Monat: %s"
 
-
 #: ../archive.php:44
 #, php-format
 msgid "Year: %s"
 msgstr "Jahr: %s"
 
-
 #: ../archive.php:47
 msgid "Asides"
 msgstr "Nebenstehender Inhalt"
-
 
 #: ../archive.php:50
 msgid "Images"
 msgstr "Bilder"
 
-
 #: ../archive.php:53
 msgid "Videos"
 msgstr "Videos"
-
 
 #: ../archive.php:56
 msgid "Quotes"
 msgstr "Zitate"
 
-
 #: ../archive.php:59
 msgid "Links"
 msgstr "Links"
-
 
 #: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oops! Die Seite konnte nicht gefunden werden."
 
-
 #: ../404.php:18
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
-msgstr "An dieser Stelle konnte nichts gefunden werden. Bitte wähle einen der untenstehenden Links oder versuche es mit einer Suche."
-
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"An dieser Stelle konnte nichts gefunden werden. Bitte wähle einen der "
+"untenstehenden Links oder versuche es mit einer Suche."
 
 #: ../404.php:29
 msgid "Most Used Categories"
 msgstr "Am meisten benutzte Kategorien"
 
-
 #: ../404.php:49
 msgid "Try looking in the monthly archives."
 msgstr "Versuche in den monatlichen Archiven nachzusehen."
-
 
 #: ../search.php:15
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Suchergebnisse für: %s"
 
-
 #: ../header.php:36
 msgid "Toggle navigation"
 msgstr "Navigation aus-/einklappen"
-
 
 #: ../header.php:42
 msgid "Toggle search"
 msgstr "Suche aus-/einklappen"
 
-
 #: ../header.php:53
 msgid "Menu"
 msgstr "Menü"
-
 
 #: ../header.php:54
 msgid "Skip to content"
 msgstr "Zum Inhalt springen"
 
-
 #: ../content.php:31 ../inc/template-tags.php:97
 msgid "Continue reading"
 msgstr "Weiterlesen"
-
 
 #: ../inc/customizer.php:24
 msgid "Logo and favicon"
 msgstr "Logo und Favicon"
 
-
 #: ../inc/customizer.php:30
 msgid "Logo"
 msgstr "Logo"
-
 
 #: ../inc/customizer.php:36
 msgid "Favicon"
 msgstr "Favicon"
 
-
 #: ../inc/customizer.php:55
 msgid "Title Length"
 msgstr "Titellänge"
-
 
 #: ../inc/customizer.php:68
 msgid "Credits"
 msgstr "Mitwirkende"
 
-
 #: ../inc/customizer.php:83
 msgid "Homepage Background Color"
 msgstr "Hintergrundfarbe der Homepage"
-
 
 #: ../inc/customizer.php:94
 msgid "Homepage Text Color"
 msgstr "Textfarbe der Homepage"
 
-
 #: ../inc/customizer.php:104
 msgid "Navbar color scheme"
 msgstr "Farbpalette für die Navigationsleiste"
-
 
 #: ../inc/customizer.php:108
 msgid "Light"
 msgstr "Hell"
 
-
 #: ../inc/customizer.php:109
 msgid "Dark"
 msgstr "Dunkel"
-
 
 #: ../inc/customizer.php:110
 msgid "Green"
 msgstr "Grün"
 
-
 #: ../inc/template-tags.php:138
 msgid "Home"
 msgstr "Startseite"
-
 
 #: ../inc/template-tags.php:212
 msgid "Post navigation"
 msgstr "Beitragsnavigation"
 
-
 #: ../inc/template-tags.php:220 ../inc/template-tags.php:222
 msgid "&larr; Older"
 msgstr "Ältere Kommentare"
-
 
 #: ../inc/template-tags.php:227 ../inc/template-tags.php:229
 msgid "Newer &rarr;"
 msgstr "Neuere Kommentare"
 
-
 #: ../inc/template-tags.php:308
 msgid "Pingback:"
 msgstr "Pingback:"
-
 
 #: ../inc/template-tags.php:322
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s bei %2$s"
 
-
 #: ../inc/template-tags.php:336
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Freischaltung."
-
 
 #: ../inc/template-tags.php:365
 msgid "Name"
 msgstr "Name"
 
-
 #: ../inc/template-tags.php:366
 msgid "Email"
 msgstr "E-Mail"
-
 
 #: ../inc/template-tags.php:367
 msgid "Website"
 msgstr "Webseite"
 
-
 #: ../inc/template-tags.php:380
 msgid "Comment"
 msgstr "Kommentieren"
-
 
 #: ../inc/template-tags.php:392
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "Pflichtfelder sind markiert durch %s"
 
-
 #: ../inc/template-tags.php:393
 msgid "Your email address will not be published."
 msgstr "Emailadresse wird nicht angezeigt"
-
 
 #: ../inc/template-tags.php:404
 #, php-format
 msgid "You may use these HTML tags and attributes: %s"
 msgstr "Du darfst diese HTML Tags und Attribute benutzen: %s"
 
-
 #: ../inc/template-tags.php:500
 #, php-format
 msgid "Posted on %1$s"
 msgstr "Geschrieben am: %1$s"
-
 
 #: ../inc/template-tags.php:500
 #, php-format
 msgid "by %2$s"
 msgstr "von %2$s"
 
-
 #: ../inc/template-tags.php:508
 #, php-format
 msgid "View all posts by %s"
 msgstr "Zeige alle Posts von %s"
-
 
 #: ../inc/template-tags.php:698
 #, php-format
 msgid "%1$s wrote 1 post"
 msgstr "%1$s schrieb einen Post"
 
-
 #: ../inc/template-tags.php:700
 #, php-format
 msgid "%1$s wrote %2$s posts"
 msgstr "%1$s schrieb %2$s Posts"
 
-
 #: ../inc/extras.php:66
 #, php-format
 msgid "Page %s"
 msgstr "Seite %s"
-
