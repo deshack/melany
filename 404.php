@@ -7,55 +7,31 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area col-md-9" role="main">
+	<section id="primary" class="content-area col-md-12" role="main">
 
 		<article id="post-0" class="error404 not-found">
-			<header class="page-header">
-				<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'melany' ); ?></h1>
+			<header class="page-header entry-header">
+				<h1 class="entry-title text-center"><?php _e( 'Oops! That page can&rsquo;t be found.', 'melany' ); ?></h1>
 			</header><!-- .entry-header -->
 
 			<div class="entry-content">
-				<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'melany' ); ?></p>
+				<img src="<?php echo get_template_directory_uri() . '/img/404.png'; ?>" class="aligncenter img-rounded" alt="404">
+				<p class="text-center"><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'melany' ); ?></p>
 
 			<section id="widgets404">
-				<div class="row">
-					<article class="col-md-6">
-						<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-					</article>
-
-					<article class="col-md-6">
-						<?php if ( melany_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-						<div class="widget widget_categories">
-							<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'melany' ); ?></h2>
-							<ul>
-							<?php
-								wp_list_categories( array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								) );
-							?>
-							</ul>
-						</div><!-- .widget -->
-						<?php endif; ?>
-					</article>
-				</div>
-				<div class="row">
-					<article class="col-md-6">
-						<?php
-						/* translators: %1$s: smiley */
-						$archive_content = '<div><p>' . sprintf( __( 'Try looking in the monthly archives.', 'melany' )) . '</p></div>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-						?>
-					</article>
-
-					<article class="col-md-6">
-						<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-					</article>
-				</div>
-			</section>
+				<form method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+					<div class="input-group">
+						<label class="sr-only"><?php _e( 'Search:', 'melany' ); ?></label>
+						<input type="search" id="s" name="s" class="form-control" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php echo esc_attr( __('Search&hellip;', 'melany') ); ?>" />
+						<span class="input-group-btn">
+							<button type="submit" for="s" class="btn btn-default">
+								<span class="sr-only"><?php _e( 'Search', 'melany' ); ?></span>
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
+					</div>
+				</form>
+			</section><!-- #widgets404 -->
 
 			</div><!-- .entry-content -->
 		</article><!-- #post-0 .post .error404 .not-found -->
