@@ -6301,6 +6301,9 @@ footer.entry-meta {
 #widgets404 {
   margin: 3em 0;
 }
+#widgets404 .row {
+  margin-top: 2em;
+}
 #colophon {
   margin-top: 20px;
   margin-bottom: 0;
