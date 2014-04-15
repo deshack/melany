@@ -6228,6 +6228,7 @@ footer.entry-meta {
 .jumbotron .entry-content,
 .jumbotron .entry-summary {
   font-size: 19.2px;
+  font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 @media (min-width: 992px) {
   .jumbotron {
