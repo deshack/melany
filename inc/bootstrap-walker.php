@@ -130,7 +130,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 			 * if there is a value in the attr_title property. If the attr_title
 			 * property is NOT null we apply it as the class name for the glyphicon.
 			 */
-			if ( ! empty( $item->attr_title && strpos( $item->attr_title, 'glyphicon' ) ) )
+			if ( ! empty( $item->attr_title && strpos( $item->attr_title, 'glyphicon' ) !== false ) )
 				$item_output .= '<a'. $attributes .'><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
 			else
 				$item_output .= '<a'. $attributes .'>';
