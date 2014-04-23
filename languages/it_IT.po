@@ -1,11 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Melany 1.1.0\n"
-"POT-Creation-Date: 2014-04-15 12:07+0100\n"
-"PO-Revision-Date: 2014-04-15 12:20+0100\n"
+"POT-Creation-Date: 2014-04-15 12:01+0100\n"
+"PO-Revision-Date: 2014-04-23 13:15+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
-"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,6 +12,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Language: it_IT\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../searchform.php:9 ../404.php:24
@@ -164,11 +164,11 @@ msgstr "Pagina non trovata."
 
 #: ../404.php:19
 msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr "Sembra che non ci sia niente qui. Una ricerca potrebbe aiutare."
+msgstr "Sembra che qui non ci sia niente. Una ricerca potrebbe aiutare."
 
 #: ../404.php:37
 msgid "Back to home"
-msgstr "Torna in Home"
+msgstr "Torna in home"
 
 #: ../search.php:15
 #, php-format
@@ -205,7 +205,7 @@ msgstr "Logo e favicon"
 
 #: ../inc/customizer.php:44
 msgid "Upload a logo to be displayed at the top of the sidebar"
-msgstr "Carica un logo che sarà visualizzato in testa alla sidebar"
+msgstr "Carica un logo che sarà visualizzato in cima alla sidebar"
 
 #: ../inc/customizer.php:48
 msgid "Logo"
@@ -217,15 +217,15 @@ msgstr "Forma del logo"
 
 #: ../inc/customizer.php:60
 msgid "Default"
-msgstr "Predefinita"
+msgstr "Predefinito"
 
 #: ../inc/customizer.php:61
 msgid "Rounded"
-msgstr "Arrotondata"
+msgstr "Arrotondato"
 
 #: ../inc/customizer.php:62
 msgid "Circle"
-msgstr "Circolare"
+msgstr "Rotondo"
 
 #: ../inc/customizer.php:67
 msgid "Favicon"
@@ -241,7 +241,7 @@ msgstr "Impostazioni riguardanti la testata."
 
 #: ../inc/customizer.php:86
 msgid "Add a link to the home page in the header image"
-msgstr "Aggiungi un link alla homepage nell'immagine di testata"
+msgstr "Aggiungi un link alla home page all'immagine di testata"
 
 #: ../inc/customizer.php:103
 msgid "Homepage Background Color"
@@ -281,15 +281,15 @@ msgstr "Personalizza la visualizzazione dei contenuti"
 
 #: ../inc/customizer.php:154
 msgid "Full text posts in Home Page"
-msgstr "Testo completo dei post in homepage"
+msgstr "Articoli completi in Home Page"
 
 #: ../inc/customizer.php:163
 msgid "Display tags in Home Page"
-msgstr "Mostra etichette in homepage"
+msgstr "Mostra etichette in Home Page"
 
 #: ../inc/customizer.php:172
 msgid "Display Featured Images in Home Page"
-msgstr "Mostra le immagini in evidenza in homepage"
+msgstr "Mostra immagini in evidenza in Home Page"
 
 #: ../inc/customizer.php:184
 msgid "Footer"
@@ -300,12 +300,13 @@ msgid ""
 "Customize the site footer. If \"Copyright text\" is empty, the site name "
 "will be used. Credits appear after the copyright text."
 msgstr ""
-"Personalizza il piè di pagina del sito. Se \"Testo copyright\" è vuoto, sarà "
-"usato il nome del sito. I crediti compaiono dopo il testo di copyright."
+"Personalizza il piè di pagina del sito. Se \"Testo Copyright\" è vuoto, "
+"viene utilizzato il nome del sito. I Crediti compaiono dopo il testo di "
+"copyright."
 
 #: ../inc/customizer.php:197
 msgid "Copyright text"
-msgstr "Testo copyright"
+msgstr "Testo Copyright"
 
 #: ../inc/customizer.php:211
 msgid "Credits"
@@ -313,23 +314,23 @@ msgstr "Crediti"
 
 #: ../inc/customizer.php:223
 msgid "Author Box"
-msgstr "Box Autore"
+msgstr "Riquadro Autore"
 
 #: ../inc/customizer.php:225
 msgid "Customize Author Box display"
-msgstr "Personalizza la visualizzazione del Box Autore"
+msgstr "Personalizza la visualizzazione del Riquadro Autore"
 
 #: ../inc/customizer.php:234
 msgid "Display Author Box?"
-msgstr "Mostrare Box Autore?"
+msgstr "Mostra Riquadro Autore?"
 
 #: ../inc/customizer.php:240
 msgid "Show Posts Number?"
-msgstr "Mostrare il numero di articoli?"
+msgstr "Mostra numero articoli?"
 
 #: ../inc/featured-content.php:398
 msgid "Featured Content"
-msgstr "Contenuti in primo piano"
+msgstr "Contenuti in evidenza"
 
 #: ../inc/featured-content.php:399
 #, php-format
@@ -337,16 +338,16 @@ msgid ""
 "Use the <a href=\"%1$s\">\"featured\" tag</a> to feature your posts. You can "
 "change this to a tag of your choice."
 msgstr ""
-"Usa il <a href=\"%1$s\">tag \"featured\"</a> per mettere in primo piano i "
-"tuoi articoli. Puoi cambiare questo tag in uno a tua scelta."
+"Usa il <a href=\"%1$s\">tag \"featured\"</a> per mettere in evidenza i tuoi "
+"articoli. Puoi cambiarlo con un tag a tua scelta."
 
 #: ../inc/featured-content.php:418
 msgid "Tag Name"
-msgstr "Nome etichetta"
+msgstr "Nome tag"
 
 #: ../inc/featured-content.php:423
 msgid "Don&rsquo;t display tag on front end."
-msgstr "Non mostrare il tag in front end."
+msgstr "Non mostrare il tag nel front end."
 
 #: ../inc/template-tags.php:160 ../inc/bootstrap-walker.php:212
 msgid "Home"
@@ -440,12 +441,3 @@ msgstr "Aggiungi un menù"
 #, php-format
 msgid "Page %s"
 msgstr "Pagina %s"
-
-#~ msgid "Meta"
-#~ msgstr "Meta"
-
-#~ msgid "Most Used Categories"
-#~ msgstr "Categorie più usate"
-
-#~ msgid "Try looking in the monthly archives."
-#~ msgstr "Prova a cercare negli archivi mensili."
