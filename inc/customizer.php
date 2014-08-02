@@ -14,6 +14,24 @@ function melany_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'refresh';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'refresh';
 	//$wp_customize->get_setting( 'header_textcolor' )->transport = 'refresh';
+	
+	if ( method_exists($wp_customize, 'add_panel' ) ) :
+	/**
+	 * Wrap Melany settings in a panel.
+	 *
+	 * Requires WordPress 4.0. Check if `$wp_customize->add_panel()` method
+	 * exists for backwards compatibility.
+	 *
+	 * @since  1.1.0
+	 */
+	$wp_customize->add_panel( 'melany', array(
+		'priority'			=> 10,
+		'capability'		=> 'edit_theme_options',
+		'theme_supports'	=> '',
+		'title'				=> __( 'Melany Settings', 'melany' ),
+		'description'		=> __( 'Customize Melany Theme', 'melany' )
+	));
+	endif;
 
 	/**
 	 * Add title length field within Site Title & Tagline section
@@ -24,13 +42,13 @@ function melany_customize_register( $wp_customize ) {
 	 * @since 1.0.0
 	 */
 	$wp_customize->add_setting( 'melany_title_length', array(
-		'default' => 20,
+		'default'	=> 20,
 		'transport' => 'refresh',
-		'type' => 'theme_mod'
+		'type'		=> 'theme_mod'
 	));
 	$wp_customize->add_control( 'melany_title_length', array(
-		'label' => __( 'Title Length', 'melany' ),
-		'section' => 'title_tagline',
+		'label'		=> __( 'Title Length', 'melany' ),
+		'section'	=> 'title_tagline',
 	));
 
 	/**
@@ -39,18 +57,19 @@ function melany_customize_register( $wp_customize ) {
 	 * @since 0.2
 	 */
 	$wp_customize->add_section( 'melany_logo_section', array(
-		'title' => __( 'Logo and favicon', 'melany' ),
-		'priority' => 30,
-		'description' => __( 'Upload a logo to be displayed at the top of the sidebar', 'melany' ),
+		'title'			=> __( 'Logo and favicon', 'melany' ),
+		'priority'		=> 30,
+		'description'	=> __( 'Upload a logo to be displayed at the top of the sidebar', 'melany' ),
+		'panel'			=> 'melany'
 	));
 	$wp_customize->add_setting( 'melany_logo' );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'melany_logo', array(
-		'label' => __( 'Logo', 'melany' ),
-		'section' => 'melany_logo_section',
-		'settings' => 'melany_logo',
+		'label'		=> __( 'Logo', 'melany' ),
+		'section'	=> 'melany_logo_section',
+		'settings'	=> 'melany_logo',
 	)));
 	$wp_customize->add_setting( 'melany_logo_shape', array(
-		'default'		=> 'default',
+		'default'	=> 'default',
 	));
 	$wp_customize->add_control( 'melany_logo_shape', array(
 		'label'			=> __( 'Logo Shape', 'melany' ),
@@ -66,7 +85,7 @@ function melany_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'melany_favicon', array(
 		'label'			=> __( 'Favicon', 'melany' ),
 		'section'		=> 'melany_logo_section',
-		'settings'	=> 'melany_favicon',
+		'settings'		=> 'melany_favicon',
 	)));
 
 	/**
@@ -77,7 +96,8 @@ function melany_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'melany_header_section', array(
 		'title'			=> __( 'Header', 'melany' ),
 		'priority'		=> 31,
-		'description'	=> __( 'Settings affecting the header.', 'melany' )
+		'description'	=> __( 'Settings affecting the header.', 'melany' ),
+		'panel'			=> 'melany'
 	));
 	$wp_customize->add_setting( 'melany_header', array(
 		'default'		=> false
@@ -145,7 +165,8 @@ function melany_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'melany_content_section', array(
 		'title'			=> __( 'Content', 'melany' ),
 		'priority'		=> 32,
-		'description'	=> __( 'Customize how the content is displayed', 'melany' )
+		'description'	=> __( 'Customize how the content is displayed', 'melany' ),
+		'panel'			=> 'melany'
 	));
 	$wp_customize->add_setting( 'melany_home_excerpt', array(
 		'default'		=> false,
@@ -183,7 +204,8 @@ function melany_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'melany_footer_section', array(
 		'title'			=> __( 'Footer', 'melany' ),
 		'priority'		=> 33,
-		'description'	=> __( 'Customize the site footer. If "Copyright text" is empty, the site name will be used. Credits appear after the copyright text.', 'melany' )
+		'description'	=> __( 'Customize the site footer. If "Copyright text" is empty, the site name will be used. Credits appear after the copyright text.', 'melany' ),
+		'panel'			=> 'melany'
 	));
 	/**
 	 * Copyright text
@@ -222,7 +244,8 @@ function melany_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'melany_author_section', array(
 		'title'			=> __( 'Author Box', 'melany' ),
 		'priority'		=> 34,
-		'description'	=> __( 'Customize Author Box display', 'melany' )
+		'description'	=> __( 'Customize Author Box display', 'melany' ),
+		'panel'			=> 'melany'
 	));
 	$wp_customize->add_setting( 'melany_author_display', array(
 		'default'		=> true
