@@ -54,4 +54,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 The MIT License (MIT)
 
-#### 
+#### wp_bootstrap_navwalker
+
+GNU General Public License v2
+
+#### img/pattern-dark.svg from Twenty Fourteen
+
+GNU General Public License v2
