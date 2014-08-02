@@ -7,6 +7,14 @@ It is addressed to privates and small businesses that need to focus users attent
 [Visit the website](http://melany.deshack.net)
 
 
+Limitations
+-----------
+
+This theme supports only 2 menu levels.
+Bootstrap 3 comes with support for only 2 menu levels (that is, one visible and one dropdown level).
+As Melany aims at giving a pure Bootstrap experience, the dropdown levels are not extended.
+
+
 Team
 ----
 
@@ -50,7 +58,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ### License of included software
 
-#### Twitter Bootstrap
+#### Bootstrap
 
 The MIT License (MIT)
 
