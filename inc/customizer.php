@@ -47,8 +47,9 @@ function melany_customize_register( $wp_customize ) {
 		'type'		=> 'theme_mod'
 	));
 	$wp_customize->add_control( 'melany_title_length', array(
-		'label'		=> __( 'Title Length', 'melany' ),
-		'section'	=> 'title_tagline',
+		'label'			=> __( 'Title Length', 'melany' ),
+		'section'		=> 'title_tagline',
+		'description'	=> __( 'Set the number of characters after which the title in the navbar gets truncated.', 'melany' )
 	));
 
 	/**
@@ -150,7 +151,11 @@ function melany_customize_register( $wp_customize ) {
 			'green'			=> __( 'Green', 'melany' )
 		),
 	));
-	$wp_customize->add_setting( 'melany_selection_color' );
+	$wp_customize->add_setting( 'melany_selection_color', array(
+		'default'	=> '#5cb85c',
+		'transport'	=> 'refresh',
+		'type'		=> 'theme_mod'
+	));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'melany_selection_color', array(
 		'label'			=> __( 'Text selection color', 'melany' ),
 		'section'		=> 'colors',
