@@ -15,6 +15,11 @@ get_header(); ?>
 
 <section id="primary" class="content-area col-md-9">
 
+<?php if ( is_front_page() && melany_has_featured_posts() ) {
+	// Include the featured content template.
+	get_template_part( 'featured-content' );
+} ?>
+
 <?php if ( have_posts() ) : ?>
 
 	<?php /* Start the Loop */ ?>

@@ -7,10 +7,18 @@ It is addressed to privates and small businesses that need to focus users attent
 [Visit the website](http://melany.deshack.net)
 
 
+Limitations
+-----------
+
+This theme supports only 2 menu levels.
+Bootstrap 3 comes with support for only 2 menu levels (that is, one visible and one dropdown level).
+As Melany aims at giving a pure Bootstrap experience, the dropdown levels are not extended.
+
+
 Team
 ----
 
-### Mattia Migliorini (deshack)
+#### Mattia Migliorini (deshack)
 
 - **Project Leader**
 - Contact: deshack@ubuntu.com
@@ -18,31 +26,13 @@ Team
 - Website: [deshack@web:~$](http://www.deshack.net)
 - Twitter: [@MattiaMglrn](https://twitter.com/MattiaMglrn)
  
-### Mirko Pizii (hallino1)
+#### Mirko Pizii (hallino1)
 
-- **Collaborator**
+- **Contributor**
 - Contact: hallino1@ubuntu.com
 - Location: Italy
 - Twitter: [@MirkoPizii](https://twitter.com/MirkoPizii)
 - LinkedIn: [MirkoPizii](http://www.linkedin.com/in/MirkoPizii)
-
-
-Based on _s
------------
-
-There's plenty of starter themes on the Internet, but they're mostly parent themes: not very cool to use and distribute the derivative work. Thanks God, I found this toolbox by ThemeShaper, _s, and I must say that's great!
-
-
-Designed with Twitter Bootstrap
--------------------------------
-
-Twitter Bootstrap is a powerful framework that allows a faster and easier web development. That's not only its description, it's reality. Because it's very powerful, I decided to use it for this project.
-
-
-The content, everywhere
------------------------
-
-I don't like that kind of layout that highlights the look instead of the content, at least on blogs. Melany is meant to be clear, linear, and make people enjoy the contents, everywhere, from the desktop to the smarphone.
 
 
 License
@@ -64,3 +54,18 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+### License of included software
+
+#### Bootstrap
+
+The MIT License (MIT)
+
+#### wp_bootstrap_navwalker
+
+GNU General Public License v2
+
+#### img/pattern-dark.svg from Twenty Fourteen
+
+GNU General Public License v2

@@ -4,8 +4,28 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
+ * @since 0.5.0
+ *
  * @package Melany
+ * @subpackage Template Tags
  */
+
+if ( ! function_exists( 'melany_post_thumbnail' ) ) :
+/**
+ * Display the post thumbnail
+ *
+ * @since 1.1.0
+ *
+ * @see the_post_thumbnail() 
+ */
+function melany_post_thumbnail() {
+	if ( is_home() && ! get_theme_mod( 'melany_home_thumb' ) )
+		return;
+
+	if ( has_post_thumbnail() )
+		the_post_thumbnail( 'post_thumbnail', array( 'class' => 'aligncenter img-rounded' ) );
+}
+endif; // melany_post_thumbnail()
 
 if ( ! function_exists( 'melany_grid_class' ) ) :
 /**
@@ -119,6 +139,8 @@ if ( ! function_exists( 'melany_page_menu' ) ) :
  * to be set to the value of the text of the link.
  *
  * @since 0.5.6
+ * @deprecated 1.1.0 Use Bootstrap_Walker::fallback
+ * @see Bootstrap_Walker::fallback
  *
  * @param array|string $args
  * @return string html menu
@@ -347,9 +369,9 @@ function melany_comment_form_fields( $fields ) {
 	$commenter	= wp_get_current_commenter();
 	$req				= get_option( 'require_name_email' );
 	$aria_req		= ( $req ? ' aria-required="true"' : '' );
-	$fields['author']		= '<div class="comment-form-author form-group">' . '<label for="author" class="sr-only">' . __( 'Name', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-user"></span>'  . '<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . __( 'Name', 'melany' ) . ( $req ? '*' : '' ) . '" size="30"' . $aria_req . ' x-autocompletetype="name-full" /></div></div>';
-	$fields['email']		= '<div class="comment-form-email form-group">' . '<label for="email" class="sr-only">' . __( 'Email', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-envelope"></span>' . '<input id="email" name="email" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="' . __( 'Email', 'melany' ) . ( $req ? '*' : '' )  . '" size="30"' . $aria_req . ' x-autocompletetype="email" /></div></div>';
-	$fields['url']			= '<div class="comment-form-url form-group">' . '<label for="url" class="sr-only">' . __( 'Website', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-home"></span>' . '<input id="url" name="url" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . __( 'Website', 'melany' ) . '" size="30" x-autocompletetype="url" /></div></div>';
+	$fields['author']		= '<div class="comment-form-author form-group">' . '<label for="author" class="sr-only">' . __( 'Name', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>'  . '<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . __( 'Name', 'melany' ) . ( $req ? '*' : '' ) . '" size="30"' . $aria_req . ' x-autocompletetype="name-full" /></div></div>';
+	$fields['email']		= '<div class="comment-form-email form-group">' . '<label for="email" class="sr-only">' . __( 'Email', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>' . '<input id="email" name="email" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="' . __( 'Email', 'melany' ) . ( $req ? '*' : '' )  . '" size="30"' . $aria_req . ' x-autocompletetype="email" /></div></div>';
+	$fields['url']			= '<div class="comment-form-url form-group">' . '<label for="url" class="sr-only">' . __( 'Website', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>' . '<input id="url" name="url" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . __( 'Website', 'melany' ) . '" size="30" x-autocompletetype="url" /></div></div>';
 	return $fields;
 }
 add_filter( 'comment_form_default_fields', 'melany_comment_form_fields' );
@@ -362,7 +384,7 @@ if ( ! function_exists( 'melany_get_comment_field' ) ) :
  * @since 1.0.0
  */
 function melany_get_comment_field() {
-	return '<div class="comment-form-comment form-group">' . '<label for="comment" class="sr-only">' . _x( 'Comment', 'noun', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon glyphicon glyphicon-pencil"></span>' . '<textarea id="comment" name="comment" class="form-control" placeholder="' . _x( 'Comment', 'noun', 'melany' ) . '" rows="8"></textarea></div></div>';
+	return '<div class="comment-form-comment form-group">' . '<label for="comment" class="sr-only">' . _x( 'Comment', 'noun', 'melany' ) . '</label>' . '<div class="input-group">' . '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' . '<textarea id="comment" name="comment" class="form-control" placeholder="' . _x( 'Comment', 'noun', 'melany' ) . '" rows="8"></textarea></div></div>';
 }
 endif; // ends check for melany_get_comment_field
 
@@ -471,6 +493,10 @@ function melany_posted_on() {
 	if ( is_attachment() )
 		$metadata = wp_get_attachment_metadata();
 
+	$sticky = '';
+	if ( is_sticky() )
+		$sticky = '<span class="glyphicon glyphicon-pushpin"></span> ';
+
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
@@ -482,7 +508,7 @@ function melany_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( '<span class="posted-on">' . __( 'Posted on %1$s', 'melany' ) . '</span> <span class="byline">' . __( 'by %2$s', 'melany' ) . '</span>',
+	printf( $sticky . '<span class="posted-on">' . __( 'Posted on %1$s', 'melany' ) . '</span> <span class="byline">' . __( 'by %2$s', 'melany' ) . '</span>',
 		sprintf( '<a href="%1$s" title="%2$s" class="tooltip-toggle" data-toggle="tooltip" data-trigger="click hover" data-placement="bottom" rel="bookmark">%3$s</a>',
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
@@ -687,5 +713,140 @@ function melany_author_box() {
 	</section><!-- #author-box -->
 
 	<?php
+}
+endif;
+
+if ( ! function_exists( 'melany_logo' ) ) :
+/**
+ * Output code to display the logo section.
+ *
+ * @since 1.1
+ * @uses get_melany_logo()
+ */
+function melany_logo( $id ) {
+	$class = $id == 'logo' ? ' col-xs-12' : '';
+	$html = '
+	<section id="' . $id . '" class="site-logo' . $class . '"">
+		<div class="thumbnail text-center">
+			<div class="caption">
+				<h2>' . get_bloginfo( 'name' ) . '</h2>
+			</div>
+			' . get_melany_logo() . '
+			<div class="caption">
+				<p>' . get_bloginfo( 'description' ) . '</p>
+			</div>
+		</div>
+	</section>';
+
+	echo $html;
+}
+endif;
+
+if ( ! function_exists( 'get_melany_logo' ) ) :
+/**
+ * Get the logo from theme options
+ *
+ * @since 1.1
+ */
+function get_melany_logo() {
+	$src = get_theme_mod( 'melany_logo' );
+	$shape = get_theme_mod( 'melany_logo_shape' );
+	if ( isset($shape) && !empty($shape) && $shape !== 'default' )
+		$shape = 'class="img-' . $shape . '"';
+	else
+		$shape = '';
+	$title = get_bloginfo( 'name' );
+	$output = '';
+
+	if ( $src )
+		$output = '<img src="' . $src . '" alt="' . $title . '" ' . $shape . '>';
+
+	return $output;
+}
+endif;
+
+if ( ! function_exists( 'melany_custom_header' ) ) :
+/**
+ * Display the custom header image
+ *
+ * @since 1.1.0
+ * @uses melany_get_custom_header()
+ */
+
+function melany_custom_header() {
+	// Prevent custom header image to be shown on static front page
+	if ( ! melany_get_custom_header() || is_page_template('templates/home.php') )
+		return;
+
+	echo '<div id="header" class="col-xm-12">';
+	echo melany_get_custom_header();
+	echo '</div>';
+}
+add_action( 'melany_header_after', 'melany_custom_header', 5 );
+endif;
+
+if ( ! function_exists( 'melany_get_custom_header' ) ) :
+/**
+ * Get the custom header image
+ *
+ * @since 1.1.0
+ */
+function melany_get_custom_header() {
+	$header_image = get_header_image();
+	$has_url = get_theme_mod( 'melany_header' );
+
+	if ( empty( $header_image ) )
+		return;
+
+	$html = '';
+
+	if ( $has_url ) {
+		$html = "<a href=\"" . esc_url( home_url( '/' ) ) . "\" rel=\"home\">\n";
+		$html .= "\t<img id=\"header-image\" src=\"" . get_header_image() . "\" class=\"aligncenter\" alt=\"" . esc_attr( get_bloginfo( 'name', 'display' ) ) . "\">\n";
+		$html .= "</a>";
+	} else {
+		$html = '<img id="header-image" src="' . get_header_image() . '" class="aligncenter" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
+	}
+
+	return $html;
+}
+endif;
+
+if ( ! function_exists( 'melany_custom_selection_color' ) ) :
+/**
+ * Customize text selection color via the Theme Customizer.
+ *
+ * @since 1.1.0
+ */
+function melany_custom_selection_color() {
+	$color = get_theme_mod('melany_selection_color');
+
+	if ( empty($color) )
+		return;
+
+	echo '<style type="text/css" id="custom-selection-color">::selection{background:' . $color . ';}</style>';
+}
+add_action( 'wp_head', 'melany_custom_selection_color' );
+endif;
+
+/**
+ * Output copyright text
+ *
+ * @since 1.1.0
+ */
+function melany_copy() {
+	echo melany_get_copyright_text();
+}
+
+if ( ! function_exists( 'melany_get_copyright_text' ) ) :
+function melany_get_copyright_text() {
+	$output = '&copy; ' . date( 'Y' ) . ' ';
+	$copy = get_theme_mod( 'melany_copyright' );
+	if ( ! empty( $copy ) )
+		$output .= $copy;
+	else
+		$output .= get_bloginfo( 'name' );
+
+	return $output;
 }
 endif;

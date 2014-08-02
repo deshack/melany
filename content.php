@@ -21,13 +21,19 @@
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
-	<?php if ( is_search() || is_home() || is_archive() ) : // Display Excerpts for blog homepage, archives and search ?>
+	
+	<?php
+	/**
+	 * Display Excerpts for blog homepage, archives and search when the "Full text" customizer option is off
+	 */
+	if ( ( ! get_theme_mod('melany_home_excerpt') && is_home() ) || is_search() || is_archive() ) : ?>
 	<div class="entry-summary">
+	<?php melany_post_thumbnail(); ?>
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
+	<?php melany_post_thumbnail(); ?>
 		<?php the_content( __( 'Continue reading', 'melany' ) ); ?>
 		<?php
 			wp_link_pages( array(
@@ -38,7 +44,7 @@
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
-<?php if ( 'post' == get_post_type() ) : // Hide tag text for pages on Search ?>
+<?php if ( 'post' == get_post_type() && get_theme_mod( 'melany_home_tags' ) ) : // Hide tag text for pages on Search ?>
 	<?php $tags_list = get_the_tag_list( '', ' - ' );
 		if ( $tags_list ) : ?>
 

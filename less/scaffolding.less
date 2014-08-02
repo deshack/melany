@@ -1,12 +1,22 @@
 //
 // Scaffolding
 // --------------------------------------------------
+ 
+// A better way of resetting box-sizing
+html {
+	.box-sizing(border-box);
+}
+*, *:before, *:after {
+	.box-sizing(inherit);
+}
 
 body {
-	padding-top:70px;
 
-	&.header-image {
-		padding-top: 51px;
+	@media (min-width:@screen-md) {
+		padding-top:70px;
+		&.header-image {
+			padding-top: 51px;
+		}
 	}
 
 	// Fix admin toolbar issues
@@ -14,17 +24,9 @@ body {
 		.navbar-fixed-top {
 			top:28px;
 		}
-		// MP6 plugin
-		&.mp6 {
-			@media (max-width:@screen-sm-max) {
-				.navbar-fixed-top {
-					top:46px;
-				}
-			}
-			@media (min-width:@screen-md) {
-				&.header-image {
-					padding-top:47px;
-				}
+		@media (min-width:@screen-md) {
+			&.header-image {
+				padding-top:47px;
 			}
 		}
 	}
@@ -45,10 +47,14 @@ img {
 select {
 	// Avoid select elements to breaking the layout
 	max-width:100%;
+}
 
-	option {
-		width:__; // This does not work
-	}
+// Override the default text selection color
+::selection {
+	background:@text-selection-color;
+}
+a::selection {
+	background:@link-selection-color;
 }
 
 // Force default cursor over input addons
@@ -58,6 +64,15 @@ select {
 
 .updated {
 	display:none;
+}
+
+// Header
+// -------------------------
+
+@media ( max-width: @screen-sm-max ) {
+	#masthead.navbar-fixed-top {
+		position:static;
+	}
 }
 
 // Content
@@ -85,24 +100,31 @@ footer.entry-meta {
 		background-color: @jumbotron-bg;
 
 		.page-header {
-			border-color:@green-light;
+			border-color:@green-light; // TODO: use a global variable that can be easily overridden
 		}
 	}
 
-  @media (min-width: @screen-md) {
-    padding: 30px 20px;
+	p,
+	.entry-content,
+	.entry-summary {
+		font-size:(@font-size-base * 1.2);
+		font-family: @font-family-sans-serif;
+	}
+
+	@media (min-width: @screen-md) {
+		padding: 30px 20px;
 		text-align:left;
 		&.sticky {
 			padding:30px 60px;
 		}
-    h1 {
-      font-size: (@font-size-base * 3.5);
-    }
+		h1 {
+			font-size: (@font-size-base * 3.5);
+		}
 		.leave-comment {
 			float:right;
 			text-align:right;
 		}
-  }
+	}
 }
 
 // Single and Pages
@@ -165,6 +187,15 @@ footer.entry-meta {
 		.posts-num {
 			text-align:left;
 		}
+	}
+}
+
+// 404 Page
+#widgets404 {
+	margin:3em 0;
+
+	.row {
+		margin-top:2em;
 	}
 }
 

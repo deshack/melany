@@ -1,0 +1,445 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Melany 1.1.0\n"
+"POT-Creation-Date: 2014-04-15 12:01+0100\n"
+"PO-Revision-Date: 2014-08-02 12:24+0100\n"
+"Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
+"Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: fr_FR\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../searchform.php:9 ../404.php:24
+msgid "Search:"
+msgstr "Rechercher:"
+
+#: ../searchform.php:10 ../404.php:25
+msgid "Search&hellip;"
+msgstr "Rechercher&hellip;"
+
+#: ../searchform.php:11 ../404.php:28
+msgid "Search"
+msgstr "Recherche"
+
+#: ../footer.php:22
+msgid "Powered by "
+msgstr "Par"
+
+#: ../footer.php:24
+#, php-format
+msgid "%1$s theme by %2$s"
+msgstr "%1$s thème par %2$s"
+
+#: ../image.php:21 ../content-page.php:15 ../content-single.php:14
+#: ../inc/template-tags.php:315 ../inc/template-tags.php:339
+msgid "Edit"
+msgstr "Éditer"
+
+#: ../image.php:26
+msgid " in"
+msgstr "dans"
+
+#: ../image.php:49 ../content-page.php:25 ../content-single.php:34
+#: ../content.php:40
+msgid "Pages:"
+msgstr "Pages:"
+
+#: ../comments.php:28
+msgid "Comments"
+msgstr "Commentaires"
+
+#: ../comments.php:33 ../comments.php:58
+msgid "Comment navigation"
+msgstr "Navigation des commentaires"
+
+#: ../comments.php:35 ../comments.php:60
+msgid "&larr; Older Comments"
+msgstr "&larr; Commentaires Précédents"
+
+#: ../comments.php:36 ../comments.php:61
+msgid "Newer Comments &rarr;"
+msgstr "Commentaires plus Récents &rarr;"
+
+#: ../comments.php:72
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: ../no-results.php:13
+msgid "Nothing Found"
+msgstr "Aucun résultat"
+
+#: ../no-results.php:19
+msgid "Ready to publish your first post?"
+msgstr "Prêt à publier votre premier post?"
+
+#: ../no-results.php:19
+msgid "Get started here"
+msgstr "Commence par la"
+
+#: ../no-results.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Votre recherche n'a donné aucun résultat. S'il vous plaît, essayez avec des "
+"mots clés différents."
+
+#: ../no-results.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"On peut pas trouver ce que vous cherchez. S'il vous plaît, essayez une "
+"recherche."
+
+#: ../functions.php:78
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+#: ../functions.php:102
+msgid "Sidebar"
+msgstr "Barre latérale"
+
+#: ../content-single.php:23 ../content.php:18
+#, php-format
+msgid " in %1$s"
+msgstr "dans %1$s"
+
+#: ../content-single.php:48 ../content.php:53
+msgid "Tags"
+msgstr "Étiquettes"
+
+#: ../archive.php:30
+#, php-format
+msgid "Author: %s"
+msgstr "Auteur: %s"
+
+#: ../archive.php:38
+#, php-format
+msgid "Day: %s"
+msgstr "Jour: %s"
+
+#: ../archive.php:41
+#, php-format
+msgid "Month: %s"
+msgstr "Mois: %s"
+
+#: ../archive.php:44
+#, php-format
+msgid "Year: %s"
+msgstr "Année: %s"
+
+#: ../archive.php:47
+msgid "Asides"
+msgstr "Digressions"
+
+#: ../archive.php:50
+msgid "Images"
+msgstr "Images"
+
+#: ../archive.php:53
+msgid "Videos"
+msgstr "Vidéos"
+
+#: ../archive.php:56
+msgid "Quotes"
+msgstr "Citations"
+
+#: ../archive.php:59
+msgid "Links"
+msgstr "Liens"
+
+#: ../archive.php:62
+msgid "Archives"
+msgstr "Archives"
+
+#: ../404.php:14
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Page non trouvée"
+
+#: ../404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+"Aucun résultat n'a été trouvez à cet emplacement. Essayez une recherche."
+
+#: ../404.php:37
+msgid "Back to home"
+msgstr "Accueil"
+
+#: ../search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Résultats de la recherche pour: %s"
+
+#: ../header.php:37
+msgid "Toggle navigation"
+msgstr "Afficher ou masquer la navigation"
+
+#: ../header.php:43
+msgid "Toggle search"
+msgstr "Afficher ou masquer la recherche"
+
+#: ../header.php:54
+msgid "Menu"
+msgstr "Menu"
+
+#: ../header.php:55
+msgid "Skip to content"
+msgstr "Passer au contenu"
+
+#: ../content.php:37 ../inc/template-tags.php:117
+msgid "Continue reading"
+msgstr "Continues à lire"
+
+#: ../inc/customizer.php:32
+msgid "Title Length"
+msgstr "Longueur du titre"
+
+#: ../inc/customizer.php:42
+msgid "Logo and favicon"
+msgstr "Logo et favicon"
+
+#: ../inc/customizer.php:44
+msgid "Upload a logo to be displayed at the top of the sidebar"
+msgstr "Télécharger un logo à afficher en haut dans la barre latérale"
+
+#: ../inc/customizer.php:48
+msgid "Logo"
+msgstr "Logo"
+
+#: ../inc/customizer.php:56
+msgid "Logo Shape"
+msgstr "Forme du Logo"
+
+#: ../inc/customizer.php:60
+msgid "Default"
+msgstr "Default"
+
+#: ../inc/customizer.php:61
+msgid "Rounded"
+msgstr "Arrondi"
+
+#: ../inc/customizer.php:62
+msgid "Circle"
+msgstr "Cercle"
+
+#: ../inc/customizer.php:67
+msgid "Favicon"
+msgstr "Favicon"
+
+#: ../inc/customizer.php:78
+msgid "Header"
+msgstr "En-tête"
+
+#: ../inc/customizer.php:80
+msgid "Settings affecting the header."
+msgstr "Paramètres concernants l'en-tête"
+
+#: ../inc/customizer.php:86
+msgid "Add a link to the home page in the header image"
+msgstr "Ajouter un lien à l'accueil dans l'image d'en-tête"
+
+#: ../inc/customizer.php:103
+msgid "Homepage Background Color"
+msgstr "Couleur de fond accueil"
+
+#: ../inc/customizer.php:114
+msgid "Homepage Text Color"
+msgstr "Couleur du texte de la page d'accueil"
+
+#: ../inc/customizer.php:124
+msgid "Navbar color scheme"
+msgstr "Palette de couleurs de la barre de navigation"
+
+#: ../inc/customizer.php:128
+msgid "Light"
+msgstr "Clair"
+
+#: ../inc/customizer.php:129
+msgid "Dark"
+msgstr "Foncé"
+
+#: ../inc/customizer.php:130
+msgid "Green"
+msgstr "Vert"
+
+#: ../inc/customizer.php:135
+msgid "Text selection color"
+msgstr "Couleur sélection texte"
+
+#: ../inc/customizer.php:146
+msgid "Content"
+msgstr "Contenu"
+
+#: ../inc/customizer.php:148
+msgid "Customize how the content is displayed"
+msgstr "Personnaliser l'affichage du contenu"
+
+#: ../inc/customizer.php:154
+msgid "Full text posts in Home Page"
+msgstr "Articles complets en page d'accueil"
+
+#: ../inc/customizer.php:163
+msgid "Display tags in Home Page"
+msgstr "Afficher les étiquettes en page d'accueil"
+
+#: ../inc/customizer.php:172
+msgid "Display Featured Images in Home Page"
+msgstr "Afficher les images sélectionnées en page d'accueil"
+
+#: ../inc/customizer.php:184
+msgid "Footer"
+msgstr "Bas de page"
+
+#: ../inc/customizer.php:186
+msgid ""
+"Customize the site footer. If \"Copyright text\" is empty, the site name "
+"will be used. Credits appear after the copyright text."
+msgstr ""
+"Personnaliser le bas de page. Si le \"texte de Copyright\" est vide, le nom "
+"du site sera utilisé. Les crédits sont affichés après le texte de copyright."
+
+#: ../inc/customizer.php:197
+msgid "Copyright text"
+msgstr "Texte de copyright"
+
+#: ../inc/customizer.php:211
+msgid "Credits"
+msgstr "Crédits"
+
+#: ../inc/customizer.php:223
+msgid "Author Box"
+msgstr "Boîte Auteur"
+
+#: ../inc/customizer.php:225
+msgid "Customize Author Box display"
+msgstr "Personnaliser la visualisation de la Boîte Auteur"
+
+#: ../inc/customizer.php:234
+msgid "Display Author Box?"
+msgstr "Montrer la Boîte Auteur?"
+
+#: ../inc/customizer.php:240
+msgid "Show Posts Number?"
+msgstr "Montrer le numéro de posts?"
+
+#: ../inc/featured-content.php:398
+msgid "Featured Content"
+msgstr "Contenu sélectionnée"
+
+#: ../inc/featured-content.php:399
+#, php-format
+msgid ""
+"Use the <a href=\"%1$s\">\"featured\" tag</a> to feature your posts. You can "
+"change this to a tag of your choice."
+msgstr ""
+"Utiliser l'<a href=\"%1$s\">étiquette \"featured\"</a> pour mettre en "
+"évidence un article. Vous pouvez la changer pour une étiquette de votre "
+"choix."
+
+#: ../inc/featured-content.php:418
+msgid "Tag Name"
+msgstr "Nom de l'étiquette"
+
+#: ../inc/featured-content.php:423
+msgid "Don&rsquo;t display tag on front end."
+msgstr "Ne pas afficher l'étiquette en frontend."
+
+#: ../inc/template-tags.php:160 ../inc/bootstrap-walker.php:212
+msgid "Home"
+msgstr "Accueil"
+
+#: ../inc/template-tags.php:219
+msgid "Post navigation"
+msgstr "Navigation des articles"
+
+#: ../inc/template-tags.php:227 ../inc/template-tags.php:229
+msgid "&larr; Older"
+msgstr "&larr; Précédent"
+
+#: ../inc/template-tags.php:234 ../inc/template-tags.php:236
+msgid "Newer &rarr;"
+msgstr "Suivant &rarr;"
+
+#: ../inc/template-tags.php:315
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: ../inc/template-tags.php:329
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s à %2$s"
+
+#: ../inc/template-tags.php:343
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de modération."
+
+#: ../inc/template-tags.php:372
+msgid "Name"
+msgstr "Nom"
+
+#: ../inc/template-tags.php:373
+msgid "Email"
+msgstr "E-mail"
+
+#: ../inc/template-tags.php:374
+msgid "Website"
+msgstr "Site internet"
+
+#: ../inc/template-tags.php:387
+msgid "Comment"
+msgstr "Commentaire"
+
+#: ../inc/template-tags.php:399
+#, php-format
+msgid "Required fields are marked %s"
+msgstr "Les champs obligatoires sont marqués %s"
+
+#: ../inc/template-tags.php:400
+msgid "Your email address will not be published."
+msgstr "Votre adresse e-mail ne sera pas affiché publiquement."
+
+#: ../inc/template-tags.php:411
+#, php-format
+msgid "You may use these HTML tags and attributes: %s"
+msgstr "Vous pouvez utiliser ces balises et attributs HTML: %s"
+
+#: ../inc/template-tags.php:511
+#, php-format
+msgid "Posted on %1$s"
+msgstr "Affiché le %1$s"
+
+#: ../inc/template-tags.php:511
+#, php-format
+msgid "by %2$s"
+msgstr "par %2$s"
+
+#: ../inc/template-tags.php:519
+#, php-format
+msgid "View all posts by %s"
+msgstr "Voir tous les posts de %s"
+
+#: ../inc/template-tags.php:708
+#, php-format
+msgid "%1$s wrote 1 post"
+msgstr "%1$s à écrit 1 post"
+
+#: ../inc/template-tags.php:710
+#, php-format
+msgid "%1$s wrote %2$s posts"
+msgstr "%1$s à écrit %2$s posts"
+
+#: ../inc/bootstrap-walker.php:215
+msgid "Add a menu"
+msgstr "Ajouter un menu"
+
+#: ../inc/extras.php:66
+#, php-format
+msgid "Page %s"
+msgstr "Page %s"

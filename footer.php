@@ -14,9 +14,7 @@
 <footer id="colophon" <?php melany_footer_class(); ?> role="contentinfo">
 	<div class="site-info navbar-text text-center">
 		<small>
-			<?php printf( '&copy; ' ); ?>
-			<?php echo date( 'Y ' ); ?>
-			<?php bloginfo( 'name' ); ?>
+			<?php melany_copy(); ?>
 			<span class="sep"> - </span>
 			<?php $credits = get_theme_mod('melany_footer_credits');
 				if ( ! empty($credits) )

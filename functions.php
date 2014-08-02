@@ -3,7 +3,16 @@
  * Melany functions and definitions
  *
  * @package Melany
+ * @since 0.5.0
  */
+
+/**
+ * Melany version.
+ *
+ * @since 1.1.0
+ * @var  string
+ */
+define( 'MELANY_VERSION', '1.1.0-beta' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -39,12 +48,17 @@ function melany_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
+	// Set post thumbnail size
+	set_post_thumbnail_size( 800, 300, false );
+	// Add image size for Featured Posts
+	add_image_size( 'featured-thumb', 800, 300, true );
 
 	/**
-	 * This theme uses wp_nav_menu() in one location.
+	 * Switch default core markup for search form, and comments
+	 * to output valid HTML5.
 	 */
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'melany' ),
+	add_theme_support( 'html5', array(
+		'search-form', 'comment-form', 'comment-list'
 	) );
 
 	/**
@@ -52,23 +66,24 @@ function melany_setup() {
 	 *
 	 * WordPress Post Formats list
 	 * aside, gallery, link, image, quote, status, video, audio, chat
-	 *
-	 * @since 1.0.0
 	 */
 	add_theme_support( 'post-formats', array( 'image' ) );
 
 	/**
-	 * Add new image sizes
+	 * Add support for featured content.
+	 *
+	 * @see Featured_Content
 	 */
-	add_image_size( 'single_post_thumb', 800, 300, true );
+	add_theme_support( 'featured-content', array(
+		'featured_content_filter' => 'melany_get_featured_posts'
+	) );
 
 	/**
-	 * Setup the WordPress core custom background feature.
+	 * This theme uses wp_nav_menu() in one location.
 	 */
-	add_theme_support( 'custom-background', apply_filters( 'melany_custom_background_args', array(
-		'default-color'	=> 'ffffff',
-		'default-image'	=> '',
-	) ) );
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', 'melany' ),
+	) );
 }
 add_action( 'after_setup_theme', 'melany_setup' );
 endif; // melany_setup
@@ -109,11 +124,12 @@ function melany_scripts() {
 	wp_register_script( 'has-error', get_template_directory_uri() . '/js/has-error.js', array( 'jquery' ), '1.0', true );
 
 	// Enqueue styles
-	wp_enqueue_style( 'melany-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'melany-style', get_template_directory_uri() . '/main.css', false, MELANY_VERSION );
 	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/css/custom-style.css', array('melany-style') );
 
 	// Enqueue scripts
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.0.0', false );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.1.1', false );
+	wp_enqueue_script( 'dropdown-multilevel', get_template_directory_uri() . '/js/dropdown-multilevel.js', array('bootstrap'), '3.1.1', false );
 	wp_enqueue_script( 'melany-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'melany-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	wp_enqueue_script( 'melany-tooltips', get_template_directory_uri() . '/js/tooltips.js', array( 'bootstrap' ), '3.0.0', true );
@@ -140,7 +156,7 @@ add_action( 'wp_enqueue_scripts', 'melany_scripts' );
 /**
  * Load the Bootstrap Walker.
  */
-require get_template_directory() . '/lib/bootstrap/bootstrap-walker.php';
+require get_template_directory() . '/inc/bootstrap-walker.php';
 
 /**
  * Implement the Custom Header feature
@@ -161,6 +177,15 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Add Featured Content functionality.
+ *
+ * To override in a plugin, define your own Featured_Content class on or
+ * before the 'setup_theme' hook.
+ */
+if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] )
+	require get_template_directory() . '/inc/featured-content.php';
 
 /**
  * Load Jetpack compatibility file.

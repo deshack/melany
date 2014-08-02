@@ -1,0 +1,48 @@
+#featured-content {
+	height:300px;
+	margin-bottom:30px;
+	background:#222 url(img/pattern-dark.svg) repeat fixed;
+	.border-radius( 6px );
+
+	// Since positioning the image, we need to help out the caption
+	.carousel-caption {
+		z-index:10;
+
+		a {
+			color:#fff;
+
+			&:hover,
+			&:focus {
+				color:#fff;
+			}
+		}
+	}
+
+	// Declare heights because of positioning of img element
+	.item {
+		height:300px;
+	}
+
+	.featured-content-inner {
+		> .item > img {
+			position:absolute;
+			top:0;
+			bottom:0;
+			right:0;
+			left:0;
+			margin:auto;
+			max-width:100%;
+			max-height:300px;
+			overflow:hidden;
+		}
+	}
+
+	.carousel-control {
+		&.left {
+			.border-radius( 6px 0 0 6px );
+		}
+		&.right {
+			.border-radius( 0 6px 6px 0 );
+		}
+	}
+}

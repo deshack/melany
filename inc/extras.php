@@ -77,3 +77,32 @@ function add_nofollow_cat( $text ) {
 	return $text;
 }
 add_filter( 'the_category', 'add_nofollow_cat' );
+
+/**
+ * Getter function for Featured Content Plugin.
+ *
+ * @since 1.1.0
+ *
+ * @return array An array of WP_Post objects.
+ */
+function melany_get_featured_posts() {
+	/**
+	 * Filter the featured posts to return in Melany.
+	 *
+	 * @since 1.1.0
+	 *
+	 * @param array|bool $posts Array of featured posts, otherwise false.
+	 */
+	return apply_filters( 'melany_get_featured_posts', array() );
+}
+
+/**
+ * A helper conditional function that returns a boolean value.
+ *
+ * @since 1.1.0
+ *
+ * @return bool Whether there are featured posts.
+ */
+function melany_has_featured_posts() {
+	return ! is_paged() && (bool) melany_get_featured_posts();
+}

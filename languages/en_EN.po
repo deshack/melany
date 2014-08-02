@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Melany 1.0.0\n"
-"POT-Creation-Date: 2013-11-13 16:37+0100\n"
-"PO-Revision-Date: 2013-11-13 16:40+0100\n"
+"Project-Id-Version: Melany 1.1.0\n"
+"POT-Creation-Date: 2014-04-15 12:01+0100\n"
+"PO-Revision-Date: 2014-04-15 12:02+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -12,31 +12,32 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Language: en_EN\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../searchform.php:9
+#: ../searchform.php:9 ../404.php:24
 msgid "Search:"
 msgstr ""
 
-#: ../searchform.php:10
+#: ../searchform.php:10 ../404.php:25
 msgid "Search&hellip;"
 msgstr ""
 
-#: ../searchform.php:11
+#: ../searchform.php:11 ../404.php:28
 msgid "Search"
 msgstr ""
 
-#: ../footer.php:24
+#: ../footer.php:22
 msgid "Powered by "
 msgstr ""
 
-#: ../footer.php:26
+#: ../footer.php:24
 #, php-format
 msgid "%1$s theme by %2$s"
 msgstr ""
 
 #: ../image.php:21 ../content-page.php:15 ../content-single.php:14
-#: ../inc/template-tags.php:293 ../inc/template-tags.php:317
+#: ../inc/template-tags.php:315 ../inc/template-tags.php:339
 msgid "Edit"
 msgstr ""
 
@@ -44,8 +45,8 @@ msgstr ""
 msgid " in"
 msgstr ""
 
-#: ../image.php:49 ../content-page.php:25 ../content-single.php:35
-#: ../content.php:34
+#: ../image.php:49 ../content-page.php:25 ../content-single.php:34
+#: ../content.php:40
 msgid "Pages:"
 msgstr ""
 
@@ -93,11 +94,11 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: ../functions.php:47
+#: ../functions.php:78
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:94
+#: ../functions.php:102
 msgid "Sidebar"
 msgstr ""
 
@@ -106,7 +107,7 @@ msgstr ""
 msgid " in %1$s"
 msgstr ""
 
-#: ../content-single.php:49 ../content.php:47
+#: ../content-single.php:48 ../content.php:53
 msgid "Tags"
 msgstr ""
 
@@ -158,18 +159,12 @@ msgstr ""
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: ../404.php:18
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
+#: ../404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: ../404.php:29
-msgid "Most Used Categories"
-msgstr ""
-
-#: ../404.php:49
-msgid "Try looking in the monthly archives."
+#: ../404.php:37
+msgid "Back to home"
 msgstr ""
 
 #: ../search.php:15
@@ -193,156 +188,245 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: ../content.php:31 ../inc/template-tags.php:97
+#: ../content.php:37 ../inc/template-tags.php:117
 msgid "Continue reading"
 msgstr ""
 
-#: ../inc/customizer.php:24
-msgid "Logo and favicon"
-msgstr ""
-
-#: ../inc/customizer.php:26
-msgid "Upload a logo to be displayed at the top of the sidebar"
-msgstr ""
-
-#: ../inc/customizer.php:30
-msgid "Logo"
-msgstr ""
-
-#: ../inc/customizer.php:36
-msgid "Favicon"
-msgstr ""
-
-#: ../inc/customizer.php:55
+#: ../inc/customizer.php:32
 msgid "Title Length"
 msgstr ""
 
-#: ../inc/customizer.php:68
-msgid "Credits"
+#: ../inc/customizer.php:42
+msgid "Logo and favicon"
 msgstr ""
 
-#: ../inc/customizer.php:83
+#: ../inc/customizer.php:44
+msgid "Upload a logo to be displayed at the top of the sidebar"
+msgstr ""
+
+#: ../inc/customizer.php:48
+msgid "Logo"
+msgstr ""
+
+#: ../inc/customizer.php:56
+msgid "Logo Shape"
+msgstr ""
+
+#: ../inc/customizer.php:60
+msgid "Default"
+msgstr ""
+
+#: ../inc/customizer.php:61
+msgid "Rounded"
+msgstr ""
+
+#: ../inc/customizer.php:62
+msgid "Circle"
+msgstr ""
+
+#: ../inc/customizer.php:67
+msgid "Favicon"
+msgstr ""
+
+#: ../inc/customizer.php:78
+msgid "Header"
+msgstr ""
+
+#: ../inc/customizer.php:80
+msgid "Settings affecting the header."
+msgstr ""
+
+#: ../inc/customizer.php:86
+msgid "Add a link to the home page in the header image"
+msgstr ""
+
+#: ../inc/customizer.php:103
 msgid "Homepage Background Color"
 msgstr ""
 
-#: ../inc/customizer.php:94
+#: ../inc/customizer.php:114
 msgid "Homepage Text Color"
 msgstr ""
 
-#: ../inc/customizer.php:104
+#: ../inc/customizer.php:124
 msgid "Navbar color scheme"
 msgstr ""
 
-#: ../inc/customizer.php:108
+#: ../inc/customizer.php:128
 msgid "Light"
 msgstr ""
 
-#: ../inc/customizer.php:109
+#: ../inc/customizer.php:129
 msgid "Dark"
 msgstr ""
 
-#: ../inc/customizer.php:110
+#: ../inc/customizer.php:130
 msgid "Green"
 msgstr ""
 
-#: ../inc/customizer.php:115
+#: ../inc/customizer.php:135
+msgid "Text selection color"
+msgstr ""
+
+#: ../inc/customizer.php:146
+msgid "Content"
+msgstr ""
+
+#: ../inc/customizer.php:148
+msgid "Customize how the content is displayed"
+msgstr ""
+
+#: ../inc/customizer.php:154
+msgid "Full text posts in Home Page"
+msgstr ""
+
+#: ../inc/customizer.php:163
+msgid "Display tags in Home Page"
+msgstr ""
+
+#: ../inc/customizer.php:172
+msgid "Display Featured Images in Home Page"
+msgstr ""
+
+#: ../inc/customizer.php:184
+msgid "Footer"
+msgstr ""
+
+#: ../inc/customizer.php:186
+msgid ""
+"Customize the site footer. If \"Copyright text\" is empty, the site name "
+"will be used. Credits appear after the copyright text."
+msgstr ""
+
+#: ../inc/customizer.php:197
+msgid "Copyright text"
+msgstr ""
+
+#: ../inc/customizer.php:211
+msgid "Credits"
+msgstr ""
+
+#: ../inc/customizer.php:223
 msgid "Author Box"
 msgstr ""
 
-#: ../inc/customizer.php:117
+#: ../inc/customizer.php:225
 msgid "Customize Author Box display"
 msgstr ""
 
-#: ../inc/customizer.php:123
+#: ../inc/customizer.php:234
 msgid "Display Author Box?"
 msgstr ""
 
-#: ../inc/customizer.php:132
+#: ../inc/customizer.php:240
 msgid "Show Posts Number?"
 msgstr ""
 
-#: ../inc/template-tags.php:138
+#: ../inc/featured-content.php:398
+msgid "Featured Content"
+msgstr ""
+
+#: ../inc/featured-content.php:399
+#, php-format
+msgid ""
+"Use the <a href=\"%1$s\">\"featured\" tag</a> to feature your posts. You can "
+"change this to a tag of your choice."
+msgstr ""
+
+#: ../inc/featured-content.php:418
+msgid "Tag Name"
+msgstr ""
+
+#: ../inc/featured-content.php:423
+msgid "Don&rsquo;t display tag on front end."
+msgstr ""
+
+#: ../inc/template-tags.php:160 ../inc/bootstrap-walker.php:212
 msgid "Home"
 msgstr ""
 
-#: ../inc/template-tags.php:197
+#: ../inc/template-tags.php:219
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/template-tags.php:205 ../inc/template-tags.php:207
+#: ../inc/template-tags.php:227 ../inc/template-tags.php:229
 msgid "&larr; Older"
 msgstr ""
 
-#: ../inc/template-tags.php:212 ../inc/template-tags.php:214
+#: ../inc/template-tags.php:234 ../inc/template-tags.php:236
 msgid "Newer &rarr;"
 msgstr ""
 
-#: ../inc/template-tags.php:293
+#: ../inc/template-tags.php:315
 msgid "Pingback:"
 msgstr ""
 
-#: ../inc/template-tags.php:307
+#: ../inc/template-tags.php:329
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../inc/template-tags.php:321
+#: ../inc/template-tags.php:343
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../inc/template-tags.php:350
+#: ../inc/template-tags.php:372
 msgid "Name"
 msgstr ""
 
-#: ../inc/template-tags.php:351
+#: ../inc/template-tags.php:373
 msgid "Email"
 msgstr ""
 
-#: ../inc/template-tags.php:352
+#: ../inc/template-tags.php:374
 msgid "Website"
 msgstr ""
 
-#: ../inc/template-tags.php:365
+#: ../inc/template-tags.php:387
 msgid "Comment"
 msgstr ""
 
-#: ../inc/template-tags.php:377
+#: ../inc/template-tags.php:399
 #, php-format
 msgid "Required fields are marked %s"
 msgstr ""
 
-#: ../inc/template-tags.php:378
+#: ../inc/template-tags.php:400
 msgid "Your email address will not be published."
 msgstr ""
 
-#: ../inc/template-tags.php:389
+#: ../inc/template-tags.php:411
 #, php-format
 msgid "You may use these HTML tags and attributes: %s"
 msgstr ""
 
-#: ../inc/template-tags.php:485
+#: ../inc/template-tags.php:511
 #, php-format
 msgid "Posted on %1$s"
 msgstr ""
 
-#: ../inc/template-tags.php:485
+#: ../inc/template-tags.php:511
 #, php-format
 msgid "by %2$s"
 msgstr ""
 
-#: ../inc/template-tags.php:493
+#: ../inc/template-tags.php:519
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: ../inc/template-tags.php:682
+#: ../inc/template-tags.php:708
 #, php-format
 msgid "%1$s wrote 1 post"
 msgstr ""
 
-#: ../inc/template-tags.php:684
+#: ../inc/template-tags.php:710
 #, php-format
 msgid "%1$s wrote %2$s posts"
+msgstr ""
+
+#: ../inc/bootstrap-walker.php:215
+msgid "Add a menu"
 msgstr ""
 
 #: ../inc/extras.php:66

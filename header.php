@@ -56,11 +56,11 @@
 			<?php
 				wp_nav_menu( array(
 				'theme_location'	=> 'primary',
-				'container' 			=> false,
-				'menu_class' 			=> 'nav navbar-nav',
-				'fallback_cb'			=> 'melany_page_menu',
-				'depth'						=> 3,
-				'walker'					=> new Bootstrap_Walker,
+				'container' 		=> false,
+				'menu_class' 		=> 'nav navbar-nav',
+				'fallback_cb'		=> 'Bootstrap_Walker::fallback',
+				'depth'				=> 2,
+				'walker'			=> new Bootstrap_Walker,
 			) ); ?>
 		</nav><!-- #site-navigation -->
 	</div><!-- .navbar-collapse -->
@@ -69,31 +69,14 @@
 	</div>
 </header><!-- #masthead -->
 
+<?php do_action( 'melany_header_after' ); ?>
+
 <div id="page" class="container hfeed site">
 	<section id="content" class="site-content">
 		<main id="main" class="row" role="main">
 			<?php // Prevent custom header image or logo section to be shown on static home pages ?>
 			<?php if ( ! is_page_template('templates/home.php') || is_home() ) : ?>
-				<?php $header_image = get_header_image();
-					if ( ! empty( $header_image ) ) : ?>
-					<div id="header" class="col-xm-12">
-						<img id="header-image" src="<?php header_image(); ?>" class="aligncenter" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-					</div>
-				<?php endif; // !empty() ?>
 				<?php // Prevent logo section to be shown on image post format
-					if ( ! has_post_format( 'image' ) ) : ?>
-					<section id="logo" class="col-xs-12">
-						<div class="thumbnail text-center">
-							<div class="caption">
-								<h2><?php bloginfo( 'name' ); ?></h2>
-							</div>
-							<?php if ( get_theme_mod( 'melany_logo' ) ) : ?>
-								<img src="<?php echo get_theme_mod( 'melany_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
-							<?php endif; ?>
-							<div class="caption">
-								<p><?php bloginfo( 'description' ); ?></p>
-							</div>
-						</div>
-					</section>
-				<?php endif; // has_post_format( 'image' ) ?>
+					if ( ! has_post_format( 'image' ) )
+						melany_logo( 'logo' ); ?>
 			<?php endif; // !is_front_page() || is_home() ?>

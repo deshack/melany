@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Melany 1.0.0\n"
+"Project-Id-Version: Melany 1.1.0\n"
 "POT-Creation-Date: 2013-10-23 14:49+0100\n"
-"PO-Revision-Date: 2013-10-23 14:49+0100\n"
+"PO-Revision-Date: 2014-04-15 12:24+0100\n"
 "Last-Translator: Mattia Migliorini <deshack@ubuntu.com>\n"
 "Language-Team: Mattia Migliorini <deshack@ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -12,388 +12,324 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Language: fi_FI\n"
 "X-Poedit-SearchPath-0: ..\n"
-""
 
 #: ../searchform.php:9
 msgid "Search:"
 msgstr "Hae:"
 
-
 #: ../searchform.php:11
 msgid "Search"
 msgstr "Hae"
 
-
 #: ../footer.php:24
 msgid "Powered by "
 msgstr "Taustalla toimii "
-
 
 #: ../footer.php:26
 #, php-format
 msgid "%1$s theme by %2$s"
 msgstr "%1$s teeman luonut %2$s"
 
-
 #: ../image.php:21 ../content-page.php:15 ../content-single.php:14
 #: ../inc/template-tags.php:308 ../inc/template-tags.php:332
 msgid "Edit"
 msgstr "Muokkaa"
 
-
 #: ../image.php:26
 msgid " in"
 msgstr "kohteessa"
-
 
 #: ../image.php:49 ../content-page.php:25 ../content-single.php:35
 #: ../content.php:34
 msgid "Pages:"
 msgstr "Sivut:"
 
-
 #: ../comments.php:28
 msgid "Comments"
 msgstr "Kommentit"
-
 
 #: ../comments.php:33 ../comments.php:58
 msgid "Comment navigation"
 msgstr "Kommenttinavigointi"
 
-
 #: ../comments.php:35 ../comments.php:60
 msgid "&larr; Older Comments"
 msgstr "&larr; Vanhemmat kommentit"
-
 
 #: ../comments.php:36 ../comments.php:61
 msgid "Newer Comments &rarr;"
 msgstr "Uudemmat kommentit &rarr;"
 
-
 #: ../comments.php:72
 msgid "Comments are closed."
 msgstr "Kommentointi on suljettu."
-
 
 #: ../no-results.php:13
 msgid "Nothing Found"
 msgstr "Mitään ei löytynyt"
 
-
 #: ../no-results.php:19
 msgid "Ready to publish your first post?"
 msgstr "Valmis julkaisemaan ensimmäisen viestiksi?"
-
 
 #: ../no-results.php:19
 msgid "Get started here"
 msgstr "Aloita tästä"
 
-
 #: ../no-results.php:23
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Valitettavasti mikään ei vastannut hakuehtojasi. Yritä uudestaan toisilla hakusanoilla."
-
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Valitettavasti mikään ei vastannut hakuehtojasi. Yritä uudestaan toisilla "
+"hakusanoilla."
 
 #: ../no-results.php:28
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr "Emme löydä etsimääsi. Ehkäpä hakeminen auttaa."
-
 
 #: ../functions.php:47
 msgid "Primary Menu"
 msgstr "Päävalikko"
 
-
 #: ../functions.php:94
 msgid "Sidebar"
 msgstr "Sivupalkki"
-
 
 #: ../sidebar.php:17 ../archive.php:62
 msgid "Archives"
 msgstr "Arkistot"
 
-
 #: ../sidebar.php:24
 msgid "Meta"
 msgstr "Meta"
-
 
 #: ../content-single.php:23 ../content.php:18
 #, php-format
 msgid " in %1$s"
 msgstr "aiheeseen %1$s"
 
-
 #: ../content-single.php:49 ../content.php:47
 msgid "Tags"
 msgstr "Tagit"
-
 
 #: ../archive.php:30
 #, php-format
 msgid "Author: %s"
 msgstr "Kirjoittaja: %s"
 
-
 #: ../archive.php:38
 #, php-format
 msgid "Day: %s"
 msgstr "Päivä: %s"
-
 
 #: ../archive.php:41
 #, php-format
 msgid "Month: %s"
 msgstr "Kuukausi: %s"
 
-
 #: ../archive.php:44
 #, php-format
 msgid "Year: %s"
 msgstr "Vuosi: %s"
 
-
 #: ../archive.php:47
 msgid "Asides"
 msgstr "Sivuhuomautukset"
-
 
 #: ../archive.php:50
 msgid "Images"
 msgstr "Kuvat"
 
-
 #: ../archive.php:53
 msgid "Videos"
 msgstr "Videot"
-
 
 #: ../archive.php:56
 msgid "Quotes"
 msgstr "Sitaatit"
 
-
 #: ../archive.php:59
 msgid "Links"
 msgstr "Linkit"
-
 
 #: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Hups! Sivua ei löytynyt."
 
-
 #: ../404.php:18
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
-msgstr "Tästä sijainnista ei löytynyt mitään. Kokeile alla olevia linkkejä tai hakua?"
-
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Tästä sijainnista ei löytynyt mitään. Kokeile alla olevia linkkejä tai hakua?"
 
 #: ../404.php:29
 msgid "Most Used Categories"
 msgstr "Käytetyimmät kategoriat"
 
-
 #: ../404.php:49
 msgid "Try looking in the monthly archives."
 msgstr "Yritä etsiä kuukausiarkistoista."
-
 
 #: ../search.php:15
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Hakutulokset aiheelle: %s"
 
-
 #: ../header.php:36
 msgid "Toggle navigation"
 msgstr "Nappulanavigointi"
-
 
 #: ../header.php:42
 msgid "Toggle search"
 msgstr "Nappulahaku"
 
-
 #: ../header.php:53
 msgid "Menu"
 msgstr "Valikko"
-
 
 #: ../header.php:54
 msgid "Skip to content"
 msgstr "Hyppää sisältöön"
 
-
 #: ../content.php:31 ../inc/template-tags.php:97
 msgid "Continue reading"
 msgstr "Jatka lukemista"
-
 
 #: ../inc/customizer.php:24
 msgid "Logo and favicon"
 msgstr "Logo ja favicon"
 
-
 #: ../inc/customizer.php:30
 msgid "Logo"
 msgstr "Logo"
-
 
 #: ../inc/customizer.php:36
 msgid "Favicon"
 msgstr "Favicon"
 
-
 #: ../inc/customizer.php:55
 msgid "Title Length"
 msgstr "Otsikon pituus"
-
 
 #: ../inc/customizer.php:68
 msgid "Credits"
 msgstr "Tekijät"
 
-
 #: ../inc/customizer.php:83
 msgid "Homepage Background Color"
 msgstr "Kotisivun taustaväri"
-
 
 #: ../inc/customizer.php:94
 msgid "Homepage Text Color"
 msgstr "Kotisivun tekstiväri"
 
-
 #: ../inc/customizer.php:104
 msgid "Navbar color scheme"
 msgstr "Navigointipalkin värikaava"
-
 
 #: ../inc/customizer.php:108
 msgid "Light"
 msgstr "Vaalea"
 
-
 #: ../inc/customizer.php:109
 msgid "Dark"
 msgstr "Tumma"
-
 
 #: ../inc/customizer.php:110
 msgid "Green"
 msgstr "Vihreä"
 
-
 #: ../inc/template-tags.php:138
 msgid "Home"
 msgstr "Etusivu"
-
 
 #: ../inc/template-tags.php:212
 msgid "Post navigation"
 msgstr "Viestinavigointi"
 
-
 #: ../inc/template-tags.php:220 ../inc/template-tags.php:222
 msgid "&larr; Older"
 msgstr "&larr; Vanhempi"
-
 
 #: ../inc/template-tags.php:227 ../inc/template-tags.php:229
 msgid "Newer &rarr;"
 msgstr "Uudempi &rarr;"
 
-
 #: ../inc/template-tags.php:308
 msgid "Pingback:"
 msgstr "Pingback:"
-
 
 #: ../inc/template-tags.php:322
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s kohteessa %2$s"
 
-
 #: ../inc/template-tags.php:336
 msgid "Your comment is awaiting moderation."
 msgstr "Kommenttisi odottaa hyväksyntää."
-
 
 #: ../inc/template-tags.php:365
 msgid "Name"
 msgstr "Nimi"
 
-
 #: ../inc/template-tags.php:366
 msgid "Email"
 msgstr "Sähköposti"
-
 
 #: ../inc/template-tags.php:367
 msgid "Website"
 msgstr "Web-sivusto"
 
-
 #: ../inc/template-tags.php:380
 msgid "Comment"
 msgstr "Kommentoi"
-
 
 #: ../inc/template-tags.php:392
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "Vaaditut kentät on merkitty %s"
 
-
 #: ../inc/template-tags.php:393
 msgid "Your email address will not be published."
 msgstr "Sähköpostiosoitettasi ei julkaistu."
-
 
 #: ../inc/template-tags.php:404
 #, php-format
 msgid "You may use these HTML tags and attributes: %s"
 msgstr "Voit käyttää näitä HTML-tageja ja attribuutteja: %s"
 
-
 #: ../inc/template-tags.php:500
 #, php-format
 msgid "Posted on %1$s"
 msgstr "Julkaistu %1$s"
-
 
 #: ../inc/template-tags.php:500
 #, php-format
 msgid "by %2$s"
 msgstr "kirjoittajalta%2$s"
 
-
 #: ../inc/template-tags.php:508
 #, php-format
 msgid "View all posts by %s"
 msgstr "Näytä kaikki viestit kirjoittajalta %s"
-
 
 #: ../inc/template-tags.php:698
 #, php-format
 msgid "%1$s wrote 1 post"
 msgstr "%1$s kirjoittu 1 viestin"
 
-
 #: ../inc/template-tags.php:700
 #, php-format
 msgid "%1$s wrote %2$s posts"
 msgstr "%1$s kirjoitti %2$s viestiä"
 
-
 #: ../inc/extras.php:66
 #, php-format
 msgid "Page %s"
 msgstr "Sivu %s"
-
