@@ -12,7 +12,7 @@
  * @since 1.1.0
  * @var  string
  */
-define( 'MELANY_VERSION', '1.1.0-alpha.2' );
+define( 'MELANY_VERSION', '1.1.0-beta' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
