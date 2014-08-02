@@ -59,7 +59,7 @@
 				'container' 		=> false,
 				'menu_class' 		=> 'nav navbar-nav',
 				'fallback_cb'		=> 'Bootstrap_Walker::fallback',
-				'depth'				=> 1,
+				'depth'				=> 2,
 				'walker'			=> new Bootstrap_Walker,
 			) ); ?>
 		</nav><!-- #site-navigation -->
