@@ -7,6 +7,14 @@
  */
 
 /**
+ * Melany version.
+ *
+ * @since 1.1.0
+ * @var  string
+ */
+define( 'MELANY_VERSION', '1.1.0-alpha.2' );
+
+/**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
@@ -116,7 +124,7 @@ function melany_scripts() {
 	wp_register_script( 'has-error', get_template_directory_uri() . '/js/has-error.js', array( 'jquery' ), '1.0', true );
 
 	// Enqueue styles
-	wp_enqueue_style( 'melany-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'melany-style', get_template_directory_uri() . '/main.css', false, MELANY_VERSION );
 	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/css/custom-style.css', array('melany-style') );
 
 	// Enqueue scripts
