@@ -782,6 +782,7 @@ function melany_custom_header() {
 	echo melany_get_custom_header();
 	echo '</div>';
 }
+add_action( 'melany_header_after', 'melany_custom_header', 5 );
 endif;
 
 if ( ! function_exists( 'melany_get_custom_header' ) ) :

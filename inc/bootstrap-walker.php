@@ -79,10 +79,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 			$class_names = join( ' ', (array) apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
 			if ( ! empty( $args->has_children ) && $args->has_children )
-				if ( $depth > 0 )
-					$class_names .= ' dropdown-submenu';
-				else
-					$class_names .= ' dropdown' . $depth;
+				$class_names .= ' dropdown';
 
 
 			if ( in_array( 'current-menu-item', $classes ) )
@@ -100,7 +97,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 			$atts['rel']    = ! empty( $item->xfn )		? $item->xfn	: '';
 
 			// If item has_children add atts to a.
-			if ( ! empty( $args->has_children ) && $args->has_children && $depth === 0 ) {
+			if ( ! empty( $args->has_children ) && $args->has_children ) {
 				$atts['href']   		= '#';
 				$atts['data-toggle']	= 'dropdown';
 				$atts['class']			= 'dropdown-toggle';
@@ -130,7 +127,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 			 * if there is a value in the attr_title property. If the attr_title
 			 * property is NOT null we apply it as the class name for the glyphicon.
 			 */
-			if ( ! empty( $item->attr_title && strpos( $item->attr_title, 'glyphicon' ) !== false ) )
+			if ( ! empty( $item->attr_title ) && strpos( $item->attr_title, 'glyphicon' ) !== false )
 				$item_output .= '<a'. $attributes .'><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
 			else
 				$item_output .= '<a'. $attributes .'>';
@@ -138,10 +135,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 			$item_output .= (!empty($args->link_before) ? $args->link_before : '') . apply_filters( 'the_title', $item->title, $item->ID ) . (!empty($args->link_after) ? $args->link_after : '');
 
 			if ( !empty($args->has_children) && $args->has_children )
-				if ( $depth === 0 )
-					$item_output .= ' <span class="caret"></span></a>';
-				else
-					$item_output .= ' <span class="glyphicon glyphicon-chevron-right arrow"></span></a>';
+				$item_output .= ' <span class="caret"></span></a>';
 			else
 				$item_output .= '</a>';
 

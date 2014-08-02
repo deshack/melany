@@ -68,7 +68,7 @@
 	</div>
 </header><!-- #masthead -->
 
-<?php melany_custom_header(); ?>
+<?php do_action( 'melany_header_after' ); ?>
 
 <div id="page" class="container hfeed site">
 	<section id="content" class="site-content">

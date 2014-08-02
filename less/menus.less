@@ -14,19 +14,17 @@
 // Dropdowns
 // -------------------------
 // Enables support for multilevel dropdown menus
-
+/*
 .dropdown-submenu {
 	position:relative;
 
 	> .dropdown-menu {
 		top:0;
 		left:100%;
-		margin-top:-6px;
-		margin-left:-1px;
 		.border-radius(0 6px 6px 6px);
 	}
 
-	&:hover > .dropdown-menu {
+	&:active > .dropdown-menu {
 		display:block;
 	}
 
@@ -43,11 +41,11 @@
 		margin-right:-10px;
 	}
 
-	&:hover > a:after {
+	&:active > a:after {
 		border-left-color:#fff;
 	}
 
-	.pull-left {
+	&.pull-left {
 		float:none;
 	}
 
@@ -61,4 +59,17 @@
 		float:right;
 		color:@text-muted;
 	}
+}*/
+.dropdown-menu .dropdown-menu {
+	position:static;
+	float:none;
+	padding:5px 0;
+	margin:2px 0 0;
+	list-style:none;
+	font-size:14px;
+	background-color:#fff;
+	border:none;
+	.border-radius(0);
+	.box-shadow(none);
+	background-clip:padding-box;
 }

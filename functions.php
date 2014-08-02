@@ -3,6 +3,7 @@
  * Melany functions and definitions
  *
  * @package Melany
+ * @since 0.5.0
  */
 
 /**
@@ -57,8 +58,6 @@ function melany_setup() {
 	 *
 	 * WordPress Post Formats list
 	 * aside, gallery, link, image, quote, status, video, audio, chat
-	 *
-	 * @since 1.0.0
 	 */
 	add_theme_support( 'post-formats', array( 'image' ) );
 
@@ -121,7 +120,8 @@ function melany_scripts() {
 	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/css/custom-style.css', array('melany-style') );
 
 	// Enqueue scripts
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.0.0', false );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.1.1', false );
+	wp_enqueue_script( 'dropdown-multilevel', get_template_directory_uri() . '/js/dropdown-multilevel.js', array('bootstrap'), '3.1.1', false );
 	wp_enqueue_script( 'melany-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'melany-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	wp_enqueue_script( 'melany-tooltips', get_template_directory_uri() . '/js/tooltips.js', array( 'bootstrap' ), '3.0.0', true );
