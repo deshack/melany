@@ -129,7 +129,6 @@ function melany_scripts() {
 
 	// Enqueue scripts
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.1.1', false );
-	wp_enqueue_script( 'dropdown-multilevel', get_template_directory_uri() . '/js/dropdown-multilevel.js', array('bootstrap'), '3.1.1', false );
 	wp_enqueue_script( 'melany-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'melany-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	wp_enqueue_script( 'melany-tooltips', get_template_directory_uri() . '/js/tooltips.js', array( 'bootstrap' ), '3.0.0', true );
