@@ -1,0 +1,4 @@
+# Add Access-Control-Allow-Origin header to allow CORS for fonts.
+<FilesMatch ".(eot|ttf|otf|woff)">
+	Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
