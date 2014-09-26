@@ -50,6 +50,12 @@ select {
 }
 
 // Override the default text selection color
+::-moz-selection {
+	background: @text-selection-color;
+}
+a::-moz-selection {
+	background: @link-selection-color;
+}
 ::selection {
 	background:@text-selection-color;
 }
