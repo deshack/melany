@@ -9,10 +9,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="page-header entry-header">
 		<hgroup class="row">
-			<div class="col-sm-10">
+			<div class="col-sm-12">
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 			</div>
-			<?php edit_post_link( __( 'Edit', 'melany' ), '<div class="col-sm-2">', '</div>' ); ?>
 		</hgroup>
 	</header><!-- .entry-header -->
 
