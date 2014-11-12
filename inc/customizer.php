@@ -574,4 +574,5 @@ add_action( 'customize_register', array( 'Melany_Customizer', 'register' ) );
 add_action( 'wp_head', array( 'Melany_Customizer', 'header_output' ) );
 
 // Enqueue live preview javascript in Theme Customizer admin screen.
-add_action( 'customize_preview_init', array( 'Melany_Customizer', 'live_preview' ) );
+// Don't include it yet, we still use the 'refresh' transport.
+// add_action( 'customize_preview_init', array( 'Melany_Customizer', 'live_preview' ) );
