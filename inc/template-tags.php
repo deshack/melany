@@ -655,8 +655,12 @@ if ( ! function_exists( 'melany_custom_home_background' ) ) :
  * Custom static homepage background color
  *
  * @since 1.0.0
+ * @deprecated 1.1.1 Replaced by Melany_Customizer::header_output()
  */
 function melany_custom_home_background() {
+	// Show deprecated function notice.
+	_deprecated_function( __FUNCTION__, '1.1.1', 'Melany_Customizer::header_output()' );
+
 	if ( !is_page_template('templates/home.php') )
 		return;
 
@@ -674,7 +678,7 @@ function melany_custom_home_background() {
 
 	echo '<style type="text/css" id="custom-home-background">' . "\n\t" . $bg_style . "\n\t" . $color_style . "\n</style>\n";
 }
-add_action( 'wp_head', 'melany_custom_home_background' );
+// add_action( 'wp_head', 'melany_custom_home_background' );
 endif;
 
 if ( ! function_exists( 'melany_author_box' ) ) :
@@ -817,8 +821,12 @@ if ( ! function_exists( 'melany_custom_selection_color' ) ) :
  * Customize text selection color via the Theme Customizer.
  *
  * @since 1.1.0
+ * @deprecated 1.1.1 Replaced with Melany_Customizer::header_output()
  */
 function melany_custom_selection_color() {
+	// Print deprecated function notice.
+	_deprecated_function( __FUNCTION__, '1.1.1', 'Melany_Customizer::header_output()' );
+
 	$color = get_theme_mod('melany_selection_color');
 
 	if ( empty($color) )
@@ -826,7 +834,7 @@ function melany_custom_selection_color() {
 
 	echo '<style type="text/css" id="custom-selection-color">::selection{background:' . $color . ';}</style>';
 }
-add_action( 'wp_head', 'melany_custom_selection_color' );
+// add_action( 'wp_head', 'melany_custom_selection_color' );
 endif;
 
 /**

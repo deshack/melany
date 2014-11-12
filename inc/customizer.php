@@ -70,8 +70,30 @@ class Melany_Customizer {
 		self::_register_colors( $wp_customize );
 
 		// Change built-in settings.
-		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+		$wp_customize->get_setting( 'blogname' )->transport         = 'refresh';
+		$wp_customize->get_setting( 'blogdescription' )->transport  = 'refresh';
+	}
+
+	/**
+	 * Output custom settings to the live theme's head.
+	 *
+	 * Hooked into 'wp_head'.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @static
+	 */
+	public static function header_output() {
+		?>
+		<!-- Customizer CSS -->
+		<style type="text/css">
+			<?php self::generate_css('body.page-template-templateshome-php', 'background-color', 'melany_home_background' ); ?>
+			<?php self::generate_css('body.page-template-templateshome-php .jumbotron', 'color', 'melany_home_color' ); ?>
+			<?php self::generate_css('::-moz-selection', 'background', 'melany_selection_color' ); ?>
+			<?php self::generate_css('::selection','background', 'melany_selection_color' ); ?>
+		</style>
+		<!-- /Customizer CSS -->
+		<?php
 	}
 
 	/**
@@ -96,6 +118,117 @@ class Melany_Customizer {
 	}
 
 	/**
+	 * Sanitize numeric value.
+	 *
+	 * If the provided value is not numeric, save the default value.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @static
+	 *
+	 * @param mixed $value
+	 * @return  int
+	 */
+	public static function sanitize_numeric( $value ) {
+		if ( ! is_numeric( $value ) )
+			$value = '';
+		return $value;
+	}
+
+	/**
+	 * Sanitize checkbox value.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @static
+	 *
+	 * @param  mixed $value
+	 * @return  string 1 if $value evaluates to true, 0 otherwise.
+	 */
+	public static function sanitize_checkbox( $value ) {
+		if ( $value )
+			return true;
+		else
+			return false;
+	}
+
+	/**
+	 * Sanitize logo shape setting.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @static
+	 *
+	 * @param  string $value
+	 * @return  string
+	 */
+	public static function sanitize_logo_shape( $value ) {
+		$accepted = array( 'default', 'rounded', 'circle' );
+
+		if ( ! in_array( $value, $accepted ) )
+			return;
+		return $value;
+	}
+
+	/**
+	 * Sanitize navbar color setting.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @static
+	 *
+	 * @param  string $value
+	 * @return string
+	 */
+	public static function sanitize_navbar_color( $value ) {
+		$accepted = array( 'default', 'green', 'inverse' );
+
+		if ( ! in_array( $value, $accepted ) )
+			return;
+		return $value;
+	}
+
+	/**
+	 * Generate CSS for use in header output.
+	 *
+	 * If the setting `$mod_name` has no defined value, the CSS will not be
+	 * output.
+	 *
+	 * @since 1.0.0
+	 * @access protected
+	 * @static
+	 *
+	 * @uses get_theme_mod()
+	 *
+	 * @param string $selector CSS selector.
+	 * @param string $style The name of the CSS property to modify.
+	 * @param string $mod_name The name of the 'theme_mod' option to fetch.
+	 * @param string $prefix Optional. Anything that needs to be output before
+	 * the CSS property.
+	 * @param string $postfix Optional. Anything that needs to be output after
+	 * the CSS property.
+	 * @param bool $echo Optional. Whether to print directly to the page.
+	 * Default true.
+	 * @return string Returns a single line of CSS with selectors and a property.
+	 */
+	protected static function generate_css( $selector, $style, $mod_name, $prefix = '', $postfix = '', $echo = true ) {
+		$css = '';
+		$mod = get_theme_mod( $mod_name );
+
+		if ( ! empty( $mod ) ) {
+			$css = sprintf( '%s { %s:%s; }',
+				$selector,
+				$style,
+				$prefix.$mod.$postfix
+			);
+			if ( $echo )
+				echo $css;
+		}
+
+		return $css;
+	}
+
+	/**
 	 * Register settings under Site Title and Tagline section.
 	 *
 	 * @since  1.0.0
@@ -115,8 +248,9 @@ class Melany_Customizer {
 		 */
 		$wp_customize->add_setting( 'melany_title_length', array(
 			'default'	=> 20,
-			'transport' => 'postMessage',
-			'type'		=> 'theme_mod'
+			'transport' => 'refresh',
+			'type'		=> 'theme_mod',
+			'sanitize_callback' => array( __CLASS__, 'sanitize_numeric' )
 		));
 		$wp_customize->add_control( 'melany_title_length', array(
 			'label'			=> __( 'Title Length', 'melany' ),
@@ -148,7 +282,9 @@ class Melany_Customizer {
 		));
 
 		// Add logo setting and control.
-		$wp_customize->add_setting( 'melany_logo' );
+		$wp_customize->add_setting( 'melany_logo', array(
+			'sanitize_callback' => 'esc_url_raw'
+		) );
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'melany_logo', array(
 			'label'		=> __( 'Logo', 'melany' ),
 			'section'	=> 'melany_logo_section',
@@ -158,6 +294,7 @@ class Melany_Customizer {
 		// Add logo shape setting and control.
 		$wp_customize->add_setting( 'melany_logo_shape', array(
 			'default'	=> 'default',
+			'sanitize_callback' => array( __CLASS__, 'sanitize_logo_shape' )
 		));
 		$wp_customize->add_control( 'melany_logo_shape', array(
 			'label'			=> __( 'Logo Shape', 'melany' ),
@@ -171,7 +308,9 @@ class Melany_Customizer {
 		));
 
 		// Add favicon setting and control
-		$wp_customize->add_setting( 'melany_favicon' );
+		$wp_customize->add_setting( 'melany_favicon', array(
+			'sanitize_callback' => 'esc_url_raw'
+		) );
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'melany_favicon', array(
 			'label'			=> __( 'Favicon', 'melany' ),
 			'section'		=> 'melany_logo_section',
@@ -199,7 +338,8 @@ class Melany_Customizer {
 		 * Add link to the home page in header image.
 		 */
 		$wp_customize->add_setting( 'melany_header', array(
-			'default'		=> false
+			'default'		=> false,
+			'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' )
 		));
 		$wp_customize->add_control( 'melany_header', array(
 			'label'			=> __( 'Add a link to the home page in the header image', 'melany' ),
@@ -232,6 +372,7 @@ class Melany_Customizer {
 		));
 		$wp_customize->add_setting( 'melany_home_excerpt', array(
 			'default'		=> false,
+			'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' )
 		));
 		$wp_customize->add_control( 'melany_home_excerpt', array(
 			'label'			=> __( 'Full text posts in Home Page', 'melany' ),
@@ -240,7 +381,8 @@ class Melany_Customizer {
 			'settings'		=> 'melany_home_excerpt',
 		));
 		$wp_customize->add_setting( 'melany_home_tags', array(
-			'default'		=> true
+			'default'		=> true,
+			'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' )
 		));
 		$wp_customize->add_control( 'melany_home_tags', array(
 			'label'			=> __( 'Display tags in Home Page', 'melany' ),
@@ -249,7 +391,8 @@ class Melany_Customizer {
 			'settings'		=> 'melany_home_tags'
 		));
 		$wp_customize->add_setting( 'melany_home_thumb', array(
-			'default'		=> false
+			'default'		=> false,
+			'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' )
 		));
 		$wp_customize->add_control( 'melany_home_thumb', array(
 			'label'			=> __( 'Display Featured Images in Home Page', 'melany' ),
@@ -287,7 +430,9 @@ class Melany_Customizer {
 		 *
 		 * @since Melany 1.1.0
 		 */
-		$wp_customize->add_setting( 'melany_copyright' );
+		$wp_customize->add_setting( 'melany_copyright', array(
+			'sanitize_callback' => 'sanitize_text_field'
+		) );
 		$wp_customize->add_control( 'melany_copyright', array(
 			'label'			=> __( 'Copyright text', 'melany' ),
 			'type'			=> 'text',
@@ -300,7 +445,8 @@ class Melany_Customizer {
 		 * @since Melany 1.0.0
 		 */
 		$wp_customize->add_setting( 'melany_footer_credits', array(
-			'type' 			=> 'theme_mod'
+			'type' 			=> 'theme_mod',
+			'sanitize_callback' => 'sanitize_text_field'
 		));
 		$wp_customize->add_control( 'melany_footer_credits', array(
 			'label' 		=> __( 'Credits', 'melany' ),
@@ -332,10 +478,12 @@ class Melany_Customizer {
 			'panel'			=> 'melany'
 		));
 		$wp_customize->add_setting( 'melany_author_display', array(
-			'default'		=> true
+			'default'		=> true,
+			'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' )
 		));
 		$wp_customize->add_setting( 'melany_author_count', array(
 			'default'		=> true,
+			'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' )
 		));
 		$wp_customize->add_control( 'melany_author_display', array(
 			'label'			=> __( 'Display Author Box?', 'melany' ),
@@ -368,8 +516,9 @@ class Melany_Customizer {
 		 */
 		$wp_customize->add_setting( 'melany_home_background', array(
 			'default'		=> '#3d8b3d',
-			'transport'		=> 'postMessage',
-			'type'			=> 'theme_mod'
+			'transport'		=> 'refresh',
+			'type'			=> 'theme_mod',
+			'sanitize_callback' => 'sanitize_hex_color'
 		));
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'melany_home_background', array(
 			'label'			=> __( 'Homepage Background Color', 'melany' ),
@@ -379,8 +528,9 @@ class Melany_Customizer {
 
 		$wp_customize->add_setting( 'melany_home_color', array(
 			'default'		=> '#ffffff',
-			'transport'		=> 'postMessage',
-			'type'			=> 'theme_mod'
+			'transport'		=> 'refresh',
+			'type'			=> 'theme_mod',
+			'sanitize_callback' => 'sanitize_hex_color'
 		));
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'melany_home_color', array(
 			'label'			=> __( 'Homepage Text Color', 'melany' ),
@@ -389,8 +539,9 @@ class Melany_Customizer {
 		)));
 		$wp_customize->add_setting( 'melany_navbar_color', array(
 			'default'		=> 'inverse',
-			'transport'		=> 'postMessage',
-			'type'			=> 'theme_mod'
+			'transport'		=> 'refresh',
+			'type'			=> 'theme_mod',
+			'sanitize_callback' => array( __CLASS__, 'sanitize_navbar_color' )
 		));
 		$wp_customize->add_control( 'melany_navbar_color', array(
 			'label'			=> __( 'Navbar color scheme', 'melany' ),
@@ -404,8 +555,9 @@ class Melany_Customizer {
 		));
 		$wp_customize->add_setting( 'melany_selection_color', array(
 			'default'	=> '#5cb85c',
-			'transport'	=> 'postMessage',
-			'type'		=> 'theme_mod'
+			'transport'	=> 'refresh',
+			'type'		=> 'theme_mod',
+			'sanitize_callback' => 'sanitize_hex_color'
 		));
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'melany_selection_color', array(
 			'label'			=> __( 'Text selection color', 'melany' ),
@@ -417,6 +569,9 @@ class Melany_Customizer {
 
 // Setup Theme Customizer settings and controls.
 add_action( 'customize_register', array( 'Melany_Customizer', 'register' ) );
+
+// Output custom CSS to live site.
+add_action( 'wp_head', array( 'Melany_Customizer', 'header_output' ) );
 
 // Enqueue live preview javascript in Theme Customizer admin screen.
 add_action( 'customize_preview_init', array( 'Melany_Customizer', 'live_preview' ) );
