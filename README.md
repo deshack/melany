@@ -14,6 +14,22 @@ This theme supports only 2 menu levels.
 Bootstrap 3 comes with support for only 2 menu levels (that is, one visible and one dropdown level).
 As Melany aims at giving a pure Bootstrap experience, the dropdown levels are not extended.
 
+Languages
+---------
+
+Thanks to a number of contributors, Melany is available in the following languages:
+
+* English
+* Italian
+* German (credits: [tobscore](http://www.getlocalization.com/profile/?username=tobscore), [Andrada](http://www.getlocalization.com/profile/?username=Andrada), [lautrivta](http://www.getlocalization.com/profile/?username=lautrivta))
+* French (credit: [silvia.bindelli](http://www.getlocalization.com/profile/?username=silvia.bindelli))
+* Spanish (credits: [magnadian](http://www.getlocalization.com/profile/?username=magnadian), [valeriaconte](http://www.getlocalization.com/profile/?username=valeriaconte))
+* Finnish (credit: [ramiselin](http://www.getlocalization.com/profile/?username=ramiselin))
+* Catalan / Catalan (Andorra)
+* Turkish (Turkey) (credit: [efeciftci](http://www.getlocalization.com/profile/?username=efeciftci))
+* Indonesian
+
+You can help translating Melany into your own language on [GetLocalization](http://www.getlocalization.com/melany/)
 
 Team
 ----
