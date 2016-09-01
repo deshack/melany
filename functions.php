@@ -50,20 +50,6 @@ function melany_setup() {
 	add_theme_support( 'title-tag' );
 
 	/**
-	 * Backwards compatibility for title tag.
-	 *
-	 * @since future-release
-	 */
-	if ( ! function_exists( '_wp_render_title_tag' ) ) {
-		function melany_render_title() {
-			?>
-			<title><?php wp_title( '|', true, 'right' ); ?></title>
-			<?php
-		}
-		add_action( 'wp_head', 'melany_render_title' );
-	}
-
-	/**
 	 * Enable support for Post Thumbnails on posts and pages
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
@@ -210,3 +196,17 @@ if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow
  * Load Jetpack compatibility file.
  */
 //require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Backwards compatibility for title tag.
+ *
+ * @since future-release
+ */
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	function melany_render_title() {
+		?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<?php
+	}
+	add_action( 'wp_head', 'melany_render_title' );
+}
