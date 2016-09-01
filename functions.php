@@ -43,6 +43,20 @@ function melany_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
+	 * Support title tag.
+	 *
+	 * @since future-release
+	 */
+	if ( ! function_exists( '_wp_render_title_tag' ) ) {
+		function theme_slug_render_title() {
+			?>
+			<title><?php wp_title( '|', true, 'right' ); ?></title>
+			<?php
+		}
+		add_action( 'wp_head', 'theme_slug_render_title' );
+	}
+
+	/**
 	 * Enable support for Post Thumbnails on posts and pages
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
