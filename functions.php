@@ -47,13 +47,20 @@ function melany_setup() {
 	 *
 	 * @since future-release
 	 */
+	add_theme_support( 'title-tag' );
+
+	/**
+	 * Backwards compatibility for title tag.
+	 *
+	 * @since future-release
+	 */
 	if ( ! function_exists( '_wp_render_title_tag' ) ) {
-		function theme_slug_render_title() {
+		function melany_render_title() {
 			?>
 			<title><?php wp_title( '|', true, 'right' ); ?></title>
 			<?php
 		}
-		add_action( 'wp_head', 'theme_slug_render_title' );
+		add_action( 'wp_head', 'melany_render_title' );
 	}
 
 	/**
