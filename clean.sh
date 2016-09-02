@@ -6,7 +6,7 @@
 version=$( git tag -l | sort -V | tail -1 )
 
 # Remove all the development stuffs.
-rm -rf .directory .gitignore .git/ *.sublime* lib/bootstrap/.git lib/bootstrap/less/ less/
+rm -rf .htaccess .directory .gitignore .git/ *.sublime* lib/bootstrap/.git lib/bootstrap/less/ less/
 
 # Move out of the Melany directory, rename and copy it.
 cd ..
