@@ -16,7 +16,7 @@ if ( ! function_exists( 'melany_post_thumbnail' ) ) :
  *
  * @since 1.1.0
  *
- * @see the_post_thumbnail() 
+ * @see the_post_thumbnail()
  */
 function melany_post_thumbnail() {
 	if ( is_home() && ! get_theme_mod( 'melany_home_thumb' ) )
@@ -443,7 +443,7 @@ function melany_the_attached_image() {
 	$next_attachment_url	= wp_get_attachment_url();
 
 	/**
-	 * Grab the IDs of all the image attachments in a gallery so we can get the 
+	 * Grab the IDs of all the image attachments in a gallery so we can get the
 	 * URL of the next adjacent image in a gallery, or the first image (if
 	 * we're looking at the last image in a gallery), or, in a gallery of one,
 	 * just the link to that image file.
@@ -666,7 +666,7 @@ function melany_custom_home_background() {
 
 	$bg			= get_theme_mod( 'melany_home_background' );
 	$color	= get_theme_mod( 'melany_home_color' );
-	
+
 	if ( $bg )
 		$bg_style = 'body.home.page.page-template-templateshome-php { background-color:' . $bg . '; }';
 	else
@@ -706,7 +706,7 @@ function melany_author_box() {
 		<div class="clearfix"></div>
 		<?php if ( get_theme_mod( 'melany_author_count', true ) ) : ?>
 			<p class="posts-num"><small>
-				<span class="glyphicon glyphicon-pencil"> </span>	
+				<span class="glyphicon glyphicon-pencil"> </span>
 				<?php $post_count = get_the_author_posts(); ?>
 				<?php if ( $post_count == 1 )
 					printf( __( '%1$s wrote 1 post', 'melany' ), get_the_author() );

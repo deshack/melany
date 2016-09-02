@@ -12,7 +12,7 @@
  * @since 1.1.0
  * @var  string
  */
-define( 'MELANY_VERSION', '1.1.1' );
+define( 'MELANY_VERSION', '1.1.2' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -41,6 +41,13 @@ function melany_setup() {
 	 * Add default posts and comments RSS feed links to head
 	 */
 	add_theme_support( 'automatic-feed-links' );
+
+	/**
+	 * Support title tag.
+	 *
+	 * @since future-release
+	 */
+	add_theme_support( 'title-tag' );
 
 	/**
 	 * Enable support for Post Thumbnails on posts and pages
@@ -189,3 +196,17 @@ if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow
  * Load Jetpack compatibility file.
  */
 //require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Backwards compatibility for title tag.
+ *
+ * @since future-release
+ */
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	function melany_render_title() {
+		?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<?php
+	}
+	add_action( 'wp_head', 'melany_render_title' );
+}
