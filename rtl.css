@@ -83,7 +83,7 @@ a img.alignright,
 @media (min-width: 992px) {
   .widget-title,
   .widgettitle {
-    padding-left: 1em;
+    padding-right: 1em;
     text-align: right;
   }
 }
