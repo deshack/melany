@@ -1,0 +1,23 @@
+/* =RTL Search
+----------------------------------------------- */
+
+// Search Toggle.
+//
+// Custom button for toggling the `.search-collapse`, powered by the collapse
+// JavaScript plugin.
+
+.search-toggle {
+  float: left;
+  margin-right: 0;
+  margin-left: @navbar-padding-horizontal;
+
+  @media (min-width: @grid-float-breakpoint) and (max-width: @screen-md-max) {
+    right: auto;
+    left: 0;
+  }
+
+  // Uncollapse the search.
+  @media (min-width: @screen-lg) {
+    float: left;
+  }
+}

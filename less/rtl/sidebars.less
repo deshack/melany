@@ -1,0 +1,54 @@
+/* =RTL Asides
+----------------------------------------------- */
+
+// Widgets
+.widget-title,
+.widgettitle {
+  @media (min-width: @screen-md) {
+    padding-left: 1em;
+    text-align: right;
+  }
+}
+
+.widget {
+  ul {
+    padding-left: 0;
+    padding-right: 1.5em;
+
+    &.sub-menu {
+      padding-left: 0;
+      padding-right: 1em;
+
+      ul.sub-menu ul.sub-menu {
+        padding-right: 0;
+      }
+    }
+    &.children {
+      padding-left: 0;
+      padding-right: 1em;
+
+      ul.children ul.children {
+        padding-right: 0;
+      }
+    }
+  }
+  .unstyled {
+    padding-right: 0;
+  }
+}
+
+// Widget Text
+.widget_text {
+  div {
+    @media (min-width: @screen-md) {
+      text-align: right;
+    }
+  }
+}
+
+// Widget Nav Menu
+.widget_nav_menu {
+  div {
+    padding-right: 0;
+  }
+}

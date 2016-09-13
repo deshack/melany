@@ -1,0 +1,44 @@
+/* =RTL Scaffolding
+----------------------------------------------- */
+
+// Jumbotron
+.jumbotron {
+  @media (min-width: @screen-md) {
+    text-align: right;
+
+    .leave-comment {
+      float: left;
+      text-align: left;
+    }
+  }
+}
+
+// Single and Pages
+.page-header {
+  @media (min-width: @screen-md) {
+    text-align: right;
+  }
+}
+
+// Pager
+.pager > li {
+  &.previous {
+    float: right;
+  }
+  &.next {
+    float: left;
+  }
+}
+
+// Author box
+#author-box.media {
+  .media-body {
+    text-align: right;
+  }
+
+  @media (min-width: @screen-md) {
+    .posts-num {
+      text-align: right;
+    }
+  }
+}

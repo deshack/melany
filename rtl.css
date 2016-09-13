@@ -6,12 +6,155 @@ it's just a matter of overwriting all the horizontal positioning attributes
 of your CSS stylesheet in a separate stylesheet file named rtl.css.
 
 http://codex.wordpress.org/Right_to_Left_Language_Support
-
 */
-
-/*
 body {
-	direction: rtl;
-	unicode-bidi: embed;
+  direction: rtl;
+  unicode-bidi: embed;
 }
-*/
+/* =Mixins
+----------------------------------------------- */
+/* =RTL Alignment
+----------------------------------------------- */
+.alignleft,
+a img.alignleft,
+.wp-caption.alignleft {
+  float: right;
+  margin: 20px 0 20px 1.5em;
+}
+.alignright,
+a img.alignright,
+.wp-caption.alignright {
+  float: left;
+  margin: 20px 1.5em 20px 0;
+}
+/* =RTL Scaffolding
+----------------------------------------------- */
+@media (min-width: 992px) {
+  .jumbotron {
+    text-align: right;
+  }
+  .jumbotron .leave-comment {
+    float: left;
+    text-align: left;
+  }
+}
+@media (min-width: 992px) {
+  .page-header {
+    text-align: right;
+  }
+}
+.pager > li.previous {
+  float: right;
+}
+.pager > li.next {
+  float: left;
+}
+#author-box.media .media-body {
+  text-align: right;
+}
+@media (min-width: 992px) {
+  #author-box.media .posts-num {
+    text-align: right;
+  }
+}
+/* =RTL Menus
+----------------------------------------------- */
+.menu-toggle {
+  float: right;
+  margin-left: 0;
+  margin-right: 15px;
+}
+/* =RTL Comments
+----------------------------------------------- */
+.comment-list .children {
+  padding-right: 20px;
+}
+.comment-list .avatar {
+  margin-right: 1em;
+}
+.comment .children .comment {
+  border-left: none;
+}
+.comment .comment-content {
+  padding-right: 1em;
+}
+/* =RTL Asides
+----------------------------------------------- */
+@media (min-width: 992px) {
+  .widget-title,
+  .widgettitle {
+    padding-left: 1em;
+    text-align: right;
+  }
+}
+.widget ul {
+  padding-left: 0;
+  padding-right: 1.5em;
+}
+.widget ul.sub-menu {
+  padding-left: 0;
+  padding-right: 1em;
+}
+.widget ul.sub-menu ul.sub-menu ul.sub-menu {
+  padding-right: 0;
+}
+.widget ul.children {
+  padding-left: 0;
+  padding-right: 1em;
+}
+.widget ul.children ul.children ul.children {
+  padding-right: 0;
+}
+.widget .unstyled {
+  padding-right: 0;
+}
+@media (min-width: 992px) {
+  .widget_text div {
+    text-align: right;
+  }
+}
+.widget_nav_menu div {
+  padding-right: 0;
+}
+/* =RTL Home
+----------------------------------------------- */
+.home.page.page-template-templateshome-php .jumbotron h1 {
+  text-align: right;
+}
+/* =RTL Buttons
+----------------------------------------------- */
+@media (min-width: 768px) {
+  .post-edit-link,
+  .comment-edit-link {
+    float: left;
+  }
+}
+.comment-edit-link {
+  margin-right: 10px;
+}
+/* =RTL Search
+----------------------------------------------- */
+.search-toggle {
+  float: left;
+  margin-right: 0;
+  margin-left: 15px;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .search-toggle {
+    right: auto;
+    left: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .search-toggle {
+    float: left;
+  }
+}
+/* =RTL Screen Reader Text
+----------------------------------------------- */
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  left: auto;
+  right: 5px;
+}

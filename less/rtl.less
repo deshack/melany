@@ -1,0 +1,39 @@
+/*
+Theme Name: Melany
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+// Twitter Bootstrap Variables and Mixins
+@import '../lib/bootstrap/less/variables.less';
+@import '../lib/bootstrap/less/mixins.less';
+
+// Core variables and mixins
+@import 'variables.less';
+@import 'mixins.less';
+
+// RTL alignment classes
+@import 'rtl/alignment.less';
+
+// Core CSS
+@import 'rtl/scaffolding.less';
+@import 'rtl/menus.less';
+@import 'rtl/comments.less';
+@import 'rtl/sidebars.less';
+@import 'rtl/home.less';
+
+// RTL components
+@import 'rtl/buttons.less';
+@import 'rtl/search.less';
+
+// Utilities
+@import 'rtl/screen-reader.less';
